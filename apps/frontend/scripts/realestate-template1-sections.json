@@ -1,0 +1,1741 @@
+{
+  "Features": {
+    "features": [
+      {
+        "title": "Prime Locations",
+        "desc": "Carefully chosen neighborhoods",
+        "icon": "location"
+      },
+      {
+        "title": "Verified Properties",
+        "desc": "Legally verified & 100% transparent",
+        "icon": "verified"
+      },
+      {
+        "title": "End-to-End Support",
+        "desc": "From site visit to possession",
+        "icon": "support"
+      },
+      {
+        "title": "Timely Delivery",
+        "desc": "On-time commitments, every time",
+        "icon": "delivery"
+      }
+    ]
+  },
+  "Highlight": {
+    "categoriesPretitle": "Explore properties",
+    "categoriesTitle": "Find the right property for your next move.",
+    "categoriesDesc": "Browse verified homes by intent and property type across Delhi NCR.",
+    "categories": [
+      {
+        "title": "Gaur Cascades",
+        "category": "For Sale",
+        "desc": "Spacious 3 BHK with clubhouse access and strong rental demand on NH-24.",
+        "image": "https://i.pinimg.com/736x/ef/9a/47/ef9a4713741ca63d55b263f14efc3439.jpg",
+        "alt": "Gaur Cascades apartment Ghaziabad",
+        "href": "/properties"
+      },
+      {
+        "title": "Puri Amanvilas",
+        "category": "For Sale",
+        "desc": "Independent villa living in Sector 89 with landscaped greens and 24/7 security.",
+        "image": "https://i.pinimg.com/1200x/89/04/7e/89047eb36310c5e1fe4f4ec53c73ad68.jpg",
+        "alt": "Puri Amanvilas villa Faridabad",
+        "href": "/properties"
+      },
+      {
+        "title": "Mahagun Mezzaria",
+        "category": "For Rent",
+        "desc": "Furnished 2 BHK near Sector 78 with corporate tenant demand and clubhouse living.",
+        "image": "https://i.pinimg.com/1200x/0c/fc/ad/0cfcadb262e1d8babfabf77242510ba8.jpg",
+        "alt": "Mahagun Mezzaria rental Noida",
+        "href": "/properties"
+      },
+      {
+        "title": "ATS Picturesque",
+        "category": "For Sale",
+        "desc": "Corner unit with private terrace, schools nearby, and landscaped community parks.",
+        "image": "https://i.pinimg.com/1200x/ef/39/59/ef3959927cdda6223562be58bd06d560.jpg",
+        "alt": "ATS Picturesque Reprieves Noida",
+        "href": "/properties"
+      },
+      {
+        "title": "SVP Gulmohur Garden",
+        "category": "For Rent",
+        "desc": "Bright one-bedroom in Raj Nagar Ext. with gym access and easy lease options.",
+        "image": "https://i.pinimg.com/1200x/3c/67/e4/3c67e4a14f41ee97947a7ecdfe9f6169.jpg",
+        "alt": "SVP Gulmohur Garden rental Ghaziabad",
+        "href": "/properties"
+      },
+      {
+        "title": "Omaxe Twin Towers",
+        "category": "For Sale",
+        "desc": "Modern interiors near Sector 79 with walkable retail and verified documents.",
+        "image": "https://i.pinimg.com/1200x/bb/65/70/bb6570905b1f188154a146cc36d1af68.jpg",
+        "alt": "Omaxe Twin Towers Faridabad",
+        "href": "/properties"
+      },
+      {
+        "title": "Greater Kailash Builder Floor",
+        "category": "For Sale",
+        "desc": "Spacious 3 BHK builder floor with private terrace, parking, and walkable markets in Greater Kailash.",
+        "image": "https://i.pinimg.com/736x/73/34/08/73340883a1c32401c904fef30ae721ff.jpg",
+        "alt": "Builder floor in South Delhi",
+        "href": "/properties"
+      },
+      {
+        "title": "Dwarka Sector 12 Builder Floor",
+        "category": "For Sale",
+        "desc": "Corner 4 BHK builder floor near metro with servant room, open kitchen, and covered parking.",
+        "image": "https://i.pinimg.com/736x/41/c5/82/41c582d693349dd9b9d6c8e5776b146f.jpg",
+        "alt": "Builder floor in Dwarka",
+        "href": "/properties"
+      }
+    ]
+  },
+  "Featured": {
+    "subtitle": "Ready for site visits this week",
+    "sectionTitle": "Featured Properties",
+    "title": "Signature Residences",
+    "description": "Handpicked residences with strong amenities, smart layouts, and verified ownership documents.",
+    "listings": [
+      {
+        "image": "https://i.pinimg.com/736x/ef/9a/47/ef9a4713741ca63d55b263f14efc3439.jpg",
+        "alt": "Gaur Cascades apartment Ghaziabad",
+        "title": "Gaur Cascades",
+        "subtitle": "3 BHK · Gaursons",
+        "infoTitle": "Expressway-facing family home",
+        "description": "Spacious 3 BHK with clubhouse access and strong rental demand on NH-24.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "3"
+          },
+          {
+            "label": "Area",
+            "value": "1850 sq.ft"
+          },
+          {
+            "label": "Parking",
+            "value": "2"
+          }
+        ],
+        "price": "Rs. 1.25 Cr",
+        "statusText": "Ready for visit",
+        "category": "For Sale",
+        "propertyType": "Apartment",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "gaur-cascades",
+        "body": "A spacious family apartment in Ghaziabad by Gaursons. Ideal for end-users looking for clubhouse access, parking, and expressway connectivity. Documents are verified and site visits can be booked the same week.",
+        "location": "Ghaziabad"
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/89/04/7e/89047eb36310c5e1fe4f4ec53c73ad68.jpg",
+        "alt": "Puri Amanvilas villa Faridabad",
+        "title": "Puri Amanvilas",
+        "subtitle": "4 BHK Villa · Puri",
+        "infoTitle": "Private garden villa",
+        "description": "Independent villa living in Sector 89 with landscaped greens and 24/7 security.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "4"
+          },
+          {
+            "label": "Area",
+            "value": "3200 sq.ft"
+          },
+          {
+            "label": "Parking",
+            "value": "3"
+          }
+        ],
+        "price": "Rs. 2.85 Cr",
+        "statusText": "New listing",
+        "category": "For Sale",
+        "propertyType": "Villa",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "puri-amanvilas",
+        "body": "Independent villa living in Faridabad Sector 89 by Puri Constructions. Private garden, gated security, and roomy layouts for families who want more space than a high-rise apartment.",
+        "location": "Faridabad"
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/0c/fc/ad/0cfcadb262e1d8babfabf77242510ba8.jpg",
+        "alt": "Mahagun Mezzaria rental Noida",
+        "title": "Mahagun Mezzaria",
+        "subtitle": "2 BHK · Mahagun",
+        "infoTitle": "Rental-ready high-rise",
+        "description": "Furnished 2 BHK near Sector 78 with corporate tenant demand and clubhouse living.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "2"
+          },
+          {
+            "label": "Area",
+            "value": "1100 sq.ft"
+          },
+          {
+            "label": "Furnished",
+            "value": "Yes"
+          }
+        ],
+        "price": "Rs. 65,000 / mo",
+        "statusText": "Available now",
+        "category": "For Rent",
+        "propertyType": "Apartment",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "mahagun-mezzaria",
+        "body": "A rental-ready 2 BHK in Noida by Mahagun Group. Furnished option with corporate tenant demand, clubhouse living, and easy commute to offices along the Noida belt.",
+        "location": "Noida"
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/ef/39/59/ef3959927cdda6223562be58bd06d560.jpg",
+        "alt": "ATS Picturesque Reprieves Noida",
+        "title": "ATS Picturesque",
+        "subtitle": "3 BHK · ATS",
+        "infoTitle": "Family-friendly township home",
+        "description": "Corner unit with private terrace, schools nearby, and landscaped community parks.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "3"
+          },
+          {
+            "label": "Area",
+            "value": "2100 sq.ft"
+          },
+          {
+            "label": "Terrace",
+            "value": "Yes"
+          }
+        ],
+        "price": "Rs. 1.68 Cr",
+        "statusText": "Open house Sat",
+        "category": "For Sale",
+        "propertyType": "Apartment",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "ats-picturesque",
+        "body": "Family-friendly 3 BHK in an ATS township. Corner unit feel with terrace options, parks, and schools nearby — suited for long-term living.",
+        "location": "Noida"
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/3c/67/e4/3c67e4a14f41ee97947a7ecdfe9f6169.jpg",
+        "alt": "SVP Gulmohur Garden rental Ghaziabad",
+        "title": "SVP Gulmohur Garden",
+        "subtitle": "1 BHK · SVP",
+        "infoTitle": "Park-facing rental",
+        "description": "Bright one-bedroom in Raj Nagar Ext. with gym access and easy lease options.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "1"
+          },
+          {
+            "label": "Area",
+            "value": "780 sq.ft"
+          },
+          {
+            "label": "Furnished",
+            "value": "Semi"
+          }
+        ],
+        "price": "Rs. 42,000 / mo",
+        "statusText": "Move-in ready",
+        "category": "For Rent",
+        "propertyType": "Studio",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "svp-gulmohur-garden",
+        "body": "Compact park-facing rental in Raj Nagar Extension. Semi-furnished, gym access, and flexible lease terms for tenants who want a quiet gated community.",
+        "location": "Ghaziabad"
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/bb/65/70/bb6570905b1f188154a146cc36d1af68.jpg",
+        "alt": "Omaxe Twin Towers Faridabad",
+        "title": "Omaxe Twin Towers",
+        "subtitle": "3 BHK · Omaxe",
+        "infoTitle": "High-rise with retail below",
+        "description": "Modern interiors near Sector 79 with walkable retail and verified documents.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "3"
+          },
+          {
+            "label": "Area",
+            "value": "1950 sq.ft"
+          },
+          {
+            "label": "Parking",
+            "value": "1"
+          }
+        ],
+        "price": "Rs. 1.42 Cr",
+        "statusText": "Verified docs",
+        "category": "For Sale",
+        "propertyType": "Apartment",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "omaxe-twin-towers",
+        "body": "High-rise 3 BHK near Sector 79 Faridabad by Omaxe. Modern interiors, walkable retail, and verified paperwork for buyers ready to close.",
+        "location": "Faridabad"
+      },
+      {
+        "image": "https://i.pinimg.com/736x/73/34/08/73340883a1c32401c904fef30ae721ff.jpg",
+        "alt": "Builder floor in South Delhi",
+        "title": "Greater Kailash Builder Floor",
+        "subtitle": "3 BHK Builder Floor · South Delhi",
+        "infoTitle": "Independent builder floor",
+        "description": "Spacious 3 BHK builder floor with private terrace, parking, and walkable markets in Greater Kailash.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "3"
+          },
+          {
+            "label": "Area",
+            "value": "2200 sq.ft"
+          },
+          {
+            "label": "Parking",
+            "value": "2"
+          }
+        ],
+        "price": "Rs. 3.45 Cr",
+        "statusText": "Ready to move",
+        "category": "For Sale",
+        "propertyType": "Builder Floor",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "greater-kailash-builder-floor",
+        "body": "A well-finished 3 BHK builder floor in Greater Kailash with private entry, terrace, and parking. Ideal for families who prefer independent living over society apartments. Documents verified for resale.",
+        "location": "Delhi"
+      },
+      {
+        "image": "https://i.pinimg.com/736x/41/c5/82/41c582d693349dd9b9d6c8e5776b146f.jpg",
+        "alt": "Builder floor in Dwarka",
+        "title": "Dwarka Sector 12 Builder Floor",
+        "subtitle": "4 BHK Builder Floor · Dwarka",
+        "infoTitle": "Corner independent floor",
+        "description": "Corner 4 BHK builder floor near metro with servant room, open kitchen, and covered parking.",
+        "features": [
+          {
+            "label": "Bedrooms",
+            "value": "4"
+          },
+          {
+            "label": "Area",
+            "value": "2650 sq.ft"
+          },
+          {
+            "label": "Parking",
+            "value": "2"
+          }
+        ],
+        "price": "Rs. 2.95 Cr",
+        "statusText": "New listing",
+        "category": "For Sale",
+        "propertyType": "Builder Floor",
+        "button": {
+          "label": "Book a visit",
+          "href": "/contact"
+        },
+        "slug": "dwarka-sector-12-builder-floor",
+        "body": "Independent 4 BHK builder floor in Dwarka Sector 12. Corner plot advantages, metro access, and flexible layout for joint families. Clear title and society-free maintenance.",
+        "location": "Delhi"
+      }
+    ]
+  },
+  "LatestProject": {
+    "pretitle": "Latest projects",
+    "title": "Spaces we recently delivered.",
+    "desc": "A look at recent handovers — interiors, layouts, and finishes families move into.",
+    "projectItems": [
+      {
+        "title": "Gaur Cascades handover",
+        "desc": "3 BHK homes delivered by Gaursons with clubhouse and expressway access.",
+        "image": "https://i.pinimg.com/1200x/21/fa/2d/21fa2d78f73bc058bb32d99643ff841f.jpg",
+        "alt": "Gaur Cascades project exterior",
+        "location": "NH-24, Ghaziabad",
+        "status": "Completed",
+        "href": "/projects/gaur-cascades-handover",
+        "slug": "gaur-cascades-handover",
+        "body": "3 BHK homes delivered by Gaursons with clubhouse and expressway access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Mahagun Moderne",
+        "desc": "High-rise residences in Raj Nagar Extension with lifestyle amenities.",
+        "image": "https://i.pinimg.com/736x/cd/ba/17/cdba17b04abdf52afda9be5e34121081.jpg",
+        "alt": "Mahagun Moderne project",
+        "location": "Raj Nagar Ext., Ghaziabad",
+        "status": "Completed",
+        "href": "/projects/mahagun-moderne",
+        "slug": "mahagun-moderne",
+        "body": "High-rise residences in Raj Nagar Extension with lifestyle amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Signature Global Titanium",
+        "desc": "Premium residences on Dwarka Expressway with modern layouts.",
+        "image": "https://i.pinimg.com/736x/12/da/d9/12dad931b4aa700eb62aa45e33dbc949.jpg",
+        "alt": "Signature Global Titanium interiors",
+        "location": "Dwarka Expressway, Gurugram",
+        "status": "Completed",
+        "href": "/projects/signature-global-titanium",
+        "slug": "signature-global-titanium",
+        "body": "Premium residences on Dwarka Expressway with modern layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Elan The Presidential",
+        "desc": "Luxury apartments on Golf Course Extn with concierge living.",
+        "image": "https://i.pinimg.com/1200x/ce/23/9d/ce239ddfb0ad61b1e04f7ed5a4b075d2.jpg",
+        "alt": "Elan The Presidential project",
+        "location": "Golf Course Extn, Gurugram",
+        "status": "New Launch",
+        "href": "/projects/elan-the-presidential",
+        "slug": "elan-the-presidential",
+        "body": "Luxury apartments on Golf Course Extn with concierge living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Ace Divino",
+        "desc": "Family apartments near Noida Extension with parks and schools nearby.",
+        "image": "https://i.pinimg.com/736x/3f/77/fe/3f77fe6eea1b182d0bf5acb1e68653ba.jpg",
+        "alt": "Ace Divino project",
+        "location": "Noida Extension, Noida",
+        "status": "Completed",
+        "href": "/projects/ace-divino",
+        "slug": "ace-divino",
+        "body": "Family apartments near Noida Extension with parks and schools nearby. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Whiteland Aspen",
+        "desc": "Sector 76 residences prepared for end-users and investors.",
+        "image": "https://i.pinimg.com/1200x/82/ca/a2/82caa2d5956c4ae2f0fde92263c6ed11.jpg",
+        "alt": "Whiteland Aspen towers",
+        "location": "Sector 76, Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/whiteland-aspen",
+        "slug": "whiteland-aspen",
+        "body": "Sector 76 residences prepared for end-users and investors. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "ATS Knightsbridge",
+        "desc": "Premium high-rise towers in Sector 124 with panoramic views and clubhouse living.",
+        "image": "https://i.pinimg.com/1200x/a6/ef/bc/a6efbc3ed5d412c0c2ff721095c1918b.jpg",
+        "alt": "ATS Knightsbridge Noida",
+        "location": "Sector 124, Noida",
+        "status": "Ready to Move",
+        "href": "/projects/ats-knightsbridge",
+        "slug": "ats-knightsbridge",
+        "body": "Premium high-rise towers in Sector 124 with panoramic views and clubhouse living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Puri Amanvilas",
+        "desc": "Luxury floors and independent homes in Sector 89 with landscaped greens.",
+        "image": "https://i.pinimg.com/1200x/df/09/42/df0942913ec19169f602d41057adb554.jpg",
+        "alt": "Puri Amanvilas Faridabad",
+        "location": "Sector 89, Faridabad",
+        "status": "Ready to Move",
+        "href": "/projects/puri-amanvilas",
+        "slug": "puri-amanvilas",
+        "body": "Luxury floors and independent homes in Sector 89 with landscaped greens. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "Omaxe World Street",
+        "desc": "London-themed retail and executive suites in Sector 79 with strong footfall.",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
+        "alt": "Omaxe World Street Faridabad",
+        "location": "Sector 79, Faridabad",
+        "status": "Ready to Move",
+        "href": "/projects/omaxe-world-street",
+        "slug": "omaxe-world-street",
+        "body": "London-themed retail and executive suites in Sector 79 with strong footfall. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "SVP Gulmohur Garden",
+        "desc": "Gated community on Raj Nagar Ext. with parks, clubhouse, and family amenities.",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+        "alt": "SVP Gulmohur Garden Ghaziabad",
+        "location": "Raj Nagar Ext., Ghaziabad",
+        "status": "Ready to Move",
+        "href": "/projects/svp-gulmohur-garden",
+        "slug": "svp-gulmohur-garden",
+        "body": "Gated community on Raj Nagar Ext. with parks, clubhouse, and family amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "Lotus Zing",
+        "desc": "Value apartments near Noida Extension with landscaped greens and school access.",
+        "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+        "alt": "Lotus Zing Noida",
+        "location": "Noida",
+        "status": "New Launch",
+        "href": "/projects/lotus-zing",
+        "slug": "lotus-zing",
+        "body": "Value apartments near Noida Extension with landscaped greens and school access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Ace Parkway",
+        "desc": "Expressway-facing residences ideal for end-users and rental investors.",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        "alt": "Ace Parkway Noida",
+        "location": "Noida",
+        "status": "New Launch",
+        "href": "/projects/ace-parkway",
+        "slug": "ace-parkway",
+        "body": "Expressway-facing residences ideal for end-users and rental investors. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "RPS Auria",
+        "desc": "High-end residential towers inside RPS City, Sector 88.",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+        "alt": "RPS Auria Faridabad",
+        "location": "Sector 88, Faridabad",
+        "status": "New Launch",
+        "href": "/projects/rps-auria",
+        "slug": "rps-auria",
+        "body": "High-end residential towers inside RPS City, Sector 88. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Tata Primanti",
+        "desc": "Premium Tata residences with strong community living and quality finishes.",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+        "alt": "Tata Primanti Delhi NCR",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/tata-primanti",
+        "slug": "tata-primanti",
+        "body": "Premium Tata residences with strong community living and quality finishes. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Anant Raj Estate",
+        "desc": "Gated residential living near South Delhi with clubhouse amenities.",
+        "image": "https://i.pinimg.com/736x/81/18/de/8118de23a12f8bba167ca0dcdfcbcfea.jpg",
+        "alt": "Anant Raj Estate Delhi",
+        "location": "South Delhi, Delhi",
+        "status": "Completed",
+        "href": "/projects/anant-raj-estate",
+        "slug": "anant-raj-estate",
+        "body": "Gated residential living near South Delhi with clubhouse amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Central Park Resorts",
+        "desc": "Resort-style gated homes near Sector 48 with landscaped greens.",
+        "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80",
+        "alt": "Central Park Resorts",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/central-park-resorts",
+        "slug": "central-park-resorts",
+        "body": "Resort-style gated homes near Sector 48 with landscaped greens. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "DLF Camellias",
+        "desc": "Ultra-luxury residences on Golf Course Road with private elevators and club living.",
+        "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
+        "alt": "DLF Camellias Gurugram",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/dlf-camellias",
+        "slug": "dlf-camellias",
+        "body": "Ultra-luxury residences on Golf Course Road with private elevators and club living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "M3M Golf Estate",
+        "desc": "Golf-facing apartments and villas with resort amenities in Sector 65.",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+        "alt": "M3M Golf Estate Gurugram",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/m3m-golf-estate",
+        "slug": "m3m-golf-estate",
+        "body": "Golf-facing apartments and villas with resort amenities in Sector 65. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "Godrej Woods",
+        "desc": "Nature-led residences near Sector 43 with large greens and family layouts.",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+        "alt": "Godrej Woods Noida",
+        "location": "Sector 43, Noida",
+        "status": "New Launch",
+        "href": "/projects/godrej-woods",
+        "slug": "godrej-woods",
+        "body": "Nature-led residences near Sector 43 with large greens and family layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Gulshan Dynasty",
+        "desc": "Premium apartments in Indirapuram with clubhouse and metro connectivity.",
+        "image": "https://i.pinimg.com/736x/19/d9/2b/19d92b013b71a16f6442eb9609436a9b.jpg",
+        "alt": "Gulshan Dynasty Ghaziabad",
+        "location": "Ghaziabad",
+        "status": "Ready to Move",
+        "href": "/projects/gulshan-dynasty",
+        "slug": "gulshan-dynasty",
+        "body": "Premium apartments in Indirapuram with clubhouse and metro connectivity. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "BPTP Park Elite Floors",
+        "desc": "Independent floors in Sector 84 with parking and family-friendly layouts.",
+        "image": "https://i.pinimg.com/736x/77/c0/a5/77c0a5138e60c0fa76697e4442ff2d48.jpg",
+        "alt": "BPTP Park Elite Floors Faridabad",
+        "location": "Faridabad",
+        "status": "Completed",
+        "href": "/projects/bptp-park-elite-floors",
+        "slug": "bptp-park-elite-floors",
+        "body": "Independent floors in Sector 84 with parking and family-friendly layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "DLF Capital Greens",
+        "desc": "Ready apartments in Moti Nagar with metro access and landscaped courts.",
+        "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
+        "alt": "DLF Capital Greens Delhi",
+        "location": "Moti Nagar, Delhi",
+        "status": "Ready to Move",
+        "href": "/projects/dlf-capital-greens",
+        "slug": "dlf-capital-greens",
+        "body": "Ready apartments in Moti Nagar with metro access and landscaped courts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Godrej South Estate",
+        "desc": "Premium high-rise living near Okhla with sky decks and club amenities.",
+        "image": "https://i.pinimg.com/1200x/f8/0b/06/f80b0608d094723d3a7f95d740bbba24.jpg",
+        "alt": "Godrej South Estate Delhi",
+        "location": "Okhla, Delhi",
+        "status": "New Launch",
+        "href": "/projects/godrej-south-estate",
+        "slug": "godrej-south-estate",
+        "body": "Premium high-rise living near Okhla with sky decks and club amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "M3M Marina",
+        "desc": "Waterfront-inspired residences in Sector 68 with modern finishes.",
+        "image": "https://i.pinimg.com/736x/e8/57/57/e8575728b78a1f29d546e85c52d6b1f7.jpg",
+        "alt": "M3M Marina Gurugram",
+        "location": "Sector 68, Gurugram",
+        "status": "New Launch",
+        "href": "/projects/m3m-marina",
+        "slug": "m3m-marina",
+        "body": "Waterfront-inspired residences in Sector 68 with modern finishes. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Mixed Use"
+      },
+      {
+        "title": "Emaar Digihomes",
+        "desc": "Smart apartments in Sector 62 with app-led living and strong connectivity.",
+        "image": "https://i.pinimg.com/736x/1c/3f/3e/1c3f3e98255182b0d91eb0f8cd161bc8.jpg",
+        "alt": "Emaar Digihomes Gurugram",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/emaar-digihomes",
+        "slug": "emaar-digihomes",
+        "body": "Smart apartments in Sector 62 with app-led living and strong connectivity. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Amrapali Sapphire",
+        "desc": "Value residences near Sector 45 with parks, schools, and metro access.",
+        "image": "https://i.pinimg.com/1200x/44/4e/8e/444e8ee62b093f4e48312a627b91486b.jpg",
+        "alt": "Amrapali Sapphire Noida",
+        "location": "Noida",
+        "status": "Completed",
+        "href": "/projects/amrapali-sapphire",
+        "slug": "amrapali-sapphire",
+        "body": "Value residences near Sector 45 with parks, schools, and metro access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Supertech Capetown",
+        "desc": "Township living in Sector 74 with retail, schools, and family amenities.",
+        "image": "https://i.pinimg.com/1200x/16/93/de/1693de5f7a785c4ba56af61eca60aed3.jpg",
+        "alt": "Supertech Capetown Noida",
+        "location": "Noida",
+        "status": "Completed",
+        "href": "/projects/supertech-capetown",
+        "slug": "supertech-capetown",
+        "body": "Township living in Sector 74 with retail, schools, and family amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "Wave One",
+        "desc": "Iconic mixed-use towers in Noida with offices, retail, and residences.",
+        "image": "https://i.pinimg.com/1200x/d0/18/d3/d018d3646a7d320d800a428b66d7c768.jpg",
+        "alt": "Wave One Noida",
+        "location": "Sector 18, Noida",
+        "status": "Ready to Move",
+        "href": "/projects/wave-one",
+        "slug": "wave-one",
+        "body": "Iconic mixed-use towers in Noida with offices, retail, and residences. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "Bestech Park View Spa",
+        "desc": "Spa-themed residences in Sector 47 with clubhouse and landscaped greens.",
+        "image": "https://i.pinimg.com/1200x/c1/c2/51/c1c2516462d7050a0db5ee42e9ea6ef5.jpg",
+        "alt": "Bestech Park View Spa Gurugram",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/bestech-park-view-spa",
+        "slug": "bestech-park-view-spa",
+        "body": "Spa-themed residences in Sector 47 with clubhouse and landscaped greens. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Vatika Gurgaon 21",
+        "desc": "Independent floors and villas with community living near Sohna Road.",
+        "image": "https://i.pinimg.com/1200x/af/e7/23/afe723e9b040978dd864edcd02c5b641.jpg",
+        "alt": "Vatika Gurgaon 21",
+        "location": "Gurugram",
+        "status": "Completed",
+        "href": "/projects/vatika-gurgaon-21",
+        "slug": "vatika-gurgaon-21",
+        "body": "Independent floors and villas with community living near Sohna Road. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "NBCC Green View",
+        "desc": "Government-backed apartments near East Kidwai Nagar with metro access.",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80",
+        "alt": "NBCC Green View Delhi",
+        "location": "Delhi",
+        "status": "Ready to Move",
+        "href": "/projects/nbcc-green-view",
+        "slug": "nbcc-green-view",
+        "body": "Government-backed apartments near East Kidwai Nagar with metro access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Unitech Horizon",
+        "desc": "Lakeside residences in Greater Noida with open greens and family layouts.",
+        "image": "https://i.pinimg.com/736x/72/ff/ce/72ffce7dd84957cf5c5bfe270db6afe1.jpg",
+        "alt": "Unitech Horizon Greater Noida",
+        "location": "Noida",
+        "status": "Completed",
+        "href": "/projects/unitech-horizon",
+        "slug": "unitech-horizon",
+        "body": "Lakeside residences in Greater Noida with open greens and family layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Gaurs Galleria",
+        "desc": "Retail and residential address on NH-24 with strong footfall and connectivity.",
+        "image": "https://i.pinimg.com/736x/a8/b8/0b/a8b80b0206694ab70700ea25a2923143.jpg",
+        "alt": "Gaurs Galleria Ghaziabad",
+        "location": "NH-24, Ghaziabad",
+        "status": "Ready to Move",
+        "href": "/projects/gaurs-galleria",
+        "slug": "gaurs-galleria",
+        "body": "Retail and residential address on NH-24 with strong footfall and connectivity. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "CRS Almera",
+        "desc": "Modern apartments in Sector 86 with parks and expressway access.",
+        "image": "https://i.pinimg.com/736x/5e/d3/8e/5ed38e4d7d65d7c9e088cd3a68312d92.jpg",
+        "alt": "CRS Almera Faridabad",
+        "location": "Faridabad",
+        "status": "New Launch",
+        "href": "/projects/crs-almera",
+        "slug": "crs-almera",
+        "body": "Modern apartments in Sector 86 with parks and expressway access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Max Estate 128",
+        "desc": "Premium residences on Noida Expressway with large decks and club living.",
+        "image": "https://i.pinimg.com/1200x/18/31/f2/1831f216593fa80c3b37644c7815f0ad.jpg",
+        "alt": "Max Estate 128 Noida",
+        "location": "Noida Expressway, Noida",
+        "status": "New Launch",
+        "href": "/projects/max-estate-128",
+        "slug": "max-estate-128",
+        "body": "Premium residences on Noida Expressway with large decks and club living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Unity The Grand",
+        "desc": "Luxury apartments near Rajouri Garden with metro and retail access.",
+        "image": "https://i.pinimg.com/736x/f3/71/56/f37156ff1ecc90b1e0a2ef50eea5a731.jpg",
+        "alt": "Unity The Grand Delhi",
+        "location": "Delhi",
+        "status": "New Launch",
+        "href": "/projects/unity-the-grand",
+        "slug": "unity-the-grand",
+        "body": "Luxury apartments near Rajouri Garden with metro and retail access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "Omaxe Twin Towers",
+        "desc": "Landmark residences near Mayur Vihar with skyline views and club amenities.",
+        "image": "https://i.pinimg.com/1200x/23/91/89/2391894774d4909707eb01e45c03f659.jpg",
+        "alt": "Omaxe Twin Towers Delhi",
+        "location": "Delhi",
+        "status": "Ready to Move",
+        "href": "/projects/omaxe-twin-towers",
+        "slug": "omaxe-twin-towers",
+        "body": "Landmark residences near Mayur Vihar with skyline views and club amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "M3M Polo Suites",
+        "desc": "Golf-facing suites in Sector 65 with clubhouse and concierge living.",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+        "alt": "M3M Polo Suites Gurugram",
+        "location": "Gurugram",
+        "status": "Ready to Move",
+        "href": "/projects/m3m-polo-suites",
+        "slug": "m3m-polo-suites",
+        "body": "Golf-facing suites in Sector 65 with clubhouse and concierge living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Sobha City",
+        "desc": "Integrated township living near Sector 108 with parks and retail.",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+        "alt": "Sobha City Gurugram",
+        "location": "Sector 108, Gurugram",
+        "status": "New Launch",
+        "href": "/projects/sobha-city",
+        "slug": "sobha-city",
+        "body": "Integrated township living near Sector 108 with parks and retail. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Mixed Use"
+      },
+      {
+        "title": "Jaypee Greens Kosmos",
+        "desc": "Golf-community apartments in Greater Noida with landscaped greens.",
+        "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+        "alt": "Jaypee Greens Kosmos Noida",
+        "location": "Noida",
+        "status": "Ready to Move",
+        "href": "/projects/jaypee-greens-kosmos",
+        "slug": "jaypee-greens-kosmos",
+        "body": "Golf-community apartments in Greater Noida with landscaped greens. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Gaur City 2",
+        "desc": "Township apartments with schools, retail, and expressway access.",
+        "image": "https://i.pinimg.com/1200x/21/fa/2d/21fa2d78f73bc058bb32d99643ff841f.jpg",
+        "alt": "Gaur City 2 Noida",
+        "location": "Noida",
+        "status": "Completed",
+        "href": "/projects/gaur-city-2",
+        "slug": "gaur-city-2",
+        "body": "Township apartments with schools, retail, and expressway access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "Conscient Habitat",
+        "desc": "Value residences in Sector 78 with parks and family amenities.",
+        "image": "https://i.pinimg.com/736x/cd/ba/17/cdba17b04abdf52afda9be5e34121081.jpg",
+        "alt": "Conscient Habitat Faridabad",
+        "location": "Faridabad",
+        "status": "Ready to Move",
+        "href": "/projects/conscient-habitat",
+        "slug": "conscient-habitat",
+        "body": "Value residences in Sector 78 with parks and family amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "SRS Royal Hills",
+        "desc": "Gated villas and floors near Sector 87 with clubhouse living.",
+        "image": "https://i.pinimg.com/736x/12/da/d9/12dad931b4aa700eb62aa45e33dbc949.jpg",
+        "alt": "SRS Royal Hills Faridabad",
+        "location": "Faridabad",
+        "status": "Completed",
+        "href": "/projects/srs-royal-hills",
+        "slug": "srs-royal-hills",
+        "body": "Gated villas and floors near Sector 87 with clubhouse living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "Omaxe Royal Residency",
+        "desc": "Family apartments in Sector 86 with landscaped greens and parking.",
+        "image": "https://i.pinimg.com/1200x/ce/23/9d/ce239ddfb0ad61b1e04f7ed5a4b075d2.jpg",
+        "alt": "Omaxe Royal Residency Faridabad",
+        "location": "Faridabad",
+        "status": "Ready to Move",
+        "href": "/projects/omaxe-royal-residency",
+        "slug": "omaxe-royal-residency",
+        "body": "Family apartments in Sector 86 with landscaped greens and parking. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "BPTP Astaire Gardens",
+        "desc": "Independent floors in Sector 70 with parks and community amenities.",
+        "image": "https://i.pinimg.com/736x/3f/77/fe/3f77fe6eea1b182d0bf5acb1e68653ba.jpg",
+        "alt": "BPTP Astaire Gardens Faridabad",
+        "location": "Sector 70, Faridabad",
+        "status": "New Launch",
+        "href": "/projects/bptp-astaire-gardens",
+        "slug": "bptp-astaire-gardens",
+        "body": "Independent floors in Sector 70 with parks and community amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Plotted Development"
+      },
+      {
+        "title": "Puri Emerald Bay",
+        "desc": "Premium residences near Sector 104 with lake views and club living.",
+        "image": "https://i.pinimg.com/1200x/82/ca/a2/82caa2d5956c4ae2f0fde92263c6ed11.jpg",
+        "alt": "Puri Emerald Bay Faridabad",
+        "location": "Sector 104, Faridabad",
+        "status": "New Launch",
+        "href": "/projects/puri-emerald-bay",
+        "slug": "puri-emerald-bay",
+        "body": "Premium residences near Sector 104 with lake views and club living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Ajnara Integrity",
+        "desc": "High-rise apartments in Indirapuram with metro and retail access.",
+        "image": "https://i.pinimg.com/1200x/a6/ef/bc/a6efbc3ed5d412c0c2ff721095c1918b.jpg",
+        "alt": "Ajnara Integrity Ghaziabad",
+        "location": "Ghaziabad",
+        "status": "Ready to Move",
+        "href": "/projects/ajnara-integrity",
+        "slug": "ajnara-integrity",
+        "body": "High-rise apartments in Indirapuram with metro and retail access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Commercial"
+      },
+      {
+        "title": "Shipra Srishti",
+        "desc": "Family homes on Indirapuram belt with parks and school access.",
+        "image": "https://i.pinimg.com/1200x/df/09/42/df0942913ec19169f602d41057adb554.jpg",
+        "alt": "Shipra Srishti Ghaziabad",
+        "location": "Ghaziabad",
+        "status": "Completed",
+        "href": "/projects/shipra-srishti",
+        "slug": "shipra-srishti",
+        "body": "Family homes on Indirapuram belt with parks and school access. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Assotech the Nest",
+        "desc": "Township living near Sector 1 with clubhouse and open greens.",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
+        "alt": "Assotech the Nest Ghaziabad",
+        "location": "Ghaziabad",
+        "status": "Ready to Move",
+        "href": "/projects/assotech-the-nest",
+        "slug": "assotech-the-nest",
+        "body": "Township living near Sector 1 with clubhouse and open greens. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Mixed Use"
+      },
+      {
+        "title": "CGHS Siddharth Vihar",
+        "desc": "Society apartments near NH-24 with parking and community amenities.",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+        "alt": "CGHS Siddharth Vihar Ghaziabad",
+        "location": "Ghaziabad",
+        "status": "Completed",
+        "href": "/projects/cghs-siddharth-vihar",
+        "slug": "cghs-siddharth-vihar",
+        "body": "Society apartments near NH-24 with parking and community amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Mahagun Mezzaria",
+        "desc": "Premium towers in Sector 78 with sky lounge and family layouts.",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        "alt": "Mahagun Mezzaria Ghaziabad",
+        "location": "Sector 78, Ghaziabad",
+        "status": "New Launch",
+        "href": "/projects/mahagun-mezzaria",
+        "slug": "mahagun-mezzaria",
+        "body": "Premium towers in Sector 78 with sky lounge and family layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "The Leela Residences",
+        "desc": "Branded residences near Chanakyapuri with hotel-backed amenities.",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+        "alt": "The Leela Residences Delhi",
+        "location": "Chanakyapuri, Delhi",
+        "status": "New Launch",
+        "href": "/projects/the-leela-residences",
+        "slug": "the-leela-residences",
+        "body": "Branded residences near Chanakyapuri with hotel-backed amenities. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "DLF The Crest",
+        "desc": "Luxury apartments near Phase 5 with concierge and club living.",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+        "alt": "DLF The Crest Delhi NCR",
+        "location": "Delhi",
+        "status": "Ready to Move",
+        "href": "/projects/dlf-the-crest",
+        "slug": "dlf-the-crest",
+        "body": "Luxury apartments near Phase 5 with concierge and club living. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Lodha The Park",
+        "desc": "High-rise residences near South Delhi belt with landscaped courts.",
+        "image": "https://i.pinimg.com/736x/19/d9/2b/19d92b013b71a16f6442eb9609436a9b.jpg",
+        "alt": "Lodha The Park Delhi",
+        "location": "Delhi",
+        "status": "New Launch",
+        "href": "/projects/lodha-the-park",
+        "slug": "lodha-the-park",
+        "body": "High-rise residences near South Delhi belt with landscaped courts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      },
+      {
+        "title": "Hero Homes",
+        "desc": "Modern apartments near Dwarka with metro connectivity and family layouts.",
+        "image": "https://i.pinimg.com/736x/77/c0/a5/77c0a5138e60c0fa76697e4442ff2d48.jpg",
+        "alt": "Hero Homes Delhi",
+        "location": "Dwarka, Delhi",
+        "status": "Ready to Move",
+        "href": "/projects/hero-homes",
+        "slug": "hero-homes",
+        "body": "Modern apartments near Dwarka with metro connectivity and family layouts. Visit the map below for the approximate project location. Our advisors can arrange a guided site visit and share pricing context.",
+        "category": "Residential"
+      }
+    ],
+    "button": {
+      "label": "View all projects",
+      "href": "/projects"
+    },
+    "detail": {
+      "notFoundTitle": "Project not found",
+      "backLabel": "Back to projects",
+      "primaryCtaLabel": "Enquire now",
+      "secondaryCtaLabel": "All projects",
+      "breadcrumbParentLabel": "Projects"
+    }
+  },
+  "Cities": {
+    "pretitle": "Our Portfolio",
+    "title": "Featured Projects",
+    "desc": "Explore our diverse portfolio of successfully delivered real estate projects.",
+    "categories": [
+      "All",
+      "Residential",
+      "Commercial",
+      "Mixed Use",
+      "Plotted Development"
+    ],
+    "cities": [
+      {
+        "name": "Anant Raj Estate",
+        "desc": "Gated residential living",
+        "image": "https://i.pinimg.com/736x/81/18/de/8118de23a12f8bba167ca0dcdfcbcfea.jpg",
+        "alt": "Anant Raj Estate Delhi",
+        "listingsLabel": "Residential",
+        "href": "/projects/anant-raj-estate",
+        "region": "Delhi",
+        "category": "Residential",
+        "location": "South Delhi, Delhi"
+      },
+      {
+        "name": "DLF Capital Greens",
+        "desc": "Ready apartments",
+        "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
+        "alt": "DLF Capital Greens Delhi",
+        "listingsLabel": "Residential",
+        "href": "/projects/dlf-capital-greens",
+        "region": "Delhi",
+        "category": "Residential",
+        "location": "Moti Nagar, Delhi"
+      },
+      {
+        "name": "Godrej South Estate",
+        "desc": "Premium high-rise living",
+        "image": "https://i.pinimg.com/1200x/f8/0b/06/f80b0608d094723d3a7f95d740bbba24.jpg",
+        "alt": "Godrej South Estate Delhi",
+        "listingsLabel": "Residential",
+        "href": "/projects/godrej-south-estate",
+        "region": "Delhi",
+        "category": "Residential",
+        "location": "Okhla, Delhi"
+      },
+      {
+        "name": "Hero Homes",
+        "desc": "Modern apartments",
+        "image": "https://i.pinimg.com/736x/77/c0/a5/77c0a5138e60c0fa76697e4442ff2d48.jpg",
+        "alt": "Hero Homes Delhi",
+        "listingsLabel": "Residential",
+        "href": "/projects/hero-homes",
+        "region": "Delhi",
+        "category": "Residential",
+        "location": "Dwarka, Delhi"
+      },
+      {
+        "name": "Elan The Presidential",
+        "desc": "Luxury apartments",
+        "image": "https://i.pinimg.com/736x/e8/57/57/e8575728b78a1f29d546e85c52d6b1f7.jpg",
+        "alt": "Elan The Presidential Gurugram",
+        "listingsLabel": "Residential",
+        "href": "/projects/elan-the-presidential",
+        "region": "Gurugram",
+        "category": "Residential",
+        "location": "Golf Course Extn, Gurugram"
+      },
+      {
+        "name": "Signature Global Titanium",
+        "desc": "Premium residences",
+        "image": "https://i.pinimg.com/1200x/f8/0b/06/f80b0608d094723d3a7f95d740bbba24.jpg",
+        "alt": "Signature Global Titanium Gurugram",
+        "listingsLabel": "Residential",
+        "href": "/projects/signature-global-titanium",
+        "region": "Gurugram",
+        "category": "Residential",
+        "location": "Dwarka Expressway, Gurugram"
+      },
+      {
+        "name": "Whiteland Aspen",
+        "desc": "Integrated residential community",
+        "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
+        "alt": "Whiteland Aspen Gurugram",
+        "listingsLabel": "Mixed Use",
+        "href": "/projects/whiteland-aspen",
+        "region": "Gurugram",
+        "category": "Mixed Use",
+        "location": "Sector 76, Gurugram"
+      },
+      {
+        "name": "M3M Golf Estate",
+        "desc": "Golf-facing apartments & villas",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+        "alt": "M3M Golf Estate Gurugram",
+        "listingsLabel": "Mixed Use",
+        "href": "/projects/m3m-golf-estate",
+        "region": "Gurugram",
+        "category": "Mixed Use",
+        "location": "Sector 65, Gurugram"
+      },
+      {
+        "name": "Ace Parkway",
+        "desc": "Expressway-facing residences",
+        "image": "https://i.pinimg.com/1200x/a6/ef/bc/a6efbc3ed5d412c0c2ff721095c1918b.jpg",
+        "alt": "Ace Parkway Noida",
+        "listingsLabel": "Mixed Use",
+        "href": "/projects/ace-parkway",
+        "region": "Noida",
+        "category": "Mixed Use",
+        "location": "Noida Expressway, Noida"
+      },
+      {
+        "name": "ATS Knightsbridge",
+        "desc": "Premium high-rise towers",
+        "image": "https://i.pinimg.com/736x/1c/3f/3e/1c3f3e98255182b0d91eb0f8cd161bc8.jpg",
+        "alt": "ATS Knightsbridge Noida",
+        "listingsLabel": "Residential",
+        "href": "/projects/ats-knightsbridge",
+        "region": "Noida",
+        "category": "Residential",
+        "location": "Sector 124, Noida"
+      },
+      {
+        "name": "Godrej Woods",
+        "desc": "Nature-led residences",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+        "alt": "Godrej Woods Noida",
+        "listingsLabel": "Residential",
+        "href": "/projects/godrej-woods",
+        "region": "Noida",
+        "category": "Residential",
+        "location": "Sector 43, Noida"
+      },
+      {
+        "name": "Max Estate 128",
+        "desc": "Premium residences",
+        "image": "https://i.pinimg.com/1200x/18/31/f2/1831f216593fa80c3b37644c7815f0ad.jpg",
+        "alt": "Max Estate 128 Noida",
+        "listingsLabel": "Residential",
+        "href": "/projects/max-estate-128",
+        "region": "Noida",
+        "category": "Residential",
+        "location": "Noida Expressway, Noida"
+      },
+      {
+        "name": "Puri Amanvilas",
+        "desc": "Luxury floors & homes",
+        "image": "https://i.pinimg.com/1200x/df/09/42/df0942913ec19169f602d41057adb554.jpg",
+        "alt": "Puri Amanvilas Faridabad",
+        "listingsLabel": "Plotted Development",
+        "href": "/projects/puri-amanvilas",
+        "region": "Faridabad",
+        "category": "Plotted Development",
+        "location": "Sector 89, Faridabad"
+      },
+      {
+        "name": "Omaxe World Street",
+        "desc": "Premium office spaces",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
+        "alt": "Omaxe World Street Faridabad",
+        "listingsLabel": "Commercial",
+        "href": "/projects/omaxe-world-street",
+        "region": "Faridabad",
+        "category": "Commercial",
+        "location": "Sector 79, Faridabad"
+      },
+      {
+        "name": "RPS Auria",
+        "desc": "High-end residential towers",
+        "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+        "alt": "RPS Auria Faridabad",
+        "listingsLabel": "Residential",
+        "href": "/projects/rps-auria",
+        "region": "Faridabad",
+        "category": "Residential",
+        "location": "Sector 88, Faridabad"
+      },
+      {
+        "name": "BPTP Astaire Gardens",
+        "desc": "Independent floors",
+        "image": "https://i.pinimg.com/736x/3f/77/fe/3f77fe6eea1b182d0bf5acb1e68653ba.jpg",
+        "alt": "BPTP Astaire Gardens Faridabad",
+        "listingsLabel": "Plotted Development",
+        "href": "/projects/bptp-astaire-gardens",
+        "region": "Faridabad",
+        "category": "Plotted Development",
+        "location": "Sector 70, Faridabad"
+      },
+      {
+        "name": "Mahagun Moderne",
+        "desc": "High-rise residences",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+        "alt": "Mahagun Ghaziabad",
+        "listingsLabel": "Residential",
+        "href": "/projects/mahagun-moderne",
+        "region": "Ghaziabad",
+        "category": "Residential",
+        "location": "Raj Nagar Ext., Ghaziabad"
+      },
+      {
+        "name": "Gaur Cascades",
+        "desc": "Luxury apartments",
+        "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80",
+        "alt": "Gaur Cascades Ghaziabad",
+        "listingsLabel": "Residential",
+        "href": "/projects/gaur-cascades-handover",
+        "region": "Ghaziabad",
+        "category": "Residential",
+        "location": "NH-24, Ghaziabad"
+      },
+      {
+        "name": "Ajnara Integrity",
+        "desc": "High-rise apartments",
+        "image": "https://i.pinimg.com/1200x/a6/ef/bc/a6efbc3ed5d412c0c2ff721095c1918b.jpg",
+        "alt": "Ajnara Integrity Ghaziabad",
+        "listingsLabel": "Residential",
+        "href": "/projects/ajnara-integrity",
+        "region": "Ghaziabad",
+        "category": "Residential",
+        "location": "Indirapuram, Ghaziabad"
+      },
+      {
+        "name": "Mahagun Mezzaria",
+        "desc": "Premium towers",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        "alt": "Mahagun Mezzaria Ghaziabad",
+        "listingsLabel": "Residential",
+        "href": "/projects/mahagun-mezzaria",
+        "region": "Ghaziabad",
+        "category": "Residential",
+        "location": "Sector 78, Ghaziabad"
+      }
+    ],
+    "button": {
+      "label": "Explore all projects",
+      "href": "/projects"
+    }
+  },
+  "WhyChooseUs": {
+    "pretitle": "Why choose us",
+    "title": "Our commitment to you",
+    "desc": "Help buyers compare real options, verified documents, and guided site visits.",
+    "whyChooseUsItems": [
+      {
+        "title": "Best properties in town",
+        "desc": "Haus group offers top properties handpicked by our agents. Explore the best we have to offer and choose the most suitable property according to your needs.",
+        "stat": "01"
+      },
+      {
+        "title": "Passion for the work",
+        "desc": "We are nothing if not passionate! Real estate is our pride and joy. Let us use that passion to find you the perfect home you'll feel passionate about.",
+        "stat": "02"
+      },
+      {
+        "title": "Top tier realtors",
+        "desc": "Our realtors were chosen according to their skills and experience. They are the best in the market, so you can rest assured you are in good hands.",
+        "stat": "03"
+      },
+      {
+        "title": "Personal dedication",
+        "desc": "Every client gets focused attention — from first shortlist to paperwork and keys — so nothing important gets missed.",
+        "stat": "04"
+      }
+    ]
+  },
+  "FeaturedDev": {
+    "pretitle": "",
+    "title": "Featured developers we partner with.",
+    "desc": "",
+    "items": [
+      {
+        "name": "RM Construction",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/vwebp/736x/32/37/17/32371764f14214a427d3cc729ec61a7a.webp",
+        "alt": "RM Construction logo",
+        "projectsLabel": "RM"
+      },
+      {
+        "name": "MD Constructora",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/1200x/ca/1b/10/ca1b10982fec28bb83029da1be025d23.jpg",
+        "alt": "MD Constructora logo",
+        "projectsLabel": "MD"
+      },
+      {
+        "name": "Ambeco Global",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/1200x/19/5d/36/195d3679633bb7d7b3743ea1bcb647be.jpg",
+        "alt": "Ambeco Global Construction logo",
+        "projectsLabel": "Ambeco"
+      },
+      {
+        "name": "Mega Bina",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/1200x/52/90/61/529061f83fa845f4fd74a297700cdc92.jpg",
+        "alt": "Mega Bina Construction logo",
+        "projectsLabel": "Mega Bina"
+      },
+      {
+        "name": "Construction Co",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/1200x/7f/42/a1/7f42a1149224ecf8e20f2eb007d13b36.jpg",
+        "alt": "Construction business logo",
+        "projectsLabel": "Construction"
+      },
+      {
+        "name": "Buildstrong",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/736x/d6/3f/2d/d63f2d21ee7da6aa521cab9c52af43dc.jpg",
+        "alt": "Buildstrong Construction logo",
+        "projectsLabel": "Buildstrong"
+      },
+      {
+        "name": "Foresight Safety",
+        "desc": "Construction partner",
+        "image": "https://i.pinimg.com/1200x/c2/82/95/c28295faee7338dbf420ae7599499ba7.jpg",
+        "alt": "Foresight Safety logo",
+        "projectsLabel": "Foresight"
+      }
+    ]
+  },
+  "Process": {
+    "pretitle": "Our Process",
+    "title": "Standard Property Process",
+    "desc": "",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Inspect & Analyse",
+        "desc": "We inspect the property and analyse your requirements to understand your goals."
+      },
+      {
+        "step": "02",
+        "title": "Quote & Supply",
+        "desc": "We provide the best options with transparent pricing and complete details."
+      },
+      {
+        "step": "03",
+        "title": "Clean Up & Finish",
+        "desc": "We prepare the property with quality finishing and attention to every detail."
+      },
+      {
+        "step": "04",
+        "title": "Quality Improve",
+        "desc": "We ensure top quality standards for your complete satisfaction."
+      }
+    ]
+  },
+  "Testimonial": {
+    "pretitle": "Testimonials",
+    "title": "Trusted by buyers, renters, and homeowners.",
+    "desc": "Real feedback from people who found their next home with HAUS Group.",
+    "testimonialItems": [
+      {
+        "name": "Aarav Mehta",
+        "role": "Homebuyer, South Delhi",
+        "quote": "They shortlisted three strong options in a week and made every site visit feel clear and pressure-free.",
+        "image": "https://i.pinimg.com/1200x/44/4e/8e/444e8ee62b093f4e48312a627b91486b.jpg",
+        "rating": "5.0"
+      },
+      {
+        "name": "Neha Kapoor",
+        "role": "First-time renter",
+        "quote": "Honest pricing, verified documents, and advisors who actually answered follow-up questions the same day.",
+        "image": "https://i.pinimg.com/1200x/16/93/de/1693de5f7a785c4ba56af61eca60aed3.jpg",
+        "rating": "4.9"
+      },
+      {
+        "name": "Rahul Verma",
+        "role": "Property investor",
+        "quote": "Neighborhood comps and rental potential were laid out simply — that made the decision much easier.",
+        "image": "https://i.pinimg.com/1200x/d0/18/d3/d018d3646a7d320d800a428b66d7c768.jpg",
+        "rating": "5.0"
+      },
+      {
+        "name": "Isha Malhotra",
+        "role": "Home seller",
+        "quote": "Listing support felt premium without being pushy. We closed with a serious buyer faster than expected.",
+        "image": "https://i.pinimg.com/1200x/c1/c2/51/c1c2516462d7050a0db5ee42e9ea6ef5.jpg",
+        "rating": "4.8"
+      },
+      {
+        "name": "Kabir Anand",
+        "role": "Relocating family",
+        "quote": "School catchments, commute times, and amenity checks were all part of the shortlist. Huge help.",
+        "image": "https://i.pinimg.com/1200x/af/e7/23/afe723e9b040978dd864edcd02c5b641.jpg",
+        "rating": "4.7"
+      },
+      {
+        "name": "Sara Khan",
+        "role": "Apartment buyer",
+        "quote": "From enquiry to registration, the process stayed organized and we always knew the next step.",
+        "image": "https://i.pinimg.com/736x/72/ff/ce/72ffce7dd84957cf5c5bfe270db6afe1.jpg",
+        "rating": "5.0"
+      }
+    ]
+  },
+  "Awards": {
+    "pretitle": "Awards",
+    "title": "Recognition earned across Delhi NCR.",
+    "desc": "Industry honors for verified listings, transparent advice, and the way our advisors stay present from first shortlist to keys.",
+    "awardItems": [
+      {
+        "year": "2023",
+        "title": "Best Results — Enterprise",
+        "org": "G2 Winter Awards",
+        "image": "/categories/realestate/template1/awards/best-results.svg",
+        "alt": "Best Results Enterprise award"
+      },
+      {
+        "year": "2022",
+        "title": "Front Runners",
+        "org": "Software Advice",
+        "image": "/categories/realestate/template1/awards/front-runners.svg",
+        "alt": "Front Runners award"
+      },
+      {
+        "year": "2023",
+        "title": "Leader — Winter",
+        "org": "G2 Winter Awards",
+        "image": "/categories/realestate/template1/awards/leader-winter.svg",
+        "alt": "Leader Winter award"
+      },
+      {
+        "year": "2021",
+        "title": "Best Ease of Use",
+        "org": "Capterra",
+        "image": "/categories/realestate/template1/awards/ease-of-use.svg",
+        "alt": "Best Ease of Use award"
+      },
+      {
+        "year": "2023",
+        "title": "Leader — Enterprise",
+        "org": "G2 Winter Awards",
+        "image": "/categories/realestate/template1/awards/leader-enterprise.svg",
+        "alt": "Leader Enterprise award"
+      }
+    ],
+    "button": {
+      "label": "View all awards",
+      "href": "/awards"
+    }
+  },
+  "Stats": {
+    "stats": [
+      {
+        "stat": "2,400+",
+        "label": "Homes shortlisted",
+        "desc": "Verified options across Delhi NCR."
+      },
+      {
+        "stat": "980+",
+        "label": "Successful closings",
+        "desc": "Buy, rent, and resale transactions."
+      },
+      {
+        "stat": "45+",
+        "label": "Verified developers",
+        "desc": "Quality brands across Delhi NCR."
+      },
+      {
+        "stat": "12",
+        "label": "Cities & corridors",
+        "desc": "Local advisors where it matters."
+      }
+    ]
+  },
+  "Blog": {
+    "pretitle": "Blog",
+    "title": "Latest insights from the market.",
+    "desc": "Tips, home guides, and practical notes to help you buy, rent, or move with confidence.",
+    "buttons": [
+      {
+        "label": "View all blogs",
+        "href": "/blog"
+      },
+      {
+        "label": "Read more",
+        "href": "/blog"
+      }
+    ],
+    "blogItems": [
+      {
+        "image": "https://i.pinimg.com/736x/19/d9/2b/19d92b013b71a16f6442eb9609436a9b.jpg",
+        "alt": "Moving into a new home with packed boxes and furniture.",
+        "title": "How to pack your stuff",
+        "date": "May 20, 2024",
+        "href": "/blog/how-to-pack-your-stuff",
+        "excerpt": "A simple room-by-room checklist for a smoother move, from clear labels to your first-night essentials."
+      },
+      {
+        "image": "https://i.pinimg.com/736x/77/c0/a5/77c0a5138e60c0fa76697e4442ff2d48.jpg",
+        "alt": "Modern living room features buyers expect today.",
+        "title": "Features that buyers have come to expect",
+        "date": "May 18, 2024",
+        "href": "/blog/features-that-buyers-have-come-to-expect",
+        "excerpt": "The amenities, documentation, and everyday conveniences that frequently decide a buyer's shortlist."
+      },
+      {
+        "image": "https://i.pinimg.com/736x/5e/d3/8e/5ed38e4d7d65d7c9e088cd3a68312d92.jpg",
+        "alt": "Bright living space with natural light and soft interiors.",
+        "title": "Living spaces that feel like home",
+        "date": "May 12, 2024",
+        "href": "/blog/living-spaces-that-feel-like-home",
+        "excerpt": "Why natural light, practical storage, ventilation, and a usable layout matter more than decorative finishes.",
+        "body": "Light, storage, and layout matter more than fancy finishes. Cross-ventilation, a usable balcony, and a kitchen that fits daily cooking make a flat feel liveable from day one."
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/18/31/f2/1831f216593fa80c3b37644c7815f0ad.jpg",
+        "alt": "Premium exterior detail of a modern residence at dusk.",
+        "title": "Premium details that raise value",
+        "date": "May 08, 2024",
+        "href": "/blog/premium-details-that-raise-value",
+        "excerpt": "Small construction and maintenance details that can signal stronger long-term value and resale potential."
+      },
+      {
+        "image": "https://i.pinimg.com/736x/f3/71/56/f37156ff1ecc90b1e0a2ef50eea5a731.jpg",
+        "alt": "Modern luxury home at sunset.",
+        "title": "What to check before a night viewing",
+        "date": "May 02, 2024",
+        "href": "/blog/what-to-check-before-a-night-viewing",
+        "excerpt": "Use an evening visit to evaluate real traffic, street lighting, neighborhood noise, and the approach road."
+      },
+      {
+        "image": "https://i.pinimg.com/1200x/23/91/89/2391894774d4909707eb01e45c03f659.jpg",
+        "alt": "Apartment interior with large windows and city views.",
+        "title": "Choosing the right floor and view",
+        "date": "Apr 28, 2024",
+        "href": "/blog/choosing-the-right-floor-and-view",
+        "excerpt": "Compare light, heat, lift reliance, road noise, and accessibility before choosing your apartment floor."
+      }
+    ]
+  },
+  "FAQ": {
+    "pretitle": "Property FAQ",
+    "title": "Buyers often ask.",
+    "faqItems": [
+      {
+        "question": "What are the steps to buy an apartment?",
+        "answer": "Start with a budget and location shortlist, book site visits, verify documents, secure financing, and complete registration with our advisor guiding each step."
+      },
+      {
+        "question": "What documents do I need?",
+        "answer": "Typically ID proof, address proof, income documents for loans, and property papers such as title deed, tax receipts, and NOC where applicable."
+      },
+      {
+        "question": "Do you help with home loans and EMI planning?",
+        "answer": "Yes. We introduce bank partners, share indicative EMI ranges, and help you compare loan offers before you finalise a purchase. We can also share a quick EMI estimate during your consultation."
+      },
+      {
+        "question": "Can I rent through HAUS Group as well?",
+        "answer": "Yes. We help with furnished and semi-furnished rentals across Gurugram, Noida, Delhi, Faridabad, and Ghaziabad — including visits, negotiation, and agreement support."
+      },
+      {
+        "question": "Is there any charge for shortlisting or site visits?",
+        "answer": "Shortlists and guided site visits for buyers and renters are typically free. Any brokerage or service fee is shared transparently before you proceed."
+      }
+    ]
+  },
+  "Contact": {
+    "pretitle": "Book a visit",
+    "title": "Tell us what kind of home you need.",
+    "desc": "Share your budget, location, and timeline so an advisor can respond.",
+    "backgroundImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    "backgroundImageTitle": "Property enquiry visual",
+    "formSubmitLabel": "Submit",
+    "formFields": [
+      {
+        "label": "Name",
+        "type": "text",
+        "placeholder": "Your name"
+      },
+      {
+        "label": "Phone",
+        "type": "tel",
+        "placeholder": "Your phone number"
+      },
+      {
+        "label": "Requirement",
+        "type": "textarea",
+        "placeholder": "Location, budget, property type"
+      }
+    ],
+    "successMessage": "Thank you — we received your request. An advisor will reach out shortly."
+  },
+  "InvestmentOpportunities": {
+    "pretitle": "Invest",
+    "title": "Investment opportunities across Delhi NCR.",
+    "desc": "Yield-focused projects and ready inventory for long-term buyers.",
+    "items": [
+      {
+        "title": "Gaur Cascades",
+        "desc": "Spacious 3 BHK with clubhouse access and strong rental demand on NH-24.",
+        "image": "https://i.pinimg.com/736x/ef/9a/47/ef9a4713741ca63d55b263f14efc3439.jpg",
+        "alt": "Gaur Cascades apartment Ghaziabad",
+        "yieldLabel": "Rs. 1.25 Cr",
+        "href": "/contact"
+      },
+      {
+        "title": "Puri Amanvilas",
+        "desc": "Independent villa living in Sector 89 with landscaped greens and 24/7 security.",
+        "image": "https://i.pinimg.com/1200x/89/04/7e/89047eb36310c5e1fe4f4ec53c73ad68.jpg",
+        "alt": "Puri Amanvilas villa Faridabad",
+        "yieldLabel": "Rs. 2.85 Cr",
+        "href": "/contact"
+      },
+      {
+        "title": "Mahagun Mezzaria",
+        "desc": "Furnished 2 BHK near Sector 78 with corporate tenant demand and clubhouse living.",
+        "image": "https://i.pinimg.com/1200x/0c/fc/ad/0cfcadb262e1d8babfabf77242510ba8.jpg",
+        "alt": "Mahagun Mezzaria rental Noida",
+        "yieldLabel": "Rs. 65,000 / mo",
+        "href": "/contact"
+      },
+      {
+        "title": "ATS Picturesque",
+        "desc": "Corner unit with private terrace, schools nearby, and landscaped community parks.",
+        "image": "https://i.pinimg.com/1200x/ef/39/59/ef3959927cdda6223562be58bd06d560.jpg",
+        "alt": "ATS Picturesque Reprieves Noida",
+        "yieldLabel": "Rs. 1.68 Cr",
+        "href": "/contact"
+      }
+    ]
+  },
+  "Banner": {
+    "backgroundImage": "https://i.pinimg.com/1200x/d1/cb/dc/d1cbdc07cd6a6a62d03f886feac1cc5e.jpg",
+    "backgroundImageTitle": "Premium Delhi NCR residence",
+    "bannerHeight": 100,
+    "pretitle": "Delhi NCR property experts",
+    "title": "Homes built for life and growth.",
+    "desc": "Verified apartments, floors, and villas across Gurugram, Noida, and Delhi. Clear pricing, local advisors, and same-week site visits.",
+    "buttons": [
+      {
+        "label": "Book a site visit",
+        "href": "/contact"
+      },
+      {
+        "label": "Browse properties",
+        "href": "/properties"
+      }
+    ],
+    "bannerSlides": [
+      {
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+        "alt": "Modern apartment living room in Gurugram",
+        "title": "Move into verified homes, faster",
+        "desc": "Shortlist visit-ready listings with pricing context and trusted local guidance.",
+        "button": {
+          "label": "View homes",
+          "href": "/properties"
+        }
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+        "alt": "Luxury residential towers on Golf Course Road",
+        "title": "Invest where NCR is growing next",
+        "desc": "Compare corridors, rental demand, and end-user potential before you commit.",
+        "button": {
+          "label": "Browse projects",
+          "href": "/projects"
+        }
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+        "alt": "Contemporary family villa exterior",
+        "title": "From first search to keys in hand",
+        "desc": "Buy, rent, or sell with advisors who stay present through visits and paperwork.",
+        "button": {
+          "label": "Talk to an advisor",
+          "href": "/contact"
+        }
+      }
+    ],
+    "smartSearch": {
+      "enabled": true,
+      "tabs": [
+        {
+          "label": "Buy",
+          "value": "For Sale"
+        },
+        {
+          "label": "Rent",
+          "value": "For Rent"
+        }
+      ],
+      "locationLabel": "Location",
+      "typeLabel": "Type",
+      "budgetLabel": "Budget",
+      "locationPlaceholder": "City or locality",
+      "typePlaceholder": "Property type",
+      "budgetPlaceholder": "e.g. 1.5 Cr",
+      "submitLabel": "Search"
+    }
+  }
+}

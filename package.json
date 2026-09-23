@@ -1,0 +1,32 @@
+{
+  "name": "css-ai-builder-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:frontend": "turbo run dev --filter=frontend",
+    "dev:admin": "turbo run dev --filter=admin",
+    "dev:backend": "turbo run dev --filter=backend",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "db:create": "npm run db:create -w backend",
+    "db:generate": "turbo run db:generate --filter=backend",
+    "db:migrate": "turbo run db:migrate --filter=backend",
+    "db:setup": "npm run db:setup -w backend",
+    "db:seed:categories": "npm run db:seed:categories -w backend",
+    "db:seed:layouts": "npm run db:seed:layouts -w backend",
+    "db:seed:templates": "npm run db:seed:templates -w backend",
+    "db:studio": "turbo run db:studio --filter=backend"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "npm@11.13.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

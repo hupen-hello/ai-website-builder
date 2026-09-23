@@ -1,0 +1,1494 @@
+{
+  "id": "template-2-school-5755d18f",
+  "templateId": "template-2",
+  "category": "School",
+  "pageLinks": [
+    {
+      "label": "Home",
+      "href": "#"
+    },
+    {
+      "label": "About",
+      "href": "#"
+    },
+    {
+      "label": "Service",
+      "href": "#service"
+    },
+    {
+      "label": "Gallery",
+      "href": "#gallery"
+    },
+    {
+      "label": "Contact",
+      "href": "#"
+    }
+  ],
+  "sections": [
+    {
+      "type": "Topbar",
+      "variant": "Topbar-2",
+      "data": {
+        "Topbar-1": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        },
+        "Topbar-2": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        }
+      },
+      "id": "Topbar"
+    },
+    {
+      "type": "Header",
+      "variant": "Header-2",
+      "data": {
+        "Header-1": {
+          "logo": "BrightSchool",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service"
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Apply Now",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Visit Campus",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        },
+        "Header-2": {
+          "logo": "BrightSchool",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service"
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Apply Now",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Visit Campus",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        }
+      },
+      "id": "Header"
+    },
+    {
+      "type": "Banner",
+      "variant": "Banner-2",
+      "data": {
+        "Banner-1": {
+          "backgroundImage": "/categories/school/bg22.jpg",
+          "backgroundImageTitle": "School campus",
+          "backgroundVideo": "/categories/school/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Future-ready learning",
+          "title": "A school where curiosity becomes confidence.",
+          "desc": "Share admissions, academics, activities, and parent trust through a flexible website your team can edit.",
+          "buttons": [
+            {
+              "label": "Explore admissions",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Students learning together",
+              "title": "Learning that feels alive",
+              "desc": "Highlight classrooms, activities, and student stories with editable slides.",
+              "button": {
+                "label": "View programs",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports that extend our outh",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "image"
+        },
+        "Banner-2": {
+          "backgroundImage": "/categories/school/bg22.jpg",
+          "backgroundImageTitle": "School campus",
+          "backgroundVideo": "/categories/school/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Future-ready learning",
+          "title": "A school where curiosity becomes confidence.",
+          "desc": "Share admissions, academics, activities, and parent trust through a flexible website your team can edit.",
+          "buttons": [
+            {
+              "label": "Explore admissions",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Students learning together",
+              "title": "Learning that feels alive",
+              "desc": "Highlight classrooms, activities, and student stories with editable slides.",
+              "button": {
+                "label": "View programs",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports that extend our outh",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "video"
+        },
+        "Banner-3": {
+          "backgroundImage": "/categories/school/bg22.jpg",
+          "backgroundImageTitle": "School campus",
+          "backgroundVideo": "/categories/school/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Future-ready learning",
+          "title": "A school where curiosity becomes confidence.",
+          "desc": "Share admissions, academics, activities, and parent trust through a flexible website your team can edit.",
+          "buttons": [
+            {
+              "label": "Explore admissions",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Students learning together",
+              "title": "Learning that feels alive",
+              "desc": "Highlight classrooms, activities, and student stories with editable slides.",
+              "button": {
+                "label": "View programs",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "video": "/categories/school/video.mp4",
+              "alt": "Student activities",
+              "title": "Academics, arts, and sports that extend our outh",
+              "desc": "Present a complete school experience with reusable website sections.",
+              "button": {
+                "label": "Discover more",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ]
+        }
+      },
+      "id": "Banner"
+    },
+    {
+      "type": "About",
+      "variant": "About-2",
+      "data": {
+        "About-1": {
+          "pretitle": "About our school",
+          "title": "Strong academics with thoughtful student care.",
+          "subtitle": "A balanced environment for learning and growth",
+          "desc": "We help students build strong fundamentals, creative confidence, and real-world curiosity through guided learning.",
+          "desc2": "Parents get clear communication, structured programs, and a school community focused on every child.",
+          "backgroundImage": "/categories/school/bg11.jpg",
+          "backgroundImageTitle": "School classroom",
+          "sideImage": "/categories/school/bg22.jpg",
+          "sideImageTitle": "Students activity",
+          "philosophyTitle": "Our Approach",
+          "philosophyDesc": "Learning works best when students feel seen, supported, and challenged at the right pace.",
+          "buttons": [
+            {
+              "label": "Meet our teachers",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "About-2": {
+          "pretitle": "About our school",
+          "title": "Strong academics with thoughtful student care.",
+          "subtitle": "A balanced environment for learning and growth",
+          "desc": "We help students build strong fundamentals, creative confidence, and real-world curiosity through guided learning.",
+          "desc2": "Parents get clear communication, structured programs, and a school community focused on every child.",
+          "backgroundImage": "/categories/school/bg11.jpg",
+          "backgroundImageTitle": "School classroom",
+          "sideImage": "/categories/school/bg22.jpg",
+          "sideImageTitle": "Students activity",
+          "philosophyTitle": "Our Approach",
+          "philosophyDesc": "Learning works best when students feel seen, supported, and challenged at the right pace.",
+          "buttons": [
+            {
+              "label": "Meet our teachers",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "About"
+    },
+    {
+      "type": "Product",
+      "variant": "Product-2",
+      "data": {
+        "Product-1": {
+          "productSectionTitle": "School Programs",
+          "productTitle": "Academic Pathways",
+          "productSubtitle": "Admissions open",
+          "productInfoTitle": "Programs for every stage",
+          "productInfoDesc": "Present classes, activities, facilities, and admission highlights with reusable cards.",
+          "productFeatures": [
+            {
+              "label": "Primary",
+              "price": "I-V"
+            },
+            {
+              "label": "Middle",
+              "price": "VI-VIII"
+            },
+            {
+              "label": "Senior",
+              "price": "IX-XII"
+            }
+          ],
+          "productTotalPrice": "Admissions Open",
+          "productShippingText": "Campus tours available",
+          "productItems": [
+            {
+              "title": "Primary School",
+              "category": "Classes I-V",
+              "desc": "Foundational learning with language, numeracy, activities, and creative confidence.",
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Primary school"
+            },
+            {
+              "title": "Senior School",
+              "category": "Classes IX-XII",
+              "desc": "Exam readiness, mentoring, and future planning for senior students.",
+              "image": "/categories/school/bg22.jpg",
+              "alt": "Senior school"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Book campus tour",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-2": {
+          "productSectionTitle": "School Programs",
+          "productTitle": "Academic Pathways",
+          "productSubtitle": "Admissions open",
+          "productInfoTitle": "Programs for every stage",
+          "productInfoDesc": "Present classes, activities, facilities, and admission highlights with reusable cards.",
+          "productFeatures": [
+            {
+              "label": "Primary",
+              "price": "I-V"
+            },
+            {
+              "label": "Middle",
+              "price": "VI-VIII"
+            },
+            {
+              "label": "Senior",
+              "price": "IX-XII"
+            }
+          ],
+          "productTotalPrice": "Admissions Open",
+          "productShippingText": "Campus tours available",
+          "productItems": [
+            {
+              "title": "Primary School",
+              "category": "Classes I-V",
+              "desc": "Foundational learning with language, numeracy, activities, and creative confidence.",
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Primary school"
+            },
+            {
+              "title": "Senior School",
+              "category": "Classes IX-XII",
+              "desc": "Exam readiness, mentoring, and future planning for senior students.",
+              "image": "/categories/school/bg22.jpg",
+              "alt": "Senior school"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Book campus tour",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-3": {
+          "productSectionTitle": "School Programs",
+          "productTitle": "Academic Pathways",
+          "productSubtitle": "Admissions open",
+          "productInfoTitle": "Programs for every stage",
+          "productInfoDesc": "Present classes, activities, facilities, and admission highlights with reusable cards.",
+          "productFeatures": [
+            {
+              "label": "Primary",
+              "price": "I-V"
+            },
+            {
+              "label": "Middle",
+              "price": "VI-VIII"
+            },
+            {
+              "label": "Senior",
+              "price": "IX-XII"
+            }
+          ],
+          "productTotalPrice": "Admissions Open",
+          "productShippingText": "Campus tours available",
+          "productItems": [
+            {
+              "title": "Primary School",
+              "category": "Classes I-V",
+              "desc": "Foundational learning with language, numeracy, activities, and creative confidence.",
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Primary school"
+            },
+            {
+              "title": "Senior School",
+              "category": "Classes IX-XII",
+              "desc": "Exam readiness, mentoring, and future planning for senior students.",
+              "image": "/categories/school/bg22.jpg",
+              "alt": "Senior school"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Book campus tour",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "Product"
+    },
+    {
+      "type": "WhyChooseUs",
+      "variant": "WhyChooseUs-2",
+      "data": {
+        "WhyChooseUs-1": {
+          "pretitle": "Why choose BrightSchool",
+          "title": "A school experience parents can trust.",
+          "desc": "Use this section to explain care, academics, activities, and communication.",
+          "whyChooseUsItems": [
+            {
+              "title": "Balanced learning",
+              "desc": "Academics, activities, and values are presented together.",
+              "stat": "01"
+            },
+            {
+              "title": "Parent clarity",
+              "desc": "Admissions, programs, and contact steps stay easy to find.",
+              "stat": "02"
+            },
+            {
+              "title": "Student growth",
+              "desc": "Show the environment, teachers, and programs that support students.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-2": {
+          "pretitle": "Why choose BrightSchool",
+          "title": "A school experience parents can trust.",
+          "desc": "Use this section to explain care, academics, activities, and communication.",
+          "whyChooseUsItems": [
+            {
+              "title": "Balanced learning",
+              "desc": "Academics, activities, and values are presented together.",
+              "stat": "01"
+            },
+            {
+              "title": "Parent clarity",
+              "desc": "Admissions, programs, and contact steps stay easy to find.",
+              "stat": "02"
+            },
+            {
+              "title": "Student growth",
+              "desc": "Show the environment, teachers, and programs that support students.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-3": {
+          "pretitle": "Why choose BrightSchool",
+          "title": "A school experience parents can trust.",
+          "desc": "Use this section to explain care, academics, activities, and communication.",
+          "whyChooseUsItems": [
+            {
+              "title": "Balanced learning",
+              "desc": "Academics, activities, and values are presented together.",
+              "stat": "01"
+            },
+            {
+              "title": "Parent clarity",
+              "desc": "Admissions, programs, and contact steps stay easy to find.",
+              "stat": "02"
+            },
+            {
+              "title": "Student growth",
+              "desc": "Show the environment, teachers, and programs that support students.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-4": {
+          "pretitle": "Why choose BrightSchool",
+          "title": "A school experience parents can trust.",
+          "desc": "Use this section to explain care, academics, activities, and communication.",
+          "whyChooseUsItems": [
+            {
+              "title": "Balanced learning",
+              "desc": "Academics, activities, and values are presented together.",
+              "stat": "01"
+            },
+            {
+              "title": "Parent clarity",
+              "desc": "Admissions, programs, and contact steps stay easy to find.",
+              "stat": "02"
+            },
+            {
+              "title": "Student growth",
+              "desc": "Show the environment, teachers, and programs that support students.",
+              "stat": "03"
+            }
+          ]
+        }
+      },
+      "id": "WhyChooseUs"
+    },
+    {
+      "type": "Gallery",
+      "variant": "Gallery-2",
+      "data": {
+        "Gallery-1": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        },
+        "Gallery-2": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        },
+        "Gallery-3": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        },
+        "Gallery-4": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        },
+        "Gallery-5": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        },
+        "Gallery-6": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        }
+      },
+      "id": "Gallery"
+    },
+    {
+      "type": "FormDetail",
+      "variant": "FormDetail-2",
+      "data": {
+        "FormDetail-1": {
+          "pretitle": "Admissions enquiry",
+          "title": "Ask about admissions and campus visits.",
+          "desc": "Parents can enquire about classes, tours, and the admission process.",
+          "backgroundImage": "/categories/school/bg33.png",
+          "backgroundImageTitle": "School admission visual",
+          "formSubmitLabel": "Send admission enquiry",
+          "formFields": [
+            {
+              "label": "Parent name",
+              "type": "text",
+              "placeholder": "Parent name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Phone number"
+            },
+            {
+              "label": "Admission details",
+              "type": "textarea",
+              "placeholder": "Class, session, questions"
+            }
+          ]
+        },
+        "FormDetail-2": {
+          "pretitle": "Admissions enquiry",
+          "title": "Ask about admissions and campus visits.",
+          "desc": "Parents can enquire about classes, tours, and the admission process.",
+          "backgroundImage": "/categories/school/bg33.png",
+          "backgroundImageTitle": "School admission visual",
+          "formSubmitLabel": "Send admission enquiry",
+          "formFields": [
+            {
+              "label": "Parent name",
+              "type": "text",
+              "placeholder": "Parent name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Phone number"
+            },
+            {
+              "label": "Admission details",
+              "type": "textarea",
+              "placeholder": "Class, session, questions"
+            }
+          ]
+        },
+        "FormDetail-3": {
+          "pretitle": "Admissions enquiry",
+          "title": "Ask about admissions and campus visits.",
+          "desc": "Parents can enquire about classes, tours, and the admission process.",
+          "backgroundImage": "/categories/school/bg33.png",
+          "backgroundImageTitle": "School admission visual",
+          "formSubmitLabel": "Send admission enquiry",
+          "formFields": [
+            {
+              "label": "Parent name",
+              "type": "text",
+              "placeholder": "Parent name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Phone number"
+            },
+            {
+              "label": "Admission details",
+              "type": "textarea",
+              "placeholder": "Class, session, questions"
+            }
+          ]
+        },
+        "FormDetail-4": {
+          "pretitle": "Admissions enquiry",
+          "title": "Ask about admissions and campus visits.",
+          "desc": "Parents can enquire about classes, tours, and the admission process.",
+          "backgroundImage": "/categories/school/bg33.png",
+          "backgroundImageTitle": "School admission visual",
+          "formSubmitLabel": "Send admission enquiry",
+          "formFields": [
+            {
+              "label": "Parent name",
+              "type": "text",
+              "placeholder": "Parent name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Phone number"
+            },
+            {
+              "label": "Admission details",
+              "type": "textarea",
+              "placeholder": "Class, session, questions"
+            }
+          ]
+        }
+      },
+      "id": "FormDetail"
+    },
+    {
+      "type": "FAQ",
+      "variant": "FAQ-2",
+      "data": {
+        "FAQ-1": {
+          "pretitle": "School FAQ",
+          "title": "Admissions questions answered.",
+          "faqItems": [
+            {
+              "question": "Are admissions open?",
+              "answer": "Yes, admission enquiries can be submitted through the form section."
+            },
+            {
+              "question": "Can parents visit campus?",
+              "answer": "Campus tours can be scheduled based on available slots."
+            },
+            {
+              "question": "Which classes are available?",
+              "answer": "Program cards can show primary, middle, and senior school details."
+            }
+          ]
+        },
+        "FAQ-2": {
+          "pretitle": "School FAQ",
+          "title": "Admissions questions answered.",
+          "faqItems": [
+            {
+              "question": "Are admissions open?",
+              "answer": "Yes, admission enquiries can be submitted through the form section."
+            },
+            {
+              "question": "Can parents visit campus?",
+              "answer": "Campus tours can be scheduled based on available slots."
+            },
+            {
+              "question": "Which classes are available?",
+              "answer": "Program cards can show primary, middle, and senior school details."
+            }
+          ]
+        },
+        "FAQ-3": {
+          "pretitle": "School FAQ",
+          "title": "Admissions questions answered.",
+          "faqItems": [
+            {
+              "question": "Are admissions open?",
+              "answer": "Yes, admission enquiries can be submitted through the form section."
+            },
+            {
+              "question": "Can parents visit campus?",
+              "answer": "Campus tours can be scheduled based on available slots."
+            },
+            {
+              "question": "Which classes are available?",
+              "answer": "Program cards can show primary, middle, and senior school details."
+            }
+          ]
+        },
+        "FAQ-4": {
+          "pretitle": "School FAQ",
+          "title": "Admissions questions answered.",
+          "faqItems": [
+            {
+              "question": "Are admissions open?",
+              "answer": "Yes, admission enquiries can be submitted through the form section."
+            },
+            {
+              "question": "Can parents visit campus?",
+              "answer": "Campus tours can be scheduled based on available slots."
+            },
+            {
+              "question": "Which classes are available?",
+              "answer": "Program cards can show primary, middle, and senior school details."
+            }
+          ]
+        }
+      },
+      "id": "FAQ"
+    },
+    {
+      "type": "Testimonial",
+      "variant": "Testimonial-2",
+      "data": {
+        "Testimonial-1": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-2": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-3": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        }
+      },
+      "id": "Testimonial"
+    },
+    {
+      "id": "AboutPage",
+      "page": "about",
+      "type": "About",
+      "variant": "AboutPage-1",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        },
+        "AboutPage-2": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        },
+        "AboutPage-3": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        }
+      }
+    },
+    {
+      "id": "ServicePage",
+      "page": "service",
+      "type": "Service",
+      "variant": "ServicePage-1",
+      "data": {
+        "ServicePage-1": {
+          "pretitle": "Services",
+          "title": "Helpful services built around your next step.",
+          "desc": "Use this page to explain the core services, support, and outcomes your team provides for every visitor.",
+          "desc2": "Each service card can be edited from the same JSON-backed editor, including text, images, and supporting details.",
+          "subtitle": "What we provide",
+          "productSectionTitle": "Core service options",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Service page image",
+          "serviceSlides": [
+            {
+              "image": "/bg1.jpg",
+              "alt": "Planning service",
+              "productTitle": "Planning",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Planning",
+              "productInfoDesc": "Clarify goals, audience needs, and the right structure before visitors take action.",
+              "productFeatures": [
+                {
+                  "label": "Strategy",
+                  "price": "01"
+                },
+                {
+                  "label": "Content",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/bg2.jpg",
+              "alt": "Execution service",
+              "productTitle": "Execution",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Execution",
+              "productInfoDesc": "Present offers, proof, and conversion paths through clean editable sections.",
+              "productFeatures": [
+                {
+                  "label": "Design",
+                  "price": "01"
+                },
+                {
+                  "label": "Build",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/blackbay.png",
+              "alt": "Support service",
+              "productTitle": "Support",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Support",
+              "productInfoDesc": "Keep enquiries, updates, and follow-up simple for both visitors and your team.",
+              "productFeatures": [
+                {
+                  "label": "Follow up",
+                  "price": "01"
+                },
+                {
+                  "label": "Updates",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/shaye.png",
+              "alt": "Growth service",
+              "productTitle": "Growth",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Growth",
+              "productInfoDesc": "Improve page content and calls to action as new visitor needs become clear.",
+              "productFeatures": [
+                {
+                  "label": "Review",
+                  "price": "01"
+                },
+                {
+                  "label": "Improve",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Planning",
+              "category": "Service",
+              "desc": "Clarify goals, audience needs, and the right structure before visitors take action.",
+              "image": "/bg1.jpg",
+              "alt": "Planning service"
+            },
+            {
+              "title": "Execution",
+              "category": "Service",
+              "desc": "Present offers, proof, and conversion paths through clean editable sections.",
+              "image": "/bg2.jpg",
+              "alt": "Execution service"
+            },
+            {
+              "title": "Support",
+              "category": "Service",
+              "desc": "Keep enquiries, updates, and follow-up simple for both visitors and your team.",
+              "image": "/blackbay.png",
+              "alt": "Support service"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GalleryPage",
+      "page": "gallery",
+      "type": "Gallery",
+      "variant": "GalleryPage-1",
+      "data": {
+        "GalleryPage-1": {
+          "pretitle": "Campus gallery",
+          "title": "Classrooms, campus, and student life.",
+          "desc": "School visuals always come from the school category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Students learning",
+              "title": "Classroom"
+            },
+            {
+              "image": "/categories/school/bg22.jpg",
+              "alt": "School campus",
+              "title": "Campus"
+            },
+            {
+              "image": "/categories/school/bg33.png",
+              "alt": "Student activities",
+              "title": "Activities"
+            },
+            {
+              "image": "/categories/school/bg11.jpg",
+              "alt": "Learning space",
+              "title": "Learning"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ContactPage",
+      "page": "contact",
+      "type": "Contact",
+      "variant": "ContactPage-1",
+      "data": {
+        "ContactPage-1": {
+          "pretitle": "Contact us",
+          "title": "Start a clear conversation with our team.",
+          "desc": "Share a few details and our team will help you choose the right next step with simple, practical guidance.",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Contact page image",
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "formSubmitLabel": "Send message",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "placeholder": "you@example.com"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Message",
+              "type": "textarea",
+              "placeholder": "Tell us what you need"
+            }
+          ]
+        },
+        "ContactPage-2": {
+          "pretitle": "Contact us",
+          "title": "Start a clear conversation with our team.",
+          "desc": "Share a few details and our team will help you choose the right next step with simple, practical guidance.",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Contact page image",
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "formSubmitLabel": "Send message",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "placeholder": "you@example.com"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Message",
+              "type": "textarea",
+              "placeholder": "Tell us what you need"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Footer",
+      "variant": "Footer-1",
+      "data": {
+        "Footer-1": {
+          "logoImage": "/etacard.png",
+          "logoImageTitle": "ETA Card logo",
+          "desc": "Editable website content powered by one category and template JSON file.",
+          "footerColumns": [
+            {
+              "title": "Pages",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "#"
+                },
+                {
+                  "label": "About",
+                  "href": "#about"
+                },
+                {
+                  "label": "Service",
+                  "href": "#service"
+                },
+                {
+                  "label": "Gallery",
+                  "href": "#gallery"
+                },
+                {
+                  "label": "Contact",
+                  "href": "#contact"
+                }
+              ]
+            },
+            {
+              "title": "Sections",
+              "links": [
+                {
+                  "label": "Listings",
+                  "href": "#"
+                },
+                {
+                  "label": "Services",
+                  "href": "#"
+                },
+                {
+                  "label": "Programs",
+                  "href": "#"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "#faq"
+                }
+              ]
+            }
+          ],
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "footerLegalLinks": [
+            {
+              "label": "Privacy Policy",
+              "href": "#privacy"
+            },
+            {
+              "label": "Terms",
+              "href": "#terms"
+            }
+          ],
+          "whatsappLink": "https://api.whatsapp.com/send?phone=962786336414",
+          "callLink": "tel:+919876543210",
+          "copyrightText": "Copyright 2026. All rights reserved."
+        }
+      },
+      "id": "Footer"
+    }
+  ],
+  "templateVariables": {
+    "--header-bg": "#111827",
+    "--header-text": "#ffffff",
+    "--hero-bg": "#020617",
+    "--hero-title": "#f8fafc",
+    "--primary-link-bg": "#ffffff",
+    "--primary-link-color": "#000000",
+    "--blue-bg": "#2563eb",
+    "--lightcream-bg": "#fbfaf6"
+  },
+  "publishedAt": "2026-07-11T11:19:39.981Z"
+}

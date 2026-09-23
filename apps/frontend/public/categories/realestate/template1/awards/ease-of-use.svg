@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <path fill="#08759f" stroke="#064e70" stroke-width="2" d="M14 13h52l-5 43-21 17-21-17z"/>
+  <path fill="#fff" fill-opacity=".13" d="M19 18h42l-3 34-18 15-18-15z"/>
+  <text x="40" y="33" text-anchor="middle" fill="#fff" font-family="Arial" font-size="8" font-weight="700">CAPTERRA</text>
+  <text x="40" y="44" text-anchor="middle" fill="#fff" font-family="Arial" font-size="6">BEST EASE OF USE</text>
+  <text x="40" y="54" text-anchor="middle" fill="#fff" font-family="Arial" font-size="8" font-weight="700">2021</text>
+</svg>

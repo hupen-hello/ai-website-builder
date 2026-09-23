@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <path fill="#f3f1ee" stroke="#d6d1cb" d="M18 9h44v49L40 72 18 58z"/>
+  <path fill="#d64b3d" d="M31 15h18v18H31z"/>
+  <path fill="#fff" d="M40 19l2 4 5 .7-3.5 3.4.8 4.9-4.3-2.3-4.3 2.3.8-4.9-3.5-3.4 5-.7z"/>
+  <text x="40" y="43" text-anchor="middle" font-family="Arial" font-size="7" font-weight="700">BEST</text>
+  <text x="40" y="51" text-anchor="middle" font-family="Arial" font-size="6">RESULTS</text>
+</svg>

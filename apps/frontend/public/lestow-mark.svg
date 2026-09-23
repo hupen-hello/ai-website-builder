@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 190" role="img" aria-labelledby="title">
+  <title id="title">Lestow</title>
+  <g fill="#070b12">
+    <path d="M45 18c-16 0-29 13-29 29v74c0 29 23 52 52 52h86c19 0 35-16 35-35s-16-35-35-35H82V47c0-16-13-29-29-29h-8z"/>
+    <rect x="115" y="43" width="35" height="35" rx="7"/>
+    <rect x="154" y="15" width="27" height="27" rx="6"/>
+  </g>
+</svg>

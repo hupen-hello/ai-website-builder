@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #bf161d;
+    --gray: #2f2e2e;
+    --black: #1b1b1b;
+    --font-inter: "Inter", sans-serif; 
+}
+
+
+body {
+    font-family: var(--font-inter); 
+}
+
+
+.btn_red{
+    background-color: var(--red);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn_gray{
+    background-color: var(--black);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+     font-weight: 600;
+}
+
+
+.btn_black{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+     font-weight: 600;
+}
+
+@keyframes fadeCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-fade-cursor {
+  animation: fadeCursor 1.2s ease-in-out infinite;
+}
+
+button{
+  cursor: pointer;
+}
+

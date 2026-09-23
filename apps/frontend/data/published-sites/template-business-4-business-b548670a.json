@@ -1,0 +1,1427 @@
+{
+  "id": "template-business-4-business-b548670a",
+  "templateId": "template-business-4",
+  "category": "Business",
+  "pageLinks": [
+    {
+      "label": "Home",
+      "href": "#"
+    },
+    {
+      "label": "About",
+      "href": "#"
+    },
+    {
+      "label": "Service",
+      "href": "#service"
+    },
+    {
+      "label": "Gallery",
+      "href": "#gallery"
+    },
+    {
+      "label": "Contact",
+      "href": "#"
+    }
+  ],
+  "sections": [
+    {
+      "type": "Topbar",
+      "variant": "Topbar-4",
+      "data": {
+        "Topbar-1": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        },
+        "Topbar-2": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        }
+      },
+      "id": "Topbar"
+    },
+    {
+      "type": "Header",
+      "variant": "Header-4",
+      "data": {
+        "Header-1": {
+          "logo": "LaunchCo",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service"
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Start Project",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Call Us",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        },
+        "Header-2": {
+          "logo": "LaunchCo",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service"
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Start Project",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Call Us",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        }
+      },
+      "id": "Header"
+    },
+    {
+      "type": "Banner",
+      "variant": "Banner-4",
+      "data": {
+        "Banner-1": {
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business workspace",
+          "backgroundVideo": "/categories/business/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Modern business websites",
+          "title": "Launch a sharper website for your company.",
+          "desc": "Present services, credibility, and calls to action through modular sections your team can edit.",
+          "buttons": [
+            {
+              "label": "Start project",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business website",
+              "title": "Clear service pages",
+              "desc": "Explain your services with strong sections and simple editing.",
+              "button": {
+                "label": "View services",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business operations",
+              "title": "Proof-led company pages",
+              "desc": "Show results, offers, and conversion paths in one place.",
+              "button": {
+                "label": "See work",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "image"
+        },
+        "Banner-2": {
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business workspace",
+          "backgroundVideo": "/categories/business/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Modern business websites",
+          "title": "Launch a sharper website for your company.",
+          "desc": "Present services, credibility, and calls to action through modular sections your team can edit.",
+          "buttons": [
+            {
+              "label": "Start project",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business website",
+              "title": "Clear service pages",
+              "desc": "Explain your services with strong sections and simple editing.",
+              "button": {
+                "label": "View services",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business operations",
+              "title": "Proof-led company pages",
+              "desc": "Show results, offers, and conversion paths in one place.",
+              "button": {
+                "label": "See work",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "video"
+        },
+        "Banner-3": {
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business workspace",
+          "backgroundVideo": "/categories/business/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Modern business websites",
+          "title": "Launch a sharper website for your company.",
+          "desc": "Present services, credibility, and calls to action through modular sections your team can edit.",
+          "buttons": [
+            {
+              "label": "Start project",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business website",
+              "title": "Clear service pages",
+              "desc": "Explain your services with strong sections and simple editing.",
+              "button": {
+                "label": "View services",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "video": "/categories/business/video.mp4",
+              "alt": "Business operations",
+              "title": "Proof-led company pages",
+              "desc": "Show results, offers, and conversion paths in one place.",
+              "button": {
+                "label": "See work",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ]
+        }
+      },
+      "id": "Banner"
+    },
+    {
+      "type": "About",
+      "variant": "About-4",
+      "data": {
+        "About-1": {
+          "pretitle": "About the company",
+          "title": "A business website built around trust.",
+          "subtitle": "Services, proof, and fast lead capture",
+          "desc": "Show what your business does, why customers choose you, and how visitors can get in touch.",
+          "desc2": "The content is business-specific while template designs can change component by component.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business office",
+          "sideImage": "/categories/business/bg2.jpg",
+          "sideImageTitle": "Business design",
+          "philosophyTitle": "How We Work",
+          "philosophyDesc": "Clear messaging, strong sections, and fast editing for teams.",
+          "buttons": [
+            {
+              "label": "Get consultation",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "About-2": {
+          "pretitle": "About the company",
+          "title": "A business website built around trust.",
+          "subtitle": "Services, proof, and fast lead capture",
+          "desc": "Show what your business does, why customers choose you, and how visitors can get in touch.",
+          "desc2": "The content is business-specific while template designs can change component by component.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business office",
+          "sideImage": "/categories/business/bg2.jpg",
+          "sideImageTitle": "Business design",
+          "philosophyTitle": "How We Work",
+          "philosophyDesc": "Clear messaging, strong sections, and fast editing for teams.",
+          "buttons": [
+            {
+              "label": "Get consultation",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "About"
+    },
+    {
+      "type": "Product",
+      "variant": "Product-4",
+      "data": {
+        "Product-1": {
+          "productSectionTitle": "Core Services",
+          "productTitle": "Business Growth Services",
+          "productSubtitle": "Ready to customize",
+          "productInfoTitle": "Everything your company needs online",
+          "productInfoDesc": "Use service cards to explain offers, packages, capabilities, or featured work.",
+          "productFeatures": [
+            {
+              "label": "Strategy",
+              "price": "Included"
+            },
+            {
+              "label": "Website",
+              "price": "Included"
+            },
+            {
+              "label": "SEO",
+              "price": "Optional"
+            }
+          ],
+          "productTotalPrice": "Custom",
+          "productShippingText": "Fast setup available",
+          "serviceSlides": [
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "productTitle": "Consulting",
+              "productSubtitle": "Growth Planning",
+              "productInfoTitle": "Clear strategy",
+              "productInfoDesc": "A focused service block for your leading offer.",
+              "productFeatures": [
+                {
+                  "label": "Audit",
+                  "price": "Included"
+                },
+                {
+                  "label": "Plan",
+                  "price": "Included"
+                }
+              ],
+              "productTotalPrice": "Custom",
+              "productShippingText": "Fast setup available",
+              "button": {
+                "label": "Talk to us",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Consulting",
+              "category": "Service",
+              "desc": "A focused service block for your leading business offer.",
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Business consulting"
+            },
+            {
+              "title": "Operations",
+              "category": "Service",
+              "desc": "Show the process and support your customers can expect.",
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Business operations"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Talk to us",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-2": {
+          "productSectionTitle": "Core Services",
+          "productTitle": "Business Growth Services",
+          "productSubtitle": "Ready to customize",
+          "productInfoTitle": "Everything your company needs online",
+          "productInfoDesc": "Use service cards to explain offers, packages, capabilities, or featured work.",
+          "productFeatures": [
+            {
+              "label": "Strategy",
+              "price": "Included"
+            },
+            {
+              "label": "Website",
+              "price": "Included"
+            },
+            {
+              "label": "SEO",
+              "price": "Optional"
+            }
+          ],
+          "productTotalPrice": "Custom",
+          "productShippingText": "Fast setup available",
+          "serviceSlides": [
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "productTitle": "Consulting",
+              "productSubtitle": "Growth Planning",
+              "productInfoTitle": "Clear strategy",
+              "productInfoDesc": "A focused service block for your leading offer.",
+              "productFeatures": [
+                {
+                  "label": "Audit",
+                  "price": "Included"
+                },
+                {
+                  "label": "Plan",
+                  "price": "Included"
+                }
+              ],
+              "productTotalPrice": "Custom",
+              "productShippingText": "Fast setup available",
+              "button": {
+                "label": "Talk to us",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Consulting",
+              "category": "Service",
+              "desc": "A focused service block for your leading business offer.",
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Business consulting"
+            },
+            {
+              "title": "Operations",
+              "category": "Service",
+              "desc": "Show the process and support your customers can expect.",
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Business operations"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Talk to us",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-3": {
+          "productSectionTitle": "Core Services",
+          "productTitle": "Business Growth Services",
+          "productSubtitle": "Ready to customize",
+          "productInfoTitle": "Everything your company needs online",
+          "productInfoDesc": "Use service cards to explain offers, packages, capabilities, or featured work.",
+          "productFeatures": [
+            {
+              "label": "Strategy",
+              "price": "Included"
+            },
+            {
+              "label": "Website",
+              "price": "Included"
+            },
+            {
+              "label": "SEO",
+              "price": "Optional"
+            }
+          ],
+          "productTotalPrice": "Custom",
+          "productShippingText": "Fast setup available",
+          "serviceSlides": [
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "productTitle": "Consulting",
+              "productSubtitle": "Growth Planning",
+              "productInfoTitle": "Clear strategy",
+              "productInfoDesc": "A focused service block for your leading offer.",
+              "productFeatures": [
+                {
+                  "label": "Audit",
+                  "price": "Included"
+                },
+                {
+                  "label": "Plan",
+                  "price": "Included"
+                }
+              ],
+              "productTotalPrice": "Custom",
+              "productShippingText": "Fast setup available",
+              "button": {
+                "label": "Talk to us",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Consulting",
+              "category": "Service",
+              "desc": "A focused service block for your leading business offer.",
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Business consulting"
+            },
+            {
+              "title": "Operations",
+              "category": "Service",
+              "desc": "Show the process and support your customers can expect.",
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Business operations"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Talk to us",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "Product"
+    },
+    {
+      "type": "WhyChooseUs",
+      "variant": "WhyChooseUs-4",
+      "data": {
+        "WhyChooseUs-1": {
+          "pretitle": "Why choose LaunchCo",
+          "title": "Business pages built for trust and leads.",
+          "desc": "Explain your offer clearly and guide visitors toward action.",
+          "whyChooseUsItems": [
+            {
+              "title": "Sharp positioning",
+              "desc": "Clear service messaging for customers who need quick answers.",
+              "stat": "01"
+            },
+            {
+              "title": "Conversion flow",
+              "desc": "Sections are arranged around proof, offers, and enquiries.",
+              "stat": "02"
+            },
+            {
+              "title": "Fast editing",
+              "desc": "Teams can update service content without rebuilding the design.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-2": {
+          "pretitle": "Why choose LaunchCo",
+          "title": "Business pages built for trust and leads.",
+          "desc": "Explain your offer clearly and guide visitors toward action.",
+          "whyChooseUsItems": [
+            {
+              "title": "Sharp positioning",
+              "desc": "Clear service messaging for customers who need quick answers.",
+              "stat": "01"
+            },
+            {
+              "title": "Conversion flow",
+              "desc": "Sections are arranged around proof, offers, and enquiries.",
+              "stat": "02"
+            },
+            {
+              "title": "Fast editing",
+              "desc": "Teams can update service content without rebuilding the design.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-3": {
+          "pretitle": "Why choose LaunchCo",
+          "title": "Business pages built for trust and leads.",
+          "desc": "Explain your offer clearly and guide visitors toward action.",
+          "whyChooseUsItems": [
+            {
+              "title": "Sharp positioning",
+              "desc": "Clear service messaging for customers who need quick answers.",
+              "stat": "01"
+            },
+            {
+              "title": "Conversion flow",
+              "desc": "Sections are arranged around proof, offers, and enquiries.",
+              "stat": "02"
+            },
+            {
+              "title": "Fast editing",
+              "desc": "Teams can update service content without rebuilding the design.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-4": {
+          "pretitle": "Why choose LaunchCo",
+          "title": "Business pages built for trust and leads.",
+          "desc": "Explain your offer clearly and guide visitors toward action.",
+          "whyChooseUsItems": [
+            {
+              "title": "Sharp positioning",
+              "desc": "Clear service messaging for customers who need quick answers.",
+              "stat": "01"
+            },
+            {
+              "title": "Conversion flow",
+              "desc": "Sections are arranged around proof, offers, and enquiries.",
+              "stat": "02"
+            },
+            {
+              "title": "Fast editing",
+              "desc": "Teams can update service content without rebuilding the design.",
+              "stat": "03"
+            }
+          ]
+        }
+      },
+      "id": "WhyChooseUs"
+    },
+    {
+      "type": "Gallery",
+      "variant": "Gallery-4",
+      "data": {
+        "Gallery-1": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        },
+        "Gallery-2": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        },
+        "Gallery-3": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        },
+        "Gallery-4": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        },
+        "Gallery-5": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        },
+        "Gallery-6": {
+          "pretitle": "Work gallery",
+          "title": "Show your team, work, and process.",
+          "desc": "Business visuals stay inside the business category folder.",
+          "galleryItems": [
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Business workspace",
+              "title": "Workspace"
+            },
+            {
+              "image": "/categories/business/bg1.jpg",
+              "alt": "Consulting",
+              "title": "Consulting"
+            },
+            {
+              "image": "/categories/business/bg2.jpg",
+              "alt": "Operations",
+              "title": "Operations"
+            },
+            {
+              "image": "/categories/business/blackbay.png",
+              "alt": "Team work",
+              "title": "Team"
+            }
+          ]
+        }
+      },
+      "id": "Gallery"
+    },
+    {
+      "type": "FormDetail",
+      "variant": "FormDetail-4",
+      "data": {
+        "FormDetail-1": {
+          "pretitle": "Start a project",
+          "title": "Tell us about your business goal.",
+          "desc": "Capture business enquiries with fields that match service-led websites.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business enquiry visual",
+          "formSubmitLabel": "Send project details",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Work email",
+              "type": "email",
+              "placeholder": "you@company.com"
+            },
+            {
+              "label": "Project details",
+              "type": "textarea",
+              "placeholder": "Services, goals, timeline"
+            }
+          ]
+        },
+        "FormDetail-2": {
+          "pretitle": "Start a project",
+          "title": "Tell us about your business goal.",
+          "desc": "Capture business enquiries with fields that match service-led websites.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business enquiry visual",
+          "formSubmitLabel": "Send project details",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Work email",
+              "type": "email",
+              "placeholder": "you@company.com"
+            },
+            {
+              "label": "Project details",
+              "type": "textarea",
+              "placeholder": "Services, goals, timeline"
+            }
+          ]
+        },
+        "FormDetail-3": {
+          "pretitle": "Start a project",
+          "title": "Tell us about your business goal.",
+          "desc": "Capture business enquiries with fields that match service-led websites.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business enquiry visual",
+          "formSubmitLabel": "Send project details",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Work email",
+              "type": "email",
+              "placeholder": "you@company.com"
+            },
+            {
+              "label": "Project details",
+              "type": "textarea",
+              "placeholder": "Services, goals, timeline"
+            }
+          ]
+        },
+        "FormDetail-4": {
+          "pretitle": "Start a project",
+          "title": "Tell us about your business goal.",
+          "desc": "Capture business enquiries with fields that match service-led websites.",
+          "backgroundImage": "/categories/business/blackbay.png",
+          "backgroundImageTitle": "Business enquiry visual",
+          "formSubmitLabel": "Send project details",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Work email",
+              "type": "email",
+              "placeholder": "you@company.com"
+            },
+            {
+              "label": "Project details",
+              "type": "textarea",
+              "placeholder": "Services, goals, timeline"
+            }
+          ]
+        }
+      },
+      "id": "FormDetail"
+    },
+    {
+      "type": "FAQ",
+      "variant": "FAQ-4",
+      "data": {
+        "FAQ-1": {
+          "pretitle": "Business FAQ",
+          "title": "Common questions before starting.",
+          "faqItems": [
+            {
+              "question": "Can this show services?",
+              "answer": "Yes, service cards and sections can be customized for your company."
+            },
+            {
+              "question": "Can we change content later?",
+              "answer": "Yes, the editor is built around reusable section data."
+            },
+            {
+              "question": "Is this useful for lead generation?",
+              "answer": "Yes, forms, CTAs, and proof sections are designed for enquiries."
+            }
+          ]
+        },
+        "FAQ-2": {
+          "pretitle": "Business FAQ",
+          "title": "Common questions before starting.",
+          "faqItems": [
+            {
+              "question": "Can this show services?",
+              "answer": "Yes, service cards and sections can be customized for your company."
+            },
+            {
+              "question": "Can we change content later?",
+              "answer": "Yes, the editor is built around reusable section data."
+            },
+            {
+              "question": "Is this useful for lead generation?",
+              "answer": "Yes, forms, CTAs, and proof sections are designed for enquiries."
+            }
+          ]
+        },
+        "FAQ-3": {
+          "pretitle": "Business FAQ",
+          "title": "Common questions before starting.",
+          "faqItems": [
+            {
+              "question": "Can this show services?",
+              "answer": "Yes, service cards and sections can be customized for your company."
+            },
+            {
+              "question": "Can we change content later?",
+              "answer": "Yes, the editor is built around reusable section data."
+            },
+            {
+              "question": "Is this useful for lead generation?",
+              "answer": "Yes, forms, CTAs, and proof sections are designed for enquiries."
+            }
+          ]
+        },
+        "FAQ-4": {
+          "pretitle": "Business FAQ",
+          "title": "Common questions before starting.",
+          "faqItems": [
+            {
+              "question": "Can this show services?",
+              "answer": "Yes, service cards and sections can be customized for your company."
+            },
+            {
+              "question": "Can we change content later?",
+              "answer": "Yes, the editor is built around reusable section data."
+            },
+            {
+              "question": "Is this useful for lead generation?",
+              "answer": "Yes, forms, CTAs, and proof sections are designed for enquiries."
+            }
+          ]
+        }
+      },
+      "id": "FAQ"
+    },
+    {
+      "type": "Testimonial",
+      "variant": "Testimonial-4",
+      "data": {
+        "Testimonial-1": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-2": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-3": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        }
+      },
+      "id": "Testimonial"
+    },
+    {
+      "type": "AboutPage",
+      "variant": "AboutPage-4",
+      "data": {},
+      "id": "AboutPage"
+    },
+    {
+      "type": "ServicePage",
+      "variant": "ServicePage-4",
+      "data": {},
+      "id": "ServicePage"
+    },
+    {
+      "type": "GalleryPage",
+      "variant": "GalleryPage-4",
+      "data": {},
+      "id": "GalleryPage"
+    },
+    {
+      "type": "ContactPage",
+      "variant": "ContactPage-4",
+      "data": {},
+      "id": "ContactPage"
+    },
+    {
+      "id": "CustomPage-about",
+      "page": "about",
+      "type": "About",
+      "variant": "AboutPage-2",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "Demo content",
+          "title": "About",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-2": {
+          "pretitle": "Demo content",
+          "title": "About",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-3": {
+          "pretitle": "Demo content",
+          "title": "About",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        }
+      }
+    },
+    {
+      "id": "CustomPage-service",
+      "page": "service",
+      "type": "About",
+      "variant": "AboutPage-2",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "Demo content",
+          "title": "Service",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-2": {
+          "pretitle": "Demo content",
+          "title": "Service",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-3": {
+          "pretitle": "Demo content",
+          "title": "Service",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        }
+      }
+    },
+    {
+      "id": "CustomPage-gallery",
+      "page": "gallery",
+      "type": "About",
+      "variant": "AboutPage-2",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "Demo content",
+          "title": "Gallery",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-2": {
+          "pretitle": "Demo content",
+          "title": "Gallery",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-3": {
+          "pretitle": "Demo content",
+          "title": "Gallery",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        }
+      }
+    },
+    {
+      "id": "CustomPage-contact",
+      "page": "contact",
+      "type": "About",
+      "variant": "AboutPage-2",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "Demo content",
+          "title": "Contact",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-2": {
+          "pretitle": "Demo content",
+          "title": "Contact",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        },
+        "AboutPage-3": {
+          "pretitle": "Demo content",
+          "title": "Contact",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "Demo page image"
+        }
+      }
+    },
+    {
+      "type": "Footer",
+      "variant": "Footer-4",
+      "data": {
+        "Footer-1": {
+          "logoImage": "/etacard.png",
+          "logoImageTitle": "ETA Card logo",
+          "desc": "Editable website content powered by one category and template JSON file.",
+          "footerColumns": [
+            {
+              "title": "Pages",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "#"
+                },
+                {
+                  "label": "About",
+                  "href": "#about"
+                },
+                {
+                  "label": "Service",
+                  "href": "#service"
+                },
+                {
+                  "label": "Gallery",
+                  "href": "#gallery"
+                },
+                {
+                  "label": "Contact",
+                  "href": "#contact"
+                }
+              ]
+            },
+            {
+              "title": "Sections",
+              "links": [
+                {
+                  "label": "Listings",
+                  "href": "#"
+                },
+                {
+                  "label": "Services",
+                  "href": "#"
+                },
+                {
+                  "label": "Programs",
+                  "href": "#"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "#faq"
+                }
+              ]
+            }
+          ],
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "footerLegalLinks": [
+            {
+              "label": "Privacy Policy",
+              "href": "#privacy"
+            },
+            {
+              "label": "Terms",
+              "href": "#terms"
+            }
+          ],
+          "whatsappLink": "https://api.whatsapp.com/send?phone=962786336414",
+          "callLink": "tel:+919876543210",
+          "copyrightText": "Copyright 2026. All rights reserved."
+        }
+      },
+      "id": "Footer"
+    }
+  ],
+  "templateVariables": {
+    "--primary-bg": "#00cadd",
+    "--primary-text": "#ffffff",
+    "--secondary-bg": "#ffffff",
+    "--secondary-text": "#000000",
+    "--header-bg": "#245c6e",
+    "--header-text": "#ffffff",
+    "--hero-bg": "#000000",
+    "--hero-title": "#ffffff",
+    "--primary-pretitle-text": "#ffffff",
+    "--primary-title-text": "#ffffff",
+    "--primary-subtitle-text": "#ffffff",
+    "--secondary-pretitle-text": "#ffffff",
+    "--secondary-title-text": "#ffffff",
+    "--secondary-subtitle-text": "#ffffff",
+    "--primary-link-bg": "#ffffff",
+    "--primary-link-color": "#000000",
+    "--secondary-link-bg": "#00cadd",
+    "--secondary-link-color": "#ffffff",
+    "--text-white": "white",
+    "--blue-bg": "#0668ff",
+    "--lightcream-bg": "#fbfaf6"
+  },
+  "publishedAt": "2026-07-14T06:53:00.721Z"
+}

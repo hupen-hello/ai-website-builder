@@ -1,0 +1,1586 @@
+{
+  "id": "template-4-realestate-be551931",
+  "templateId": "template-4",
+  "category": "Realestate",
+  "pageLinks": [
+    {
+      "label": "Home",
+      "href": "#"
+    },
+    {
+      "label": "About",
+      "href": "#"
+    },
+    {
+      "label": "Service",
+      "href": "#service",
+      "children": [
+        {
+          "label": "Gurgaon east",
+          "href": "#gurgaon-east"
+        }
+      ]
+    },
+    {
+      "label": "Gallery",
+      "href": "#gallery"
+    },
+    {
+      "label": "Contact",
+      "href": "#"
+    }
+  ],
+  "sections": [
+    {
+      "type": "Topbar",
+      "variant": "Topbar-2",
+      "data": {
+        "Topbar-1": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        },
+        "Topbar-2": {
+          "text": [
+            "Fast setup, editable sections, category-ready media"
+          ],
+          "phone": "+91 98765 43210",
+          "email": "hello@example.com",
+          "location": "India",
+          "socialLinks": [
+            {
+              "label": "facebook",
+              "href": "#"
+            },
+            {
+              "label": "twitter",
+              "href": "#"
+            },
+            {
+              "label": "linkedin",
+              "href": "#"
+            }
+          ]
+        }
+      },
+      "id": "Topbar"
+    },
+    {
+      "type": "Header",
+      "variant": "Header-1",
+      "data": {
+        "Header-1": {
+          "logo": "PrimeHomes",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service",
+              "children": [
+                {
+                  "label": "Gurgaon east",
+                  "href": "#gurgaon-east"
+                }
+              ]
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Book Visit",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Call Agent",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ],
+          "headerTextColor": "#ffffff",
+          "headerType": "sticky",
+          "headerBackgroundType": "gradient"
+        },
+        "Header-2": {
+          "logo": "PrimeHomes",
+          "menu": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Service",
+              "href": "#service"
+            },
+            {
+              "label": "Gallery",
+              "href": "#gallery"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Book Visit",
+              "href": "#",
+              "variant": "primary"
+            },
+            {
+              "label": "Call Agent",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        }
+      },
+      "id": "Header"
+    },
+    {
+      "type": "Banner",
+      "variant": "Banner-4",
+      "data": {
+        "Banner-1": {
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Modern property exterior",
+          "backgroundVideo": "/categories/realestate/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Premium real estate advisory",
+          "title": "Find a home that fits your next chapter.",
+          "desc": "Browse curated apartments, villas, and investment properties with transparent pricing, verified documents, and guided site visits.",
+          "buttons": [
+            {
+              "label": "Explore listings",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Modern apartment living room",
+              "title": "Move into verified homes faster",
+              "desc": "Shortlist ready-to-visit properties with trusted local guidance.",
+              "button": {
+                "label": "View homes",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Luxury residential building",
+              "title": "Invest in high-growth locations",
+              "desc": "Compare neighborhoods, amenities, pricing, and rental potential.",
+              "button": {
+                "label": "Compare areas",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "image"
+        },
+        "Banner-2": {
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Modern property exterior",
+          "backgroundVideo": "/categories/realestate/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Premium real estate advisory",
+          "title": "Find a home that fits your next chapter.",
+          "desc": "Browse curated apartments, villas, and investment properties with transparent pricing, verified documents, and guided site visits.",
+          "buttons": [
+            {
+              "label": "Explore listings",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Modern apartment living room",
+              "title": "Move into verified homes faster",
+              "desc": "Shortlist ready-to-visit properties with trusted local guidance.",
+              "button": {
+                "label": "View homes",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Luxury residential building",
+              "title": "Invest in high-growth locations",
+              "desc": "Compare neighborhoods, amenities, pricing, and rental potential.",
+              "button": {
+                "label": "Compare areas",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "bannerBackgroundMode": "video"
+        },
+        "Banner-3": {
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Modern property exterior",
+          "backgroundVideo": "/categories/realestate/video.mp4",
+          "bannerHeight": 70,
+          "pretitle": "Premium real estate advisory",
+          "title": "Find a home that fits your next chapter.",
+          "desc": "Browse curated apartments, villas, and investment properties with transparent pricing, verified documents, and guided site visits.",
+          "buttons": [
+            {
+              "label": "Explore listings",
+              "href": "#",
+              "variant": "primary"
+            }
+          ],
+          "bannerSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Modern apartment living room",
+              "title": "Move into verified homes faster",
+              "desc": "Shortlist ready-to-visit properties with trusted local guidance.",
+              "button": {
+                "label": "View homes",
+                "href": "#",
+                "variant": "primary"
+              }
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "video": "/categories/realestate/video.mp4",
+              "alt": "Luxury residential building",
+              "title": "Invest in high-growth locations",
+              "desc": "Compare neighborhoods, amenities, pricing, and rental potential.",
+              "button": {
+                "label": "Compare areas",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ]
+        }
+      },
+      "id": "Banner"
+    },
+    {
+      "type": "About",
+      "variant": "About-1",
+      "data": {
+        "About-1": {
+          "pretitle": "Why buyers trust us",
+          "title": "Real estate guidance from search to keys.",
+          "subtitle": "Verified homes, smarter visits, clearer decisions",
+          "desc": "We help families and investors shortlist the right properties using neighborhood insight, pricing context, and documentation checks.",
+          "desc2": "From first call to final paperwork, our advisors keep every step simple, transparent, and focused on your goals.",
+          "backgroundImage": "/categories/realestate/bg2.jpg",
+          "backgroundImageTitle": "Premium property lounge",
+          "sideImage": "/categories/realestate/bg1.jpg",
+          "sideImageTitle": "Luxury residence interior",
+          "philosophyTitle": "Our Promise",
+          "philosophyDesc": "Real options, clear numbers, and reliable local support.",
+          "buttons": [
+            {
+              "label": "Meet our advisors",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "About-2": {
+          "pretitle": "Why buyers trust us",
+          "title": "Real estate guidance from search to keys.",
+          "subtitle": "Verified homes, smarter visits, clearer decisions",
+          "desc": "We help families and investors shortlist the right properties using neighborhood insight, pricing context, and documentation checks.",
+          "desc2": "From first call to final paperwork, our advisors keep every step simple, transparent, and focused on your goals.",
+          "backgroundImage": "/categories/realestate/bg2.jpg",
+          "backgroundImageTitle": "Premium property lounge",
+          "sideImage": "/categories/realestate/bg1.jpg",
+          "sideImageTitle": "Luxury residence interior",
+          "philosophyTitle": "Our Promise",
+          "philosophyDesc": "Real options, clear numbers, and reliable local support.",
+          "buttons": [
+            {
+              "label": "Meet our advisors",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "About"
+    },
+    {
+      "type": "Product",
+      "variant": "Product-2",
+      "data": {
+        "Product-1": {
+          "productSectionTitle": "Featured Properties",
+          "productTitle": "Signature Residences",
+          "productSubtitle": "Ready for site visits this week",
+          "productInfoTitle": "Prime City Homes",
+          "productInfoDesc": "Handpicked residences with strong amenities, smart layouts, and verified ownership documents.",
+          "productFeatures": [
+            {
+              "label": "Verified documents",
+              "price": "Included"
+            },
+            {
+              "label": "Site visit",
+              "price": "Free"
+            },
+            {
+              "label": "Loan support",
+              "price": "Available"
+            }
+          ],
+          "productTotalPrice": "From Rs. 1.25 Cr",
+          "productShippingText": "Site visits available today",
+          "serviceSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment",
+              "productTitle": "Skyline Residences",
+              "productSubtitle": "3 BHK Apartment",
+              "productInfoTitle": "High-floor city home",
+              "productInfoDesc": "Open views, clubhouse access, and fast metro connectivity.",
+              "productFeatures": [
+                {
+                  "label": "Bedrooms",
+                  "price": "3"
+                },
+                {
+                  "label": "Area",
+                  "price": "1850 sq.ft"
+                }
+              ],
+              "productTotalPrice": "Rs. 1.25 Cr",
+              "productShippingText": "Ready for visit",
+              "button": {
+                "label": "View details",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Skyline Residences",
+              "category": "3 BHK Apartment",
+              "desc": "High-floor homes with open views, clubhouse access, and quick metro connectivity.",
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment"
+            },
+            {
+              "title": "Green Villa Enclave",
+              "category": "Independent Villa",
+              "desc": "Private garden, premium finishes, and a quiet gated community address.",
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury villa"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Take the virtual walkthrough",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-2": {
+          "productSectionTitle": "Featured Properties",
+          "productTitle": "Signature Residences",
+          "productSubtitle": "Ready for site visits this week",
+          "productInfoTitle": "Prime City Homes",
+          "productInfoDesc": "Handpicked residences with strong amenities, smart layouts, and verified ownership documents.",
+          "productFeatures": [
+            {
+              "label": "Verified documents",
+              "price": "Included"
+            },
+            {
+              "label": "Site visit",
+              "price": "Free"
+            },
+            {
+              "label": "Loan support",
+              "price": "Available"
+            }
+          ],
+          "productTotalPrice": "From Rs. 1.25 Cr",
+          "productShippingText": "Site visits available today",
+          "serviceSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment",
+              "productTitle": "Skyline Residences",
+              "productSubtitle": "3 BHK Apartment",
+              "productInfoTitle": "High-floor city home",
+              "productInfoDesc": "Open views, clubhouse access, and fast metro connectivity.",
+              "productFeatures": [
+                {
+                  "label": "Bedrooms",
+                  "price": "3"
+                },
+                {
+                  "label": "Area",
+                  "price": "1850 sq.ft"
+                }
+              ],
+              "productTotalPrice": "Rs. 1.25 Cr",
+              "productShippingText": "Ready for visit",
+              "button": {
+                "label": "View details",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Skyline Residences",
+              "category": "3 BHK Apartment",
+              "desc": "High-floor homes with open views, clubhouse access, and quick metro connectivity.",
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment"
+            },
+            {
+              "title": "Green Villa Enclave",
+              "category": "Independent Villa",
+              "desc": "Private garden, premium finishes, and a quiet gated community address.",
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury villa"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Take the virtual walkthrough",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        },
+        "Product-3": {
+          "productSectionTitle": "Featured Properties",
+          "productTitle": "Signature Residences",
+          "productSubtitle": "Ready for site visits this week",
+          "productInfoTitle": "Prime City Homes",
+          "productInfoDesc": "Handpicked residences with strong amenities, smart layouts, and verified ownership documents.",
+          "productFeatures": [
+            {
+              "label": "Verified documents",
+              "price": "Included"
+            },
+            {
+              "label": "Site visit",
+              "price": "Free"
+            },
+            {
+              "label": "Loan support",
+              "price": "Available"
+            }
+          ],
+          "productTotalPrice": "From Rs. 1.25 Cr",
+          "productShippingText": "Site visits available today",
+          "serviceSlides": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment",
+              "productTitle": "Skyline Residences",
+              "productSubtitle": "3 BHK Apartment",
+              "productInfoTitle": "High-floor city home",
+              "productInfoDesc": "Open views, clubhouse access, and fast metro connectivity.",
+              "productFeatures": [
+                {
+                  "label": "Bedrooms",
+                  "price": "3"
+                },
+                {
+                  "label": "Area",
+                  "price": "1850 sq.ft"
+                }
+              ],
+              "productTotalPrice": "Rs. 1.25 Cr",
+              "productShippingText": "Ready for visit",
+              "button": {
+                "label": "View details",
+                "href": "#",
+                "variant": "primary"
+              }
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Skyline Residences",
+              "category": "3 BHK Apartment",
+              "desc": "High-floor homes with open views, clubhouse access, and quick metro connectivity.",
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Skyline apartment"
+            },
+            {
+              "title": "Green Villa Enclave",
+              "category": "Independent Villa",
+              "desc": "Private garden, premium finishes, and a quiet gated community address.",
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury villa"
+            }
+          ],
+          "buttons": [
+            {
+              "label": "Take the virtual walkthrough",
+              "href": "#",
+              "variant": "primary"
+            }
+          ]
+        }
+      },
+      "id": "Product"
+    },
+    {
+      "type": "WhyChooseUs",
+      "variant": "WhyChooseUs-4",
+      "data": {
+        "WhyChooseUs-1": {
+          "pretitle": "Why choose PrimeHomes",
+          "title": "Property decisions with clearer proof.",
+          "desc": "Help buyers compare real options, verified documents, and guided site visits.",
+          "whyChooseUsItems": [
+            {
+              "title": "Verified listings",
+              "desc": "Every featured property includes basic document and visit checks.",
+              "stat": "01"
+            },
+            {
+              "title": "Local advisors",
+              "desc": "Neighborhood guidance helps buyers compare price, location, and lifestyle.",
+              "stat": "02"
+            },
+            {
+              "title": "Simple visits",
+              "desc": "Site visits and follow-ups are handled with clear next steps.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-2": {
+          "pretitle": "Why choose PrimeHomes",
+          "title": "Property decisions with clearer proof.",
+          "desc": "Help buyers compare real options, verified documents, and guided site visits.",
+          "whyChooseUsItems": [
+            {
+              "title": "Verified listings",
+              "desc": "Every featured property includes basic document and visit checks.",
+              "stat": "01"
+            },
+            {
+              "title": "Local advisors",
+              "desc": "Neighborhood guidance helps buyers compare price, location, and lifestyle.",
+              "stat": "02"
+            },
+            {
+              "title": "Simple visits",
+              "desc": "Site visits and follow-ups are handled with clear next steps.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-3": {
+          "pretitle": "Why choose PrimeHomes",
+          "title": "Property decisions with clearer proof.",
+          "desc": "Help buyers compare real options, verified documents, and guided site visits.",
+          "whyChooseUsItems": [
+            {
+              "title": "Verified listings",
+              "desc": "Every featured property includes basic document and visit checks.",
+              "stat": "01"
+            },
+            {
+              "title": "Local advisors",
+              "desc": "Neighborhood guidance helps buyers compare price, location, and lifestyle.",
+              "stat": "02"
+            },
+            {
+              "title": "Simple visits",
+              "desc": "Site visits and follow-ups are handled with clear next steps.",
+              "stat": "03"
+            }
+          ]
+        },
+        "WhyChooseUs-4": {
+          "pretitle": "Why choose PrimeHomes",
+          "title": "Property decisions with clearer proof.",
+          "desc": "Help buyers compare real options, verified documents, and guided site visits.",
+          "whyChooseUsItems": [
+            {
+              "title": "Verified listings",
+              "desc": "Every featured property includes basic document and visit checks.",
+              "stat": "01"
+            },
+            {
+              "title": "Local advisors",
+              "desc": "Neighborhood guidance helps buyers compare price, location, and lifestyle.",
+              "stat": "02"
+            },
+            {
+              "title": "Simple visits",
+              "desc": "Site visits and follow-ups are handled with clear next steps.",
+              "stat": "03"
+            }
+          ]
+        }
+      },
+      "id": "WhyChooseUs"
+    },
+    {
+      "type": "Gallery",
+      "variant": "Gallery-4",
+      "data": {
+        "Gallery-1": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        },
+        "Gallery-2": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        },
+        "Gallery-3": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        },
+        "Gallery-4": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        },
+        "Gallery-5": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        },
+        "Gallery-6": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        }
+      },
+      "id": "Gallery"
+    },
+    {
+      "type": "FormDetail",
+      "variant": "FormDetail-4",
+      "data": {
+        "FormDetail-1": {
+          "pretitle": "Book a visit",
+          "title": "Tell us what kind of home you need.",
+          "desc": "Share your budget, location, and timeline so an advisor can respond.",
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Property enquiry visual",
+          "formSubmitLabel": "Request property help",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Requirement",
+              "type": "textarea",
+              "placeholder": "Location, budget, property type"
+            }
+          ]
+        },
+        "FormDetail-2": {
+          "pretitle": "Book a visit",
+          "title": "Tell us what kind of home you need.",
+          "desc": "Share your budget, location, and timeline so an advisor can respond.",
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Property enquiry visual",
+          "formSubmitLabel": "Request property help",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Requirement",
+              "type": "textarea",
+              "placeholder": "Location, budget, property type"
+            }
+          ]
+        },
+        "FormDetail-3": {
+          "pretitle": "Book a visit",
+          "title": "Tell us what kind of home you need.",
+          "desc": "Share your budget, location, and timeline so an advisor can respond.",
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Property enquiry visual",
+          "formSubmitLabel": "Request property help",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Requirement",
+              "type": "textarea",
+              "placeholder": "Location, budget, property type"
+            }
+          ]
+        },
+        "FormDetail-4": {
+          "pretitle": "Book a visit",
+          "title": "Tell us what kind of home you need.",
+          "desc": "Share your budget, location, and timeline so an advisor can respond.",
+          "backgroundImage": "/categories/realestate/bg1.jpg",
+          "backgroundImageTitle": "Property enquiry visual",
+          "formSubmitLabel": "Request property help",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Requirement",
+              "type": "textarea",
+              "placeholder": "Location, budget, property type"
+            }
+          ]
+        }
+      },
+      "id": "FormDetail"
+    },
+    {
+      "type": "FAQ",
+      "variant": "FAQ-4",
+      "data": {
+        "FAQ-1": {
+          "pretitle": "Property FAQ",
+          "title": "Questions buyers often ask.",
+          "faqItems": [
+            {
+              "question": "Can I book a site visit?",
+              "answer": "Yes, share your preferred date and our advisor will coordinate the visit."
+            },
+            {
+              "question": "Are documents verified?",
+              "answer": "Featured listings include basic ownership and documentation checks."
+            },
+            {
+              "question": "Do you help with loans?",
+              "answer": "Loan and legal support can be coordinated after property shortlisting."
+            }
+          ]
+        },
+        "FAQ-2": {
+          "pretitle": "Property FAQ",
+          "title": "Questions buyers often ask.",
+          "faqItems": [
+            {
+              "question": "Can I book a site visit?",
+              "answer": "Yes, share your preferred date and our advisor will coordinate the visit."
+            },
+            {
+              "question": "Are documents verified?",
+              "answer": "Featured listings include basic ownership and documentation checks."
+            },
+            {
+              "question": "Do you help with loans?",
+              "answer": "Loan and legal support can be coordinated after property shortlisting."
+            }
+          ]
+        },
+        "FAQ-3": {
+          "pretitle": "Property FAQ",
+          "title": "Questions buyers often ask.",
+          "faqItems": [
+            {
+              "question": "Can I book a site visit?",
+              "answer": "Yes, share your preferred date and our advisor will coordinate the visit."
+            },
+            {
+              "question": "Are documents verified?",
+              "answer": "Featured listings include basic ownership and documentation checks."
+            },
+            {
+              "question": "Do you help with loans?",
+              "answer": "Loan and legal support can be coordinated after property shortlisting."
+            }
+          ]
+        },
+        "FAQ-4": {
+          "pretitle": "Property FAQ",
+          "title": "Questions buyers often ask.",
+          "faqItems": [
+            {
+              "question": "Can I book a site visit?",
+              "answer": "Yes, share your preferred date and our advisor will coordinate the visit."
+            },
+            {
+              "question": "Are documents verified?",
+              "answer": "Featured listings include basic ownership and documentation checks."
+            },
+            {
+              "question": "Do you help with loans?",
+              "answer": "Loan and legal support can be coordinated after property shortlisting."
+            }
+          ]
+        }
+      },
+      "id": "FAQ"
+    },
+    {
+      "type": "Testimonial",
+      "variant": "Testimonial-1",
+      "data": {
+        "Testimonial-1": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-2": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        },
+        "Testimonial-3": {
+          "pretitle": "Our clients",
+          "title": "Trusted by people who care about results.",
+          "desc": "Use real customer feedback to build trust with new visitors.",
+          "testimonialItems": [
+            {
+              "name": "Aarav Mehta",
+              "role": "Founder, Studio North",
+              "quote": "The site made our work easier to understand and brought in better leads within the first week.",
+              "image": "/bg1.jpg",
+              "rating": "5.0"
+            },
+            {
+              "name": "Neha Kapoor",
+              "role": "Marketing Lead",
+              "quote": "Clean sections, fast pages, and the editor keeps the content simple for our whole team.",
+              "image": "/bg2.jpg",
+              "rating": "4.9"
+            },
+            {
+              "name": "Rahul Verma",
+              "role": "Operations Head",
+              "quote": "We finally have a website that looks premium and still feels practical to update.",
+              "image": "/blackbay.png",
+              "rating": "5.0"
+            },
+            {
+              "name": "Isha Malhotra",
+              "role": "Creative Director",
+              "quote": "The layouts gave our brand a sharper story and made every service easier to browse.",
+              "image": "/shaye.png",
+              "rating": "4.8"
+            },
+            {
+              "name": "Kabir Anand",
+              "role": "Product Manager",
+              "quote": "We could test different sections quickly without losing the polished look of the page.",
+              "image": "/stylam.png",
+              "rating": "4.7"
+            },
+            {
+              "name": "Sara Khan",
+              "role": "Business Owner",
+              "quote": "Visitors understand what we offer faster, and enquiries feel more relevant now.",
+              "image": "/prod2.jpg",
+              "rating": "5.0"
+            }
+          ]
+        }
+      },
+      "id": "Testimonial"
+    },
+    {
+      "id": "AboutPage",
+      "page": "about",
+      "type": "About",
+      "variant": "AboutPage-1",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        },
+        "AboutPage-2": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        },
+        "AboutPage-3": {
+          "pretitle": "About us",
+          "title": "We build thoughtful websites for growing brands.",
+          "desc": "Our team combines strategy, design, and technology to create digital experiences that explain your business clearly and help visitors take action.",
+          "desc2": "From the first idea to the final launch, we focus on useful content, clean layouts, and flexible sections that your team can keep improving over time.",
+          "subtitle": "Our approach",
+          "sideImage": "/bg1.jpg",
+          "sideImageTitle": "About page team image",
+          "philosophyTitle": "Clear thinking, careful execution.",
+          "philosophyDesc": "We start by understanding the business, the audience, and the decisions visitors need to make. Then we shape pages around strong messaging, useful sections, and simple editing workflows."
+        }
+      }
+    },
+    {
+      "id": "ServicePage",
+      "page": "service",
+      "type": "Service",
+      "variant": "ServicePage-1",
+      "data": {
+        "ServicePage-1": {
+          "pretitle": "Services",
+          "title": "Helpful services built around your next step.",
+          "desc": "Use this page to explain the core services, support, and outcomes your team provides for every visitor.",
+          "desc2": "Each service card can be edited from the same JSON-backed editor, including text, images, and supporting details.",
+          "subtitle": "What we provide",
+          "productSectionTitle": "Core service options",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Service page image",
+          "serviceSlides": [
+            {
+              "image": "/bg1.jpg",
+              "alt": "Planning service",
+              "productTitle": "Planning",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Planning",
+              "productInfoDesc": "Clarify goals, audience needs, and the right structure before visitors take action.",
+              "productFeatures": [
+                {
+                  "label": "Strategy",
+                  "price": "01"
+                },
+                {
+                  "label": "Content",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/bg2.jpg",
+              "alt": "Execution service",
+              "productTitle": "Execution",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Execution",
+              "productInfoDesc": "Present offers, proof, and conversion paths through clean editable sections.",
+              "productFeatures": [
+                {
+                  "label": "Design",
+                  "price": "01"
+                },
+                {
+                  "label": "Build",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/blackbay.png",
+              "alt": "Support service",
+              "productTitle": "Support",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Support",
+              "productInfoDesc": "Keep enquiries, updates, and follow-up simple for both visitors and your team.",
+              "productFeatures": [
+                {
+                  "label": "Follow up",
+                  "price": "01"
+                },
+                {
+                  "label": "Updates",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            },
+            {
+              "image": "/shaye.png",
+              "alt": "Growth service",
+              "productTitle": "Growth",
+              "productSubtitle": "Service",
+              "productInfoTitle": "Growth",
+              "productInfoDesc": "Improve page content and calls to action as new visitor needs become clear.",
+              "productFeatures": [
+                {
+                  "label": "Review",
+                  "price": "01"
+                },
+                {
+                  "label": "Improve",
+                  "price": "02"
+                }
+              ],
+              "productTotalPrice": "Service",
+              "productShippingText": "Editable"
+            }
+          ],
+          "productItems": [
+            {
+              "title": "Planning",
+              "category": "Service",
+              "desc": "Clarify goals, audience needs, and the right structure before visitors take action.",
+              "image": "/bg1.jpg",
+              "alt": "Planning service"
+            },
+            {
+              "title": "Execution",
+              "category": "Service",
+              "desc": "Present offers, proof, and conversion paths through clean editable sections.",
+              "image": "/bg2.jpg",
+              "alt": "Execution service"
+            },
+            {
+              "title": "Support",
+              "category": "Service",
+              "desc": "Keep enquiries, updates, and follow-up simple for both visitors and your team.",
+              "image": "/blackbay.png",
+              "alt": "Support service"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GalleryPage",
+      "page": "gallery",
+      "type": "Gallery",
+      "variant": "GalleryPage-1",
+      "data": {
+        "GalleryPage-1": {
+          "pretitle": "Property gallery",
+          "title": "Homes, interiors, and location views.",
+          "desc": "Show category-specific property visuals in every gallery layout.",
+          "galleryItems": [
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Premium apartment",
+              "title": "Apartment view"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Luxury residence",
+              "title": "Residence exterior"
+            },
+            {
+              "image": "/categories/realestate/bg1.jpg",
+              "alt": "Modern home",
+              "title": "Living space"
+            },
+            {
+              "image": "/categories/realestate/bg2.jpg",
+              "alt": "Property detail",
+              "title": "Premium detail"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ContactPage",
+      "page": "contact",
+      "type": "Contact",
+      "variant": "ContactPage-1",
+      "data": {
+        "ContactPage-1": {
+          "pretitle": "Contact us",
+          "title": "Start a clear conversation with our team.",
+          "desc": "Share a few details and our team will help you choose the right next step with simple, practical guidance.",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Contact page image",
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "formSubmitLabel": "Send message",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "placeholder": "you@example.com"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Message",
+              "type": "textarea",
+              "placeholder": "Tell us what you need"
+            }
+          ]
+        },
+        "ContactPage-2": {
+          "pretitle": "Contact us",
+          "title": "Start a clear conversation with our team.",
+          "desc": "Share a few details and our team will help you choose the right next step with simple, practical guidance.",
+          "sideImage": "/bg2.jpg",
+          "sideImageTitle": "Contact page image",
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "formSubmitLabel": "Send message",
+          "formFields": [
+            {
+              "label": "Name",
+              "type": "text",
+              "placeholder": "Your name"
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "placeholder": "you@example.com"
+            },
+            {
+              "label": "Phone",
+              "type": "tel",
+              "placeholder": "Your phone number"
+            },
+            {
+              "label": "Message",
+              "type": "textarea",
+              "placeholder": "Tell us what you need"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "CustomPage-gurgaon-east",
+      "page": "gurgaon-east",
+      "type": "About",
+      "variant": "AboutPage-2",
+      "data": {
+        "AboutPage-1": {
+          "pretitle": "Demo content",
+          "title": "Gurgaon east",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/categories/realestate/bg1.jpg",
+          "sideImageTitle": "Luxury residence interior"
+        },
+        "AboutPage-2": {
+          "pretitle": "Demo content",
+          "title": "Gurgaon east",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/categories/realestate/bg1.jpg",
+          "sideImageTitle": "Luxury residence interior"
+        },
+        "AboutPage-3": {
+          "pretitle": "Demo content",
+          "title": "Gurgaon east",
+          "desc": "This demo paragraph is loaded from the same JSON content source as the rest of the template. Replace it with the message, offer, or story this page should explain.",
+          "desc2": "Use this section as a simple starting point with a small pretitle, clear heading, useful paragraph, and supporting image.",
+          "sideImage": "/categories/realestate/bg1.jpg",
+          "sideImageTitle": "Luxury residence interior"
+        }
+      }
+    },
+    {
+      "type": "Footer",
+      "variant": "Footer-1",
+      "data": {
+        "Footer-1": {
+          "logoImage": "/etacard.png",
+          "logoImageTitle": "ETA Card logo",
+          "desc": "Editable website content powered by one category and template JSON file.",
+          "footerColumns": [
+            {
+              "title": "Pages",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "#"
+                },
+                {
+                  "label": "About",
+                  "href": "#about"
+                },
+                {
+                  "label": "Service",
+                  "href": "#service"
+                },
+                {
+                  "label": "Gallery",
+                  "href": "#gallery"
+                },
+                {
+                  "label": "Contact",
+                  "href": "#contact"
+                }
+              ]
+            },
+            {
+              "title": "Sections",
+              "links": [
+                {
+                  "label": "Listings",
+                  "href": "#"
+                },
+                {
+                  "label": "Services",
+                  "href": "#"
+                },
+                {
+                  "label": "Programs",
+                  "href": "#"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "#faq"
+                }
+              ]
+            }
+          ],
+          "footerContact": {
+            "location": "India",
+            "email": "hello@example.com",
+            "phone": "+91 98765 43210"
+          },
+          "footerLegalLinks": [
+            {
+              "label": "Privacy Policy",
+              "href": "#privacy"
+            },
+            {
+              "label": "Terms",
+              "href": "#terms"
+            }
+          ],
+          "whatsappLink": "https://api.whatsapp.com/send?phone=962786336414",
+          "callLink": "tel:+919876543210",
+          "copyrightText": "Copyright 2026. All rights reserved."
+        }
+      },
+      "id": "Footer"
+    }
+  ],
+  "templateVariables": {
+    "--header-bg": "#1f2937",
+    "--header-text": "#ffffff",
+    "--hero-bg": "#111827",
+    "--hero-title": "#ffffff",
+    "--primary-link-bg": "#facc15",
+    "--primary-link-color": "#111827",
+    "--blue-bg": "#1d4ed8",
+    "--lightcream-bg": "#fff7ed"
+  },
+  "publishedAt": "2026-07-11T11:21:26.358Z"
+}

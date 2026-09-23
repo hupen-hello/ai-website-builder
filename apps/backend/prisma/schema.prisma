@@ -1,0 +1,300 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Admin panel accounts (separate from future end-users)
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  phone        String?
+  location     String?
+  state        String?
+  zip          String?
+  avatarUrl    String?
+  lastSeenAt   DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  order       Int      @default(1)
+  name        String
+  slug        String   @unique
+  icon        String?
+  description String?
+  status      String   @default("Active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+/// Design variants from frontend sectionRegistry (shared across categories)
+model Layout {
+  id            String   @id @default(cuid())
+  /// Registry key, e.g. "Header-1" — matches section.variant in frontend
+  key           String   @unique
+  name          String
+  /// e.g. Header, Banner, AboutPage
+  sectionType   String
+  sectionNumber Int      @default(1)
+  /// Null means shared across every category; otherwise matches Category.slug
+  categorySlug  String?
+  /// "home" | "page"
+  scope         String   @default("home")
+  order         Int      @default(1)
+  status        String   @default("Active")
+  thumbnailUrl  String?
+  description   String?
+  /// Default editable content bag for category-content (auto-synced on create)
+  defaultContent Json?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([sectionType, order])
+  @@index([categorySlug])
+}
+
+/// Structure templates (sectionVariants + theme variables)
+model Template {
+  id                 String   @id @default(cuid())
+  /// Stable key matching frontend, e.g. "template-1"
+  key                String   @unique
+  numericId          Int      @unique
+  title              String
+  /// "Single Page Website" | "Multiple Pages Website"
+  type               String
+  image              String?
+  previewImage       String?
+  previewDescription String?
+  prebuiltPages      Int      @default(0)
+  /// Multi-page list: [{ id, label, sectionType }] — Home is always implied
+  pages             Json?
+  /// Optional explicit home canvas order (template-1 style)
+  homeSectionOrder   Json?
+  /// { "Header": "Header-1", "Banner": "Banner-1", ... }
+  sectionVariants    Json
+  /// CSS custom properties map
+  variables          Json?
+  order              Int      @default(1)
+  status             String   @default("Active")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+/// Shared default section copy (categoryContent.json → common)
+model SharedContent {
+  id        String   @id @default(cuid())
+  key       String   @unique @default("common")
+  sections  Json
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+/// Per-category content overrides + which templates apply
+model CategoryContent {
+  id           String   @id @default(cuid())
+  /// Matches Category.slug (business, realestate, school)
+  categorySlug String   @unique
+  categoryName String
+  /// ["template-1", "template-2", ...]
+  templateKeys Json
+  /// Section content map: { Header: {...}, Banner: {...}, ... }
+  sections     Json
+  status       String   @default("Active")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// End-user accounts (website builder customers)
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  avatarUrl    String?
+  gender       String?
+  birthday     String?
+  phone        String?
+  nationality  String?
+  location     String?
+  address      String?
+  /// null for Google/Apple-only accounts
+  passwordHash String?
+  /// local | google | apple
+  authProvider String  @default("local")
+  providerId   String?
+  status       String   @default("Active")
+  siteSubscriptions Json?
+  purchasedAddons   Json?
+  purchasedDomains  Json?
+  domainConnections Json?
+  /// Razorpay customer id for this app user (not shared by email alone)
+  razorpayCustomerId String?
+  /// Token ids this user saved — used so shared Razorpay email customers don't leak cards
+  razorpayTokenIds   Json?
+  sites        Site[]
+  createAiDesigns CreateAiDesign[]
+  supportTickets SupportTicket[]
+  notifications Notification[]
+  lastSeenAt   DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([authProvider, providerId])
+  @@index([providerId])
+}
+
+/// Billing / account support messages from end-users to admins
+model SupportTicket {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// e.g. billing
+  category  String   @default("billing")
+  topic     String
+  message   String
+  /// open | in_progress | resolved | closed
+  status    String   @default("open")
+  userName  String?
+  userEmail String?
+  replies   SupportTicketReply[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category, status, createdAt(sort: Desc)])
+  @@index([userId, createdAt(sort: Desc)])
+}
+
+/// Thread replies on a support ticket (admin ↔ user)
+model SupportTicketReply {
+  id         String        @id @default(cuid())
+  ticketId   String
+  ticket     SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  /// admin | user
+  authorRole String
+  body       String
+  /// [{ name, url, size, mimeType }]
+  attachments Json?
+  /// When the other party has seen this reply
+  readAt     DateTime?
+  createdAt  DateTime      @default(now())
+
+  @@index([ticketId, createdAt])
+  @@index([ticketId, readAt])
+}
+
+/// Published / builder sites owned by end-users
+model Site {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  status      String    @default("draft")
+  templateId  String
+  category    String
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  config      Json?
+  ownerId     String
+  owner       User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  leads       SiteLead[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([ownerId])
+}
+
+/// Create-with-AI designs — metadata + payload/site JSON so My Websites → Edit can resume
+model CreateAiDesign {
+  id           String   @id @default(cuid())
+  /// Client design id e.g. ca_…
+  designKey    String   @unique
+  ownerId      String
+  owner        User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  title        String?
+  brandName    String?
+  category     String?
+  pageType     String?
+  pageCount    Int      @default(1)
+  pageLabels   Json?
+  /// Onboarding payload (brand, contact, prefs) for resume
+  payload      Json?
+  /// Generated pages HTML for resume (Edit must not re-generate)
+  site         Json?
+  /// Studio chat history (logged-in sync; guests keep localStorage)
+  chat         Json?
+  status       String   @default("draft")
+  lastSyncedAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([ownerId, updatedAt(sort: Desc)])
+  @@index([status])
+}
+
+model SiteLead {
+  id          String   @id @default(cuid())
+  siteId      String
+  site        Site     @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  siteTitle   String
+  siteSlug    String
+  formName    String
+  formSection String
+  formPage    String?
+  fields      Json
+  createdAt   DateTime @default(now())
+
+  @@index([siteId, createdAt(sort: Desc)])
+}
+
+/// App-wide SMTP mail settings (singleton row managed by admin)
+model SmtpSetting {
+  id        String   @id @default(cuid())
+  host      String
+  port      Int      @default(587)
+  secure    Boolean  @default(false)
+  username  String
+  password  String
+  fromEmail String
+  fromName  String?
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Inbox email where admin receives system alerts (billing support, etc.)
+model AdminMailSetting {
+  id        String   @id @default(cuid())
+  email     String
+  name      String?
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// In-app notifications for admin panel and end-users
+model Notification {
+  id        String    @id @default(cuid())
+  /// admin | user
+  audience  String
+  /// Required when audience = user
+  userId    String?
+  user      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  body      String
+  /// billing_support | ticket_status | system
+  type      String    @default("system")
+  href      String?
+  readAt    DateTime?
+  meta      Json?
+  createdAt DateTime  @default(now())
+
+  @@index([audience, createdAt(sort: Desc)])
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([audience, readAt])
+}

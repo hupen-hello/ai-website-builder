@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <path fill="#171225" stroke="#c84e45" stroke-width="2" d="M40 7l28 16v34L40 73 12 57V23z"/>
+  <path fill="none" stroke="#fff" stroke-opacity=".45" d="M40 12l23 13v29L40 67 17 54V25z"/>
+  <text x="40" y="31" text-anchor="middle" fill="#fff" font-family="Arial" font-size="6">Software</text>
+  <text x="40" y="43" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10" font-weight="700">FRONT</text>
+  <text x="40" y="52" text-anchor="middle" fill="#fff" font-family="Arial" font-size="8" font-weight="700">RUNNERS</text>
+</svg>

@@ -1,0 +1,32 @@
+/* Scoped to /redesign routes only (imported from redesign/layout.tsx).
+   Do not put these rules in app/globals.css — keeps editor/published CSS untouched. */
+
+.redesign-root .redesign-build-shell {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1.5rem;
+  min-height: 0;
+}
+
+.redesign-root .redesign-build-sidebar,
+.redesign-root .redesign-build-preview {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+@media (max-width: 899px) {
+  .redesign-root .redesign-build-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 42%) minmax(240px, 1fr);
+    gap: 1rem;
+  }
+}
+
+.redesign-root .redesign-success-modal {
+  width: 100% !important;
+  max-width: 480px !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box;
+}

@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(16px, calc(10px + 0.4167vw), 18px);
+}
+
+body {
+  min-width: 320px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes editorFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes editorPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-editor-fade {
+  animation: editorFadeIn 220ms ease-out both;
+}
+
+.animate-editor-pop {
+  animation: editorPopIn 240ms ease-out both;
+}
+
+.editor-smooth-surface section,
+.editor-smooth-surface [contenteditable="true"],
+.editor-smooth-surface a,
+.editor-smooth-surface button,
+.editor-smooth-surface img,
+.editor-smooth-surface video {
+  transition-duration: 240ms;
+  transition-property:
+    background-color, border-color, color, opacity, box-shadow, transform,
+    filter;
+  transition-timing-function: ease;
+}
+
+.font-agrandir-bolt {
+  font-family: var(--font-agrandir-bolt), sans-serif;
+}
+
+@keyframes onboardingSwap {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-onboarding-swap {
+  animation: onboardingSwap 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (max-width: 1023px) {
+  .onboarding-responsive-scroll {
+    scrollbar-color: rgba(49, 95, 244, 0.42) transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .onboarding-responsive-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .onboarding-responsive-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .onboarding-responsive-scroll::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: rgba(49, 95, 244, 0.42);
+  }
+}
