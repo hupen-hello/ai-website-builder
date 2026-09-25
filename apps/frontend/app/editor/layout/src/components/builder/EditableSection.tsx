@@ -52,7 +52,7 @@ import {
   resolveLayoutPreview,
   type BuilderLayout,
 } from "../../data/templateFlow";
-import { sectionRegistry, resolveSectionComponent } from "../../lib/sectionRegistry";
+import { resolveSectionComponent } from "../../lib/sectionRegistry";
 import {
   applyInlineTextFormats,
   EDITOR_EMPTY_TEXT_VALUE,
@@ -4054,7 +4054,7 @@ function AddComponentCard({
     [],
   );
   const PreviewComponent = shouldLoadPreview
-    ? resolveSectionComponent(layout.key)
+    ? resolveSectionComponent(layout.key, category)
     : undefined;
   const preview = useMemo(
     () =>

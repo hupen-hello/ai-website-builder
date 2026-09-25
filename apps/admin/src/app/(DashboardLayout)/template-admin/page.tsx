@@ -21,6 +21,9 @@ const HOME_SECTIONS = [
   "Product",
   "WhyChooseUs",
   "FeaturedDev",
+  "FeaturedDevelopers",
+  "PropertySearch",
+  "PropertyGrid",
   "Process",
   "Gallery",
   "FormDetail",
@@ -30,6 +33,9 @@ const HOME_SECTIONS = [
   "FAQ",
   "Testimonial",
   "Contact",
+  "CtaBanner",
+  "Team",
+  "MissionVision",
   "InvestmentOpportunities",
   "Footer",
 ];
@@ -45,11 +51,13 @@ const PAGE_SECTIONS = [
   "ContactPage",
   "AwardsPage",
   "MissionPage",
+  "VisionPage",
   "CsrPage",
   "CareerPage",
   "RentPage",
   "BuyPropertyPage",
   "BlogPage",
+  "BlogDetail",
   "SitemapPage",
   "PrivacyPage",
   "TermsPage",
@@ -57,6 +65,29 @@ const PAGE_SECTIONS = [
   "CookiePolicyPage",
   "RefundPolicyPage",
   "CustomPage",
+  "TestimonialPage",
+  "PartnerPage",
+  "TeamDetail",
+  "CareerJobs",
+  "CareerCta",
+  "CareerApplication",
+  "EnquiryPage",
+  "BrochurePage",
+  "QuotePage",
+  "CsrPrograms",
+  "CsrCta",
+  "ContactMap",
+  "ContactFeatures",
+  "PricingPage",
+  "PricingTable",
+  "PricingHelp",
+  "FaqPage",
+  "IndustriesPage",
+  "WhyPartner",
+  "IndustryDetail",
+  "PropertyDetail",
+  "ProjectDetail",
+  "PageBanner",
 ];
 
 const PAGE_BODIES_WITH_OWN_BREADCRUMB = new Set([
@@ -122,6 +153,9 @@ const SECTION_ORDER = [
   "Product",
   "WhyChooseUs",
   "FeaturedDev",
+  "FeaturedDevelopers",
+  "PropertySearch",
+  "PropertyGrid",
   "Process",
   "Gallery",
   "FormDetail",
@@ -131,6 +165,9 @@ const SECTION_ORDER = [
   "FAQ",
   "Testimonial",
   "Contact",
+  "CtaBanner",
+  "Team",
+  "MissionVision",
   "InvestmentOpportunities",
   "CountriesServe",
   ...PAGE_SECTIONS,
@@ -283,6 +320,30 @@ const SECTION_TYPE_LABELS: Record<string, string> = {
   Breadcrumb: "Breadcrumb",
   WhyChooseUs: "Why Choose Us",
   FormDetail: "Form Detail",
+  PropertySearch: "Property Search",
+  PropertyGrid: "Property Grid",
+  FeaturedDevelopers: "Featured Developers",
+  CtaBanner: "CTA Banner",
+  MissionVision: "Mission & Vision",
+  PageBanner: "Page Banner",
+  BlogDetail: "Blog Detail",
+  VisionPage: "Vision Page",
+  TestimonialPage: "Testimonials Page",
+  PartnerPage: "Partners Page",
+  TeamDetail: "Team Detail",
+  CareerJobs: "Career Jobs",
+  CareerCta: "Career CTA",
+  EnquiryPage: "Enquiry Page",
+  BrochurePage: "Brochure Page",
+  QuotePage: "Quote Page",
+  PricingPage: "Pricing Page",
+  PricingTable: "Pricing Table",
+  PricingHelp: "Pricing Help",
+  FaqPage: "FAQ Page",
+  IndustriesPage: "Industries Page",
+  WhyPartner: "Why Partner",
+  PropertyDetail: "Property Detail",
+  ProjectDetail: "Project Detail",
 };
 
 function sectionTypeLabel(type: string) {
@@ -309,8 +370,8 @@ function fallbackPageLayouts(sectionType: string): LayoutRow[] {
     sectionType === "CustomPage"
       ? [1, 2, 3, 4, 5]
       : DISTINCT_VARIANT_6.has(sectionType)
-        ? [5, 6]
-        : [5];
+        ? [4, 5, 6]
+        : [4, 5];
   return numbers.map((n) => {
     const key = `${sectionType}-${n}`;
     return {
@@ -353,15 +414,30 @@ function uniqueSectionLayouts(
   return list.sort((a, b) => a.key.localeCompare(b.key));
 }
 
-function preferredLayoutKey(sectionType: string, options: LayoutRow[]) {
+function preferredLayoutKey(
+  sectionType: string,
+  options: LayoutRow[],
+  templateNumericId?: number,
+) {
   if (sectionType === "CustomPage") {
+    const customN = templateNumericId
+      ? options.find((row) => row.key === `CustomPage-${templateNumericId}`)
+      : null;
     return (
+      customN?.key ||
       options.find((row) => row.key === "CustomPage-1")?.key ||
       options[0]?.key ||
       ""
     );
   }
+  const byTemplate =
+    templateNumericId != null && templateNumericId > 0
+      ? options.find(
+          (row) => row.key === `${sectionType}-${templateNumericId}`,
+        )
+      : undefined;
   return (
+    byTemplate?.key ||
     options.find((row) => row.key === `${sectionType}-5`)?.key ||
     options[0]?.key ||
     ""
@@ -982,7 +1058,11 @@ const TemplatesPage = () => {
       ]);
       const current = builderData.sectionVariants[sectionType];
       if (current && options.some((row) => row.key === current)) continue;
-      const next = preferredLayoutKey(sectionType, options);
+      const next = preferredLayoutKey(
+        sectionType,
+        options,
+        builderData.numericId,
+      );
       if (next) patch[sectionType] = next;
     }
     if (!Object.keys(patch).length) return;
@@ -1242,7 +1322,11 @@ const TemplatesPage = () => {
       validSaved ||
       (pinnedSectionTypes.includes(page.sectionType)
         ? ""
-        : preferredLayoutKey(page.sectionType, pageOptions));
+        : preferredLayoutKey(
+            page.sectionType,
+            pageOptions,
+            builderData.numericId,
+          ));
     if (!pageLayout) return null;
 
     const url = buildComposeUrl(

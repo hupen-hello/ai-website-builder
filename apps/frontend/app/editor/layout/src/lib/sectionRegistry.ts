@@ -124,6 +124,66 @@ import RealEstateCustomPage1, {
   RealEstateCustomPage5,
 } from "../components/sections/custom/RealEstateCustomPage1";
 
+import RealEstateHeader4 from "../components/sections/header/RealEstateHeader4";
+import RealEstateBanner4 from "../components/sections/banner/RealEstateBanner4";
+import RealEstateAbout4 from "../components/sections/about/RealEstateAbout4";
+import RealEstateAboutPage4 from "../components/sections/about/RealEstateAboutPage4";
+import RealEstateFooter4 from "../components/sections/footer/RealEstateFooter4";
+import RealEstateBreadCrumb4 from "../components/sections/breadcrumb/RealEstateBreadCrumb4";
+import RealEstateFeatures4 from "../components/sections/features/RealEstateFeatures4";
+import RealEstateFeaturedDevelopers4 from "../components/sections/featured/RealEstateFeaturedDevelopers4";
+import RealEstateTestimonial4 from "../components/sections/testimonial/RealEstateTestimonial4";
+import RealEstateTestimonialPage4 from "../components/sections/testimonial/RealEstateTestimonialPage4";
+import RealEstatePropertySearch1 from "../components/sections/property-search/PropertySearch1";
+import RealEstatePropertyGrid1 from "../components/sections/property-grid/PropertyGrid1";
+import RealEstateCtaBanner from "../components/sections/csr/RealEstateCtaBanner";
+import RealEstateCSRImpactSection3 from "../components/sections/csr/RealEstateCSRImpactSection3";
+import RealEstateCSRPrograms3 from "../components/sections/csr/RealEstateCSRPrograms3";
+import RealEstateCSRCTA3 from "../components/sections/csr/RealEstateCSRCTA3";
+import RealEstatePropertyCatalog3 from "../components/sections/buy-a-property/RealEstatePropertyCatalog3";
+import RealEstateProjectCatalog3 from "../components/sections/projects/RealEstateProjectCatalog3";
+import RealEstateStats3 from "../components/sections/stats/RealEstateStats3";
+import RealEstateAwardPage4 from "../components/sections/awards/RealEstateAwardPage4";
+import RealEstateBlogPage4 from "../components/sections/blog/RealEstateBlogPage4";
+import RealEstateBlogDetailPage4 from "../components/sections/blog/RealEstateBlogDetailPage4";
+import RealEstateCareerPage4 from "../components/sections/career/RealEstateCareerPage4";
+import RealEstateCareerJobs4 from "../components/sections/career/RealEstateCareerJobs4";
+import RealEstateCareerCta4 from "../components/sections/career/RealEstateCareerCta4";
+import RealEstateCareerApplicationPage4 from "../components/sections/career/RealEstateCareerApplicationPage4";
+import RealEstateEnquiryPage4 from "../components/sections/enquiry/RealEstateEnquiryPage4";
+import RealEstateBrochurePage4 from "../components/sections/brochure/RealEstateBrochurePage4";
+import RealEstateQuotePage4 from "../components/sections/quote/RealEstateQuotePage4";
+import RealEstateFormDetail4 from "../components/sections/formdetail/RealEstateFormDetail4";
+import RealEstateContactMap4 from "../components/sections/contact/RealEstateContactMap4";
+import RealEstateContactFeatures4 from "../components/sections/contact/RealEstateContactFeatures4";
+import RealEstateGalleryPage4 from "../components/sections/gallery/RealEstateGalleryPage4";
+import RealEstatePartnerPage4 from "../components/sections/partner/RealEstatePartnerPage4";
+import RealEstateTeam4 from "../components/sections/team/RealEstateTeam4";
+import RealEstateTeamPage4 from "../components/sections/team/RealEstateTeamPage4";
+import RealEstateTeamDetailPage4 from "../components/sections/team/RealEstateTeamDetailPage4";
+import RealEstateMission4 from "../components/sections/mission-vision/RealEstateMission4";
+import RealEstateMissionPage4 from "../components/sections/mission-vision/RealEstateMissionPage4";
+import RealEstateMissionVision4 from "../components/sections/mission-vision/RealEstateMissionVision4";
+import RealEstateVision4 from "../components/sections/mission-vision/RealEstateVision4";
+import RealEstateVisionPage4 from "../components/sections/mission-vision/RealEstateVisionPage4";
+import RealEstateServicePage4 from "../components/sections/service/RealEstateServicePage4";
+import RealEstatePricingPage4 from "../components/sections/pricing/RealEstatePricingPage4";
+import RealEstatePricingTable4 from "../components/sections/pricing/RealEstatePricingTable4";
+import RealEstatePricingHelpBanner4 from "../components/sections/pricing/RealEstatePricingHelpBanner4";
+import RealEstateFaqPage4 from "../components/sections/faq/RealEstateFaqPage4";
+import RealEstateIndustriesPage4 from "../components/sections/industries/RealEstateIndustriesPage4";
+import RealEstateIndustryDetailPage4 from "../components/sections/industries/RealEstateIndustryDetailPage4";
+import RealEstateWhyPartner4 from "../components/sections/industries/RealEstateWhyPartner4";
+import RealEstateSitemapPage4 from "../components/sections/sitemap/RealEstateSitemapPage4";
+import RealEstatePropertyDetailPage4 from "../components/sections/property-detail/RealEstatePropertyDetailPage4";
+import {
+  RealEstateCookiePage4,
+  RealEstateDisclaimerPage4,
+  RealEstatePrivacyPage4,
+  RealEstateRefundPage4,
+  RealEstateTermsPage4,
+} from "../components/sections/legal/RealEstateLegalPages4";
+
 import { SectionProps } from "../types/section";
 
 /**
@@ -399,11 +459,145 @@ export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   RealEstateProcess1,
   RealEstateCTA1,
   RealEstateInvestmentOpportunities1,
+
+  RealEstateHeader4,
+  RealEstateBanner4,
+  RealEstateAbout4,
+  RealEstateAboutPage4,
+  RealEstateFooter4,
+  RealEstateBreadCrumb4,
+  RealEstateFeatures4,
+  RealEstateFeaturedDevelopers4,
+  RealEstateTestimonial4,
+  RealEstateTestimonialPage4,
+  RealEstatePropertySearch1,
+  RealEstatePropertyGrid1,
+  RealEstateCtaBanner,
+  RealEstateCtaBanner1: RealEstateCtaBanner,
+  RealEstateCSRImpactSection1: RealEstateCSRImpactSection3,
+  RealEstateCSRImpactSection3,
+  RealEstateCSRPrograms3,
+  RealEstateCSRCTA1: RealEstateCSRCTA3,
+  RealEstateCSRCTA3,
+  RealEstatePropertyCatalog1: RealEstatePropertyCatalog3,
+  RealEstatePropertyCatalog3,
+  RealEstateProjectCatalog1: RealEstateProjectCatalog3,
+  RealEstateProjectCatalog3,
+  RealEstateStats3,
+  RealEstateAwardPage4,
+  RealEstateBlogPage4,
+  RealEstateBlogDetailPage4,
+  RealEstateCareerPage4,
+  RealEstateCareerJobs4,
+  RealEstateCareerCta4,
+  RealEstateCareerApplicationPage4,
+  RealEstateEnquiryPage4,
+  RealEstateBrochurePage4,
+  RealEstateQuotePage4,
+  RealEstateFormDetail4,
+  RealEstateContactMap4,
+  RealEstateContactFeatures4,
+  RealEstateGalleryPage4,
+  RealEstatePartnerPage4,
+  RealEstateTeamPage4,
+  RealEstateTeamDetailPage4,
+  RealEstateMission4,
+  RealEstateMissionPage4,
+  RealEstateVision4,
+  RealEstateVisionPage4,
+  RealEstateServicePage4,
+  RealEstatePricingPage4,
+  RealEstatePricingTable4,
+  RealEstatePricingHelpBanner4,
+  RealEstateFaqPage4,
+  RealEstateIndustriesPage4,
+  RealEstateIndustryDetailPage4,
+  RealEstateWhyPartner4,
+  RealEstateSitemapPage4,
+  RealEstatePropertyDetailPage4,
+  RealEstateRentalListing1: RealEstateRent1,
+  RealEstateTermsPage4,
+  RealEstatePrivacyPage4,
+  RealEstateDisclaimerPage4,
+  RealEstateRefundPage4,
+  RealEstateCookiePage4,
+};
+
+/** Realestate template-4 skins. Global *-4 keys stay generic for Business/School. */
+const REALESTATE_VARIANT_4: Record<string, ComponentType<SectionProps>> = {
+  "Topbar-4": RealEstateTopbar1,
+  "Header-4": RealEstateHeader4,
+  "Banner-4": RealEstateBanner4,
+  "About-4": RealEstateAbout4,
+  "Features-4": RealEstateFeatures4,
+  "FeaturedDevelopers-4": RealEstateFeaturedDevelopers4,
+  "Testimonial-4": RealEstateTestimonial4,
+  "CtaBanner-4": RealEstateCtaBanner,
+  "Footer-4": RealEstateFooter4,
+  "Breadcrumb-4": RealEstateBreadCrumb4,
+  "PageBanner-4": RealEstateInnerBanner1,
+  "AboutPage-4": RealEstateAbout4,
+  "AwardsPage-4": RealEstateAwardPage4,
+  "BlogPage-4": RealEstateBlogPage4,
+  "BlogDetail-4": RealEstateBlogDetailPage4,
+  "PropertySearch-4": RealEstatePropertySearch1,
+  "PropertyGrid-4": RealEstatePropertyGrid1,
+  "PropertyPage-4": RealEstatePropertyGrid1,
+  "PropertyDetail-4": RealEstatePropertyDetailPage4,
+  "BuyPropertyPage-4": RealEstatePropertyCatalog3,
+  "CareerPage-4": RealEstateCareerPage4,
+  "CareerJobs-4": RealEstateCareerJobs4,
+  "CareerCta-4": RealEstateCareerCta4,
+  "CareerApplication-4": RealEstateCareerApplicationPage4,
+  "EnquiryPage-4": RealEstateEnquiryPage4,
+  "BrochurePage-4": RealEstateBrochurePage4,
+  "QuotePage-4": RealEstateQuotePage4,
+  "CsrPage-4": RealEstateCSRImpactSection3,
+  "CsrPrograms-4": RealEstateCSRPrograms3,
+  "CsrCta-4": RealEstateCSRCTA3,
+  "ContactPage-4": RealEstateFormDetail4,
+  "FormDetail-4": RealEstateFormDetail4,
+  "ContactMap-4": RealEstateContactMap4,
+  "ContactFeatures-4": RealEstateContactFeatures4,
+  "CookiePolicyPage-4": RealEstateCookiePage4,
+  "DisclaimerPage-4": RealEstateDisclaimerPage4,
+  "GalleryPage-4": RealEstateGalleryPage4,
+  "PartnerPage-4": RealEstatePartnerPage4,
+  "Team-4": RealEstateTeam4,
+  "TeamPage-4": RealEstateTeamPage4,
+  "TeamDetail-4": RealEstateTeamDetailPage4,
+  "Mission-4": RealEstateMission4,
+  "MissionPage-4": RealEstateMission4,
+  "MissionVision-4": RealEstateMissionVision4,
+  "Vision-4": RealEstateVision4,
+  "VisionPage-4": RealEstateVision4,
+  "TestimonialPage-4": RealEstateTestimonialPage4,
+  "PortfolioPage-4": RealEstateProjectCatalog3,
+  "ProjectDetail-4": RealEstateProjectDetail1,
+  "PrivacyPage-4": RealEstatePrivacyPage4,
+  "RefundPolicyPage-4": RealEstateRefundPage4,
+  "RentPage-4": RealEstateRent1,
+  "ServicePage-4": RealEstateServicePage4,
+  "PricingPage-4": RealEstatePricingPage4,
+  "PricingTable-4": RealEstatePricingTable4,
+  "PricingHelp-4": RealEstatePricingHelpBanner4,
+  "FaqPage-4": RealEstateFaqPage4,
+  "IndustriesPage-4": RealEstateIndustriesPage4,
+  "WhyPartner-4": RealEstateWhyPartner4,
+  "IndustryDetail-4": RealEstateIndustryDetailPage4,
+  "SitemapPage-4": RealEstateSitemapPage4,
+  "TermsPage-4": RealEstateTermsPage4,
+  "Stats-4": RealEstateStats3,
 };
 
 export function resolveSectionComponent(
   variantKey: string,
+  category?: string,
 ): ComponentType<SectionProps> | undefined {
+  const isRealestate = (category || "").trim().toLowerCase() === "realestate";
+  if (isRealestate && REALESTATE_VARIANT_4[variantKey]) {
+    return REALESTATE_VARIANT_4[variantKey];
+  }
   if (sectionRegistry[variantKey]) return sectionRegistry[variantKey];
   const lower = variantKey.toLowerCase();
   const matchKey = Object.keys(sectionRegistry).find(

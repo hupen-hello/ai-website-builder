@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from "react";
 import { useSearchParams } from "next/navigation";
-import { sectionRegistry } from "@/app/editor/layout/src/lib/sectionRegistry";
+import { resolveSectionComponent } from "@/app/editor/layout/src/lib/sectionRegistry";
 import {
   getTemplateVariables,
   refreshCategoryContentFromApi,
@@ -673,7 +673,7 @@ function ComposeInner() {
   const sections = useMemo(() => {
     if (!contentReady) return [];
     return variantKeys.map((key) => {
-      const Component = sectionRegistry[key];
+      const Component = resolveSectionComponent(key, categoryParam);
       const preview = resolveLayoutPreview(key, categoryParam);
       const sectionType = key.replace(/-\d+$/, "");
       let data: Record<string, unknown> = preview?.data

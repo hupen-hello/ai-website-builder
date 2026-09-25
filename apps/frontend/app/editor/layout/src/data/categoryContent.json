@@ -154,37 +154,81 @@
     {
       "id": "template-realestate-4",
       "numericId": 4,
-      "title": "Realestate · Motion Slider",
+      "title": "Realestate · Template 4",
       "type": "Multiple Pages Website",
       "image": "/blackbay.png",
       "previewimage": "/blackbaypreview.png",
-      "preview_description": "Realestate template 4 (unique to this category). Variants *-4.",
-      "prebuilt_pages": 8,
+      "preview_description": "Multi-page RealEstate template 4 from css-ai-builder-main1 (original component names).",
+      "prebuilt_pages": 35,
       "sectionVariants": {
         "Topbar": "Topbar-4",
         "Header": "Header-4",
         "Banner": "Banner-4",
+        "PropertySearch": "PropertySearch-4",
+        "PropertyGrid": "PropertyGrid-4",
         "About": "About-4",
-        "Product": "Product-4",
-        "WhyChooseUs": "WhyChooseUs-4",
-        "Gallery": "Gallery-4",
-        "FormDetail": "FormDetail-4",
-        "FAQ": "FAQ-4",
+        "Features": "Features-4",
+        "FeaturedDevelopers": "FeaturedDevelopers-4",
         "Testimonial": "Testimonial-4",
+        "CtaBanner": "CtaBanner-4",
         "Footer": "Footer-4",
         "Breadcrumb": "Breadcrumb-4",
+        "PageBanner": "PageBanner-4",
         "AboutPage": "AboutPage-4",
-        "ServicePage": "ServicePage-4",
+        "MissionVision": "MissionVision-4",
+        "Team": "Team-4",
+        "AwardsPage": "AwardsPage-4",
+        "BlogPage": "BlogPage-4",
+        "BlogDetail": "BlogDetail-4",
+        "BuyPropertyPage": "BuyPropertyPage-4",
+        "CareerPage": "CareerPage-4",
+        "CareerJobs": "CareerJobs-4",
+        "CareerCta": "CareerCta-4",
+        "CareerApplication": "CareerApplication-4",
+        "EnquiryPage": "EnquiryPage-4",
+        "BrochurePage": "BrochurePage-4",
+        "QuotePage": "QuotePage-4",
+        "CsrPage": "CsrPage-4",
+        "CsrPrograms": "CsrPrograms-4",
+        "CsrCta": "CsrCta-4",
+        "ContactPage": "ContactPage-4",
+        "ContactMap": "ContactMap-4",
+        "ContactFeatures": "ContactFeatures-4",
+        "CookiePolicyPage": "CookiePolicyPage-4",
+        "DisclaimerPage": "DisclaimerPage-4",
         "GalleryPage": "GalleryPage-4",
-        "ContactPage": "ContactPage-4"
+        "PartnerPage": "PartnerPage-4",
+        "TeamPage": "TeamPage-4",
+        "TeamDetail": "TeamDetail-4",
+        "MissionPage": "MissionPage-4",
+        "VisionPage": "VisionPage-4",
+        "TestimonialPage": "TestimonialPage-4",
+        "PortfolioPage": "PortfolioPage-4",
+        "ProjectDetail": "ProjectDetail-4",
+        "PropertyDetail": "PropertyDetail-4",
+        "PropertyPage": "PropertyPage-4",
+        "PrivacyPage": "PrivacyPage-4",
+        "RefundPolicyPage": "RefundPolicyPage-4",
+        "RentPage": "RentPage-4",
+        "ServicePage": "ServicePage-4",
+        "PricingPage": "PricingPage-4",
+        "PricingTable": "PricingTable-4",
+        "PricingHelp": "PricingHelp-4",
+        "FaqPage": "FaqPage-4",
+        "IndustriesPage": "IndustriesPage-4",
+        "WhyPartner": "WhyPartner-4",
+        "IndustryDetail": "IndustryDetail-4",
+        "SitemapPage": "SitemapPage-4",
+        "TermsPage": "TermsPage-4",
+        "Stats": "Stats-4"
       },
       "variables": {
-        "--primary-bg": "#00cadd",
+        "--primary-bg": "#0a8296",
         "--primary-text": "#ffffff",
         "--secondary-bg": "#ffffff",
         "--secondary-text": "#000000",
-        "--header-bg": "#245c6e",
-        "--header-text": "#ffffff",
+        "--header-bg": "#ffffff",
+        "--header-text": "#1f2937",
         "--hero-bg": "#000000",
         "--hero-title": "#ffffff",
         "--primary-pretitle-text": "#ffffff",
@@ -199,7 +243,334 @@
         "--secondary-link-color": "#ffffff",
         "--text-white": "white",
         "--blue-bg": "#0668ff",
-        "--lightcream-bg": "#fbfaf6"
+        "--lightcream-bg": "#fbfaf6",
+        "--accent": "#0a8296"
+      },
+      "homeSectionOrder": [
+        "Topbar",
+        "Header",
+        "Banner",
+        "PropertySearch",
+        "PropertyGrid",
+        "About",
+        "Features",
+        "FeaturedDevelopers",
+        "Testimonial",
+        "CtaBanner",
+        "Footer"
+      ],
+      "pages": [
+        {
+          "id": "about",
+          "label": "About",
+          "sectionType": "AboutPage"
+        },
+        {
+          "id": "awards",
+          "label": "Awards",
+          "sectionType": "AwardsPage"
+        },
+        {
+          "id": "blog",
+          "label": "Blog",
+          "sectionType": "BlogPage"
+        },
+        {
+          "id": "blog-detail",
+          "label": "Blog Detail",
+          "sectionType": "BlogDetail"
+        },
+        {
+          "id": "buy-a-property",
+          "label": "Buy a Property",
+          "sectionType": "BuyPropertyPage"
+        },
+        {
+          "id": "careers",
+          "label": "Careers",
+          "sectionType": "CareerPage"
+        },
+        {
+          "id": "career-application",
+          "label": "Career Application",
+          "sectionType": "CareerApplication"
+        },
+        {
+          "id": "enquiry",
+          "label": "Enquiry",
+          "sectionType": "EnquiryPage"
+        },
+        {
+          "id": "brochure",
+          "label": "Brochure",
+          "sectionType": "BrochurePage"
+        },
+        {
+          "id": "quote",
+          "label": "Quote",
+          "sectionType": "QuotePage"
+        },
+        {
+          "id": "community",
+          "label": "CSR Initiatives",
+          "sectionType": "CsrPage"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "sectionType": "ContactPage"
+        },
+        {
+          "id": "cookie-policy",
+          "label": "Cookie Policy",
+          "sectionType": "CookiePolicyPage"
+        },
+        {
+          "id": "disclaimer",
+          "label": "Disclaimer",
+          "sectionType": "DisclaimerPage"
+        },
+        {
+          "id": "gallery",
+          "label": "Gallery",
+          "sectionType": "GalleryPage"
+        },
+        {
+          "id": "partners",
+          "label": "Partners",
+          "sectionType": "PartnerPage"
+        },
+        {
+          "id": "team",
+          "label": "Team",
+          "sectionType": "TeamPage"
+        },
+        {
+          "id": "team-detail",
+          "label": "Team Detail",
+          "sectionType": "TeamDetail"
+        },
+        {
+          "id": "mission",
+          "label": "Mission",
+          "sectionType": "MissionPage"
+        },
+        {
+          "id": "vision",
+          "label": "Vision",
+          "sectionType": "VisionPage"
+        },
+        {
+          "id": "testimonials",
+          "label": "Testimonials",
+          "sectionType": "TestimonialPage"
+        },
+        {
+          "id": "projects",
+          "label": "Projects",
+          "sectionType": "PortfolioPage"
+        },
+        {
+          "id": "project-detail",
+          "label": "Project Detail",
+          "sectionType": "ProjectDetail"
+        },
+        {
+          "id": "property-detail",
+          "label": "Property Detail",
+          "sectionType": "PropertyDetail"
+        },
+        {
+          "id": "properties",
+          "label": "Properties",
+          "sectionType": "PropertyPage"
+        },
+        {
+          "id": "privacy",
+          "label": "Privacy",
+          "sectionType": "PrivacyPage"
+        },
+        {
+          "id": "refund-policy",
+          "label": "Refund Policy",
+          "sectionType": "RefundPolicyPage"
+        },
+        {
+          "id": "rent",
+          "label": "Rent",
+          "sectionType": "RentPage"
+        },
+        {
+          "id": "services",
+          "label": "Services",
+          "sectionType": "ServicePage"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing",
+          "sectionType": "PricingPage"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ",
+          "sectionType": "FaqPage"
+        },
+        {
+          "id": "industries",
+          "label": "Industries",
+          "sectionType": "IndustriesPage"
+        },
+        {
+          "id": "industry-detail",
+          "label": "Industry Detail",
+          "sectionType": "IndustryDetail"
+        },
+        {
+          "id": "sitemap",
+          "label": "Sitemap",
+          "sectionType": "SitemapPage"
+        },
+        {
+          "id": "terms",
+          "label": "Terms",
+          "sectionType": "TermsPage"
+        }
+      ],
+      "pageCompanions": {
+        "about": [
+          "Breadcrumb",
+          "MissionVision",
+          "Features",
+          "Team",
+          "CtaBanner"
+        ],
+        "awards": [
+          "Breadcrumb"
+        ],
+        "blog": [
+          "Breadcrumb"
+        ],
+        "blog-detail": [
+          "Breadcrumb"
+        ],
+        "buy-a-property": [
+          "PageBanner"
+        ],
+        "careers": [
+          "Breadcrumb",
+          "CareerJobs",
+          "CareerCta"
+        ],
+        "career-application": [
+          "Breadcrumb"
+        ],
+        "enquiry": [
+          "Breadcrumb"
+        ],
+        "brochure": [
+          "Breadcrumb"
+        ],
+        "quote": [
+          "Breadcrumb"
+        ],
+        "community": [
+          "PageBanner",
+          "CsrPrograms",
+          "CsrCta"
+        ],
+        "contact": [
+          "Breadcrumb",
+          "ContactMap",
+          "ContactFeatures"
+        ],
+        "cookie-policy": [
+          "Breadcrumb"
+        ],
+        "disclaimer": [
+          "Breadcrumb"
+        ],
+        "gallery": [
+          "Breadcrumb",
+          "Stats",
+          "CtaBanner"
+        ],
+        "partners": [
+          "Breadcrumb",
+          "CtaBanner"
+        ],
+        "team": [
+          "Breadcrumb"
+        ],
+        "team-detail": [
+          "Breadcrumb"
+        ],
+        "mission": [
+          "Breadcrumb",
+          "Stats",
+          "CtaBanner"
+        ],
+        "vision": [
+          "Breadcrumb",
+          "Stats",
+          "CtaBanner"
+        ],
+        "testimonials": [
+          "Breadcrumb",
+          "Stats",
+          "CtaBanner"
+        ],
+        "projects": [
+          "PageBanner"
+        ],
+        "project-detail": [
+          "Breadcrumb"
+        ],
+        "property-detail": [
+          "Breadcrumb"
+        ],
+        "properties": [
+          "Breadcrumb"
+        ],
+        "privacy": [
+          "Breadcrumb"
+        ],
+        "refund-policy": [
+          "Breadcrumb"
+        ],
+        "rent": [
+          "PageBanner"
+        ],
+        "services": [
+          "Breadcrumb",
+          "CtaBanner"
+        ],
+        "pricing": [
+          "Breadcrumb",
+          "PricingTable",
+          "PricingHelp",
+          "CtaBanner"
+        ],
+        "faq": [
+          "Breadcrumb",
+          "CtaBanner"
+        ],
+        "industries": [
+          "Breadcrumb",
+          "WhyPartner",
+          "CtaBanner"
+        ],
+        "industry-detail": [
+          "Breadcrumb",
+          "WhyPartner",
+          "CtaBanner"
+        ],
+        "sitemap": [
+          "Breadcrumb",
+          "CtaBanner"
+        ],
+        "terms": [
+          "Breadcrumb"
+        ]
       }
     },
     {
@@ -1774,6 +2145,114 @@
                 "href": "/contact"
               }
             ]
+          },
+          "Header-4": {
+            "logo": "SIMPLE",
+            "logoImage": "",
+            "logoImageTitle": "Simple Logo",
+            "headerBackgroundType": "solid",
+            "headerType": "sticky",
+            "headerBackgroundColor": "#ffffff",
+            "headerGradientColor": "#0a8296",
+            "headerTextColor": "#1f2937",
+            "menu": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "About Us",
+                "href": "/template4/about",
+                "children": [
+                  {
+                    "label": "About Us",
+                    "href": "/template4/about"
+                  },
+                  {
+                    "label": "Our Mission",
+                    "href": "/template4/mission"
+                  },
+                  {
+                    "label": "Our Vision",
+                    "href": "/template4/vision"
+                  },
+                  {
+                    "label": "Testimonials",
+                    "href": "/template4/testimonials"
+                  },
+                  {
+                    "label": "Gallery",
+                    "href": "/template4/gallery"
+                  },
+                  {
+                    "label": "Our Partner",
+                    "href": "/template4/partners"
+                  },
+                  {
+                    "label": "Award",
+                    "href": "/template4/awards"
+                  },
+                  {
+                    "label": "Team",
+                    "href": "/template4/team"
+                  }
+                ]
+              },
+              {
+                "label": "Services",
+                "href": "/template4/services",
+                "children": [
+                  {
+                    "label": "Services",
+                    "href": "/template4/services"
+                  },
+                  {
+                    "label": "Pricing",
+                    "href": "/template4/pricing"
+                  },
+                  {
+                    "label": "FAQ",
+                    "href": "/template4/faq"
+                  }
+                ]
+              },
+              {
+                "label": "Industries",
+                "href": "/template4/industries"
+              },
+              {
+                "label": "Blog",
+                "href": "/template4/blog"
+              },
+              {
+                "label": "Contact Us",
+                "href": "/template4/contact",
+                "children": [
+                  {
+                    "label": "Contact Us",
+                    "href": "/template4/contact"
+                  },
+                  {
+                    "label": "Enquiry",
+                    "href": "/template4/enquiry"
+                  },
+                  {
+                    "label": "Career",
+                    "href": "/template4/careers"
+                  },
+                  {
+                    "label": "Brochure",
+                    "href": "/template4/brochure"
+                  }
+                ]
+              }
+            ],
+            "buttons": [
+              {
+                "label": "GET A QUOTE",
+                "href": "/template4/quote"
+              }
+            ]
           }
         },
         "Banner": {
@@ -1956,6 +2435,18 @@
               "budgetPlaceholder": "e.g. 1.5 Cr",
               "submitLabel": "Search"
             }
+          },
+          "Banner-4": {
+            "backgroundImage": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80",
+            "pretitle": "Luxury Properties",
+            "title": "FIND YOUR <br />DREAM PROPERTY",
+            "desc": "Discover exceptional homes in the most sought-after locations. Let us help you find the perfect place to call home.",
+            "buttons": [
+              {
+                "label": "EXPLORE LISTINGS",
+                "href": "/"
+              }
+            ]
           }
         },
         "About": {
@@ -1976,7 +2467,214 @@
               "href": "#",
               "variant": "primary"
             }
-          ]
+          ],
+          "About-4": {
+            "pretitle": "ABOUT US",
+            "title": "About us",
+            "desc": "At Villa Estates, we believe finding the perfect home is about more than just property—it's about lifestyle, comfort, and lasting value. With deep market knowledge and a client-first approach, we make your journey smooth, transparent, and rewarding.",
+            "features": [
+              {
+                "title": "Client First",
+                "desc": "Your goals are our<br/>top priority.",
+                "icon": "user"
+              },
+              {
+                "title": "Expert Guidance",
+                "desc": "Local expertise for<br/>smarter decisions.",
+                "icon": "search"
+              },
+              {
+                "title": "Trusted Service",
+                "desc": "Honesty, transparency<br/>and reliability.",
+                "icon": "home"
+              },
+              {
+                "title": "Seamless Process",
+                "desc": "From search to closing,<br/>we're with you.",
+                "icon": "badgeCheck"
+              }
+            ],
+            "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+            "parentPage": "About",
+            "parentHref": "/template4/about",
+            "bgImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "homeText": "Home",
+            "homeHref": "/",
+            "missionPretitle": "Our Mission & Vision",
+            "missionMainTitle": "Our Commitment. Your Future.",
+            "missionMainDesc": "We are committed to delivering exceptional real estate experiences built on trust, integrity, and a passion for excellence.",
+            "missionImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "missionTitle": "Our Mission",
+            "missionDesc": "To deliver a seamless and refined buying and selling experience. We stand out from the rest with our standards of integrity, expertise and sophistication.",
+            "visionTitle": "Our Vision",
+            "visionDesc": "To be the most trusted and innovative real estate company, inspiring better lives and stronger communities through every property we represent.",
+            "featureCards": [
+              {
+                "title": "Exclusive Service",
+                "desc": "Our agents are top producers, providing every client with the highest level of service to achieve their goals.",
+                "icon": "home"
+              },
+              {
+                "title": "Location is Everything",
+                "desc": "We represent residential properties throughout the West San Fernando Valley and Greater Los Angeles Area.",
+                "icon": "mapPin"
+              },
+              {
+                "title": "Guaranteed Service",
+                "desc": "With exceptional integrity, negotiating skills and marketing strategies, we promise the best price for your property.",
+                "icon": "keyRound"
+              }
+            ],
+            "teamTitle": "Our Agents",
+            "team": [
+              {
+                "id": "rosalina-d-william",
+                "name": "Rosalina D. William",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "User",
+                "details": {
+                  "position": "Senior Property Seller",
+                  "experience": "10+ Years",
+                  "location": "13/A, NYC",
+                  "practiceArea": "Property Seller",
+                  "email": "example@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ]
+              },
+              {
+                "id": "kelian-anderson",
+                "name": "Kelian Anderson",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "FileText",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "8 Years",
+                  "location": "Los Angeles, CA",
+                  "practiceArea": "Residential",
+                  "email": "kelian@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "miranda-h-halim",
+                "name": "Miranda H. Halim",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "5 Years",
+                  "location": "Beverly Hills, CA",
+                  "practiceArea": "Luxury Homes",
+                  "email": "miranda@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "damble-d-browni",
+                "name": "Damble D. Browni",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "7 Years",
+                  "location": "San Diego, CA",
+                  "practiceArea": "Condos",
+                  "email": "damble@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "aidan-benjamin",
+                "name": "Aidan Benjamin",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase",
+                "details": {
+                  "position": "Real Estate Broker",
+                  "experience": "12 Years",
+                  "location": "Santa Monica, CA",
+                  "practiceArea": "Commercial",
+                  "email": "aidan@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "james-carter",
+                "name": "James Carter",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "UserCheck",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "6 Years",
+                  "location": "Malibu, CA",
+                  "practiceArea": "Beachfront Properties",
+                  "email": "james@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              }
+            ]
+          }
         },
         "Product": {
           "productSectionTitle": "Featured Properties",
@@ -2177,7 +2875,50 @@
               "type": "textarea",
               "placeholder": "Location, budget, property type"
             }
-          ]
+          ],
+          "FormDetail-4": {
+            "title": "Get In Touch",
+            "desc": "Have a question or need assistance? Fill out the form and our team will get back to you shortly.",
+            "formSubmitLabel": "Send Message",
+            "privacyText": "Your information is safe with us. We never share your details.",
+            "sidebarTitle": "Contact Information",
+            "locationTitle": "Our Office",
+            "location": "123 Luxury Lane,\nBeverly Hills, CA 90210,\nUnited States",
+            "phoneTitle": "Phone Number",
+            "phone": "+1 555-555-5555\n+1 555-444-4444",
+            "emailTitle": "Email Address",
+            "email": "info@villaestates.com\nsupport@villaestates.com",
+            "hoursTitle": "Office Hours",
+            "hours": "Mon - Fri: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed",
+            "formFields": [
+              {
+                "label": "Your Name",
+                "type": "text",
+                "placeholder": "Enter your full name"
+              },
+              {
+                "label": "Email Address",
+                "type": "email",
+                "placeholder": "Enter your email"
+              },
+              {
+                "label": "Phone Number",
+                "type": "tel",
+                "placeholder": "Enter your phone number"
+              },
+              {
+                "label": "Subject",
+                "type": "text",
+                "placeholder": "Select a subject"
+              },
+              {
+                "label": "Message",
+                "type": "textarea",
+                "placeholder": "Type your message here..."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "FAQ": {
           "pretitle": "Property FAQ",
@@ -2271,7 +3012,37 @@
               "desc": "On-time commitments, every time",
               "icon": "delivery"
             }
-          ]
+          ],
+          "Features-4": {
+            "backgroundImage": "/images/unsplash-e09b1df2.jpg",
+            "stats": [
+              {
+                "value": "850",
+                "title": "Premium Properties",
+                "desc": "Carefully curated<br/>for you",
+                "icon": "home"
+              },
+              {
+                "value": "57",
+                "title": "Locations Listed In",
+                "desc": "Prime & emerging<br/>areas covered",
+                "icon": "map"
+              },
+              {
+                "value": "35",
+                "title": "Happy Clients",
+                "desc": "Trusted by many<br/>satisfied buyers",
+                "icon": "users"
+              },
+              {
+                "value": "18",
+                "title": "Years of Trust",
+                "desc": "Building relationships<br/>that last",
+                "icon": "heartHandshake"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "Highlight": {
           "categoriesPretitle": "Explore properties",
@@ -3713,6 +4484,54 @@
                 "rating": "5.0"
               }
             ]
+          },
+          "Testimonial-4": {
+            "title": "Our Clients Say",
+            "desc": " ",
+            "testimonials": [
+              {
+                "id": "1",
+                "name": "Sarah Jenkins",
+                "location": "New York",
+                "text": "The service was absolutely phenomenal. They helped us find our dream home in less than a month!",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "2",
+                "name": "Michael Chen",
+                "location": "San Francisco",
+                "text": "Highly professional and dedicated team. I would recommend them to anyone looking to buy or sell property.",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "3",
+                "name": "Emily Rodriguez",
+                "location": "Miami",
+                "text": "A seamless experience from start to finish. They handled all the paperwork and made it stress-free.",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "4",
+                "name": "David Smith",
+                "location": "Chicago",
+                "text": "Great communication and excellent market knowledge. I got the best deal possible thanks to them.",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "5",
+                "name": "David ",
+                "location": "Chicago",
+                "text": "Great communication and excellent market knowledge. I got the best deal possible thanks to them.",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "6",
+                "name": "Smith",
+                "location": "Chicago",
+                "text": "Great communication and excellent market knowledge. I got the best deal possible thanks to them.",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              }
+            ]
           }
         },
         "Awards": {
@@ -3783,7 +4602,32 @@
               "label": "Cities & corridors",
               "desc": "Local advisors where it matters."
             }
-          ]
+          ],
+          "Stats-4": {
+            "stats": [
+              {
+                "value": "12+",
+                "label": "Years Experience",
+                "icon": "Award"
+              },
+              {
+                "value": "1,500+",
+                "label": "Happy Clients",
+                "icon": "Users"
+              },
+              {
+                "value": "100%",
+                "label": "Satisfaction",
+                "icon": "Star"
+              },
+              {
+                "value": "50+",
+                "label": "Awards Won",
+                "icon": "Building2"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "Blog": {
           "pretitle": "Blog",
@@ -3940,6 +4784,28 @@
             ]
           },
           "Topbar-6": {
+            "text": [
+              "Fast setup, editable sections, category-ready media"
+            ],
+            "phone": "+91 98100 45210",
+            "email": "hello@hausgroup.in",
+            "location": "Gurugram, Haryana",
+            "socialLinks": [
+              {
+                "label": "facebook",
+                "href": "https://facebook.com"
+              },
+              {
+                "label": "instagram",
+                "href": "https://instagram.com"
+              },
+              {
+                "label": "linkedin",
+                "href": "https://linkedin.com"
+              }
+            ]
+          },
+          "Topbar-4": {
             "text": [
               "Fast setup, editable sections, category-ready media"
             ],
@@ -4246,6 +5112,97 @@
             "legalTitle": "Legal",
             "disclaimerTitle": "Disclaimer",
             "disclaimerText": "Property details, pricing, availability, and images on this website are for general information only and may change without notice. HAUS Group does not guarantee accuracy until verified by an advisor. Always confirm listing status, documents, and terms before making a decision."
+          },
+          "Footer-4": {
+            "title": "Our Clients Say",
+            "desc": "At Villa Estates, we help you find your dream home or sell your property for the best value. With expert guidance, we make real estate simple.",
+            "socialLinks": [
+              {
+                "platform": "Facebook",
+                "url": "#"
+              },
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "X",
+                "url": "#"
+              },
+              {
+                "platform": "LinkedIn",
+                "url": "#"
+              }
+            ],
+            "usefulLinksTitle": "Useful Links",
+            "usefulLinks": [
+              {
+                "label": "About Us",
+                "url": "/template1/about"
+              },
+              {
+                "label": "Services",
+                "url": "/template1/services"
+              },
+              {
+                "label": "Industries",
+                "url": "/template1/industries"
+              },
+              {
+                "label": "Blog",
+                "url": "/template1/blog"
+              },
+              {
+                "label": "Contact Us",
+                "url": "/template1/contact"
+              },
+              {
+                "label": "Careers",
+                "url": "/template1/careers"
+              }
+            ],
+            "legalLinksTitle": "Legal",
+            "legalLinks": [
+              {
+                "label": "Terms & Conditions",
+                "url": "/template4/terms"
+              },
+              {
+                "label": "Privacy Policy",
+                "url": "/template4/privacy"
+              },
+              {
+                "label": "Disclaimer",
+                "url": "/template4/disclaimer"
+              },
+              {
+                "label": "Refund Policy",
+                "url": "/template4/refund-policy"
+              },
+              {
+                "label": "Cookies Policy",
+                "url": "/template4/cookie-policy"
+              },
+              {
+                "label": "Sitemap",
+                "url": "/template4/sitemap"
+              }
+            ],
+            "contactTitle": "Contact Us",
+            "contactPhone": "555-555-5555",
+            "contactEmail": "info@villaestates.com",
+            "contactAddress": "123 Luxury Lane,\nBeverly Hills, CA 90210",
+            "copyrightText": "© 2024 Villa Estates. All rights reserved.",
+            "bottomLinks": [
+              {
+                "label": "Privacy Policy",
+                "url": "/template4/privacy"
+              },
+              {
+                "label": "Terms & Conditions",
+                "url": "/template4/terms"
+              }
+            ]
           }
         },
         "PropertyPage": {
@@ -4792,6 +5749,102 @@
               }
             ],
             "listingsTitle": "Homes for sale"
+          },
+          "PropertyPage-4": {
+            "hideTitle": false,
+            "hideButton": false,
+            "properties": [
+              {
+                "id": "prop-1",
+                "title": "Modern Beverly Hills Mansion",
+                "price": "9,200,000",
+                "address": "Beverly Hills, CA",
+                "beds": 5,
+                "baths": 6,
+                "sqft": 7500,
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "prop-2",
+                "title": "Oceanfront Malibu Villa",
+                "price": "2,500,000",
+                "address": "Malibu, CA",
+                "beds": 4,
+                "baths": 4,
+                "sqft": 5200,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "prop-3",
+                "title": "Contemporary Hollywood Hills",
+                "price": "5,950,000",
+                "address": "Hollywood Hills, CA",
+                "beds": 3,
+                "baths": 3,
+                "sqft": 3800,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "title": "Beautifully Renovated",
+                "price": "7,968,888",
+                "address": "252 Castlewood Creek, Rolling Hills, CA 90210",
+                "beds": 4,
+                "baths": 3,
+                "sqft": 2450,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-4"
+              },
+              {
+                "title": "Ocean View Estate",
+                "price": "7,500,000",
+                "address": "123 Ocean Dr, Malibu, CA 90265",
+                "beds": 5,
+                "baths": 4,
+                "sqft": 4200,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-5"
+              },
+              {
+                "title": "Modern Minimalist Home",
+                "price": "1,850,000",
+                "address": "456 Valley Blvd, Sherman Oaks, CA 91403",
+                "beds": 3,
+                "baths": 2,
+                "sqft": 1800,
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-6"
+              },
+              {
+                "title": "Beautifully Renovated",
+                "price": "1,968,888",
+                "address": "252 Castlewood Creek, Rolling Hills, CA 90210",
+                "beds": 4,
+                "baths": 3,
+                "sqft": 2450,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-7"
+              },
+              {
+                "title": "Ocean View Estate",
+                "price": "1,500,000",
+                "address": "123 Ocean Dr, Malibu, CA 90265",
+                "beds": 5,
+                "baths": 4,
+                "sqft": 4200,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-8"
+              },
+              {
+                "title": "Modern Minimalist Home",
+                "price": "1,850,000",
+                "address": "456 Valley Blvd, Sherman Oaks, CA 91403",
+                "beds": 3,
+                "baths": 2,
+                "sqft": 1800,
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-9"
+              }
+            ]
           }
         },
         "PortfolioPage": {
@@ -6128,7 +7181,8 @@
                 "category": "Residential"
               }
             ]
-          }
+          },
+          "PortfolioPage-4": {}
         },
         "AwardsPage": {
           "pretitle": "Awards",
@@ -6182,7 +7236,71 @@
               "label": "Awards",
               "href": "/awards"
             }
-          ]
+          ],
+          "AwardsPage-4": {
+            "pretitle": "Our Honors",
+            "title": "Recognized For Excellence",
+            "description": "We take pride in the trust our clients place in us and the industry recognition that motivates us to consistently deliver exceptional results.",
+            "awards": [
+              {
+                "id": "a1",
+                "title": "Best Real Estate Company",
+                "description": "Awarded for outstanding performance in real estate.",
+                "year": "2024",
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a2",
+                "title": "Excellence In Customer Service",
+                "description": "Recognized for delivering exceptional customer satisfaction.",
+                "year": "2023",
+                "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a3",
+                "title": "Top Property Consultant",
+                "description": "Honored for expert advice and trusted consultations.",
+                "year": "2023",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a4",
+                "title": "Luxury Real Estate Leader",
+                "description": "Awarded for leadership in luxury real estate segment.",
+                "year": "2022",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a5",
+                "title": "National Real Estate Award",
+                "description": "Recognized for contribution to the real estate industry.",
+                "year": "2022",
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a6",
+                "title": "Rising Star In Real Estate",
+                "description": "Honored for rapid growth and impactful results.",
+                "year": "2021",
+                "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a7",
+                "title": "Certificate Of Achievement",
+                "description": "For maintaining high standards of transparency and ethics.",
+                "year": "2021",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "a8",
+                "title": "Client Choice Award",
+                "description": "Voted by clients for trust, service & dedication.",
+                "year": "2020",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "MissionPage": {
           "pretitle": "Our mission",
@@ -6247,7 +7365,39 @@
               "label": "Mission",
               "href": "/mission"
             }
-          ]
+          ],
+          "MissionPage-4": {
+            "pretitle": "Our Mission",
+            "title": "Turning Vision Into Reality",
+            "description": "Our mission is to provide premium real estate solutions with honesty and professionalism. We are committed to understanding our clients' needs and delivering properties that exceed expectations while building lifelong relationships.",
+            "values": [
+              {
+                "id": "1",
+                "title": "Customer Focus",
+                "description": "We put our clients at the heart of everything we do and ensure 100% satisfaction.",
+                "icon": "users"
+              },
+              {
+                "id": "2",
+                "title": "Quality & Excellence",
+                "description": "We maintain the highest standards in every project and deliver the best value.",
+                "icon": "award"
+              },
+              {
+                "id": "3",
+                "title": "Innovation",
+                "description": "We embrace new ideas and modern solutions to stay ahead.",
+                "icon": "lightbulb"
+              },
+              {
+                "id": "4",
+                "title": "Integrity",
+                "description": "We conduct our business with honesty, transparency, and ethical practices.",
+                "icon": "handshake"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "MissionValues": {
           "pretitle": "What we stand for",
@@ -6335,7 +7485,69 @@
               "label": "Community",
               "href": "/community"
             }
-          ]
+          ],
+          "CsrPage-4": {
+            "pretitle": "Community",
+            "title": "How we give back.",
+            "desc": "A share of every project supports safer homes, skills training, and neighborhood care.",
+            "desc2": "We partner with local nonprofits and track impact so donations stay practical and transparent.",
+            "sideImage": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&q=80",
+            "sideImageTitle": "Community volunteers painting a home",
+            "impactStats": [
+              {
+                "stat": "120+",
+                "label": "Homes supported"
+              },
+              {
+                "stat": "8%",
+                "label": "Of profits donated"
+              },
+              {
+                "stat": "45",
+                "label": "Volunteer days yearly"
+              },
+              {
+                "stat": "12",
+                "label": "Nonprofit partners"
+              }
+            ],
+            "programs": [
+              {
+                "title": "Safe Homes Fund",
+                "desc": "Helps families with urgent repairs — railings, lighting, and accessibility basics.",
+                "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&q=80",
+                "amount": "Part of every project fee"
+              },
+              {
+                "title": "Trade Skills Scholarships",
+                "desc": "Supports apprentices entering carpentry, tiling, and finishing trades.",
+                "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80",
+                "amount": "Annual scholarship pool"
+              },
+              {
+                "title": "Neighborhood Refresh",
+                "desc": "Volunteer days for shared spaces — parks, entryways, and community rooms.",
+                "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1000&q=80",
+                "amount": "Quarterly build days"
+              }
+            ],
+            "donateCta": {
+              "title": "Want to contribute with us?",
+              "desc": "Reach out to learn about matched donations and volunteer opportunities.",
+              "buttonLabel": "Talk to our community team",
+              "buttonHref": "/contact"
+            },
+            "breadcrumb": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Community",
+                "href": "/community"
+              }
+            ]
+          }
         },
         "CsrPrograms": {
           "pretitle": "Our initiatives",
@@ -6359,7 +7571,31 @@
               "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1000&q=80",
               "amount": "Quarterly build days"
             }
-          ]
+          ],
+          "CsrPrograms-4": {
+            "pretitle": "Our initiatives",
+            "title": "Practical support for stronger communities.",
+            "programs": [
+              {
+                "title": "Safe Homes Fund",
+                "desc": "Helps families with urgent repairs — railings, lighting, and accessibility basics.",
+                "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&q=80",
+                "amount": "Part of every project fee"
+              },
+              {
+                "title": "Trade Skills Scholarships",
+                "desc": "Supports apprentices entering carpentry, tiling, and finishing trades.",
+                "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80",
+                "amount": "Annual scholarship pool"
+              },
+              {
+                "title": "Neighborhood Refresh",
+                "desc": "Volunteer days for shared spaces — parks, entryways, and community rooms.",
+                "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1000&q=80",
+                "amount": "Quarterly build days"
+              }
+            ]
+          }
         },
         "CareerPage": {
           "pretitle": "Careers",
@@ -6484,7 +7720,45 @@
               "label": "Careers",
               "href": "/careers"
             }
-          ]
+          ],
+          "CareerPage-4": {
+            "pretitle": "WHY WORK WITH US",
+            "title": "More Than Just A Workplace",
+            "description": "We believe in empowering our people, inspiring growth and creating a positive impact together.",
+            "features": [
+              {
+                "id": "growth",
+                "icon": "TrendingUp",
+                "title": "Growth & Development",
+                "description": "We invest in your growth with training, mentorship and career advancement."
+              },
+              {
+                "id": "culture",
+                "icon": "Heart",
+                "title": "Great Work Culture",
+                "description": "Collaborative, inclusive and supportive environment where you belong."
+              },
+              {
+                "id": "recognition",
+                "icon": "Award",
+                "title": "Recognition",
+                "description": "We appreciate your contributions and celebrate your achievements."
+              },
+              {
+                "id": "benefits",
+                "icon": "BadgeDollarSign",
+                "title": "Competitive Benefits",
+                "description": "Attractive compensation packages with health, wellness and financial benefits."
+              },
+              {
+                "id": "balance",
+                "icon": "Scale",
+                "title": "Work-Life Balance",
+                "description": "We value your time and support flexibility for a balanced lifestyle."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "CareerJobs": {
           "pretitle": "Open positions",
@@ -6565,7 +7839,69 @@
               "type": "Full-time",
               "desc": "Create listing stories, campaign creatives, and neighborhood content across channels."
             }
-          ]
+          ],
+          "CareerJobs-4": {
+            "title": "Open Positions",
+            "description": "Find the right opportunity and be a part of our journey.",
+            "applyLabel": "Apply Now",
+            "jobs": [
+              {
+                "id": "interior-designer",
+                "title": "Interior Designer",
+                "department": "Design",
+                "location": "Beverly Hills, CA",
+                "experience": "3-5 Years",
+                "type": "Full-time",
+                "posted": "Aug 4, 2024"
+              },
+              {
+                "id": "sales-advisor",
+                "title": "Sales Advisor",
+                "department": "Sales",
+                "location": "Los Angeles, CA",
+                "experience": "2-4 Years",
+                "type": "Full-time",
+                "posted": "Jul 28, 2024"
+              },
+              {
+                "id": "site-supervisor",
+                "title": "Site Supervisor",
+                "department": "Operations",
+                "location": "Southern California",
+                "experience": "4-6 Years",
+                "type": "Full-time",
+                "posted": "Jul 15, 2024"
+              },
+              {
+                "id": "marketing-associate",
+                "title": "Marketing Associate",
+                "department": "Marketing",
+                "location": "Beverly Hills, CA",
+                "experience": "1-3 Years",
+                "type": "Full-time",
+                "posted": "Jul 10, 2024"
+              },
+              {
+                "id": "client-coordinator",
+                "title": "Client Coordinator",
+                "department": "Client Services",
+                "location": "Los Angeles, CA",
+                "experience": "2-4 Years",
+                "type": "Full-time",
+                "posted": "Jul 1, 2024"
+              },
+              {
+                "id": "property-analyst",
+                "title": "Property Analyst",
+                "department": "Research",
+                "location": "Southern California",
+                "experience": "3-5 Years",
+                "type": "Full-time",
+                "posted": "Jun 20, 2024"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "SitemapPage": {
           "pretitle": "Explore",
@@ -6682,7 +8018,266 @@
               "label": "Sitemap",
               "href": "/sitemap"
             }
-          ]
+          ],
+          "SitemapPage-4": {
+            "title": "Everything You Need, In One Place",
+            "description": "Use this sitemap to quickly find the information you're looking for. We're here to help you every step of the way.",
+            "groups": [
+              {
+                "id": "home",
+                "title": "Home",
+                "icon": "Home",
+                "links": [
+                  {
+                    "label": "Home Page",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Get a Quote",
+                    "href": "/template4/quote"
+                  },
+                  {
+                    "label": "Featured Properties",
+                    "href": "/template4/properties"
+                  },
+                  {
+                    "label": "Why Choose Us",
+                    "href": "/template4/about"
+                  },
+                  {
+                    "label": "Testimonials",
+                    "href": "/template4/testimonials"
+                  },
+                  {
+                    "label": "Latest News",
+                    "href": "/template4/blog"
+                  }
+                ]
+              },
+              {
+                "id": "about",
+                "title": "About Us",
+                "icon": "User",
+                "links": [
+                  {
+                    "label": "Our Company",
+                    "href": "/template4/about"
+                  },
+                  {
+                    "label": "Our Mission",
+                    "href": "/template4/mission"
+                  },
+                  {
+                    "label": "Our Vision",
+                    "href": "/template4/vision"
+                  },
+                  {
+                    "label": "Our Team",
+                    "href": "/template4/team"
+                  },
+                  {
+                    "label": "Gallery",
+                    "href": "/template4/gallery"
+                  },
+                  {
+                    "label": "Our Partners",
+                    "href": "/template4/partners"
+                  },
+                  {
+                    "label": "Awards",
+                    "href": "/template4/awards"
+                  }
+                ]
+              },
+              {
+                "id": "services",
+                "title": "Services",
+                "icon": "Building2",
+                "links": [
+                  {
+                    "label": "All Services",
+                    "href": "/template4/services"
+                  },
+                  {
+                    "label": "Pricing Plans",
+                    "href": "/template4/pricing"
+                  },
+                  {
+                    "label": "Property Management",
+                    "href": "/template4/services"
+                  },
+                  {
+                    "label": "Consulting",
+                    "href": "/template4/services"
+                  },
+                  {
+                    "label": "Investment Advisory",
+                    "href": "/template4/services"
+                  },
+                  {
+                    "label": "Property Valuation",
+                    "href": "/template4/services"
+                  }
+                ]
+              },
+              {
+                "id": "industries",
+                "title": "Industries",
+                "icon": "Factory",
+                "links": [
+                  {
+                    "label": "Real Estate Developers",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Corporate Clients",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Investors",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Retail & Hospitality",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Healthcare",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Education",
+                    "href": "/template4/industries"
+                  },
+                  {
+                    "label": "Government",
+                    "href": "/template4/industries"
+                  }
+                ]
+              },
+              {
+                "id": "case-study",
+                "title": "Case Study",
+                "icon": "FileText",
+                "links": [
+                  {
+                    "label": "Completed Projects",
+                    "href": "/template4/projects"
+                  },
+                  {
+                    "label": "Ongoing Projects",
+                    "href": "/template4/projects"
+                  },
+                  {
+                    "label": "Client Success Stories",
+                    "href": "/template4/testimonials"
+                  },
+                  {
+                    "label": "Project Gallery",
+                    "href": "/template4/gallery"
+                  },
+                  {
+                    "label": "Our Impact",
+                    "href": "/template4/about"
+                  }
+                ]
+              },
+              {
+                "id": "blog",
+                "title": "Blog",
+                "icon": "Edit",
+                "links": [
+                  {
+                    "label": "Market Insights",
+                    "href": "/template4/blog"
+                  },
+                  {
+                    "label": "Buying Guide",
+                    "href": "/template4/blog"
+                  },
+                  {
+                    "label": "Selling Guide",
+                    "href": "/template4/blog"
+                  },
+                  {
+                    "label": "Investment Tips",
+                    "href": "/template4/blog"
+                  },
+                  {
+                    "label": "Company News",
+                    "href": "/template4/blog"
+                  },
+                  {
+                    "label": "Industry Trends",
+                    "href": "/template4/blog"
+                  }
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "icon": "Phone",
+                "links": [
+                  {
+                    "label": "Get In Touch",
+                    "href": "/template4/contact"
+                  },
+                  {
+                    "label": "Our Office",
+                    "href": "/template4/contact"
+                  },
+                  {
+                    "label": "Careers",
+                    "href": "/template4/careers"
+                  },
+                  {
+                    "label": "FAQs",
+                    "href": "/template4/faq"
+                  },
+                  {
+                    "label": "Support",
+                    "href": "/template4/enquiry"
+                  }
+                ]
+              },
+              {
+                "id": "resources",
+                "title": "Resources",
+                "icon": "Download",
+                "links": [
+                  {
+                    "label": "Brochures",
+                    "href": "/template4/brochure"
+                  },
+                  {
+                    "label": "Privacy Policy",
+                    "href": "/template4/privacy"
+                  },
+                  {
+                    "label": "Terms & Conditions",
+                    "href": "/template4/terms"
+                  },
+                  {
+                    "label": "Disclaimer",
+                    "href": "/template4/disclaimer"
+                  },
+                  {
+                    "label": "Refund Policy",
+                    "href": "/template4/refund-policy"
+                  },
+                  {
+                    "label": "Cookies Policy",
+                    "href": "/template4/cookie-policy"
+                  },
+                  {
+                    "label": "Sitemap",
+                    "href": "/template4/sitemap"
+                  }
+                ]
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "PrivacyPage": {
           "pretitle": "Legal",
@@ -6728,7 +8323,48 @@
               "label": "Privacy Policy",
               "href": "/privacy"
             }
-          ]
+          ],
+          "PrivacyPage-4": {
+            "title": "Privacy Policy",
+            "onThisPageTitle": "ON THIS PAGE",
+            "helpTitle": "NEED HELP?",
+            "helpDescription": "If you have any questions about these {title}, feel free to contact us.",
+            "helpButtonLabel": "CONTACT US",
+            "helpHref": "/template4/contact",
+            "legalSections": [
+              {
+                "id": "introduction",
+                "title": "Introduction",
+                "icon": "Shield",
+                "content": "At Simple Real Estate, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website."
+              },
+              {
+                "id": "data-collection",
+                "title": "Data We Collect",
+                "icon": "Database",
+                "content": "We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows: Identity Data, Contact Data, Technical Data, Usage Data, and Marketing and Communications Data."
+              },
+              {
+                "id": "how-we-use-data",
+                "title": "How We Use Your Data",
+                "icon": "Settings",
+                "content": "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data to perform the contract we are about to enter into or have entered into with you, or where it is necessary for our legitimate interests."
+              },
+              {
+                "id": "data-security",
+                "title": "Data Security",
+                "icon": "Lock",
+                "content": "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed."
+              },
+              {
+                "id": "your-rights",
+                "title": "Your Legal Rights",
+                "icon": "Eye",
+                "content": "Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, to object to processing, to portability of data."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "TermsPage": {
           "pretitle": "Legal",
@@ -6778,7 +8414,72 @@
               "label": "Terms & Conditions",
               "href": "/terms"
             }
-          ]
+          ],
+          "TermsPage-4": {
+            "title": "Terms & Conditions",
+            "onThisPageTitle": "ON THIS PAGE",
+            "helpTitle": "NEED HELP?",
+            "helpDescription": "If you have any questions about these {title}, feel free to contact us.",
+            "helpButtonLabel": "CONTACT US",
+            "helpHref": "/template4/contact",
+            "legalSections": [
+              {
+                "id": "introduction",
+                "title": "Introduction",
+                "icon": "FileText",
+                "content": "Welcome to Simple Real Estate. By accessing or using our website, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services."
+              },
+              {
+                "id": "use-of-website",
+                "title": "Use of Website",
+                "icon": "Monitor",
+                "content": "You agree to use this website for lawful purposes only. You must not use our website in any way that could damage, disable, overburden, or impair the site or interfere with any other party's use."
+              },
+              {
+                "id": "property-information",
+                "title": "Property Information",
+                "icon": "Home",
+                "content": "We strive to provide accurate property information, but we do not warrant that descriptions, prices, availability, or any other content is accurate, complete, reliable, current, or error-free."
+              },
+              {
+                "id": "user-responsibilities",
+                "title": "User Responsibilities",
+                "icon": "User",
+                "content": "Users are responsible for maintaining the confidentiality of their account information and for all activities that occur under their account."
+              },
+              {
+                "id": "intellectual-property",
+                "title": "Intellectual Property",
+                "icon": "ShieldCheck",
+                "content": "All content on this website, including text, graphics, logos, images, and software, is the property of Simple Real Estate and is protected by applicable copyright and trademark laws."
+              },
+              {
+                "id": "limitation-of-liability",
+                "title": "Limitation of Liability",
+                "icon": "AlertTriangle",
+                "content": "Simple Real Estate shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with your use of our website."
+              },
+              {
+                "id": "external-links",
+                "title": "External Links",
+                "icon": "LinkIcon",
+                "content": "Our website may contain links to third-party websites. We are not responsible for the content or practices of these external sites."
+              },
+              {
+                "id": "changes-to-terms",
+                "title": "Changes to Terms",
+                "icon": "Edit",
+                "content": "We may update these Terms and Conditions from time to time. Any changes will be posted on this page with an updated effective date."
+              },
+              {
+                "id": "governing-law",
+                "title": "Governing Law",
+                "icon": "Scale",
+                "content": "These Terms and Conditions are governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "DisclaimerPage": {
           "pretitle": "Legal",
@@ -6824,7 +8525,42 @@
               "label": "Disclaimer",
               "href": "/disclaimer"
             }
-          ]
+          ],
+          "DisclaimerPage-4": {
+            "title": "Disclaimer",
+            "onThisPageTitle": "ON THIS PAGE",
+            "helpTitle": "NEED HELP?",
+            "helpDescription": "If you have any questions about these {title}, feel free to contact us.",
+            "helpButtonLabel": "CONTACT US",
+            "helpHref": "/template4/contact",
+            "legalSections": [
+              {
+                "id": "general-info",
+                "title": "General Information",
+                "icon": "Info",
+                "content": "The information contained on the Simple Real Estate website is for general information purposes only. Simple Real Estate assumes no responsibility for errors or omissions in the contents of the Service."
+              },
+              {
+                "id": "no-advice",
+                "title": "No Professional Advice",
+                "icon": "HelpCircle",
+                "content": "The real estate information provided on this website is for informational purposes only and does not constitute financial, legal, or real estate advice. You should consult with a professional before making any real estate decisions."
+              },
+              {
+                "id": "accuracy",
+                "title": "Accuracy of Materials",
+                "icon": "FileX",
+                "content": "While we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose."
+              },
+              {
+                "id": "liability",
+                "title": "Limitation of Liability",
+                "icon": "AlertCircle",
+                "content": "In no event shall Simple Real Estate be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "CookiePolicyPage": {
           "pretitle": "Legal",
@@ -6862,7 +8598,42 @@
               "label": "Cookie Policy",
               "href": "/cookie-policy"
             }
-          ]
+          ],
+          "CookiePolicyPage-4": {
+            "title": "Cookies Policy",
+            "onThisPageTitle": "ON THIS PAGE",
+            "helpTitle": "NEED HELP?",
+            "helpDescription": "If you have any questions about these {title}, feel free to contact us.",
+            "helpButtonLabel": "CONTACT US",
+            "helpHref": "/template4/contact",
+            "legalSections": [
+              {
+                "id": "what-are-cookies",
+                "title": "What Are Cookies?",
+                "icon": "Cookie",
+                "content": "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the owners of the site."
+              },
+              {
+                "id": "how-we-use",
+                "title": "How We Use Cookies",
+                "icon": "Settings",
+                "content": "Simple Real Estate uses cookies to understand how you interact with our website, to remember your preferences (such as saved properties or searches), and to improve your overall user experience."
+              },
+              {
+                "id": "types-of-cookies",
+                "title": "Types of Cookies We Use",
+                "icon": "EyeOff",
+                "content": "We use Essential Cookies (required for basic operation), Analytical Cookies (to understand interaction), Functional Cookies (to recognize you), and Targeting Cookies (to record your visit)."
+              },
+              {
+                "id": "managing-cookies",
+                "title": "Managing Your Cookies",
+                "icon": "ShieldAlert",
+                "content": "You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "RefundPolicyPage": {
           "pretitle": "Legal",
@@ -6900,7 +8671,42 @@
               "label": "Refund Policy",
               "href": "/refund-policy"
             }
-          ]
+          ],
+          "RefundPolicyPage-4": {
+            "title": "Refund Policy",
+            "onThisPageTitle": "ON THIS PAGE",
+            "helpTitle": "NEED HELP?",
+            "helpDescription": "If you have any questions about these {title}, feel free to contact us.",
+            "helpButtonLabel": "CONTACT US",
+            "helpHref": "/template4/contact",
+            "legalSections": [
+              {
+                "id": "policy-overview",
+                "title": "Policy Overview",
+                "icon": "RefreshCcw",
+                "content": "At Simple Real Estate, we strive to ensure our clients are satisfied with our services. This Refund Policy outlines the terms and conditions under which refunds may be issued for consulting or advisory services."
+              },
+              {
+                "id": "eligibility",
+                "title": "Eligibility for Refunds",
+                "icon": "DollarSign",
+                "content": "Refunds may be issued in cases where services were not rendered as outlined in the client agreement. Application fees or administrative fees related to property processing are generally non-refundable."
+              },
+              {
+                "id": "timeframe",
+                "title": "Timeframe for Requests",
+                "icon": "Clock",
+                "content": "All refund requests must be submitted in writing within 14 days of the original transaction date. Requests made after this period will not be considered."
+              },
+              {
+                "id": "process",
+                "title": "Refund Process",
+                "icon": "HelpCircle",
+                "content": "Once a refund request is received, our team will review the claim and notify you of the approval or rejection of your refund within 7 business days. Approved refunds will be processed to the original method of payment."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "BlogPage": {
           "pretitle": "Blog",
@@ -6956,7 +8762,57 @@
               "href": "/blog/choosing-the-right-floor-and-view",
               "excerpt": "Compare light, heat, lift reliance, road noise, and accessibility before choosing your apartment floor."
             }
-          ]
+          ],
+          "BlogPage-4": {
+            "pretitle": "Our News",
+            "title": "Latest News & Insights",
+            "readMoreLabel": "Read More",
+            "searchPlaceholder": "Search news...",
+            "featuredImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+            "featuredBadge": "FEATURED",
+            "featuredTitle": "Find Your\nDream Property",
+            "featuredDescription": "Can't find what you want in our listings? Let us know what you're looking for and we'll help you find the house of your dreams.",
+            "featuredButtonText": "CONTACT US",
+            "featuredButtonLink": "/template4/contact",
+            "recentPostsTitle": "Recent Posts",
+            "categoriesTitle": "Categories",
+            "allPostsLabel": "All Posts",
+            "clearFilterLabel": "Clear Filter",
+            "emptyMessage": "No posts found for this category.",
+            "blogPosts": [
+              {
+                "id": "post-1",
+                "title": "Top 10 Interior Design Trends for 2024",
+                "excerpt": "Discover the latest trends that will transform your home from ordinary to extraordinary this coming year.",
+                "date": "Aug 4, 2024",
+                "category": "Design",
+                "author": "Admin",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "body": "Discover the latest trends that will transform your home from ordinary to extraordinary this coming year.\n\n**Warm Neutrals And Texture**\n\nLayered fabrics, natural stone, and muted palettes are replacing high-contrast interiors. Buyers want rooms that feel calm, tactile, and easy to live in every day.\n\n**Indoor Outdoor Flow**\n\nLarger openings, usable balconies, and garden-facing living rooms continue to raise value because they make compact homes feel more generous."
+              },
+              {
+                "id": "post-2",
+                "title": "Navigating the Southern California Housing Market",
+                "excerpt": "A comprehensive guide for buyers and sellers in the current competitive landscape.",
+                "date": "Jul 28, 2024",
+                "category": "Market Updates",
+                "author": "Admin",
+                "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80",
+                "body": "A comprehensive guide for buyers and sellers in the current competitive landscape.\n\n**Read The Local Micro-Market**\n\nPricing power still depends on school zones, commute time, and inventory in a few-mile radius rather than city-wide headlines.\n\n**Offer With Clarity**\n\nClean terms, verified documents, and a realistic closing window often matter more than stretching the last dollar."
+              },
+              {
+                "id": "post-3",
+                "title": "Essential Tips for First-Time Homebuyers",
+                "excerpt": "Everything you need to know before making your first real estate purchase.",
+                "date": "Jul 15, 2024",
+                "category": "Tips for Buyers",
+                "author": "Admin",
+                "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+                "body": "Everything you need to know before making your first real estate purchase.\n\n**Start With A True Budget**\n\nInclude stamp duty, registration, interiors, and a six-month buffer so EMI pressure does not start on day one.\n\n**Verify Before You Fall In Love**\n\nTitle, approvals, and possession timelines should be checked before you shortlist finishes or furniture."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
         },
         "RentPage": {
           "pretitle": "Explore",
@@ -7228,7 +9084,279 @@
               "location": "Delhi"
             }
           ],
-          "listingsTitle": "Homes for rent"
+          "listingsTitle": "Homes for rent",
+          "RentPage-4": {
+            "pretitle": "Explore",
+            "title": "Rent a Property",
+            "desc": "Browse verified rentals across Delhi NCR with clear monthly pricing.",
+            "listings": [
+              {
+                "image": "https://i.pinimg.com/736x/ef/9a/47/ef9a4713741ca63d55b263f14efc3439.jpg",
+                "alt": "Gaur Cascades apartment Ghaziabad",
+                "title": "Gaur Cascades",
+                "subtitle": "3 BHK · Gaursons",
+                "infoTitle": "Expressway-facing family home",
+                "description": "Spacious 3 BHK with clubhouse access and strong rental demand on NH-24.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1850 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 1.25 Cr",
+                "statusText": "Ready for visit",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "gaur-cascades",
+                "body": "A spacious family apartment in Ghaziabad by Gaursons. Ideal for end-users looking for clubhouse access, parking, and expressway connectivity. Documents are verified and site visits can be booked the same week.",
+                "location": "Ghaziabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/89/04/7e/89047eb36310c5e1fe4f4ec53c73ad68.jpg",
+                "alt": "Puri Amanvilas villa Faridabad",
+                "title": "Puri Amanvilas",
+                "subtitle": "4 BHK Villa · Puri",
+                "infoTitle": "Private garden villa",
+                "description": "Independent villa living in Sector 89 with landscaped greens and 24/7 security.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "3200 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "3"
+                  }
+                ],
+                "price": "Rs. 2.85 Cr",
+                "statusText": "New listing",
+                "category": "For Sale",
+                "propertyType": "Villa",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "puri-amanvilas",
+                "body": "Independent villa living in Faridabad Sector 89 by Puri Constructions. Private garden, gated security, and roomy layouts for families who want more space than a high-rise apartment.",
+                "location": "Faridabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/0c/fc/ad/0cfcadb262e1d8babfabf77242510ba8.jpg",
+                "alt": "Mahagun Mezzaria rental Noida",
+                "title": "Mahagun Mezzaria",
+                "subtitle": "2 BHK · Mahagun",
+                "infoTitle": "Rental-ready high-rise",
+                "description": "Furnished 2 BHK near Sector 78 with corporate tenant demand and clubhouse living.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "2"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1100 sq.ft"
+                  },
+                  {
+                    "label": "Furnished",
+                    "value": "Yes"
+                  }
+                ],
+                "price": "Rs. 65,000 / mo",
+                "statusText": "Available now",
+                "category": "For Rent",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "mahagun-mezzaria",
+                "body": "A rental-ready 2 BHK in Noida by Mahagun Group. Furnished option with corporate tenant demand, clubhouse living, and easy commute to offices along the Noida belt.",
+                "location": "Noida"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/ef/39/59/ef3959927cdda6223562be58bd06d560.jpg",
+                "alt": "ATS Picturesque Reprieves Noida",
+                "title": "ATS Picturesque",
+                "subtitle": "3 BHK · ATS",
+                "infoTitle": "Family-friendly township home",
+                "description": "Corner unit with private terrace, schools nearby, and landscaped community parks.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2100 sq.ft"
+                  },
+                  {
+                    "label": "Terrace",
+                    "value": "Yes"
+                  }
+                ],
+                "price": "Rs. 1.68 Cr",
+                "statusText": "Open house Sat",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "ats-picturesque",
+                "body": "Family-friendly 3 BHK in an ATS township. Corner unit feel with terrace options, parks, and schools nearby — suited for long-term living.",
+                "location": "Noida"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/3c/67/e4/3c67e4a14f41ee97947a7ecdfe9f6169.jpg",
+                "alt": "SVP Gulmohur Garden rental Ghaziabad",
+                "title": "SVP Gulmohur Garden",
+                "subtitle": "1 BHK · SVP",
+                "infoTitle": "Park-facing rental",
+                "description": "Bright one-bedroom in Raj Nagar Ext. with gym access and easy lease options.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "1"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "780 sq.ft"
+                  },
+                  {
+                    "label": "Furnished",
+                    "value": "Semi"
+                  }
+                ],
+                "price": "Rs. 42,000 / mo",
+                "statusText": "Move-in ready",
+                "category": "For Rent",
+                "propertyType": "Studio",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "svp-gulmohur-garden",
+                "body": "Compact park-facing rental in Raj Nagar Extension. Semi-furnished, gym access, and flexible lease terms for tenants who want a quiet gated community.",
+                "location": "Ghaziabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/bb/65/70/bb6570905b1f188154a146cc36d1af68.jpg",
+                "alt": "Omaxe Twin Towers Faridabad",
+                "title": "Omaxe Twin Towers",
+                "subtitle": "3 BHK · Omaxe",
+                "infoTitle": "High-rise with retail below",
+                "description": "Modern interiors near Sector 79 with walkable retail and verified documents.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1950 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "1"
+                  }
+                ],
+                "price": "Rs. 1.42 Cr",
+                "statusText": "Verified docs",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "omaxe-twin-towers",
+                "body": "High-rise 3 BHK near Sector 79 Faridabad by Omaxe. Modern interiors, walkable retail, and verified paperwork for buyers ready to close.",
+                "location": "Faridabad"
+              },
+              {
+                "image": "https://i.pinimg.com/736x/73/34/08/73340883a1c32401c904fef30ae721ff.jpg",
+                "alt": "Builder floor in South Delhi",
+                "title": "Greater Kailash Builder Floor",
+                "subtitle": "3 BHK Builder Floor · South Delhi",
+                "infoTitle": "Independent builder floor",
+                "description": "Spacious 3 BHK builder floor with private terrace, parking, and walkable markets in Greater Kailash.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2200 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 3.45 Cr",
+                "statusText": "Ready to move",
+                "category": "For Sale",
+                "propertyType": "Builder Floor",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "greater-kailash-builder-floor",
+                "body": "A well-finished 3 BHK builder floor in Greater Kailash with private entry, terrace, and parking. Ideal for families who prefer independent living over society apartments. Documents verified for resale.",
+                "location": "Delhi"
+              },
+              {
+                "image": "https://i.pinimg.com/736x/41/c5/82/41c582d693349dd9b9d6c8e5776b146f.jpg",
+                "alt": "Builder floor in Dwarka",
+                "title": "Dwarka Sector 12 Builder Floor",
+                "subtitle": "4 BHK Builder Floor · Dwarka",
+                "infoTitle": "Corner independent floor",
+                "description": "Corner 4 BHK builder floor near metro with servant room, open kitchen, and covered parking.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2650 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 2.95 Cr",
+                "statusText": "New listing",
+                "category": "For Sale",
+                "propertyType": "Builder Floor",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "dwarka-sector-12-builder-floor",
+                "body": "Independent 4 BHK builder floor in Dwarka Sector 12. Corner plot advantages, metro access, and flexible layout for joint families. Clear title and society-free maintenance.",
+                "location": "Delhi"
+              }
+            ],
+            "listingsTitle": "Homes for rent"
+          }
         },
         "BuyPropertyPage": {
           "pretitle": "Explore",
@@ -8044,7 +10172,2478 @@
             ],
             "listingsTitle": "Homes to buy"
           },
-          "listingsTitle": "Homes to buy"
+          "listingsTitle": "Homes to buy",
+          "BuyPropertyPage-4": {
+            "pretitle": "Explore",
+            "title": "Buy a Property",
+            "desc": "Browse verified homes to buy across Delhi NCR with clear pricing and same-week site visits.",
+            "listings": [
+              {
+                "image": "https://i.pinimg.com/736x/ef/9a/47/ef9a4713741ca63d55b263f14efc3439.jpg",
+                "alt": "Gaur Cascades apartment Ghaziabad",
+                "title": "Gaur Cascades",
+                "subtitle": "3 BHK · Gaursons",
+                "infoTitle": "Expressway-facing family home",
+                "description": "Spacious 3 BHK with clubhouse access and strong rental demand on NH-24.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1850 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 1.25 Cr",
+                "statusText": "Ready for visit",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "gaur-cascades",
+                "body": "A spacious family apartment in Ghaziabad by Gaursons. Ideal for end-users looking for clubhouse access, parking, and expressway connectivity. Documents are verified and site visits can be booked the same week.",
+                "location": "Ghaziabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/89/04/7e/89047eb36310c5e1fe4f4ec53c73ad68.jpg",
+                "alt": "Puri Amanvilas villa Faridabad",
+                "title": "Puri Amanvilas",
+                "subtitle": "4 BHK Villa · Puri",
+                "infoTitle": "Private garden villa",
+                "description": "Independent villa living in Sector 89 with landscaped greens and 24/7 security.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "3200 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "3"
+                  }
+                ],
+                "price": "Rs. 2.85 Cr",
+                "statusText": "New listing",
+                "category": "For Sale",
+                "propertyType": "Villa",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "puri-amanvilas",
+                "body": "Independent villa living in Faridabad Sector 89 by Puri Constructions. Private garden, gated security, and roomy layouts for families who want more space than a high-rise apartment.",
+                "location": "Faridabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/0c/fc/ad/0cfcadb262e1d8babfabf77242510ba8.jpg",
+                "alt": "Mahagun Mezzaria rental Noida",
+                "title": "Mahagun Mezzaria",
+                "subtitle": "2 BHK · Mahagun",
+                "infoTitle": "Rental-ready high-rise",
+                "description": "Furnished 2 BHK near Sector 78 with corporate tenant demand and clubhouse living.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "2"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1100 sq.ft"
+                  },
+                  {
+                    "label": "Furnished",
+                    "value": "Yes"
+                  }
+                ],
+                "price": "Rs. 65,000 / mo",
+                "statusText": "Available now",
+                "category": "For Rent",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "mahagun-mezzaria",
+                "body": "A rental-ready 2 BHK in Noida by Mahagun Group. Furnished option with corporate tenant demand, clubhouse living, and easy commute to offices along the Noida belt.",
+                "location": "Noida"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/ef/39/59/ef3959927cdda6223562be58bd06d560.jpg",
+                "alt": "ATS Picturesque Reprieves Noida",
+                "title": "ATS Picturesque",
+                "subtitle": "3 BHK · ATS",
+                "infoTitle": "Family-friendly township home",
+                "description": "Corner unit with private terrace, schools nearby, and landscaped community parks.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2100 sq.ft"
+                  },
+                  {
+                    "label": "Terrace",
+                    "value": "Yes"
+                  }
+                ],
+                "price": "Rs. 1.68 Cr",
+                "statusText": "Open house Sat",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "ats-picturesque",
+                "body": "Family-friendly 3 BHK in an ATS township. Corner unit feel with terrace options, parks, and schools nearby — suited for long-term living.",
+                "location": "Noida"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/3c/67/e4/3c67e4a14f41ee97947a7ecdfe9f6169.jpg",
+                "alt": "SVP Gulmohur Garden rental Ghaziabad",
+                "title": "SVP Gulmohur Garden",
+                "subtitle": "1 BHK · SVP",
+                "infoTitle": "Park-facing rental",
+                "description": "Bright one-bedroom in Raj Nagar Ext. with gym access and easy lease options.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "1"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "780 sq.ft"
+                  },
+                  {
+                    "label": "Furnished",
+                    "value": "Semi"
+                  }
+                ],
+                "price": "Rs. 42,000 / mo",
+                "statusText": "Move-in ready",
+                "category": "For Rent",
+                "propertyType": "Studio",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "svp-gulmohur-garden",
+                "body": "Compact park-facing rental in Raj Nagar Extension. Semi-furnished, gym access, and flexible lease terms for tenants who want a quiet gated community.",
+                "location": "Ghaziabad"
+              },
+              {
+                "image": "https://i.pinimg.com/1200x/bb/65/70/bb6570905b1f188154a146cc36d1af68.jpg",
+                "alt": "Omaxe Twin Towers Faridabad",
+                "title": "Omaxe Twin Towers",
+                "subtitle": "3 BHK · Omaxe",
+                "infoTitle": "High-rise with retail below",
+                "description": "Modern interiors near Sector 79 with walkable retail and verified documents.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "1950 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "1"
+                  }
+                ],
+                "price": "Rs. 1.42 Cr",
+                "statusText": "Verified docs",
+                "category": "For Sale",
+                "propertyType": "Apartment",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "omaxe-twin-towers",
+                "body": "High-rise 3 BHK near Sector 79 Faridabad by Omaxe. Modern interiors, walkable retail, and verified paperwork for buyers ready to close.",
+                "location": "Faridabad"
+              },
+              {
+                "image": "https://i.pinimg.com/736x/73/34/08/73340883a1c32401c904fef30ae721ff.jpg",
+                "alt": "Builder floor in South Delhi",
+                "title": "Greater Kailash Builder Floor",
+                "subtitle": "3 BHK Builder Floor · South Delhi",
+                "infoTitle": "Independent builder floor",
+                "description": "Spacious 3 BHK builder floor with private terrace, parking, and walkable markets in Greater Kailash.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2200 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 3.45 Cr",
+                "statusText": "Ready to move",
+                "category": "For Sale",
+                "propertyType": "Builder Floor",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "greater-kailash-builder-floor",
+                "body": "A well-finished 3 BHK builder floor in Greater Kailash with private entry, terrace, and parking. Ideal for families who prefer independent living over society apartments. Documents verified for resale.",
+                "location": "Delhi"
+              },
+              {
+                "image": "https://i.pinimg.com/736x/41/c5/82/41c582d693349dd9b9d6c8e5776b146f.jpg",
+                "alt": "Builder floor in Dwarka",
+                "title": "Dwarka Sector 12 Builder Floor",
+                "subtitle": "4 BHK Builder Floor · Dwarka",
+                "infoTitle": "Corner independent floor",
+                "description": "Corner 4 BHK builder floor near metro with servant room, open kitchen, and covered parking.",
+                "features": [
+                  {
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "label": "Area",
+                    "value": "2650 sq.ft"
+                  },
+                  {
+                    "label": "Parking",
+                    "value": "2"
+                  }
+                ],
+                "price": "Rs. 2.95 Cr",
+                "statusText": "New listing",
+                "category": "For Sale",
+                "propertyType": "Builder Floor",
+                "button": {
+                  "label": "Book a visit",
+                  "href": "/contact"
+                },
+                "slug": "dwarka-sector-12-builder-floor",
+                "body": "Independent 4 BHK builder floor in Dwarka Sector 12. Corner plot advantages, metro access, and flexible layout for joint families. Clear title and society-free maintenance.",
+                "location": "Delhi"
+              }
+            ],
+            "listingsTitle": "Homes to buy"
+          }
+        },
+        "AboutPage": {
+          "AboutPage-4": {
+            "title": "About us",
+            "parentPage": "About",
+            "parentHref": "/template4/about",
+            "bgImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "homeText": "Home",
+            "homeHref": "/",
+            "missionPretitle": "Our Mission & Vision",
+            "missionMainTitle": "Our Commitment. Your Future.",
+            "missionMainDesc": "We are committed to delivering exceptional real estate experiences built on trust, integrity, and a passion for excellence.",
+            "missionImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "missionTitle": "Our Mission",
+            "missionDesc": "To deliver a seamless and refined buying and selling experience. We stand out from the rest with our standards of integrity, expertise and sophistication.",
+            "visionTitle": "Our Vision",
+            "visionDesc": "To be the most trusted and innovative real estate company, inspiring better lives and stronger communities through every property we represent.",
+            "featureCards": [
+              {
+                "title": "Exclusive Service",
+                "desc": "Our agents are top producers, providing every client with the highest level of service to achieve their goals.",
+                "icon": "home"
+              },
+              {
+                "title": "Location is Everything",
+                "desc": "We represent residential properties throughout the West San Fernando Valley and Greater Los Angeles Area.",
+                "icon": "mapPin"
+              },
+              {
+                "title": "Guaranteed Service",
+                "desc": "With exceptional integrity, negotiating skills and marketing strategies, we promise the best price for your property.",
+                "icon": "keyRound"
+              }
+            ],
+            "teamTitle": "Our Agents",
+            "team": [
+              {
+                "id": "rosalina-d-william",
+                "name": "Rosalina D. William",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "User",
+                "details": {
+                  "position": "Senior Property Seller",
+                  "experience": "10+ Years",
+                  "location": "13/A, NYC",
+                  "practiceArea": "Property Seller",
+                  "email": "example@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ]
+              },
+              {
+                "id": "kelian-anderson",
+                "name": "Kelian Anderson",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "FileText",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "8 Years",
+                  "location": "Los Angeles, CA",
+                  "practiceArea": "Residential",
+                  "email": "kelian@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "miranda-h-halim",
+                "name": "Miranda H. Halim",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "5 Years",
+                  "location": "Beverly Hills, CA",
+                  "practiceArea": "Luxury Homes",
+                  "email": "miranda@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "damble-d-browni",
+                "name": "Damble D. Browni",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "7 Years",
+                  "location": "San Diego, CA",
+                  "practiceArea": "Condos",
+                  "email": "damble@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "aidan-benjamin",
+                "name": "Aidan Benjamin",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase",
+                "details": {
+                  "position": "Real Estate Broker",
+                  "experience": "12 Years",
+                  "location": "Santa Monica, CA",
+                  "practiceArea": "Commercial",
+                  "email": "aidan@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "james-carter",
+                "name": "James Carter",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "UserCheck",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "6 Years",
+                  "location": "Malibu, CA",
+                  "practiceArea": "Beachfront Properties",
+                  "email": "james@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "GalleryPage": {
+          "GalleryPage-4": {
+            "pretitle": "Our Gallery",
+            "title": "Explore Our Spaces & Projects",
+            "description": "Take a look at our premium real estate projects, modern spaces, and memorable moments from our journey.",
+            "items": [
+              {
+                "id": "1",
+                "category": "Residential",
+                "title": "Modern family residence",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "2",
+                "category": "Commercial",
+                "title": "Contemporary business district",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "3",
+                "category": "Luxury Homes",
+                "title": "Premium luxury villa",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "4",
+                "category": "Interiors",
+                "title": "Elegant living room",
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "5",
+                "category": "Events",
+                "title": "Property showcase event",
+                "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "6",
+                "category": "Residential",
+                "title": "Bright contemporary home",
+                "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "7",
+                "category": "Commercial",
+                "title": "Modern office space",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "8",
+                "category": "Luxury Homes",
+                "title": "Exclusive waterfront property",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "9",
+                "category": "Interiors",
+                "title": "Minimal bedroom interior",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "ContactPage": {
+          "ContactPage-4": {
+            "title": "Get In Touch",
+            "desc": "Have a question or need assistance? Fill out the form and our team will get back to you shortly.",
+            "formSubmitLabel": "Send Message",
+            "privacyText": "Your information is safe with us. We never share your details.",
+            "sidebarTitle": "Contact Information",
+            "locationTitle": "Our Office",
+            "location": "123 Luxury Lane,\nBeverly Hills, CA 90210,\nUnited States",
+            "phoneTitle": "Phone Number",
+            "phone": "+1 555-555-5555\n+1 555-444-4444",
+            "emailTitle": "Email Address",
+            "email": "info@villaestates.com\nsupport@villaestates.com",
+            "hoursTitle": "Office Hours",
+            "hours": "Mon - Fri: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed",
+            "formFields": [
+              {
+                "label": "Your Name",
+                "type": "text",
+                "placeholder": "Enter your full name"
+              },
+              {
+                "label": "Email Address",
+                "type": "email",
+                "placeholder": "Enter your email"
+              },
+              {
+                "label": "Phone Number",
+                "type": "tel",
+                "placeholder": "Enter your phone number"
+              },
+              {
+                "label": "Subject",
+                "type": "text",
+                "placeholder": "Select a subject"
+              },
+              {
+                "label": "Message",
+                "type": "textarea",
+                "placeholder": "Type your message here..."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "Mission": {
+          "Mission-4": {
+            "pretitle": "Our Mission",
+            "title": "Turning Vision Into Reality",
+            "description": "Our mission is to provide premium real estate solutions with honesty and professionalism. We are committed to understanding our clients' needs and delivering properties that exceed expectations while building lifelong relationships.",
+            "values": [
+              {
+                "id": "1",
+                "title": "Customer Focus",
+                "description": "We put our clients at the heart of everything we do and ensure 100% satisfaction.",
+                "icon": "users"
+              },
+              {
+                "id": "2",
+                "title": "Quality & Excellence",
+                "description": "We maintain the highest standards in every project and deliver the best value.",
+                "icon": "award"
+              },
+              {
+                "id": "3",
+                "title": "Innovation",
+                "description": "We embrace new ideas and modern solutions to stay ahead.",
+                "icon": "lightbulb"
+              },
+              {
+                "id": "4",
+                "title": "Integrity",
+                "description": "We conduct our business with honesty, transparency, and ethical practices.",
+                "icon": "handshake"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "FeaturedDevelopers": {
+          "FeaturedDevelopers-4": {
+            "pretitle": "",
+            "title": "Our Partners",
+            "desc": "",
+            "items": [
+              {
+                "name": "Coca Cola",
+                "logo": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "name": "HCL Tech",
+                "logo": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "name": "RE/MAX",
+                "logo": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "name": "Century 21",
+                "logo": "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+              }
+            ]
+          }
+        },
+        "PropertySearch": {
+          "PropertySearch-4": {
+            "title": "Ask Our Agents",
+            "desc": "Fill in the form below and one of our agents will contact you soon",
+            "formSubmitLabel": "Submit",
+            "accentColor": "#0a8296",
+            "formFields": [
+              {
+                "label": "Interested In",
+                "name": "interestedIn",
+                "type": "select",
+                "placeholder": "Select",
+                "options": "Buying, Selling, Renting"
+              },
+              {
+                "label": "Location",
+                "name": "location",
+                "type": "text",
+                "placeholder": "Enter location"
+              },
+              {
+                "label": "Property Type",
+                "name": "propertyType",
+                "type": "select",
+                "placeholder": "Select type",
+                "options": "House, Apartment, Villa"
+              },
+              {
+                "label": "Price Range",
+                "name": "priceRange",
+                "type": "select",
+                "placeholder": "Min - Max",
+                "options": "Up to $1M, Up to $2M, Up to $5M"
+              },
+              {
+                "label": "Name",
+                "name": "name",
+                "type": "text",
+                "placeholder": "Your name"
+              },
+              {
+                "label": "Email",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Your email"
+              },
+              {
+                "label": "Phone",
+                "name": "phone",
+                "type": "tel",
+                "placeholder": "Your phone"
+              },
+              {
+                "label": "Additional Info",
+                "name": "additionalInfo",
+                "type": "text",
+                "placeholder": "Any additional info"
+              }
+            ]
+          }
+        },
+        "PropertyGrid": {
+          "PropertyGrid-4": {
+            "hideTitle": false,
+            "hideButton": false,
+            "properties": [
+              {
+                "id": "prop-1",
+                "title": "Modern Beverly Hills Mansion",
+                "price": "9,200,000",
+                "address": "Beverly Hills, CA",
+                "beds": 5,
+                "baths": 6,
+                "sqft": 7500,
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "prop-2",
+                "title": "Oceanfront Malibu Villa",
+                "price": "2,500,000",
+                "address": "Malibu, CA",
+                "beds": 4,
+                "baths": 4,
+                "sqft": 5200,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "prop-3",
+                "title": "Contemporary Hollywood Hills",
+                "price": "5,950,000",
+                "address": "Hollywood Hills, CA",
+                "beds": 3,
+                "baths": 3,
+                "sqft": 3800,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "title": "Beautifully Renovated",
+                "price": "7,968,888",
+                "address": "252 Castlewood Creek, Rolling Hills, CA 90210",
+                "beds": 4,
+                "baths": 3,
+                "sqft": 2450,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-4"
+              },
+              {
+                "title": "Ocean View Estate",
+                "price": "7,500,000",
+                "address": "123 Ocean Dr, Malibu, CA 90265",
+                "beds": 5,
+                "baths": 4,
+                "sqft": 4200,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-5"
+              },
+              {
+                "title": "Modern Minimalist Home",
+                "price": "1,850,000",
+                "address": "456 Valley Blvd, Sherman Oaks, CA 91403",
+                "beds": 3,
+                "baths": 2,
+                "sqft": 1800,
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-6"
+              },
+              {
+                "title": "Beautifully Renovated",
+                "price": "1,968,888",
+                "address": "252 Castlewood Creek, Rolling Hills, CA 90210",
+                "beds": 4,
+                "baths": 3,
+                "sqft": 2450,
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-7"
+              },
+              {
+                "title": "Ocean View Estate",
+                "price": "1,500,000",
+                "address": "123 Ocean Dr, Malibu, CA 90265",
+                "beds": 5,
+                "baths": 4,
+                "sqft": 4200,
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-8"
+              },
+              {
+                "title": "Modern Minimalist Home",
+                "price": "1,850,000",
+                "address": "456 Valley Blvd, Sherman Oaks, CA 91403",
+                "beds": 3,
+                "baths": 2,
+                "sqft": 1800,
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+                "id": "prop-9"
+              }
+            ]
+          }
+        },
+        "CtaBanner": {
+          "CtaBanner-4": {
+            "title": "WANT TO BUY OR SELL A PROPERTY?",
+            "callLabel": "Call us today",
+            "phoneNumber": "555-555-5555",
+            "buttonText": "GET IN TOUCH",
+            "buttonLink": "/realestate/template4/contact"
+          }
+        },
+        "ContactMap": {
+          "ContactMap-4": {
+            "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105677.34842186847!2d-118.4907106!3d34.0658428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus",
+            "overlayTitle": "Visit Our Office",
+            "overlayDescription": "We'd love to meet you in person. Feel free to visit our office.",
+            "directionsLabel": "Get Directions",
+            "directionsLink": "https://maps.google.com/?q=Beverly+Hills,+CA",
+            "accentColor": "#0a8296"
+          }
+        },
+        "ContactFeatures": {
+          "ContactFeatures-4": {
+            "features": [
+              {
+                "id": "support",
+                "icon": "Headphones",
+                "title": "Quick Support",
+                "description": "We reply to all inquiries within 24 hours."
+              },
+              {
+                "id": "trusted",
+                "icon": "ShieldCheck",
+                "title": "Trusted Service",
+                "description": "Your satisfaction and trust are our top priority."
+              },
+              {
+                "id": "team",
+                "icon": "Users",
+                "title": "Expert Team",
+                "description": "Our experts are always ready to assist you."
+              },
+              {
+                "id": "channels",
+                "icon": "MessageSquare",
+                "title": "Multiple Channels",
+                "description": "Reach us via phone, email or visit our office."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "BlogDetail": {
+          "BlogDetail-4": {
+            "readTime": "5 min read",
+            "recentPostsTitle": "Recent Posts",
+            "newsletterTitle": "Subscribe to Our Newsletter",
+            "newsletterDescription": "Get the latest news directly in your inbox.",
+            "newsletterPlaceholder": "Your email address",
+            "newsletterButtonText": "Subscribe",
+            "accentColor": "#0a8296"
+          }
+        },
+        "CareerCta": {
+          "CareerCta-4": {
+            "title": "Don't See The Right Role?",
+            "subtitle": "We're Always Looking For Great Talent!",
+            "description": "Send us your resume and tell us about yourself. We'll keep you in mind for future opportunities.",
+            "buttonText": "Send Your Resume",
+            "buttonLink": "mailto:careers@example.com",
+            "email": "careers@example.com",
+            "accentColor": "#0a8296"
+          }
+        },
+        "CareerApplication": {
+          "CareerApplication-4": {
+            "formTitle": "Personal Information",
+            "formDescription": "Please provide your personal details.",
+            "submitLabel": "Submit",
+            "resumeLabel": "Current Resume *",
+            "resumeHint": "Supported formats: PDF, DOC, DOCX (Max size: 5MB)",
+            "resumeButtonLabel": "Choose File",
+            "jobDetailsTitle": "Job Details",
+            "whyJoinTitle": "Why Join Us?",
+            "helpTitle": "Need Help?",
+            "helpDescription": "If you have any questions while applying, feel free to reach out to our HR team.",
+            "helpEmail": "careers@example.com",
+            "helpPhone": "+01 98765 43210",
+            "successTitle": "Application Submitted!",
+            "successDescription": "Thank you for applying. We have received your application and will get back to you soon.",
+            "closeLabel": "Close",
+            "formFields": [
+              {
+                "label": "Full Name *",
+                "name": "fullName",
+                "type": "text",
+                "placeholder": "Enter your full name"
+              },
+              {
+                "label": "Email Address *",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Enter your email address"
+              },
+              {
+                "label": "Phone Number *",
+                "name": "phone",
+                "type": "tel",
+                "placeholder": "Enter your phone number"
+              },
+              {
+                "label": "Alternate Number",
+                "name": "alternate",
+                "type": "tel",
+                "placeholder": "Enter alternate number"
+              },
+              {
+                "label": "Current Location *",
+                "name": "location",
+                "type": "select",
+                "placeholder": "Select your location",
+                "options": "Beverly Hills, CA, Los Angeles, CA, Southern California"
+              },
+              {
+                "label": "Notice Period *",
+                "name": "notice",
+                "type": "select",
+                "placeholder": "Select notice period",
+                "options": "Immediate, 15 Days, 30 Days"
+              },
+              {
+                "label": "LinkedIn Profile",
+                "name": "linkedin",
+                "type": "text",
+                "placeholder": "https://linkedin.com/in/yourprofile"
+              },
+              {
+                "label": "Portfolio / Website (if any)",
+                "name": "website",
+                "type": "text",
+                "placeholder": "https://yourwebsite.com"
+              }
+            ],
+            "reasons": [
+              {
+                "id": "growth",
+                "icon": "TrendingUp",
+                "title": "Growth Opportunities",
+                "description": "We invest in your growth and career development."
+              },
+              {
+                "id": "culture",
+                "icon": "Users",
+                "title": "Collaborative Culture",
+                "description": "Be part of a supportive and inclusive team."
+              },
+              {
+                "id": "benefits",
+                "icon": "BadgeDollarSign",
+                "title": "Competitive Benefits",
+                "description": "Enjoy attractive compensation and employee benefits."
+              },
+              {
+                "id": "balance",
+                "icon": "Heart",
+                "title": "Work-Life Balance",
+                "description": "We value your time and personal well-being."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "EnquiryPage": {
+          "EnquiryPage-4": {
+            "pretitle": "LET'S GET STARTED",
+            "title": "Tell Us What You Need and We'll Take Care of the Rest.",
+            "description": "Share a few details about your requirements and we'll get in touch with the best solutions.",
+            "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "expertTitle": "Our Experts Are Ready to Help",
+            "expertDescription": "Quick response within 24 hours.",
+            "formTitle": "Send Us an Enquiry",
+            "formSubmitLabel": "SUBMIT ENQUIRY",
+            "contactMethodLabel": "Preferred Contact Method",
+            "consentText": "I agree to the",
+            "privacyLabel": "Privacy Policy",
+            "privacyHref": "/template4/privacy",
+            "termsLabel": "Terms & Conditions",
+            "termsHref": "/template4/terms",
+            "features": [
+              {
+                "id": "assistance",
+                "icon": "Users",
+                "title": "Personalized Assistance",
+                "description": "Get tailored solutions that match your needs."
+              },
+              {
+                "id": "options",
+                "icon": "Home",
+                "title": "Wide Range of Options",
+                "description": "Explore the best properties with us."
+              },
+              {
+                "id": "trusted",
+                "icon": "ShieldCheck",
+                "title": "Trusted by Thousands",
+                "description": "Reliable service with complete transparency."
+              },
+              {
+                "id": "confidential",
+                "icon": "Lock",
+                "title": "100% Confidential",
+                "description": "Your information is safe and secure."
+              }
+            ],
+            "highlights": [
+              {
+                "id": "response",
+                "icon": "MessageSquare",
+                "title": "Instant Response",
+                "description": "We respond to all enquiries as quickly as possible."
+              },
+              {
+                "id": "guidance",
+                "icon": "Handshake",
+                "title": "Expert Guidance",
+                "description": "Our experts provide the right advice."
+              },
+              {
+                "id": "visit",
+                "icon": "Calendar",
+                "title": "Book a Visit",
+                "description": "Schedule a visit at your convenience."
+              },
+              {
+                "id": "search",
+                "icon": "Search",
+                "title": "Find Your Perfect Property",
+                "description": "We help you find the best property that fits your goals."
+              }
+            ],
+            "formFields": [
+              {
+                "label": "Full Name *",
+                "name": "fullName",
+                "type": "text",
+                "placeholder": "Enter your full name",
+                "icon": "User"
+              },
+              {
+                "label": "Email Address *",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Enter your email address",
+                "icon": "Mail"
+              },
+              {
+                "label": "Phone Number *",
+                "name": "phone",
+                "type": "tel",
+                "placeholder": "Enter your phone number",
+                "icon": "Phone"
+              },
+              {
+                "label": "Property Type *",
+                "name": "propertyType",
+                "type": "select",
+                "placeholder": "Select property type",
+                "options": "Apartment, Villa, Townhouse, Commercial, Land"
+              },
+              {
+                "label": "City *",
+                "name": "city",
+                "type": "text",
+                "placeholder": "Enter city",
+                "icon": "MapPin"
+              },
+              {
+                "label": "Budget Range *",
+                "name": "budget",
+                "type": "select",
+                "placeholder": "Select budget range",
+                "options": "Under $500k, $500k-$1M, $1M-$2M, $2M+"
+              },
+              {
+                "label": "Preferred Location",
+                "name": "location",
+                "type": "text",
+                "placeholder": "Enter preferred location",
+                "icon": "MapPin",
+                "fullWidth": true
+              },
+              {
+                "label": "Message / Requirements *",
+                "name": "message",
+                "type": "textarea",
+                "placeholder": "Tell us more about your requirements...",
+                "fullWidth": true
+              }
+            ],
+            "contactMethods": [
+              {
+                "id": "phone",
+                "icon": "Phone",
+                "label": "Phone Call"
+              },
+              {
+                "id": "email",
+                "icon": "Mail",
+                "label": "Email"
+              },
+              {
+                "id": "whatsapp",
+                "icon": "MessageSquare",
+                "label": "WhatsApp"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "BrochurePage": {
+          "BrochurePage-4": {
+            "pretitle": "BROCHURE LIBRARY",
+            "title": "Explore. Download. Discover More.",
+            "description": "Get in-depth insights about our company, services and properties. Choose a brochure below to download.",
+            "formatLabel": "PDF Format",
+            "downloadLabel": "DOWNLOAD PDF",
+            "brochures": [
+              {
+                "id": "b1",
+                "title": "Company Profile",
+                "description": "Know more about our company background, mission, vision and core values.",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "pages": 12,
+                "size": "2.4 MB",
+                "file": "/dummy.pdf"
+              },
+              {
+                "id": "b2",
+                "title": "Our Services",
+                "description": "Explore our wide range of real estate services and expertise.",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80",
+                "pages": 16,
+                "size": "3.1 MB",
+                "file": "/dummy.pdf"
+              },
+              {
+                "id": "b3",
+                "title": "Residential Properties",
+                "description": "Handpicked selection of premium residential properties.",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80",
+                "pages": 20,
+                "size": "4.5 MB",
+                "file": "/dummy.pdf"
+              },
+              {
+                "id": "b4",
+                "title": "Commercial Properties",
+                "description": "Discover prime commercial spaces for your business growth.",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "pages": 18,
+                "size": "3.8 MB",
+                "file": "/dummy.pdf"
+              },
+              {
+                "id": "b5",
+                "title": "Luxury Collection",
+                "description": "Exclusive luxury properties for a sophisticated lifestyle.",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "pages": 24,
+                "size": "5.2 MB",
+                "file": "/dummy.pdf"
+              },
+              {
+                "id": "b6",
+                "title": "Investment Guide",
+                "description": "Smart real estate investment tips and market insights.",
+                "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80",
+                "pages": 14,
+                "size": "2.8 MB",
+                "file": "/dummy.pdf"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "QuotePage": {
+          "QuotePage-4": {
+            "pretitle": "GET A FREE QUOTE",
+            "title": "Tell Us About Your Project",
+            "description": "Fill out the form and our real estate experts will get in touch with you shortly with the best solutions tailored to your needs.",
+            "formSubmitLabel": "SUBMIT REQUEST",
+            "contactMethodLabel": "Preferred Contact Method",
+            "consentText": "I agree to the",
+            "privacyLabel": "Privacy Policy",
+            "privacyHref": "/template4/privacy",
+            "termsLabel": "Terms & Conditions",
+            "termsHref": "/template4/terms",
+            "featuresTitle": "Why Get a Quote From Us?",
+            "howItWorksPretitle": "HOW IT WORKS",
+            "features": [
+              {
+                "id": "consultation",
+                "icon": "Award",
+                "title": "Expert Consultation",
+                "description": "Get professional advice from experienced real estate experts."
+              },
+              {
+                "id": "price",
+                "icon": "Tag",
+                "title": "Best Price Guarantee",
+                "description": "We ensure you get the best value for your investment."
+              },
+              {
+                "id": "response",
+                "icon": "Clock",
+                "title": "Quick Response",
+                "description": "Our team will get back to you within 24 hours."
+              },
+              {
+                "id": "confidential",
+                "icon": "ShieldCheck",
+                "title": "100% Confidential",
+                "description": "Your information is safe and secure with us."
+              }
+            ],
+            "formFields": [
+              {
+                "label": "Full Name *",
+                "name": "fullName",
+                "type": "text",
+                "placeholder": "Enter your full name"
+              },
+              {
+                "label": "Email Address *",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Enter your email address"
+              },
+              {
+                "label": "Phone Number *",
+                "name": "phone",
+                "type": "tel",
+                "placeholder": "Enter your phone number"
+              },
+              {
+                "label": "Property Type *",
+                "name": "propertyType",
+                "type": "select",
+                "placeholder": "Select property type",
+                "options": "Residential, Commercial, Industrial"
+              },
+              {
+                "label": "City *",
+                "name": "city",
+                "type": "text",
+                "placeholder": "Enter city"
+              },
+              {
+                "label": "Budget Range *",
+                "name": "budget",
+                "type": "select",
+                "placeholder": "Select budget range",
+                "options": "Under $500k, $500k - $1M, $1M - $5M, Over $5M"
+              },
+              {
+                "label": "Project Details *",
+                "name": "details",
+                "type": "textarea",
+                "placeholder": "Tell us more about your requirements...",
+                "fullWidth": true
+              }
+            ],
+            "contactMethods": [
+              {
+                "id": "phone",
+                "icon": "Phone",
+                "label": "Phone Call"
+              },
+              {
+                "id": "email",
+                "icon": "Mail",
+                "label": "Email"
+              },
+              {
+                "id": "whatsapp",
+                "icon": "MessageSquare",
+                "label": "WhatsApp"
+              }
+            ],
+            "steps": [
+              {
+                "id": "step-1",
+                "num": "01",
+                "icon": "FileText",
+                "title": "Fill Out the Form",
+                "description": "Share your requirements by filling out our quick form."
+              },
+              {
+                "id": "step-2",
+                "num": "02",
+                "icon": "Mail",
+                "title": "We Get in Touch",
+                "description": "Our experts will contact you to understand your needs."
+              },
+              {
+                "id": "step-3",
+                "num": "03",
+                "icon": "MessageSquare",
+                "title": "Get Expert Advice",
+                "description": "Receive personalized solutions tailored to your goals."
+              },
+              {
+                "id": "step-4",
+                "num": "04",
+                "icon": "Home",
+                "title": "Find Your Perfect Property",
+                "description": "We help you find the best property that fits your needs."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "PartnerPage": {
+          "PartnerPage-4": {
+            "pretitle": "Our Trusted Partners",
+            "title": "Collaborating With The Best",
+            "description": "We are proud to partner with leading brands and organizations who share our values and commitment to quality, trust, and excellence.",
+            "partners": [
+              {
+                "id": "p1",
+                "name": "Coca Cola",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p2",
+                "name": "HCL Tech",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p3",
+                "name": "RE/MAX",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p4",
+                "name": "Century 21",
+                "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p5",
+                "name": "Coca Cola",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p6",
+                "name": "HCL Tech",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p7",
+                "name": "RE/MAX",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p8",
+                "name": "Century 21",
+                "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p9",
+                "name": "Coca Cola",
+                "image": "https://images.unsplash.com/photo-1600047509807-ba8b95fdaa0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p10",
+                "name": "HCL Tech",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p11",
+                "name": "RE/MAX",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "p12",
+                "name": "Century 21",
+                "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "TeamPage": {
+          "TeamPage-4": {
+            "pretitle": "Meet Our Professionals",
+            "title": "Dedicated Professionals. Proven Results.",
+            "description": "Our team of experienced real estate experts is committed to providing you with the best guidance, insights, and support at every step.",
+            "team": [
+              {
+                "id": "rosalina-d-william",
+                "name": "Rosalina D. William",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "User",
+                "details": {
+                  "position": "Senior Property Seller",
+                  "experience": "10+ Years",
+                  "location": "13/A, NYC",
+                  "practiceArea": "Property Seller",
+                  "email": "example@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ]
+              },
+              {
+                "id": "kelian-anderson",
+                "name": "Kelian Anderson",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "FileText",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "8 Years",
+                  "location": "Los Angeles, CA",
+                  "practiceArea": "Residential",
+                  "email": "kelian@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "miranda-h-halim",
+                "name": "Miranda H. Halim",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "5 Years",
+                  "location": "Beverly Hills, CA",
+                  "practiceArea": "Luxury Homes",
+                  "email": "miranda@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "damble-d-browni",
+                "name": "Damble D. Browni",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "7 Years",
+                  "location": "San Diego, CA",
+                  "practiceArea": "Condos",
+                  "email": "damble@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "aidan-benjamin",
+                "name": "Aidan Benjamin",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase",
+                "details": {
+                  "position": "Real Estate Broker",
+                  "experience": "12 Years",
+                  "location": "Santa Monica, CA",
+                  "practiceArea": "Commercial",
+                  "email": "aidan@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "james-carter",
+                "name": "James Carter",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "UserCheck",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "6 Years",
+                  "location": "Malibu, CA",
+                  "practiceArea": "Beachfront Properties",
+                  "email": "james@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "TeamDetail": {
+          "TeamDetail-4": {
+            "serviceCards": [
+              {
+                "id": "home-buying",
+                "icon": "Home",
+                "title": "Home Buying",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              },
+              {
+                "id": "home-selling",
+                "icon": "UserCheck",
+                "title": "Home Selling",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              },
+              {
+                "id": "escrow-services",
+                "icon": "Shield",
+                "title": "Escrow Services",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "Vision": {
+          "Vision-4": {
+            "pretitle": "Our Vision",
+            "title": "Building a Better Tomorrow, One Property at a Time.",
+            "description": "Our vision is to become the most trusted real estate company, recognized for integrity, innovation, and excellence. We aim to create lasting value for our clients and communities by delivering exceptional property solutions.",
+            "features": [
+              {
+                "accent": "Long-Term",
+                "title": "Impact",
+                "description": "Creating communities and spaces that enhance lifestyles and stand the test of time.",
+                "icon": "eye"
+              },
+              {
+                "accent": "Trusted",
+                "title": "Leadership",
+                "description": "Leading the industry with transparency, expertise, and a customer-first approach.",
+                "icon": "target"
+              },
+              {
+                "accent": "Sustainable",
+                "title": "Growth",
+                "description": "Focusing on sustainable development and building a prosperous future for generations to come.",
+                "icon": "trendingUp"
+              }
+            ],
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "imageTitle": "Luxury home",
+            "quote": "To be the most preferred real estate brand, delivering exceptional value and experiences while contributing to stronger, smarter, and more sustainable communities.",
+            "accentColor": "#0a8296"
+          }
+        },
+        "TestimonialPage": {
+          "TestimonialPage-4": {
+            "testimonials": [
+              {
+                "id": "1",
+                "name": "Sarah Jenkins",
+                "location": "New York",
+                "text": "The service was absolutely phenomenal. They helped us find our dream home in less than a month!",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "2",
+                "name": "Michael Chen",
+                "location": "San Francisco",
+                "text": "Highly professional and dedicated team. I would recommend them to anyone looking to buy or sell property.",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "3",
+                "name": "Emily Rodriguez",
+                "location": "Miami",
+                "text": "A seamless experience from start to finish. They handled all the paperwork and made it stress-free.",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "4",
+                "name": "David Smith",
+                "location": "Chicago",
+                "text": "Great communication and excellent market knowledge. I got the best deal possible thanks to them.",
+                "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "ServicePage": {
+          "ServicePage-4": {
+            "readMoreLabel": "Read more",
+            "services": [
+              {
+                "id": "buying",
+                "title": "Property Buying & Selling",
+                "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home"
+              },
+              {
+                "id": "selling",
+                "title": "Property Rentals Services",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key"
+              },
+              {
+                "id": "management",
+                "title": "Property Management",
+                "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Building"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "PricingPage": {
+          "PricingPage-4": {
+            "pretitle": "Choose the Best Plan",
+            "title": "Find the Perfect Package for Your Property",
+            "description": "Select a package that fits your needs and list your property with maximum visibility to reach serious buyers.",
+            "buttonLabel": "CHOOSE PLAN",
+            "plans": [
+              {
+                "id": "basic",
+                "name": "Basic",
+                "description": "Ideal for getting started",
+                "price": "99",
+                "popular": false,
+                "features": [
+                  "Property Listing",
+                  "Up to 10 Photos",
+                  "Basic Details",
+                  "Standard Listing",
+                  "Email Support"
+                ]
+              },
+              {
+                "id": "standard",
+                "name": "Standard",
+                "description": "Great for more visibility",
+                "price": "199",
+                "popular": true,
+                "features": [
+                  "Everything in Basic",
+                  "Up to 20 Photos",
+                  "Featured Listing",
+                  "Property Highlights",
+                  "Priority Email Support"
+                ]
+              },
+              {
+                "id": "premium",
+                "name": "Premium",
+                "description": "Maximum exposure for faster sales",
+                "price": "299",
+                "popular": false,
+                "features": [
+                  "Everything in Standard",
+                  "Up to 40 Photos",
+                  "Top Listing Placement",
+                  "Virtual Tour (360°)",
+                  "Priority Support"
+                ]
+              },
+              {
+                "id": "ultimate",
+                "name": "Ultimate",
+                "description": "The best for serious sellers",
+                "price": "499",
+                "popular": false,
+                "features": [
+                  "Everything in Premium",
+                  "Unlimited Photos",
+                  "Top of Homepage",
+                  "Virtual Tour (360°)",
+                  "Dedicated Account Manager",
+                  "Phone & Email Support"
+                ]
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "PricingTable": {
+          "PricingTable-4": {
+            "title": "Compare All Features",
+            "rows": [
+              {
+                "name": "Property Listing",
+                "basic": true,
+                "standard": true,
+                "premium": true,
+                "ultimate": true
+              },
+              {
+                "name": "Photos",
+                "basic": "Up to 10",
+                "standard": "Up to 20",
+                "premium": "Up to 40",
+                "ultimate": "Unlimited"
+              },
+              {
+                "name": "Featured Listing",
+                "basic": false,
+                "standard": true,
+                "premium": true,
+                "ultimate": true
+              },
+              {
+                "name": "Top Listing Placement",
+                "basic": false,
+                "standard": false,
+                "premium": true,
+                "ultimate": true
+              },
+              {
+                "name": "Virtual Tour (360°)",
+                "basic": false,
+                "standard": false,
+                "premium": true,
+                "ultimate": true
+              },
+              {
+                "name": "Priority Support",
+                "basic": false,
+                "standard": true,
+                "premium": true,
+                "ultimate": true
+              },
+              {
+                "name": "Dedicated Account Manager",
+                "basic": false,
+                "standard": false,
+                "premium": false,
+                "ultimate": true
+              },
+              {
+                "name": "Price",
+                "basic": "$99 / listing",
+                "standard": "$199 / listing",
+                "premium": "$299 / listing",
+                "ultimate": "$499 / listing",
+                "isPrice": true
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "PricingHelp": {
+          "PricingHelp-4": {
+            "title": "Need Help Choosing the Right Plan?",
+            "description": "Our team is here to help you find the perfect package for your property needs.",
+            "buttonText": "CONTACT US",
+            "buttonLink": "/template4/contact",
+            "accentColor": "#0a8296"
+          }
+        },
+        "FaqPage": {
+          "FaqPage-4": {
+            "newsletterPretitle": "// subscribe",
+            "newsletterTitle": "Get Newsletter",
+            "newsletterPlaceholder": "Search",
+            "sidebarImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80",
+            "sidebarImageAlt": "Cabin View",
+            "faqList": [
+              {
+                "id": "1",
+                "question": "How long does it take to sell a house?",
+                "answer": "On average, it takes about 30 to 60 days to sell a house depending on the market conditions and location."
+              },
+              {
+                "id": "2",
+                "question": "Do I need a real estate agent?",
+                "answer": "While not legally required, a real estate agent can help you navigate complex paperwork, negotiate better prices, and find properties faster."
+              },
+              {
+                "id": "3",
+                "question": "What is included in the property management fee?",
+                "answer": "Our property management fee includes tenant screening, rent collection, maintenance coordination, and regular property inspections."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "IndustriesPage": {
+          "IndustriesPage-4": {
+            "pretitle": "Our Industries",
+            "title": "Building Spaces For Every Industry",
+            "description": "We understand that every industry has unique needs. Our real estate solutions are designed to help your business grow and thrive.",
+            "learnMoreLabel": "Learn More",
+            "industries": [
+              {
+                "id": "residential",
+                "name": "Residential",
+                "description": "Handpicked selection of premium residential properties for you and your family.",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Building2"
+              },
+              {
+                "id": "commercial",
+                "name": "Commercial",
+                "description": "Modern workspaces designed to boost productivity and business growth.",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase"
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "WhyPartner": {
+          "WhyPartner-4": {
+            "title": "Why Partner With Us?",
+            "reasons": [
+              {
+                "id": "expertise",
+                "icon": "ShieldCheck",
+                "title": "Industry Expertise",
+                "description": "Deep knowledge of diverse industries and their real estate requirements."
+              },
+              {
+                "id": "solutions",
+                "icon": "Handshake",
+                "title": "Tailored Solutions",
+                "description": "Customized real estate strategies that align with your business goals."
+              },
+              {
+                "id": "track-record",
+                "icon": "TrendingUp",
+                "title": "Proven Track Record",
+                "description": "Successful projects delivered across multiple sectors with excellence."
+              },
+              {
+                "id": "support",
+                "icon": "UserCheck",
+                "title": "End-to-End Support",
+                "description": "From consultation to delivery, we're with you at every step of the journey."
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "IndustryDetail": {
+          "IndustryDetail-4": {
+            "aboutPretitle": "About the Industry",
+            "headingSuffix": "Real Estate Solutions",
+            "body": "We provide comprehensive and tailored real estate solutions specifically designed to meet the unique challenges and opportunities in the {name} sector. Whether you are looking for investments, new spaces to grow your business, or premium properties, our experienced team is here to guide you every step of the way.",
+            "quote": "Our goal is to create long-lasting value and exceptional experiences in the {name} real estate market.",
+            "accentColor": "#0a8296"
+          }
+        },
+        "PropertyDetail": {
+          "PropertyDetail-4": {
+            "statusLabel": "For Sale",
+            "shareLabel": "Share",
+            "saveLabel": "Save",
+            "extraPhotosCount": "+12",
+            "extraPhotosLabel": "Photos",
+            "descriptionTitle": "Property Description",
+            "description": "This stunning modern villa offers the perfect blend of luxury, comfort, and style. Located in the heart of Beverly Hills, this beautiful home features spacious living areas, a state-of-the-art kitchen, four luxurious bedrooms, and a resort-style pool with breathtaking views.",
+            "description2": "The open-concept design, high-end finishes, and floor-to-ceiling windows create a bright and inviting atmosphere throughout the home.",
+            "amenitiesTitle": "Amenities",
+            "locationTitle": "Location",
+            "mapImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "formTitle": "Request a Callback",
+            "formDescription": "Interested in this property? Fill out the form and our agent will contact you shortly.",
+            "formSubmitLabel": "Request Callback",
+            "overviewTitle": "Property Overview",
+            "helpTitle": "Need Help?",
+            "helpDescription": "Our expert agents are here to help you.",
+            "helpPhone": "555-555-5555",
+            "galleryImages": [
+              {
+                "id": "gallery-2",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+              },
+              {
+                "id": "gallery-3",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              }
+            ],
+            "stats": [
+              {
+                "id": "beds",
+                "icon": "Bed",
+                "value": "{beds}",
+                "label": "Bedrooms"
+              },
+              {
+                "id": "baths",
+                "icon": "Bath",
+                "value": "{baths}",
+                "label": "Bathrooms"
+              },
+              {
+                "id": "sqft",
+                "icon": "Square",
+                "value": "{sqft}",
+                "label": "Sq Ft"
+              },
+              {
+                "id": "garage",
+                "icon": "Car",
+                "value": "2",
+                "label": "Garage"
+              },
+              {
+                "id": "pool",
+                "icon": "Waves",
+                "value": "Yes",
+                "label": "Swimming Pool"
+              },
+              {
+                "id": "kitchen",
+                "icon": "UtensilsCrossed",
+                "value": "Yes",
+                "label": "Modern Kitchen"
+              }
+            ],
+            "amenities": [
+              {
+                "id": "ac",
+                "label": "Air Conditioning"
+              },
+              {
+                "id": "heating",
+                "label": "Central Heating"
+              },
+              {
+                "id": "smart",
+                "label": "Smart Home System"
+              },
+              {
+                "id": "fireplace",
+                "label": "Fireplace"
+              },
+              {
+                "id": "pool",
+                "label": "Private Pool"
+              },
+              {
+                "id": "security",
+                "label": "Home Security"
+              },
+              {
+                "id": "garden",
+                "label": "Garden"
+              },
+              {
+                "id": "laundry",
+                "label": "Laundry Room"
+              },
+              {
+                "id": "internet",
+                "label": "High Speed Internet"
+              }
+            ],
+            "overviewItems": [
+              {
+                "id": "id",
+                "label": "Property ID:",
+                "value": "SE12345"
+              },
+              {
+                "id": "type",
+                "label": "Property Type:",
+                "value": "Villa / House"
+              },
+              {
+                "id": "status",
+                "label": "Status:",
+                "value": "For Sale"
+              },
+              {
+                "id": "beds",
+                "label": "Bedrooms:",
+                "value": "{beds}"
+              },
+              {
+                "id": "baths",
+                "label": "Bathrooms:",
+                "value": "{baths}"
+              },
+              {
+                "id": "area",
+                "label": "Area:",
+                "value": "{sqft} Sq Ft"
+              },
+              {
+                "id": "lot",
+                "label": "Lot Size:",
+                "value": "7,500 Sq Ft"
+              },
+              {
+                "id": "year",
+                "label": "Year Built:",
+                "value": "2022"
+              },
+              {
+                "id": "garage",
+                "label": "Garage:",
+                "value": "2 Cars"
+              }
+            ],
+            "formFields": [
+              {
+                "label": "Your Name",
+                "name": "name",
+                "type": "text",
+                "placeholder": "Your Name"
+              },
+              {
+                "label": "Email Address",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Email Address"
+              },
+              {
+                "label": "Phone Number",
+                "name": "phone",
+                "type": "tel",
+                "placeholder": "Phone Number"
+              },
+              {
+                "label": "Message",
+                "name": "message",
+                "type": "textarea",
+                "placeholder": "I am interested in this property...",
+                "fullWidth": true
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "Breadcrumb": {
+          "Breadcrumb-4": {
+            "title": "Page",
+            "homeText": "Home",
+            "homeLabel": "Home",
+            "homeHref": "/",
+            "bgImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "backgroundImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "subtitle": ""
+          }
+        },
+        "VisionPage": {
+          "VisionPage-4": {
+            "pretitle": "Our Vision",
+            "title": "Building a Better Tomorrow, One Property at a Time.",
+            "description": "Our vision is to become the most trusted real estate company, recognized for integrity, innovation, and excellence. We aim to create lasting value for our clients and communities by delivering exceptional property solutions.",
+            "features": [
+              {
+                "accent": "Long-Term",
+                "title": "Impact",
+                "description": "Creating communities and spaces that enhance lifestyles and stand the test of time.",
+                "icon": "eye"
+              },
+              {
+                "accent": "Trusted",
+                "title": "Leadership",
+                "description": "Leading the industry with transparency, expertise, and a customer-first approach.",
+                "icon": "target"
+              },
+              {
+                "accent": "Sustainable",
+                "title": "Growth",
+                "description": "Focusing on sustainable development and building a prosperous future for generations to come.",
+                "icon": "trendingUp"
+              }
+            ],
+            "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "imageTitle": "Luxury home",
+            "quote": "To be the most preferred real estate brand, delivering exceptional value and experiences while contributing to stronger, smarter, and more sustainable communities.",
+            "accentColor": "#0a8296"
+          }
+        },
+        "PageBanner": {
+          "PageBanner-4": {
+            "title": "About us",
+            "parentPage": "About",
+            "parentHref": "/template4/about",
+            "bgImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+            "homeText": "Home",
+            "homeHref": "/",
+            "missionPretitle": "Our Mission & Vision",
+            "missionMainTitle": "Our Commitment. Your Future.",
+            "missionMainDesc": "We are committed to delivering exceptional real estate experiences built on trust, integrity, and a passion for excellence.",
+            "missionImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "missionTitle": "Our Mission",
+            "missionDesc": "To deliver a seamless and refined buying and selling experience. We stand out from the rest with our standards of integrity, expertise and sophistication.",
+            "visionTitle": "Our Vision",
+            "visionDesc": "To be the most trusted and innovative real estate company, inspiring better lives and stronger communities through every property we represent.",
+            "featureCards": [
+              {
+                "title": "Exclusive Service",
+                "desc": "Our agents are top producers, providing every client with the highest level of service to achieve their goals.",
+                "icon": "home"
+              },
+              {
+                "title": "Location is Everything",
+                "desc": "We represent residential properties throughout the West San Fernando Valley and Greater Los Angeles Area.",
+                "icon": "mapPin"
+              },
+              {
+                "title": "Guaranteed Service",
+                "desc": "With exceptional integrity, negotiating skills and marketing strategies, we promise the best price for your property.",
+                "icon": "keyRound"
+              }
+            ],
+            "teamTitle": "Our Agents",
+            "team": [
+              {
+                "id": "rosalina-d-william",
+                "name": "Rosalina D. William",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "User",
+                "details": {
+                  "position": "Senior Property Seller",
+                  "experience": "10+ Years",
+                  "location": "13/A, NYC",
+                  "practiceArea": "Property Seller",
+                  "email": "example@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ]
+              },
+              {
+                "id": "kelian-anderson",
+                "name": "Kelian Anderson",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "FileText",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "8 Years",
+                  "location": "Los Angeles, CA",
+                  "practiceArea": "Residential",
+                  "email": "kelian@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "miranda-h-halim",
+                "name": "Miranda H. Halim",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "5 Years",
+                  "location": "Beverly Hills, CA",
+                  "practiceArea": "Luxury Homes",
+                  "email": "miranda@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "damble-d-browni",
+                "name": "Damble D. Browni",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "7 Years",
+                  "location": "San Diego, CA",
+                  "practiceArea": "Condos",
+                  "email": "damble@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "aidan-benjamin",
+                "name": "Aidan Benjamin",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase",
+                "details": {
+                  "position": "Real Estate Broker",
+                  "experience": "12 Years",
+                  "location": "Santa Monica, CA",
+                  "practiceArea": "Commercial",
+                  "email": "aidan@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "james-carter",
+                "name": "James Carter",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "UserCheck",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "6 Years",
+                  "location": "Malibu, CA",
+                  "practiceArea": "Beachfront Properties",
+                  "email": "james@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              }
+            ],
+            "accentColor": "#0a8296"
+          }
+        },
+        "CsrCta": {
+          "CsrCta-4": {
+            "title": "Partner with us",
+            "desc": "Join our community initiatives.",
+            "button": {
+              "label": "Get involved",
+              "href": "/contact"
+            }
+          }
+        },
+        "ProjectDetail": {
+          "ProjectDetail-4": {}
+        },
+        "MissionVision": {
+          "MissionVision-4": {
+            "missionPretitle": "Our Mission & Vision",
+            "missionMainTitle": "Our Commitment. Your Future.",
+            "missionMainDesc": "We are committed to delivering exceptional real estate experiences built on trust, integrity, and a passion for excellence.",
+            "missionImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+            "missionTitle": "Our Mission",
+            "missionDesc": "To deliver a seamless and refined buying and selling experience. We stand out from the rest with our standards of integrity, expertise and sophistication.",
+            "visionTitle": "Our Vision",
+            "visionDesc": "To be the most trusted and innovative real estate company, inspiring better lives and stronger communities through every property we represent."
+          }
+        },
+        "Team": {
+          "Team-4": {
+            "pretitle": "Our Agents",
+            "title": "Our Agents",
+            "team": [
+              {
+                "id": "rosalina-d-william",
+                "name": "Rosalina D. William",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "User",
+                "details": {
+                  "position": "Senior Property Seller",
+                  "experience": "10+ Years",
+                  "location": "13/A, NYC",
+                  "practiceArea": "Property Seller",
+                  "email": "example@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ]
+              },
+              {
+                "id": "kelian-anderson",
+                "name": "Kelian Anderson",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "FileText",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "8 Years",
+                  "location": "Los Angeles, CA",
+                  "practiceArea": "Residential",
+                  "email": "kelian@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "miranda-h-halim",
+                "name": "Miranda H. Halim",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Key",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "5 Years",
+                  "location": "Beverly Hills, CA",
+                  "practiceArea": "Luxury Homes",
+                  "email": "miranda@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "damble-d-browni",
+                "name": "Damble D. Browni",
+                "role": "Property Seller",
+                "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Home",
+                "details": {
+                  "position": "Property Seller",
+                  "experience": "7 Years",
+                  "location": "San Diego, CA",
+                  "practiceArea": "Condos",
+                  "email": "damble@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "aidan-benjamin",
+                "name": "Aidan Benjamin",
+                "role": "Real Estate Broker",
+                "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+                "icon": "Briefcase",
+                "details": {
+                  "position": "Real Estate Broker",
+                  "experience": "12 Years",
+                  "location": "Santa Monica, CA",
+                  "practiceArea": "Commercial",
+                  "email": "aidan@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "james-carter",
+                "name": "James Carter",
+                "role": "Selling Agents",
+                "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+                "icon": "UserCheck",
+                "details": {
+                  "position": "Selling Agent",
+                  "experience": "6 Years",
+                  "location": "Malibu, CA",
+                  "practiceArea": "Beachfront Properties",
+                  "email": "james@example.com",
+                  "fax": "+0123-456 789",
+                  "phone": "+0123-456 789"
+                },
+                "socials": {
+                  "facebook": "#",
+                  "twitter": "#",
+                  "linkedin": "#"
+                },
+                "bio": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              }
+            ]
+          }
         }
       }
     },

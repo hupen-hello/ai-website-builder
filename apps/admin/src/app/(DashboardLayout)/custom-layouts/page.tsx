@@ -21,6 +21,48 @@ const SECTION_TYPES = [
   "FAQ",
   "Testimonial",
   "Footer",
+  "Features",
+  "PropertySearch",
+  "PropertyGrid",
+  "FeaturedDevelopers",
+  "CtaBanner",
+  "Stats",
+  "Team",
+  "TeamPage",
+  "MissionVision",
+  "MissionPage",
+  "VisionPage",
+  "Breadcrumb",
+  "PageBanner",
+  "AwardsPage",
+  "BlogPage",
+  "BlogDetail",
+  "BuyPropertyPage",
+  "CareerPage",
+  "CareerJobs",
+  "CareerCta",
+  "EnquiryPage",
+  "BrochurePage",
+  "QuotePage",
+  "CsrPage",
+  "CsrPrograms",
+  "CsrCta",
+  "ContactMap",
+  "ContactFeatures",
+  "PartnerPage",
+  "TestimonialPage",
+  "PortfolioPage",
+  "PropertyPage",
+  "PropertyDetail",
+  "PricingPage",
+  "PricingTable",
+  "PricingHelp",
+  "FaqPage",
+  "IndustriesPage",
+  "WhyPartner",
+  "SitemapPage",
+  "PrivacyPage",
+  "TermsPage",
 ];
 
 /** UI labels — Product section is shown as Service */
@@ -32,6 +74,12 @@ const SECTION_TYPE_LABELS: Record<string, string> = {
   ContactPage: "Contact Page",
   WhyChooseUs: "Why Choose Us",
   FormDetail: "Form Detail",
+  PropertySearch: "Property Search",
+  PropertyGrid: "Property Grid",
+  FeaturedDevelopers: "Featured Developers",
+  CtaBanner: "CTA Banner",
+  MissionVision: "Mission & Vision",
+  PageBanner: "Page Banner",
 };
 
 function sectionTypeLabel(type: string) {
@@ -95,6 +143,8 @@ const CustomLayoutsPage = () => {
   const [isScopeOpen, setIsScopeOpen] = useState(false);
   const [isStatusOpen, setIsStatusOpen] = useState(false);
   const [previewLayout, setPreviewLayout] = useState<LayoutRow | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [variantFilter, setVariantFilter] = useState("all");
 
   const [formData, setFormData] = useState(emptyForm);
   const [isUploadingThumb, setIsUploadingThumb] = useState(false);
@@ -301,6 +351,20 @@ const CustomLayoutsPage = () => {
     }
   };
 
+  const visibleLayouts = layouts.filter((layout) => {
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !q ||
+      layout.key.toLowerCase().includes(q) ||
+      layout.name.toLowerCase().includes(q) ||
+      layout.sectionType.toLowerCase().includes(q);
+    const matchesVariant =
+      variantFilter === "all" ||
+      String(layout.sectionNumber) === variantFilter ||
+      layout.key.endsWith(`-${variantFilter}`);
+    return matchesSearch && matchesVariant;
+  });
+
   return (
     <>
       <CardBox className="bg-white dark:bg-[#0b0b0b]/80 backdrop-blur-xl border border-gray-100 dark:border-white/5 rounded-2xl p-0 overflow-hidden relative flex flex-col h-[calc(100vh-120px)]">
@@ -313,12 +377,31 @@ const CustomLayoutsPage = () => {
               Manage section variants (registry key, scope, thumbnail).
             </p>
           </div>
+          <div className="flex items-center gap-3">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search key or name (e.g. T4, PropertySearch-4)"
+              className="w-64 bg-gray-50 dark:bg-[#171717] border border-gray-200 dark:border-white/10 rounded-full px-4 py-2 text-[13px] text-gray-800 dark:text-white focus:outline-none focus:border-[#e53935]"
+            />
+            <select
+              value={variantFilter}
+              onChange={(e) => setVariantFilter(e.target.value)}
+              className="appearance-none bg-gray-50 dark:bg-[#171717] border border-gray-200 dark:border-white/10 rounded-full pl-4 pr-8 py-2 text-[13px] font-semibold text-gray-700 dark:text-gray-200 focus:outline-none focus:border-[#e53935]"
+            >
+              <option value="all">All variants</option>
+              <option value="4">Template 4</option>
+              <option value="5">Variant 5</option>
+              <option value="6">Variant 6</option>
+            </select>
           <button
             onClick={openAddModal}
             className="flex items-center gap-2 bg-[#e53935] hover:bg-[#c22028] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_15px_rgba(229,57,53,0.3)]"
           >
             <Icon icon="solar:document-add-bold-duotone" width={18} /> Add Layout
           </button>
+          </div>
         </div>
 
         <div className="overflow-auto w-full flex-1 relative hide-scrollbar">
@@ -360,8 +443,8 @@ const CustomLayoutsPage = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 dark:divide-white/5 relative z-10">
-                {layouts.length > 0 ? (
-                  layouts.map((layout, index) => (
+                {visibleLayouts.length > 0 ? (
+                  visibleLayouts.map((layout, index) => (
                     <tr
                       key={layout._id || layout.key}
                       className="hover:bg-gray-50 dark:hover:bg-white/5 group transition-colors"

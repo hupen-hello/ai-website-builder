@@ -14,7 +14,7 @@ import {
   PreviewProvider,
   usePreview,
 } from "../../editor/layout/src/components/context/PreviewContext";
-import { sectionRegistry } from "../../editor/layout/src/lib/sectionRegistry";
+import { resolveSectionComponent } from "../../editor/layout/src/lib/sectionRegistry";
 import {
   EDITOR_EMPTY_TEXT_VALUE,
   readInlineTextFormats,
@@ -1883,7 +1883,8 @@ const attachMissingSplitInnerPageSections = (
     ) &&
     !next.some(
       (section) =>
-        section.type === "Breadcrumb" && Boolean(sectionRegistry[section.variant]),
+        section.type === "Breadcrumb" &&
+        Boolean(resolveSectionComponent(section.variant, category)),
     )
   ) {
     const saved =
@@ -1897,7 +1898,8 @@ const attachMissingSplitInnerPageSections = (
       saved?.variant ||
       payload.sections.find(
         (section) =>
-          section.type === "Breadcrumb" && Boolean(sectionRegistry[section.variant]),
+          section.type === "Breadcrumb" &&
+        Boolean(resolveSectionComponent(section.variant, category)),
       )?.variant ||
       "Breadcrumb-5";
     const preview = (resolveLayoutPreview(variant, category)?.data ||
@@ -4914,7 +4916,7 @@ function PublishedSiteContent({
       return null;
     }
     const section = countriesServeSectionForShell;
-    const Component = sectionRegistry[section.variant];
+    const Component = resolveSectionComponent(section.variant, category);
     if (!Component) return null;
     const defaultVariant = `${section.type}-1`;
     const variantData =
@@ -4959,7 +4961,7 @@ function PublishedSiteContent({
           publishedTemplate,
         );
         const renderSection = { ...section, variant: renderVariant };
-        const Component = sectionRegistry[renderVariant];
+        const Component = resolveSectionComponent(renderVariant, category);
         const defaultVariant = `${section.type}-1`;
         const variantData =
           section.data?.[renderVariant] ??

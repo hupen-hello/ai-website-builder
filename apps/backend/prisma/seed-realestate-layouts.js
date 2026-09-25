@@ -94,6 +94,62 @@ const PAGE = [
   ['Breadcrumb', 6, 'Realestate Inner Banner 2'],
 ];
 
+/** Template 4 (Realestate · Template 4) — skip keys that already exist as global *-4. */
+const HOME_T4 = [
+  ['PropertySearch', 4, 'Realestate T4 Property Search'],
+  ['PropertyGrid', 4, 'Realestate T4 Property Grid'],
+  ['Features', 4, 'Realestate T4 Features'],
+  ['FeaturedDevelopers', 4, 'Realestate T4 Featured Developers'],
+  ['CtaBanner', 4, 'Realestate T4 CTA Banner'],
+  ['Stats', 4, 'Realestate T4 Stats'],
+  ['Team', 4, 'Realestate T4 Team'],
+  ['MissionVision', 4, 'Realestate T4 Mission Vision'],
+];
+
+const PAGE_T4 = [
+  ['PageBanner', 4, 'Realestate T4 Page Banner'],
+  ['AwardsPage', 4, 'Realestate T4 Awards Page'],
+  ['BlogPage', 4, 'Realestate T4 Blog Page'],
+  ['BlogDetail', 4, 'Realestate T4 Blog Detail'],
+  ['BuyPropertyPage', 4, 'Realestate T4 Buy Property'],
+  ['CareerPage', 4, 'Realestate T4 Career Page'],
+  ['CareerJobs', 4, 'Realestate T4 Career Jobs'],
+  ['CareerCta', 4, 'Realestate T4 Career CTA'],
+  ['CareerApplication', 4, 'Realestate T4 Career Application'],
+  ['EnquiryPage', 4, 'Realestate T4 Enquiry'],
+  ['BrochurePage', 4, 'Realestate T4 Brochure'],
+  ['QuotePage', 4, 'Realestate T4 Quote'],
+  ['CsrPage', 4, 'Realestate T4 CSR'],
+  ['CsrPrograms', 4, 'Realestate T4 CSR Programs'],
+  ['CsrCta', 4, 'Realestate T4 CSR CTA'],
+  ['ContactMap', 4, 'Realestate T4 Contact Map'],
+  ['ContactFeatures', 4, 'Realestate T4 Contact Features'],
+  ['CookiePolicyPage', 4, 'Realestate T4 Cookie Policy'],
+  ['DisclaimerPage', 4, 'Realestate T4 Disclaimer'],
+  ['PartnerPage', 4, 'Realestate T4 Partners'],
+  ['TeamPage', 4, 'Realestate T4 Team Page'],
+  ['TeamDetail', 4, 'Realestate T4 Team Detail'],
+  ['MissionPage', 4, 'Realestate T4 Mission Page'],
+  ['VisionPage', 4, 'Realestate T4 Vision Page'],
+  ['TestimonialPage', 4, 'Realestate T4 Testimonials Page'],
+  ['PortfolioPage', 4, 'Realestate T4 Projects'],
+  ['ProjectDetail', 4, 'Realestate T4 Project Detail'],
+  ['PropertyDetail', 4, 'Realestate T4 Property Detail'],
+  ['PropertyPage', 4, 'Realestate T4 Properties'],
+  ['PrivacyPage', 4, 'Realestate T4 Privacy'],
+  ['RefundPolicyPage', 4, 'Realestate T4 Refund Policy'],
+  ['RentPage', 4, 'Realestate T4 Rent'],
+  ['PricingPage', 4, 'Realestate T4 Pricing'],
+  ['PricingTable', 4, 'Realestate T4 Pricing Table'],
+  ['PricingHelp', 4, 'Realestate T4 Pricing Help'],
+  ['FaqPage', 4, 'Realestate T4 FAQ Page'],
+  ['IndustriesPage', 4, 'Realestate T4 Industries'],
+  ['WhyPartner', 4, 'Realestate T4 Why Partner'],
+  ['IndustryDetail', 4, 'Realestate T4 Industry Detail'],
+  ['SitemapPage', 4, 'Realestate T4 Sitemap'],
+  ['TermsPage', 4, 'Realestate T4 Terms'],
+];
+
 for (const [sectionType, sectionNumber, name] of HOME) {
   layouts.push({
     key: `${sectionType}-${sectionNumber}`,
@@ -117,6 +173,32 @@ for (const [sectionType, sectionNumber, name] of PAGE) {
     order: sectionNumber,
     categorySlug: CATEGORY_SLUG,
     description: `Imported RealEstate page layout (${sectionType}-${sectionNumber})`,
+  });
+}
+
+for (const [sectionType, sectionNumber, name] of HOME_T4) {
+  layouts.push({
+    key: `${sectionType}-${sectionNumber}`,
+    name,
+    sectionType,
+    sectionNumber,
+    scope: 'home',
+    order: sectionNumber,
+    categorySlug: CATEGORY_SLUG,
+    description: `Realestate template 4 home layout (${sectionType}-${sectionNumber})`,
+  });
+}
+
+for (const [sectionType, sectionNumber, name] of PAGE_T4) {
+  layouts.push({
+    key: `${sectionType}-${sectionNumber}`,
+    name,
+    sectionType,
+    sectionNumber,
+    scope: 'page',
+    order: sectionNumber,
+    categorySlug: CATEGORY_SLUG,
+    description: `Realestate template 4 page layout (${sectionType}-${sectionNumber})`,
   });
 }
 
@@ -148,6 +230,10 @@ async function main() {
   let updated = 0;
   for (const layout of layouts) {
     const existing = await prisma.layout.findUnique({ where: { key: layout.key } });
+    if (existing && !existing.categorySlug) {
+      console.log(`skip global ${layout.key}`);
+      continue;
+    }
     const row = await prisma.layout.upsert({
       where: { key: layout.key },
       create: { ...layout, status: 'Active' },

@@ -47,7 +47,7 @@ import {
   SocialLinkData,
   resolveBannerSlideButtons,
 } from "../../types/section";
-import { sectionRegistry } from "../../lib/sectionRegistry";
+import { resolveSectionComponent } from "../../lib/sectionRegistry";
 import {
   getContentBundle,
   getSectionLayoutsForCategory,
@@ -186,7 +186,7 @@ const LazyDatabaseLayoutPreview = ({
 }) => {
   const previewRef = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
-  const Component = sectionRegistry[layout.id];
+  const Component = resolveSectionComponent(layout.id, category);
   const preview = shouldLoad
     ? resolveLayoutPreview(layout.id, category)
     : null;
@@ -785,6 +785,7 @@ const componentContentFieldsByVariant: Record<string, string[]> = {
   "WhyChooseUs-4": ["pretitle", "title", "desc", "whyChooseUsItems"],
   "WhyChooseUs-5": ["pretitle", "title", "desc", "whyChooseUsItems"],
   "WhyChooseUs-6": ["pretitle", "title", "desc", "whyChooseUsItems"],
+  "Features-4": ["backgroundImage", "stats", "accentColor"],
   "Features-5": ["features"],
   "Features-6": ["features"],
   "FeaturedDev-5": ["pretitle", "title", "desc", "items"],
@@ -932,7 +933,7 @@ const knownContentFieldsBySection: Record<string, Set<string>> = {
   Service: new Set(["pretitle", "title", "subtitle", "desc", "desc2", "sideImage", "sideImageTitle", "productSectionTitle", "productItems", "serviceSlides"]),
   Product: new Set(["pretitle", "title", "desc", "buttons", "serviceSlides", "productFeatures", "productTotalPrice", "productShippingText", "productSectionTitle", "productItems"]),
   WhyChooseUs: new Set(["pretitle", "title", "desc", "whyChooseUsItems"]),
-  Features: new Set(["features"]),
+  Features: new Set(["features", "stats", "backgroundImage", "accentColor"]),
   FeaturedDev: new Set(["pretitle", "title", "desc", "items"]),
   InvestmentOpportunities: new Set(["pretitle", "title", "desc", "items"]),
   Process: new Set(["pretitle", "title", "desc", "steps", "button"]),
@@ -1109,9 +1110,33 @@ const normalizeSectionType = (sectionType: string) => {
   return normalized.charAt(0).toUpperCase() + normalized.slice(1);
 };
 
+const getSidebarItems = (sectionType: string) => {
+  const type = normalizeSectionType(sectionType);
+  return (
+    sidebarItemsBySection[type] ?? [`${type} Content`, `${type} Layout`]
+  );
+};
+
+const DEDICATED_CONTENT_SECTIONS = new Set([
+  "Topbar",
+  "Header",
+  "Banner",
+  "FormDetail",
+  "Footer",
+]);
+
+const DEDICATED_LAYOUT_SECTIONS = new Set([
+  "Topbar",
+  "Header",
+  "Banner",
+  "About",
+  "Product",
+  "FormDetail",
+  "Footer",
+]);
+
 const getDefaultTab = (sectionType: string) =>
-  sidebarItemsBySection[normalizeSectionType(sectionType)]?.[0] ??
-  "Header Layout";
+  getSidebarItems(sectionType)[0] ?? "Header Layout";
 
 const formatSectionTitle = (sectionType: string) =>
   normalizeSectionType(sectionType);
@@ -1230,6 +1255,17 @@ const getDefaultBannerData = (
     : [];
 
   if (variant === "Banner-4") {
+    const looksLikeImageHero =
+      !sourceSlides.length &&
+      Boolean(
+        sourceData.title ||
+          sourceData.pretitle ||
+          sourceData.backgroundImage ||
+          sourceData.bgImage,
+      );
+    if (looksLikeImageHero) {
+      return { ...sourceData };
+    }
     return {
       ...sourceData,
       bannerHeight: 70,
@@ -2013,6 +2049,22 @@ const userManageableCollectionFields = new Set([
   "stats",
   "promises",
   "formFields",
+  "properties",
+  "items",
+  "listings",
+  "services",
+  "members",
+  "posts",
+  "groups",
+  "plans",
+  "industries",
+  "partners",
+  "highlights",
+  "slides",
+  "cards",
+  "faqs",
+  "team",
+  "awards",
 ]);
 
 const formatFieldLabel = (fieldName: string) =>
@@ -2058,6 +2110,7 @@ const GenericArrayFieldEditor = ({
       (userManageableCollectionFields.has(fieldName) ||
         (fieldName === "items" &&
           (sectionType === "FeaturedDev" ||
+            sectionType === "FeaturedDevelopers" ||
             sectionType === "InvestmentOpportunities"))) &&
     Boolean(onAddArrayItem) &&
     Boolean(onDeleteArrayItem);
@@ -2870,7 +2923,7 @@ export default function EditSectionModal({
   const newMenuLabelInputRef = useRef<HTMLInputElement>(null);
   const [scrollToNewMenuItem, setScrollToNewMenuItem] = useState(false);
   const activeSectionType = normalizeSectionType(sectionType);
-  const visibleSidebarItems = sidebarItemsBySection[activeSectionType] ?? [];
+  const visibleSidebarItems = getSidebarItems(activeSectionType);
   const currentSection = sections.find(
     (item) => (item.id ?? item.type) === sectionId,
   );
@@ -3630,15 +3683,20 @@ export default function EditSectionModal({
     hasBannerImageField || hasBannerVideoField || hasBannerColorField;
   const hasBannerHeightField = "bannerHeight" in (activeBannerData ?? {});
   const hasBannerSlidesField = Array.isArray(activeBannerData?.bannerSlides);
+  const isRealestateCategory =
+    (category || "").trim().toLowerCase() === "realestate";
   const isSliderBanner =
-    activeVariant === "Banner-3" ||
-    activeVariant === "Banner-4" ||
-    activeVariant === "Banner-5" ||
-    activeVariant === "Banner-6";
-  const isVideoSliderBanner = activeVariant === "Banner-4";
+    (activeVariant === "Banner-3" ||
+      activeVariant === "Banner-4" ||
+      activeVariant === "Banner-5" ||
+      activeVariant === "Banner-6") &&
+    !(isRealestateCategory && activeVariant === "Banner-4");
+  const isVideoSliderBanner =
+    activeVariant === "Banner-4" && !isRealestateCategory;
   const isSimpleBanner =
     activeVariant === "Banner-1" ||
-    activeVariant === "Banner-2";
+    activeVariant === "Banner-2" ||
+    (isRealestateCategory && activeVariant === "Banner-4");
 
   const activeFooterData = (currentSection?.data?.[activeVariant] ??
     (activeSectionType === "Footer" ? fallbackVariantData : undefined)) as
@@ -4163,7 +4221,6 @@ export default function EditSectionModal({
     if (field === "impactStats" && items.length >= 4) return;
     if (field === "benefits" && items.length >= 4) return;
     if (field === "formFields" && items.length >= MAX_FORM_FIELDS) return;
-    if (field === "items" && activeSectionType !== "FeaturedDev" && activeSectionType !== "InvestmentOpportunities") return;
 
     const newItems: Record<string, unknown> = {
       productItems: {
@@ -4232,6 +4289,11 @@ export default function EditSectionModal({
               yieldLabel: "",
               href: "/contact",
             }
+          : activeSectionType === "FeaturedDevelopers"
+            ? {
+                name: "New partner",
+                logo: "",
+              }
           : {
               name: "New developer",
               image: "",
@@ -4281,8 +4343,12 @@ export default function EditSectionModal({
         desc: "Add a short description.",
       },
       stats: {
+        value: "0",
         stat: "0+",
+        title: "New stat",
         label: "New stat",
+        desc: "",
+        icon: "home",
       },
       promises: {
         title: "New point",
@@ -4301,7 +4367,11 @@ export default function EditSectionModal({
               placeholder: "Enter value",
       },
     };
-    const newItem = newItems[field];
+    const newItem =
+      newItems[field] ??
+      (items[0] && typeof items[0] === "object"
+        ? { ...(items[0] as Record<string, unknown>) }
+        : undefined);
 
     if (!newItem) return;
     updateGenericField(path, [...items, newItem]);
@@ -7596,32 +7666,7 @@ export default function EditSectionModal({
                 </div>
               )}
 
-            {[
-              "Breadcrumb",
-              "About",
-              "Service",
-              "Product",
-              "WhyChooseUs",
-              "Features",
-              "FeaturedDev",
-              "InvestmentOpportunities",
-              "Process",
-              "Awards",
-              "AwardsPage",
-              "MissionPage",
-              "MissionValues",
-              "CsrPage",
-              "CsrPrograms",
-              "CareerPage",
-              "CareerJobs",
-              "ContactPage",
-              "Stats",
-              "CTA",
-              "Gallery",
-              "Contact",
-              "FAQ",
-              "Testimonial",
-            ].includes(activeSectionType) &&
+            {!DEDICATED_CONTENT_SECTIONS.has(activeSectionType) &&
               activeTab.endsWith("Content") && (
                 <div className="space-y-5">
                   {visibleGenericContentEntries.map(([key, value]) => (
@@ -7643,7 +7688,7 @@ export default function EditSectionModal({
                 </div>
               )}
 
-            {["Breadcrumb", "WhyChooseUs", "Features", "FeaturedDev", "InvestmentOpportunities", "Process", "Awards", "AwardsPage", "MissionPage", "MissionValues", "CsrPage", "CsrPrograms", "CareerPage", "CareerJobs", "ContactPage", "Stats", "CTA", "Service", "Gallery", "Contact", "FAQ", "Testimonial"].includes(activeSectionType) &&
+            {!DEDICATED_LAYOUT_SECTIONS.has(activeSectionType) &&
               activeTab.endsWith("Layout") && (
                 <div className="space-y-4">
                   {activeSectionType === "Gallery" && layoutOptions.length > 4 && (
@@ -7683,7 +7728,10 @@ export default function EditSectionModal({
                       layout.id === currentSection?.variant ||
                       (unorderedLayoutOptions.length === 1 &&
                         layout.id.startsWith(`${activeSectionType}-`));
-                    const Component = sectionRegistry[layout.id];
+                    const Component = resolveSectionComponent(
+                      layout.id,
+                      category,
+                    );
 
                     if (layout.isDatabase) {
                     return (

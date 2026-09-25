@@ -44,7 +44,7 @@ import {
   withTopbarLayoutSkin,
   applyTopbarLayoutSkins,
 } from "./src/data/templateFlow";
-import { sectionRegistry } from "./src/lib/sectionRegistry";
+import { resolveSectionComponent } from "./src/lib/sectionRegistry";
 import {
   INLINE_TEXT_FORMATS_KEY,
   readInlineTextFormats,
@@ -16323,7 +16323,7 @@ function EditorPage({
       return null;
     }
     const section = countriesServeSection;
-    const Component = sectionRegistry[section.variant];
+    const Component = resolveSectionComponent(section.variant, category);
     if (!Component) return null;
     const defaultVariant = `${section.type}-1`;
     const variantData =
@@ -16443,7 +16443,7 @@ function EditorPage({
           section,
           editorTemplate,
         );
-        const Component = sectionRegistry[renderVariant];
+        const Component = resolveSectionComponent(renderVariant, category);
         const defaultVariant = `${section.type}-1`;
         const variantData =
           section.data?.[renderVariant] ??

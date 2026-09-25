@@ -8,7 +8,7 @@ import {
   type CSSProperties,
 } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { sectionRegistry } from "@/app/editor/layout/src/lib/sectionRegistry";
+import { resolveSectionComponent } from "@/app/editor/layout/src/lib/sectionRegistry";
 import { PreviewProvider } from "@/app/editor/layout/src/components/context/PreviewContext";
 import { setActiveRedesignDesignId } from "@/lib/redesign-design-id";
 import { readRedesignEditorSections } from "@/lib/build-redesign-home-sections";
@@ -166,7 +166,10 @@ function LiveBrandedPreview() {
           }
         `}</style>
         {visible.map((section, index) => {
-          const Component = sectionRegistry[section.variant];
+          const Component = resolveSectionComponent(
+            section.variant,
+            searchParams.get("category") || "Realestate",
+          );
           if (!Component) return null;
           const data = sectionData(section);
           const isNewest =

@@ -1,6 +1,7 @@
 import { selectedConfig } from "./selectedConfig";
 import categoryContentJson from "./categoryContent.json";
 import type { SectionData, SectionItem, SelectedConfig } from "../types/section";
+import { resolveMediaSrc } from "../lib/resolveMediaSrc";
 
 export type CategoryKey = string;
 
@@ -16,6 +17,11 @@ export type BuilderTemplate = {
   pages?: Array<{ id: string; label: string; sectionType: string }> | null;
   /** When set, home canvas order follows this list (template-1 style). */
   homeSectionOrder?: string[] | null;
+  /**
+   * Extra section types rendered on an inner page (same `page` slug).
+   * `Breadcrumb` / `PageBanner` entries are placed before the page body.
+   */
+  pageCompanions?: Record<string, string[]> | null;
   sectionVariants: Record<string, string>;
   variables?: Record<string, string>;
   status?: string;
@@ -76,9 +82,50 @@ let bundleLastRefreshAt = 0;
 const BUNDLE_REFRESH_TTL_MS = 60_000;
 
 /** Frozen JSON skins — API bundle must not overwrite premium -5/-6 variants. */
-const jsonBuilderTemplates = (
-  structuredClone(categoryContentJson) as unknown as CategoryContentRecord
-).templates;
+const jsonCategoryContent = structuredClone(
+  categoryContentJson,
+) as unknown as CategoryContentRecord;
+
+const jsonBuilderTemplates = jsonCategoryContent.templates;
+
+const overlayLocalDash4Sections = (
+  remote: CategoryContentRecord["categories"],
+): CategoryContentRecord["categories"] => {
+  const out: CategoryContentRecord["categories"] = { ...remote };
+  for (const [catName, localPack] of Object.entries(
+    jsonCategoryContent.categories || {},
+  )) {
+    const remotePack = out[catName];
+    if (!remotePack) {
+      out[catName] = localPack;
+      continue;
+    }
+    const sections: SectionContentMap = { ...(remotePack.sections || {}) };
+    for (const [secName, localSec] of Object.entries(localPack.sections || {})) {
+      if (!localSec || typeof localSec !== "object") continue;
+      const remoteSec = sections[secName];
+      if (!remoteSec || typeof remoteSec !== "object") {
+        sections[secName] = localSec as Record<string, unknown>;
+        continue;
+      }
+      const merged = { ...(remoteSec as Record<string, unknown>) };
+      for (const [key, val] of Object.entries(
+        localSec as Record<string, unknown>,
+      )) {
+        if (/-4$/.test(key)) merged[key] = val;
+      }
+      sections[secName] = merged;
+    }
+    const templates = Array.from(
+      new Set([
+        ...(Array.isArray(remotePack.templates) ? remotePack.templates : []),
+        ...(Array.isArray(localPack.templates) ? localPack.templates : []),
+      ]),
+    );
+    out[catName] = { ...remotePack, templates, sections };
+  }
+  return out;
+};
 
 const mergeRemoteTemplates = (remote: BuilderTemplate[]) => {
   const jsonById = new Map(jsonBuilderTemplates.map((item) => [item.id, item]));
@@ -92,6 +139,7 @@ const mergeRemoteTemplates = (remote: BuilderTemplate[]) => {
       type: local.type,
       pages: local.pages || item.pages,
       homeSectionOrder: local.homeSectionOrder || item.homeSectionOrder,
+      pageCompanions: local.pageCompanions || item.pageCompanions,
       sectionVariants: local.sectionVariants,
       variables: local.variables || item.variables,
       preview_description: local.preview_description || item.preview_description,
@@ -120,7 +168,9 @@ export const applyContentBundle = (
         : categoryContent.common,
     categories:
       bundle.categories && typeof bundle.categories === "object"
-        ? (bundle.categories as CategoryContentRecord["categories"])
+        ? overlayLocalDash4Sections(
+            bundle.categories as CategoryContentRecord["categories"],
+          )
         : categoryContent.categories,
   };
 };
@@ -544,6 +594,25 @@ const fallbackVariantData = (
   return {};
 };
 
+const rewriteTemplate4Media = (value: unknown): unknown => {
+  if (typeof value === "string") {
+    return value.includes("/categories/realestate/template4/") ||
+      value.includes("/images/placeholder")
+      ? resolveMediaSrc(value)
+      : value;
+  }
+  if (Array.isArray(value)) return value.map(rewriteTemplate4Media);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, nested]) => [
+        key,
+        rewriteTemplate4Media(nested),
+      ]),
+    );
+  }
+  return value;
+};
+
 const mergeCategoryData = (
   section: SectionItem,
   category: string,
@@ -600,7 +669,10 @@ const mergeCategoryData = (
     }
   }
 
-  return { ...section, data: nextData };
+  return {
+    ...section,
+    data: rewriteTemplate4Media(nextData) as SectionItem["data"],
+  };
 };
 
 const createDefaultSectionData = (
@@ -2543,6 +2615,52 @@ export const buildSelectedConfig = (
         page: page.id,
       };
       const companions: SectionItem[] = [];
+      const customCompanions = builderTemplate.pageCompanions?.[page.id];
+      const useCustomPageMap = Boolean(builderTemplate.pageCompanions);
+      if (useCustomPageMap) {
+        const before: SectionItem[] = [];
+        const after: SectionItem[] = [];
+        const companionTypes = [...(customCompanions || [])];
+        if (
+          !companionTypes.includes("Breadcrumb") &&
+          !companionTypes.includes("PageBanner")
+        ) {
+          companionTypes.unshift("Breadcrumb");
+        }
+        companionTypes.forEach((sectionType) => {
+          const companionVariant = builderTemplate.sectionVariants[sectionType];
+          if (!companionVariant) return;
+          const item = {
+            ...makeSection(sectionType, companionVariant),
+            id: `${sectionType}-${page.id}`,
+            page: page.id,
+          };
+          if (sectionType === "Breadcrumb" || sectionType === "PageBanner") {
+            const variantData =
+              (item.data?.[companionVariant] as Record<string, unknown>) || {};
+            item.data = {
+              ...item.data,
+              [companionVariant]: {
+                ...variantData,
+                title: page.label,
+                name: page.label,
+                homeText:
+                  (typeof variantData.homeText === "string" &&
+                    variantData.homeText) ||
+                  "Home",
+                homeLabel:
+                  (typeof variantData.homeLabel === "string" &&
+                    variantData.homeLabel) ||
+                  "Home",
+              },
+            };
+            before.push(item);
+          } else {
+            after.push(item);
+          }
+        });
+        return [...before, pageBody, ...after];
+      }
       if (page.sectionType === "MissionPage") {
         const valuesVariant =
           builderTemplate.sectionVariants.MissionValues || "MissionValues-5";

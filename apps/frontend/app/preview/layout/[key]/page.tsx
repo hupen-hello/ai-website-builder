@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useMemo, useState, CSSProperties } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { sectionRegistry } from "@/app/editor/layout/src/lib/sectionRegistry";
+import { resolveSectionComponent } from "@/app/editor/layout/src/lib/sectionRegistry";
 import {
   getTemplateVariables,
   refreshCategoryContentFromApi,
@@ -48,7 +48,7 @@ function LayoutPreviewInner() {
       contentReady ? resolveLayoutPreview(variantKey, category) : null,
     [variantKey, category, contentReady],
   );
-  const Component = sectionRegistry[variantKey];
+  const Component = resolveSectionComponent(variantKey, category);
   const cssVars = useMemo(
     () =>
       contentReady

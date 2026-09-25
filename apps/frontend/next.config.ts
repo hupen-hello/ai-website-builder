@@ -15,8 +15,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/editor/dashboard",
-        destination: "/user/dashboard",
+        source: "/categories/realestate/template4/:path*",
+        destination:
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
         permanent: false,
       },
       {
