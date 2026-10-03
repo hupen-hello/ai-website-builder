@@ -9,14 +9,6 @@ const prisma = new PrismaClient();
 const categories = [
   {
     order: 1,
-    name: 'Business',
-    slug: 'business',
-    icon: 'lucide-briefcase',
-    description: 'Grow your business',
-    status: 'Active',
-  },
-  {
-    order: 2,
     name: 'Realestate',
     slug: 'realestate',
     icon: 'lucide-home',
@@ -24,11 +16,11 @@ const categories = [
     status: 'Active',
   },
   {
-    order: 3,
-    name: 'School',
-    slug: 'school',
-    icon: 'lucide-graduation-cap',
-    description: 'Manage admissions',
+    order: 2,
+    name: 'Event Services',
+    slug: 'event-services',
+    icon: 'lucide-calendar-days',
+    description: 'Build an events website',
     status: 'Active',
   },
 ];

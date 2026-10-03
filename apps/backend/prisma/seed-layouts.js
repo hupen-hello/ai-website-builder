@@ -73,13 +73,16 @@ const NAMES = {
 /** @type {Array<{ key: string; name: string; sectionType: string; sectionNumber: number; scope: string; order: number }>} */
 const layouts = [];
 
+const VARIANT_NUMBERS = [2, 4];
+
 for (const sectionType of HOME_SECTIONS) {
-  for (let n = 1; n <= 4; n += 1) {
+  for (const n of VARIANT_NUMBERS) {
     layouts.push({
       key: `${sectionType}-${n}`,
       name: NAMES[sectionType]?.[n] || `${sectionType} ${n}`,
       sectionType,
       sectionNumber: n,
+      categorySlug: 'realestate',
       scope: 'home',
       order: n,
     });
@@ -87,12 +90,13 @@ for (const sectionType of HOME_SECTIONS) {
 }
 
 for (const sectionType of PAGE_SECTIONS) {
-  for (let n = 1; n <= 4; n += 1) {
+  for (const n of VARIANT_NUMBERS) {
     layouts.push({
       key: `${sectionType}-${n}`,
       name: `${sectionType.replace('Page', ' Page')} ${n}`,
       sectionType,
       sectionNumber: n,
+      categorySlug: 'realestate',
       scope: 'page',
       order: n,
     });
@@ -100,12 +104,13 @@ for (const sectionType of PAGE_SECTIONS) {
 }
 
 for (const sectionType of INNER_PAGE_CHROME) {
-  for (let n = 1; n <= 4; n += 1) {
+  for (const n of VARIANT_NUMBERS) {
     layouts.push({
       key: `${sectionType}-${n}`,
       name: `Breadcrumb ${n}`,
       sectionType,
       sectionNumber: n,
+      categorySlug: 'realestate',
       scope: 'page',
       order: n,
     });
@@ -121,6 +126,7 @@ async function main() {
         name: layout.name,
         sectionType: layout.sectionType,
         sectionNumber: layout.sectionNumber,
+        categorySlug: layout.categorySlug,
         scope: layout.scope,
         order: layout.order,
         status: 'Active',

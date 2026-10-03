@@ -301,8 +301,7 @@ export const applyInlineTextFormats = (
   const claimedElements = new Set<HTMLElement>();
 
   formats.forEach((format) => {
-    // Keyed formats belong to InlineRichText — mutating them with innerHTML
-    // detaches React fibers and causes removeChild crashes on later updates.
+     
     if (format.key) return;
 
     const matches = editableElements.filter(

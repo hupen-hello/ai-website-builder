@@ -123,7 +123,7 @@ const emptyForm = {
   name: "",
   sectionType: SECTION_TYPES[0],
   sectionNumber: 1,
-  categorySlug: "",
+  categorySlug: "realestate",
   scope: "home",
   order: 1,
   status: "Active",
@@ -475,7 +475,7 @@ const CustomLayoutsPage = () => {
                       <td className="py-4 px-6 text-[13px] font-medium text-gray-600 dark:text-gray-400 whitespace-nowrap">
                         {categories.find(
                           (category) => category.slug === layout.categorySlug,
-                        )?.name || "All categories"}
+                        )?.name || layout.categorySlug || "—"}
                       </td>
                       <td className="py-4 px-6 text-[13px] font-medium text-gray-600 dark:text-gray-400 capitalize">
                         {layout.scope}
@@ -646,7 +646,7 @@ const CustomLayoutsPage = () => {
                   <span className="truncate text-gray-900 dark:text-white">
                     {categories.find(
                       (category) => category.slug === formData.categorySlug,
-                    )?.name || "All categories"}
+                    )?.name || "Select category"}
                   </span>
                   <Icon
                     icon="solar:alt-arrow-down-bold"
@@ -656,23 +656,6 @@ const CustomLayoutsPage = () => {
                 </button>
                 {isCategoryOpen && (
                   <div className="absolute z-50 mt-1.5 max-h-48 w-full overflow-y-auto rounded-xl border border-gray-100 bg-white shadow-xl dark:border-white/10 dark:bg-[#1f1f1f]">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setFormData((current) => ({
-                          ...current,
-                          categorySlug: "",
-                        }));
-                        setIsCategoryOpen(false);
-                      }}
-                      className={`block w-full px-4 py-2.5 text-left text-[13.5px] hover:bg-gray-50 dark:hover:bg-white/5 ${
-                        !formData.categorySlug
-                          ? "font-bold text-[#e53935]"
-                          : "text-gray-700 dark:text-gray-300"
-                      }`}
-                    >
-                      All categories
-                    </button>
                     {categories.map((category) => (
                       <button
                         type="button"
@@ -696,7 +679,7 @@ const CustomLayoutsPage = () => {
                   </div>
                 )}
                 <p className="mt-1 text-[11px] text-gray-400">
-                  Choose where this layout content should be available.
+                  Choose Realestate or Event Services. Layouts are never shared across all categories.
                 </p>
               </div>
 

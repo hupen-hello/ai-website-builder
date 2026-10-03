@@ -270,239 +270,148 @@ const asSection = (component: unknown) =>
 
 export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   "CustomSection-1": CustomSection,
-  "BlogPage-1": BlogPage,
   "BlogPage-2": BlogPage,
-  "BlogPage-3": BlogPage,
   "BlogPage-4": BlogPage,
   "BlogPage-5": BlogPage,
-  "BlogPage-6": RealEstateBlogPage1,
   "AwardsPage-5": RealEstateAwardsPage1,
-  "AwardsPage-6": RealEstateAwardsPage1,
   "MissionPage-5": RealEstateMissionVision1,
-  "MissionPage-6": RealEstateMissionVision1,
   "MissionValues-5": RealEstateMissionValues1,
-  "MissionValues-6": RealEstateMissionValues1,
   "CsrPage-5": RealEstateCSRPage1,
-  "CsrPage-6": RealEstateCSRPage1,
   "CsrPrograms-5": RealEstateCSRPrograms1,
-  "CsrPrograms-6": RealEstateCSRPrograms1,
   "CareerPage-5": RealEstateCareerPage1,
-  "CareerPage-6": RealEstateCareerPage1,
   "CareerJobs-5": RealEstateCareerJobs1,
-  "CareerJobs-6": RealEstateCareerJobs1,
   "RentPage-5": RealEstateRent1,
-  "RentPage-6": RealEstateRent1,
   "BuyPropertyPage-5": RealEstateProperty1,
-  "BuyPropertyPage-6": RealEstateProperty1,
   "SitemapPage-5": RealEstateSitemap1,
-  "SitemapPage-6": RealEstateSitemap1,
   "PrivacyPage-5": RealEstatePrivacyPolicy1,
-  "PrivacyPage-6": RealEstatePrivacyPolicy1,
   "TermsPage-5": RealEstateTermsConditions1,
-  "TermsPage-6": RealEstateTermsConditions1,
   "DisclaimerPage-5": RealEstateDisclaimer1,
-  "DisclaimerPage-6": RealEstateDisclaimer1,
   "CookiePolicyPage-5": RealEstateCookiePolicy1,
-  "CookiePolicyPage-6": RealEstateCookiePolicy1,
   "RefundPolicyPage-5": RealEstateRefundPolicy1,
-  "RefundPolicyPage-6": RealEstateRefundPolicy1,
   "CustomPage-1": RealEstateCustomPage1,
   "CustomPage-2": RealEstateCustomPage2,
-  "CustomPage-3": RealEstateCustomPage3,
   "CustomPage-4": RealEstateCustomPage4,
   "CustomPage-5": RealEstateCustomPage5,
-  "CustomPage-6": RealEstateCustomPage5,
 
   // Topbar
-  "Topbar-1": TopbarOne,
   "Topbar-2": TopbarTwo,
-  "Topbar-3": TopbarOne,
   "Topbar-4": TopbarTwo,
   "Topbar-5": RealEstateTopbar1,
-  "Topbar-6": RealEstateTopbar2,
 
   // Header
-  "Header-1": HeaderOne,
   "Header-2": HeaderTwo,
-  "Header-3": HeaderOne,
   "Header-4": HeaderTwo,
   "Header-5": RealEstateHeader1,
-  "Header-6": RealEstateHeader2,
 
   // Banner
-  "Banner-1": BannerOne,
   "Banner-2": BannerTwo,
-  "Banner-3": BannerThree,
   "Banner-4": BannerFour,
   "Banner-5": RealEstateBanner1,
-  "Banner-6": RealEstateBanner2,
 
   // About
-  "About-1": AboutOne,
   "About-2": AboutTwo,
-  "About-3": AboutOne,
   "About-4": AboutTwo,
   "About-5": RealEstateAbout1,
-  "About-6": RealEstateAbout2,
 
   // Product / Services
-  "Product-1": ProductOne,
   "Product-2": ProductTwo,
-  "Product-3": ProductThree,
   "Product-4": ProductOne,
   "Product-5": RealEstateProduct1,
-  "Product-6": RealEstateProduct2,
 
   // WhyChooseUs
-  "WhyChooseUs-1": WhyChooseUsOne,
   "WhyChooseUs-2": WhyChooseUsTwo,
-  "WhyChooseUs-3": WhyChooseUsThree,
   "WhyChooseUs-4": WhyChooseUsFour,
   "WhyChooseUs-5": RealEstateWhyChooseUs1,
-  "WhyChooseUs-6": RealEstateWhyChooseUs2,
 
   // Gallery (5–6 keep legacy aliases; 7–8 = RealEstate)
-  "Gallery-1": GalleryOne,
   "Gallery-2": GalleryTwo,
-  "Gallery-3": GalleryThree,
   "Gallery-4": GalleryFour,
   "Gallery-5": GalleryFive,
-  "Gallery-6": GallerySix,
   "Gallery-7": RealEstateGallery1,
   "Gallery-8": RealEstateGallery2,
 
   // Countries We Serve
-  "CountriesServe-1": CountriesServeOne,
   "CountriesServe-2": CountriesServeOne,
-  "CountriesServe-3": CountriesServeOne,
   "CountriesServe-4": CountriesServeOne,
 
   // FormDetail
-  "FormDetail-1": FormDetailOne,
   "FormDetail-2": FormDetailTwo,
-  "FormDetail-3": FormDetailThree,
   "FormDetail-4": FormDetailFour,
   "FormDetail-5": RealEstateFormDetail1,
-  "FormDetail-6": RealEstateFormDetail2,
 
   // FAQ
-  "FAQ-1": FaqOne,
   "FAQ-2": FaqTwo,
-  "FAQ-3": FaqThree,
   "FAQ-4": FaqFour,
   "FAQ-5": RealEstateFAQ1,
-  "FAQ-6": RealEstateFAQ2,
 
   // Testimonial
-  "Testimonial-1": TestimonialOne,
   "Testimonial-2": TestimonialTwo,
-  "Testimonial-3": TestimonialThree,
   "Testimonial-4": TestimonialOne,
   "Testimonial-5": RealEstateTestimonial1,
-  "Testimonial-6": RealEstateTestimonial2,
 
   // Footer
-  "Footer-1": FooterOne,
   "Footer-2": FooterOne,
-  "Footer-3": FooterOne,
   "Footer-4": FooterOne,
   "Footer-5": RealEstateFooter1,
-  "Footer-6": RealEstateFooter2,
 
   // Pages
-  "AboutPage-1": AboutPage,
   "AboutPage-2": AboutPageTwo,
-  "AboutPage-3": AboutPageThree,
   "AboutPage-4": AboutPage,
   "AboutPage-5": RealEstateAboutPage1,
-  "AboutPage-6": RealEstateAboutPage1,
 
-  "ServicePage-1": ServicePage,
   "ServicePage-2": ServicePage,
-  "ServicePage-3": ServicePage,
   "ServicePage-4": ServicePage,
   "ServicePage-5": RealEstateServicePage1,
-  "ServicePage-6": RealEstateServicePage1,
 
-  "EventPage-1": EventPage,
   "EventPage-2": EventPage,
-  "EventPage-3": EventPage,
   "EventPage-4": EventPage,
 
   "PropertyPage-1": PropertyPage,
   "PropertyPage-2": PropertyPage,
-  "PropertyPage-3": PropertyPage,
   "PropertyPage-4": PropertyPage,
   "PropertyPage-5": RealEstateSaleProperty1,
-  "PropertyPage-6": RealEstateSaleProperty1,
   "PropertyDetail-5": RealEstatePropertyDetail1,
-  "PropertyDetail-6": RealEstatePropertyDetail1,
 
   "PortfolioPage-1": PortfolioPage,
   "PortfolioPage-2": PortfolioPage,
-  "PortfolioPage-3": PortfolioPage,
   "PortfolioPage-4": PortfolioPage,
   "PortfolioPage-5": RealEstateProject1,
   "ProjectDetail-5": RealEstateProjectDetail1,
-  "ProjectDetail-6": RealEstateProjectDetail1,
-  "PortfolioPage-6": RealEstateProject1,
 
-  "TeamPage-1": TeamPage,
   "TeamPage-2": TeamPage,
-  "TeamPage-3": TeamPage,
   "TeamPage-4": TeamPage,
 
-  "GalleryPage-1": GalleryPage,
   "GalleryPage-2": GalleryPage,
-  "GalleryPage-3": GalleryPage,
   "GalleryPage-4": GalleryPage,
   "GalleryPage-5": GalleryPage,
   "GalleryPage-6": RealEstateGalleryPage1,
 
-  "ContactPage-1": ContactPage,
   "ContactPage-2": ContactPageTwo,
-  "ContactPage-3": ContactPage,
   "ContactPage-4": ContactPageTwo,
   "ContactPage-5": RealEstateContactPage1,
-  "ContactPage-6": RealEstateContactPage1,
 
   // Also expose Contact home section variants used by RealEstate templates
   "Contact-5": RealEstateContact1,
-  "Contact-6": RealEstateContact1,
 
   // Breadcrumb
-  "Breadcrumb-1": BreadcrumbOne,
   "Breadcrumb-2": BreadcrumbTwo,
-  "Breadcrumb-3": BreadcrumbThree,
   "Breadcrumb-4": BreadcrumbFour,
   "Breadcrumb-5": RealEstateInnerBanner1,
-  "Breadcrumb-6": RealEstateInnerBanner1,
 
   // RealEstate extended section types (optional / future templates)
   "Features-5": RealEstateFeatures1,
-  "Features-6": RealEstateFeatures1,
   "Highlight-5": RealEstateHighlight1,
-  "Highlight-6": RealEstateHighlight1,
   "Featured-5": RealEstateFeatured1,
-  "Featured-6": RealEstateFeatured1,
   "FeaturedDev-5": RealEstateFeaturedDev1,
-  "FeaturedDev-6": RealEstateFeaturedDev1,
   "LatestProject-5": RealEstateLatestProject1,
-  "LatestProject-6": RealEstateLatestProject1,
   "Cities-5": RealEstateCities1,
-  "Cities-6": RealEstateCities1,
   "Awards-5": RealEstateAwards1,
-  "Awards-6": RealEstateAwards1,
   "Stats-5": RealEstateStats1,
-  "Stats-6": RealEstateStats1,
   "Process-5": RealEstateProcess1,
-  "Process-6": RealEstateProcess1,
   "CTA-5": RealEstateCTA1,
   "Blog-5": RealEstateBlog1,
-  "Blog-6": RealEstateBlog1,
   "BlogDetail-5": RealEstateBlogDetail1,
   "InvestmentOpportunities-5": RealEstateInvestmentOpportunities1,
-  "InvestmentOpportunities-6": RealEstateInvestmentOpportunities1,
 
   // Keep original RealEstate* keys for custom-layouts / previews
   RealEstateTopbar1,
@@ -781,3 +690,4 @@ export function resolveSectionComponent(
   );
   return matchKey ? sectionRegistry[matchKey] : undefined;
 }
+

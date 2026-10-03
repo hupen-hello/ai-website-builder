@@ -37,22 +37,12 @@ async function main() {
   // core keys from categoryContent.json that are no longer in the file.
   const keepKeys = templates.map((t) => t.id).filter(Boolean);
   const keepSet = new Set(keepKeys);
-  const CORE_TEMPLATE_RE = /^template-(realestate|business|school)-\d+$/;
   if (keepKeys.length) {
-    const extras = await prisma.template.findMany({
+    const removed = await prisma.template.deleteMany({
       where: { key: { notIn: keepKeys } },
-      select: { key: true },
     });
-    const staleCore = extras
-      .map((row) => row.key)
-      .filter((key) => CORE_TEMPLATE_RE.test(key) && !keepSet.has(key));
-    if (staleCore.length) {
-      const removed = await prisma.template.deleteMany({
-        where: { key: { in: staleCore } },
-      });
-      if (removed.count) {
-        console.log(`Removed ${removed.count} stale core template(s)`);
-      }
+    if (removed.count) {
+      console.log(`Removed ${removed.count} extra template(s)`);
     }
   }
 
@@ -123,6 +113,14 @@ async function main() {
     update: { sections: common },
   });
   console.log('✓ SharedContent (common)');
+
+  await prisma.categoryContent.deleteMany({
+    where: {
+      categorySlug: {
+        notIn: Object.keys(categories).map((name) => slugifyName(name)),
+      },
+    },
+  });
 
   for (const [categoryName, pack] of Object.entries(categories)) {
     const categorySlug = slugifyName(categoryName);

@@ -1666,7 +1666,7 @@ export const getBuilderTemplate = (
     if (premium) return premium;
   }
   if (isRealestate && requested === "template-2") {
-    const premium = templates.find((t) => t.id === "template-realestate-6");
+    const premium = templates.find((t) => t.id === "template-realestate-2");
     if (premium) return premium;
   }
 
@@ -1685,7 +1685,7 @@ export const isSameBuilderTemplate = (
     const isRealestate =
       categoryKey === "realestate" || categoryKey === "real-estate";
     if (isRealestate && requested === "template-1") return "template-realestate-5";
-    if (isRealestate && requested === "template-2") return "template-realestate-6";
+    if (isRealestate && requested === "template-2") return "template-realestate-2";
     return requested;
   };
   const a = alias(left);

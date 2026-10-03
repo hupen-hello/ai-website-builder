@@ -166,6 +166,7 @@ const PAGE_T5 = [
 ];
 
 for (const [sectionType, sectionNumber, name] of HOME) {
+  if (sectionNumber === 6) continue;
   layouts.push({
     key: `${sectionType}-${sectionNumber}`,
     name,
@@ -179,6 +180,7 @@ for (const [sectionType, sectionNumber, name] of HOME) {
 }
 
 for (const [sectionType, sectionNumber, name] of PAGE) {
+  if (sectionNumber === 6) continue;
   layouts.push({
     key: `${sectionType}-${sectionNumber}`,
     name,
