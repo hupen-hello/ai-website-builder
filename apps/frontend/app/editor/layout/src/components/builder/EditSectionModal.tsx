@@ -529,6 +529,12 @@ const layoutsBySection: Record<string, { id: string; name: string }[]> = {
   CsrPrograms: [{ id: "CsrPrograms-5", name: "Realestate CSR Programs" }],
   CareerPage: [{ id: "CareerPage-5", name: "Realestate Career Benefits" }],
   CareerJobs: [{ id: "CareerJobs-5", name: "Realestate Open Positions" }],
+  AboutAchievements: [
+    { id: "AboutAchievements-5", name: "Realestate About Achievements" },
+  ],
+  AboutHistory: [{ id: "AboutHistory-5", name: "Realestate About History" }],
+  AboutTeam: [{ id: "AboutTeam-5", name: "Realestate About Team" }],
+  AboutProcess: [{ id: "AboutProcess-5", name: "Realestate About Process" }],
   ContactPage: [{ id: "ContactPage-5", name: "Realestate Contact Page" }],
   Stats: [{ id: "Stats-5", name: "Realestate Stats 1" }],
   CTA: [{ id: "CTA-5", name: "Realestate Call to Action" }],
@@ -751,14 +757,49 @@ const componentContentFieldsByVariant: Record<string, string[]> = {
   "AboutPage-2": ["pretitle", "title", "desc", "desc2", "sideImage", "sideImageTitle"],
   "AboutPage-3": ["pretitle", "title", "subtitle", "desc", "desc2", "philosophyTitle", "philosophyDesc"],
   "AboutPage-5": [
-    "subtitle",
-    "title",
-    "desc1",
-    "desc2",
-    "promises",
-    "buttons",
-    "sideImage",
-    "sideImageTitle",
+    "storyTagline",
+    "storyTitle",
+    "storyDescription",
+    "experienceYears",
+    "experienceText",
+    "shapeImage",
+    "image1",
+    "image2",
+    "worldwideServicesLabel",
+    "worldwideServicesDescription",
+  ],
+  "About-5": [
+    "storyTagline",
+    "storyTitle",
+    "storyDescription",
+    "experienceYears",
+    "experienceText",
+    "shapeImage",
+    "image1",
+    "image2",
+    "worldwideServicesLabel",
+    "worldwideServicesDescription",
+  ],
+  "AboutAchievements-5": [
+    "achievementsTagline",
+    "achievementsTitle",
+    "ctaText",
+    "ctaUrl",
+    "stats",
+  ],
+  "AboutHistory-5": [
+    "historySubtitle",
+    "historyTitle",
+    "historyTabs",
+    "timeline",
+    "defaultTab",
+  ],
+  "AboutTeam-5": ["teamSubtitle", "teamTitle", "team", "teamDetailBasePath"],
+  "AboutProcess-5": [
+    "processSubtitle",
+    "processTitle",
+    "processSteps",
+    "stepPrefix",
   ],
   "AboutPage-6": [
     "subtitle",
@@ -2947,6 +2988,9 @@ export default function EditSectionModal({
       string,
       unknown
     >;
+    if (typeof data.storyTitle === "string" || typeof data.storyTagline === "string") {
+      return;
+    }
     if (typeof data.desc1 === "string") return;
     const promises = Array.isArray(data.promises)
       ? data.promises.flatMap((item) => {
@@ -3690,13 +3734,15 @@ export default function EditSectionModal({
       activeVariant === "Banner-4" ||
       activeVariant === "Banner-5" ||
       activeVariant === "Banner-6") &&
-    !(isRealestateCategory && activeVariant === "Banner-4");
+    !(isRealestateCategory &&
+      (activeVariant === "Banner-4" || activeVariant === "Banner-5"));
   const isVideoSliderBanner =
     activeVariant === "Banner-4" && !isRealestateCategory;
   const isSimpleBanner =
     activeVariant === "Banner-1" ||
     activeVariant === "Banner-2" ||
-    (isRealestateCategory && activeVariant === "Banner-4");
+    (isRealestateCategory &&
+      (activeVariant === "Banner-4" || activeVariant === "Banner-5"));
 
   const activeFooterData = (currentSection?.data?.[activeVariant] ??
     (activeSectionType === "Footer" ? fallbackVariantData : undefined)) as

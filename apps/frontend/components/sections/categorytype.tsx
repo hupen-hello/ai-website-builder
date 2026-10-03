@@ -21,14 +21,10 @@ import {
 import {
   fetchOnboardingCategories,
   filterOnboardingCategories,
-  preferCategoriesWithContent,
   type OnboardingCategory,
 } from "@/lib/onboardingCategories";
 import type { OnboardingWebsiteRelated } from "@/lib/onboardingDraft";
-import {
-  getCategoriesForOnboarding,
-  getTemplatesForCategory,
-} from "@/app/editor/layout/src/data/templateFlow";
+import { getCategoriesForOnboarding } from "@/app/editor/layout/src/data/templateFlow";
 
 const ICON_BY_KEY: Record<string, LucideIcon> = {
   business: Briefcase,
@@ -157,19 +153,10 @@ export default function CategoryType({
   }, []);
 
   const relatedCategories = useMemo(() => {
-    // Filter by website type (NGO / products / …). Create-AI skips template/theme shrink only.
-    const related = filterOnboardingCategories(apiCategories, websiteRelated);
-    if (createPath === "create-ai") {
-      return related;
-    }
-    const contentWithThemes = getCategoriesForOnboarding()
-      .filter((cat) => getTemplatesForCategory(cat.name).length > 0)
-      .map((cat) => ({
-        name: cat.name,
-        slug: cat.slug,
-      }));
-    return preferCategoriesWithContent(related, contentWithThemes);
-  }, [apiCategories, websiteRelated, createPath]);
+    // Always show every active Category from the API (Home Services, Automotive, …).
+    // Do not shrink to categoryContent.json keys — that list is only Realestate/Business/School.
+    return filterOnboardingCategories(apiCategories, websiteRelated);
+  }, [apiCategories, websiteRelated]);
 
   const availableTypes = useMemo(
     () => toCards(relatedCategories),

@@ -63,6 +63,8 @@ const SECTION_TYPES = [
   "SitemapPage",
   "PrivacyPage",
   "TermsPage",
+  "PackagePage",
+  "ServiceDetail",
 ];
 
 /** UI labels — Product section is shown as Service */
@@ -80,6 +82,8 @@ const SECTION_TYPE_LABELS: Record<string, string> = {
   CtaBanner: "CTA Banner",
   MissionVision: "Mission & Vision",
   PageBanner: "Page Banner",
+  PackagePage: "Package Page",
+  ServiceDetail: "Service Detail",
 };
 
 function sectionTypeLabel(type: string) {

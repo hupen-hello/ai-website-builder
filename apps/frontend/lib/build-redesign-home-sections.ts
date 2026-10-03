@@ -22,7 +22,7 @@ const HOME_SECTION_ORDER = [
 ] as const;
 
 type SectionItem = {
-  id: string;
+  id?: string;
   type: string;
   variant: string;
   page?: string;

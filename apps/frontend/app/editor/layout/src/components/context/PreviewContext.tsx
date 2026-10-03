@@ -8,6 +8,8 @@ import {
   useMemo,
   useRef,
   useState,
+  type Dispatch,
+  type SetStateAction,
 } from "react";
 import { useSearchParams } from "next/navigation";
 import {
@@ -28,6 +30,7 @@ import {
   mirrorActiveFlowCurrentPage,
   mirrorActiveFlowPageLinks,
 } from "@/lib/flowPreviewStorage";
+import { pageSlugsMatch } from "../../lib/previewNav";
 
 export type PageLink = {
   label: string;
@@ -179,7 +182,7 @@ type PreviewContextType = {
   setActiveRentalItemsPerPage?: (value: number) => void;
   setViewportMode: (mode: "desktop" | "mobile") => void;
   setCurrentPage: (page: string) => void;
-  setPageLinks: (links: PageLink[]) => void;
+  setPageLinks: Dispatch<SetStateAction<PageLink[]>>;
   setThemeVariables: (vars: Record<string, string>) => void;
   patchThemeVariable: (key: string, value: string) => void;
   setSiteSeoConfig: (config: unknown) => void;
@@ -315,6 +318,11 @@ export function PreviewProvider({
     const current = (currentPage || "").trim().toLowerCase();
     if (!current || current === "home") return;
     if (labels.has(current)) return;
+    if (
+      [...labels].some((label) => pageSlugsMatch(label, current))
+    ) {
+      return;
+    }
     setCurrentPage("Home");
   }, [pageLinks, currentPage]);
 

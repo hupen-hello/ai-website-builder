@@ -184,13 +184,90 @@ import {
   RealEstateTermsPage4,
 } from "../components/sections/legal/RealEstateLegalPages4";
 
-import { SectionProps } from "../types/section";
+import RealEstateHeader5 from "../components/sections/header/RealEstateHeader5";
+import RealEstateBanner5 from "../components/sections/banner/RealEstateBanner5";
+import RealEstateFeatures5 from "../components/sections/features/RealEstateFeatures5";
+import RealEstateProduct5 from "../components/sections/product/RealEstateProduct5";
+import RealEstateHighlight5 from "../components/sections/highlight/RealEstateHighlight5";
+import RealEstateLatestProject5 from "../components/sections/latest-project/RealEstateLatestProject5";
+import RealEstateTestimonial5 from "../components/sections/testimonial/RealEstateTestimonial5";
+import RealEstateBlog5 from "../components/sections/blog/RealEstateBlog5";
+import RealEstateFooter5 from "../components/sections/footer/RealEstateFooter5";
+import RealEstateBreadCrumb5 from "../components/sections/breadcrumb/RealEstateBreadCrumb5";
+import RealEstateAbout5 from "../components/sections/about/RealEstateAbout5";
+import RealEstateAboutPage5 from "../components/sections/about/RealEstateAboutPage5";
+import RealEstateAboutAchievements5 from "../components/sections/about/RealEstateAboutAchievements5";
+import RealEstateAboutHistory5 from "../components/sections/about/RealEstateAboutHistory5";
+import RealEstateAboutTeam5 from "../components/sections/about/RealEstateAboutTeam5";
+import RealEstateAboutProcess5 from "../components/sections/about/RealEstateAboutProcess5";
+import RealEstateTeamPage5 from "../components/sections/team/RealEstateTeamPage5";
+import RealEstateCareerPage5 from "../components/sections/career/RealEstateCareerPage5";
+import RealEstateCareerJobs5 from "../components/sections/career/RealEstateCareerJobs5";
+import RealEstateTestimonialPage5 from "../components/sections/testimonial/RealEstateTestimonialPage5";
+import RealEstateAwardPage5 from "../components/sections/awards/RealEstateAwardPage5";
+import RealEstatePartnerPage5 from "../components/sections/partner/RealEstatePartnerPage5";
+import RealEstateServicePage5 from "../components/sections/service/RealEstateServicePage5";
+import RealEstateServiceDetailPage5 from "../components/sections/service/RealEstateServiceDetailPage5";
+import RealEstatePropertyGrid5 from "../components/sections/property-grid/RealEstatePropertyGrid5";
+import RealEstatePropertyDetailPage5 from "../components/sections/property-detail/RealEstatePropertyDetailPage5";
+import RealEstateGalleryPage5 from "../components/sections/gallery/RealEstateGalleryPage5";
+import RealEstateBlogPage5 from "../components/sections/blog/RealEstateBlogPage5";
+import RealEstateBlogDetailPage5 from "../components/sections/blog/RealEstateBlogDetailPage5";
+import RealEstateBrochurePage5 from "../components/sections/brochure/RealEstateBrochurePage5";
+import RealEstatePackagePage5 from "../components/sections/package/RealEstatePackagePage5";
+import RealEstateFaqPage5 from "../components/sections/faq/RealEstateFaqPage5";
+import RealEstateContactPage5 from "../components/sections/contact/RealEstateContactPage5";
+import RealEstateQuotePage5 from "../components/sections/quote/RealEstateQuotePage5";
+import RealEstateSitemapPage5 from "../components/sections/sitemap/RealEstateSitemapPage5";
+import {
+  RealEstateCookiePage5,
+  RealEstatePrivacyPage5,
+  RealEstateTermsPage5,
+} from "../components/sections/legal/RealEstateLegalPages5";
 
-/**
- * Every section type exposes variants 1–4 for template-admin.
- * Realestate imports from ai-builder-main start at *-5 / *-6
- * (Gallery already had 5–6 aliases → RealEstate uses Gallery-7/8).
- */
+import { SectionProps } from "../types/section";
+import EventHeader from "../components/sections/header/EventHeader";
+import EventBanner from "../components/sections/banner/EventBanner";
+import EventAbout from "../components/sections/about/EventAbout";
+import EventAboutPage from "../components/sections/about/EventAboutPage";
+import EventCoreValues from "../components/sections/about/EventCoreValues";
+import EventOurStoryPage from "../components/sections/about/EventOurStoryPage";
+import EventService from "../components/sections/service/EventService";
+import EventServicePage from "../components/sections/service/EventServicePage";
+import EventServiceDetailPage from "../components/sections/service/EventServiceDetailPage";
+import EventTestimonial from "../components/sections/testimonial/EventTestimonial";
+import EventTestimonialPage from "../components/sections/testimonial/EventTestimonialPage";
+import EventBlog from "../components/sections/blog/EventBlog";
+import EventBlogPage from "../components/sections/blog/EventBlogPage";
+import EventBlogDetailPage from "../components/sections/blog/EventBlogDetailPage";
+import EventFooter from "../components/sections/footer/EventFooter";
+import EventBreadCrumb from "../components/sections/breadcrumb/EventBreadCrumb";
+import EventFaqPage from "../components/sections/faq/EventFaqPage";
+import EventContactPage from "../components/sections/contact/EventContactPage";
+import EventContactMap from "../components/sections/contact/EventContactMap";
+import EventGalleryPage from "../components/sections/gallery/EventGalleryPage";
+import EventVideoGallery from "../components/sections/gallery/EventVideoGallery";
+import EventListPage from "../components/sections/event/EventListPage";
+import EventDetailPage from "../components/sections/event/EventDetailPage";
+import EventMissionPage from "../components/sections/mission-vision/EventMissionPage";
+import EventVisionPage from "../components/sections/mission-vision/EventVisionPage";
+import EventMissionVision from "../components/sections/mission-vision/EventMissionVision";
+import EventAwardsPage from "../components/sections/awards/EventAwardsPage";
+import EventTeamPage from "../components/sections/team/EventTeamPage";
+import EventTeamDetailPage from "../components/sections/team/EventTeamDetailPage";
+import EventWhyChooseUsPage from "../components/sections/whychooseus/EventWhyChooseUsPage";
+import EventPartnerPage from "../components/sections/partner/EventPartnerPage";
+import EventCareerPage from "../components/sections/career/EventCareerPage";
+import EventCareerDetailPage from "../components/sections/career/EventCareerDetailPage";
+import EventQuotePage from "../components/sections/quote/EventQuotePage";
+import EventLegalPage from "../components/sections/legal/EventLegalPage";
+import EventSitemapPage from "../components/sections/sitemap/EventSitemapPage";
+import EventErrorPage from "../components/sections/error/EventErrorPage";
+import EventStats from "../components/sections/stats/EventStats";
+
+const asSection = (component: unknown) =>
+  component as ComponentType<SectionProps>;
+
 export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   "CustomSection-1": CustomSection,
   "BlogPage-1": BlogPage,
@@ -403,18 +480,29 @@ export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
 
   // RealEstate extended section types (optional / future templates)
   "Features-5": RealEstateFeatures1,
+  "Features-6": RealEstateFeatures1,
   "Highlight-5": RealEstateHighlight1,
+  "Highlight-6": RealEstateHighlight1,
   "Featured-5": RealEstateFeatured1,
+  "Featured-6": RealEstateFeatured1,
   "FeaturedDev-5": RealEstateFeaturedDev1,
+  "FeaturedDev-6": RealEstateFeaturedDev1,
   "LatestProject-5": RealEstateLatestProject1,
+  "LatestProject-6": RealEstateLatestProject1,
   "Cities-5": RealEstateCities1,
+  "Cities-6": RealEstateCities1,
   "Awards-5": RealEstateAwards1,
+  "Awards-6": RealEstateAwards1,
   "Stats-5": RealEstateStats1,
+  "Stats-6": RealEstateStats1,
   "Process-5": RealEstateProcess1,
+  "Process-6": RealEstateProcess1,
   "CTA-5": RealEstateCTA1,
   "Blog-5": RealEstateBlog1,
+  "Blog-6": RealEstateBlog1,
   "BlogDetail-5": RealEstateBlogDetail1,
   "InvestmentOpportunities-5": RealEstateInvestmentOpportunities1,
+  "InvestmentOpportunities-6": RealEstateInvestmentOpportunities1,
 
   // Keep original RealEstate* keys for custom-layouts / previews
   RealEstateTopbar1,
@@ -521,7 +609,50 @@ export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   RealEstateDisclaimerPage4,
   RealEstateRefundPage4,
   RealEstateCookiePage4,
-};
+
+  "Header-9": asSection(EventHeader),
+  "Banner-9": asSection(EventBanner),
+  "About-9": asSection(EventAbout),
+  "Product-9": asSection(EventService),
+  "Testimonial-9": asSection(EventTestimonial),
+  "Blog-9": asSection(EventBlog),
+  "Footer-9": asSection(EventFooter),
+  "Breadcrumb-9": asSection(EventBreadCrumb),
+  "Stats-9": asSection(EventStats),
+  "MissionVision-9": asSection(EventMissionVision),
+  "CoreValues-9": asSection(EventCoreValues),
+  "AboutPage-9": asSection(EventAboutPage),
+  "MissionPage-9": asSection(EventMissionPage),
+  "VisionPage-9": asSection(EventVisionPage),
+  "OurStoryPage-9": asSection(EventOurStoryPage),
+  "AwardsPage-9": asSection(EventAwardsPage),
+  "TeamPage-9": asSection(EventTeamPage),
+  "TeamDetail-9": asSection(EventTeamDetailPage),
+  "WhyChooseUs-9": asSection(EventWhyChooseUsPage),
+  "ServicePage-9": asSection(EventServicePage),
+  "ServiceDetail-9": asSection(EventServiceDetailPage),
+  "EventPage-9": asSection(EventListPage),
+  "EventDetail-9": asSection(EventDetailPage),
+  "GalleryPage-9": asSection(EventGalleryPage),
+  "VideoGallery-9": asSection(EventVideoGallery),
+  "TestimonialPage-9": asSection(EventTestimonialPage),
+  "PartnerPage-9": asSection(EventPartnerPage),
+  "FaqPage-9": asSection(EventFaqPage),
+  "CareerPage-9": asSection(EventCareerPage),
+  "CareerDetail-9": asSection(EventCareerDetailPage),
+  "QuotePage-9": asSection(EventQuotePage),
+  "BlogPage-9": asSection(EventBlogPage),
+  "BlogDetail-9": asSection(EventBlogDetailPage),
+  "ContactPage-9": asSection(EventContactPage),
+  "ContactMap-9": asSection(EventContactMap),
+  "TermsPage-9": asSection(EventLegalPage),
+  "PrivacyPage-9": asSection(EventLegalPage),
+  "DisclaimerPage-9": asSection(EventLegalPage),
+  "RefundPolicyPage-9": asSection(EventLegalPage),
+  "CookiePolicyPage-9": asSection(EventLegalPage),
+  "SitemapPage-9": asSection(EventSitemapPage),
+  "ErrorPage-9": asSection(EventErrorPage),
+ };
 
 /** Realestate template-4 skins. Global *-4 keys stay generic for Business/School. */
 const REALESTATE_VARIANT_4: Record<string, ComponentType<SectionProps>> = {
@@ -590,6 +721,48 @@ const REALESTATE_VARIANT_4: Record<string, ComponentType<SectionProps>> = {
   "Stats-4": RealEstateStats3,
 };
 
+/** Realestate template-5 skins from css-ai-builder-main1. */
+const REALESTATE_VARIANT_5: Record<string, ComponentType<SectionProps>> = {
+  "Header-5": RealEstateHeader5,
+  "Banner-5": RealEstateBanner5,
+  "Features-5": RealEstateFeatures5,
+  "Product-5": RealEstateProduct5,
+  "Highlight-5": RealEstateHighlight5,
+  "LatestProject-5": RealEstateLatestProject5,
+  "Testimonial-5": RealEstateTestimonial5,
+  "Blog-5": RealEstateBlog5,
+  "Footer-5": RealEstateFooter5,
+  "Breadcrumb-5": RealEstateBreadCrumb5,
+  "About-5": RealEstateAbout5,
+  "AboutPage-5": RealEstateAboutPage5,
+  "AboutAchievements-5": RealEstateAboutAchievements5,
+  "AboutHistory-5": RealEstateAboutHistory5,
+  "AboutTeam-5": RealEstateAboutTeam5,
+  "AboutProcess-5": RealEstateAboutProcess5,
+  "TeamPage-5": RealEstateTeamPage5,
+  "CareerPage-5": RealEstateCareerPage5,
+  "CareerJobs-5": RealEstateCareerJobs5,
+  "TestimonialPage-5": RealEstateTestimonialPage5,
+  "AwardsPage-5": RealEstateAwardPage5,
+  "PartnerPage-5": RealEstatePartnerPage5,
+  "ServicePage-5": RealEstateServicePage5,
+  "ServiceDetail-5": RealEstateServiceDetailPage5,
+  "PropertyGrid-5": RealEstatePropertyGrid5,
+  "PropertyDetail-5": RealEstatePropertyDetailPage5,
+  "GalleryPage-5": RealEstateGalleryPage5,
+  "BlogPage-5": RealEstateBlogPage5,
+  "BlogDetail-5": RealEstateBlogDetailPage5,
+  "BrochurePage-5": RealEstateBrochurePage5,
+  "PackagePage-5": RealEstatePackagePage5,
+  "FaqPage-5": RealEstateFaqPage5,
+  "ContactPage-5": RealEstateContactPage5,
+  "QuotePage-5": RealEstateQuotePage5,
+  "TermsPage-5": RealEstateTermsPage5,
+  "PrivacyPage-5": RealEstatePrivacyPage5,
+  "CookiePolicyPage-5": RealEstateCookiePage5,
+  "SitemapPage-5": RealEstateSitemapPage5,
+};
+
 export function resolveSectionComponent(
   variantKey: string,
   category?: string,
@@ -597,6 +770,9 @@ export function resolveSectionComponent(
   const isRealestate = (category || "").trim().toLowerCase() === "realestate";
   if (isRealestate && REALESTATE_VARIANT_4[variantKey]) {
     return REALESTATE_VARIANT_4[variantKey];
+  }
+  if (isRealestate && REALESTATE_VARIANT_5[variantKey]) {
+    return REALESTATE_VARIANT_5[variantKey];
   }
   if (sectionRegistry[variantKey]) return sectionRegistry[variantKey];
   const lower = variantKey.toLowerCase();

@@ -88,6 +88,9 @@ const PAGE_SECTIONS = [
   "PropertyDetail",
   "ProjectDetail",
   "PageBanner",
+  "PackagePage",
+  "ServiceDetail",
+  "PropertyGrid",
 ];
 
 const PAGE_BODIES_WITH_OWN_BREADCRUMB = new Set([
@@ -344,6 +347,8 @@ const SECTION_TYPE_LABELS: Record<string, string> = {
   WhyPartner: "Why Partner",
   PropertyDetail: "Property Detail",
   ProjectDetail: "Project Detail",
+  PackagePage: "Package Page",
+  ServiceDetail: "Service Detail",
 };
 
 function sectionTypeLabel(type: string) {

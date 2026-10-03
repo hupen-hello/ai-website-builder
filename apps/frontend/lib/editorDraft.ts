@@ -6,7 +6,7 @@ export type EditorDraftPageLink = {
   label: string;
   href: string;
   children?: EditorDraftPageLink[];
-  kind?: "page" | "blogIndex" | "blog";
+  kind?: "page" | "blogIndex" | "blog" | "document";
   hidden?: boolean;
   layout?: string;
   author?: string;

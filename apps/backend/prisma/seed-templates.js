@@ -33,14 +33,26 @@ async function main() {
 
   console.log(`Seeding ${templates.length} templates...`);
 
-  // Drop templates not in this seed so unique numericId / key stay clean
+  // Keep extra category home templates (template-*-home). Only drop stale
+  // core keys from categoryContent.json that are no longer in the file.
   const keepKeys = templates.map((t) => t.id).filter(Boolean);
+  const keepSet = new Set(keepKeys);
+  const CORE_TEMPLATE_RE = /^template-(realestate|business|school)-\d+$/;
   if (keepKeys.length) {
-    const removed = await prisma.template.deleteMany({
+    const extras = await prisma.template.findMany({
       where: { key: { notIn: keepKeys } },
+      select: { key: true },
     });
-    if (removed.count) {
-      console.log(`Removed ${removed.count} stale template(s)`);
+    const staleCore = extras
+      .map((row) => row.key)
+      .filter((key) => CORE_TEMPLATE_RE.test(key) && !keepSet.has(key));
+    if (staleCore.length) {
+      const removed = await prisma.template.deleteMany({
+        where: { key: { in: staleCore } },
+      });
+      if (removed.count) {
+        console.log(`Removed ${removed.count} stale core template(s)`);
+      }
     }
   }
 
@@ -48,7 +60,6 @@ async function main() {
   const existing = await prisma.template.findMany({
     select: { id: true, key: true, numericId: true },
   });
-  const keepSet = new Set(keepKeys);
   for (const row of existing) {
     if (keepSet.has(row.key)) continue;
   }

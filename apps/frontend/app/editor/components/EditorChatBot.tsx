@@ -1897,7 +1897,7 @@ export default function EditorChatBot({
             const prompt = buildBulkRewritePrompt(
               pageLabel,
               session.mode,
-              session.brief,
+              session.brief ?? "",
               category,
             );
             const result = await runOpenAiAssist(

@@ -150,6 +150,21 @@ const PAGE_T4 = [
   ['TermsPage', 4, 'Realestate T4 Terms'],
 ];
 
+const PAGE_T5 = [
+  ['AboutPage', 5, 'Realestate T5 About Page'],
+  ['AboutAchievements', 5, 'Realestate T5 About Achievements'],
+  ['AboutHistory', 5, 'Realestate T5 About History'],
+  ['AboutTeam', 5, 'Realestate T5 About Team'],
+  ['AboutProcess', 5, 'Realestate T5 About Process'],
+  ['PackagePage', 5, 'Realestate T5 Package Page'],
+  ['ServiceDetail', 5, 'Realestate T5 Service Detail'],
+  ['PropertyGrid', 5, 'Realestate T5 Property Grid'],
+  ['TeamPage', 5, 'Realestate T5 Team Page'],
+  ['TestimonialPage', 5, 'Realestate T5 Testimonials Page'],
+  ['GalleryPage', 5, 'Realestate T5 Gallery Page'],
+  ['BlogPage', 5, 'Realestate T5 Blog Page'],
+];
+
 for (const [sectionType, sectionNumber, name] of HOME) {
   layouts.push({
     key: `${sectionType}-${sectionNumber}`,
@@ -199,6 +214,19 @@ for (const [sectionType, sectionNumber, name] of PAGE_T4) {
     order: sectionNumber,
     categorySlug: CATEGORY_SLUG,
     description: `Realestate template 4 page layout (${sectionType}-${sectionNumber})`,
+  });
+}
+
+for (const [sectionType, sectionNumber, name] of PAGE_T5) {
+  layouts.push({
+    key: `${sectionType}-${sectionNumber}`,
+    name,
+    sectionType,
+    sectionNumber,
+    scope: 'page',
+    order: sectionNumber,
+    categorySlug: CATEGORY_SLUG,
+    description: `Realestate template 5 page layout (${sectionType}-${sectionNumber})`,
   });
 }
 

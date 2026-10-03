@@ -45,6 +45,7 @@ import {
   applyTopbarLayoutSkins,
 } from "./src/data/templateFlow";
 import { resolveSectionComponent } from "./src/lib/sectionRegistry";
+import { pageSlugsMatch } from "./src/lib/previewNav";
 import {
   INLINE_TEXT_FORMATS_KEY,
   readInlineTextFormats,
@@ -71,7 +72,7 @@ import TeamDetailArticle from "./src/components/sections/team/TeamDetailArticle"
 import PropertyDetailArticle from "./src/components/sections/property/PropertyDetailArticle";
 import RealEstatePropertyDetail1 from "./src/components/sections/featured/RealEstatePropertyDetail1";
 
-import { SectionData, SectionItem } from "./src/types/section";
+import { SectionData, SectionItem, type ProductCardData } from "./src/types/section";
 import type { ServiceItem, ServicePageState } from "../components/ServiceManager";
 import type { EventItem, EventPageState } from "../components/EventManager";
 import type {
@@ -694,6 +695,7 @@ const isEventsPageLink = (link: {
     normalizePageSlug(link.label || "");
   return (
     slug === "events" ||
+    slug === "event" ||
     href === "#page-event" ||
     href === "#page-events" ||
     href === "#event" ||
@@ -762,12 +764,15 @@ const isTeamPageLink = (link: {
     normalizePageSlug(link.label || "");
   return (
     slug === "teams" ||
+    slug === "team" ||
+    slug === "our-team" ||
     href === "#page-team" ||
     href === "#page-teams" ||
     href === "#team" ||
     href === "#teams" ||
     (link.label || "").trim().toLowerCase() === "team" ||
-    (link.label || "").trim().toLowerCase() === "teams"
+    (link.label || "").trim().toLowerCase() === "teams" ||
+    (link.label || "").trim().toLowerCase() === "our team"
   );
 };
 
@@ -1607,7 +1612,7 @@ const isSectionVisibleInEditor = (
   if (pageSlug && pageSlug !== "home") {
     return (
       PAGE_SHELL_SECTION_TYPES.has(section.type) ||
-      normalizePageSlug(section.page || "") === pageSlug
+      pageSlugsMatch(section.page || "", pageSlug)
     );
   }
   return !section.page;
@@ -1780,6 +1785,17 @@ const alignTemplatePageSections = (
       // page (theme switch). Dropping here wiped About/Services from the DB.
       return [section];
     }
+    const isPageBody =
+      section.id === pageDefinition.sectionType ||
+      section.type === pageDefinition.sectionType ||
+      String(section.variant || "").replace(/-\d+$/, "") ===
+        pageDefinition.sectionType ||
+      (pageDefinition.sectionType === "AboutPage" &&
+        (section.type === "About" || section.id === "AboutPage"));
+    // Companions share page=about. Keep them; only remap the real page body.
+    if (!isPageBody) {
+      return [section];
+    }
     if (seenPages.has(pageDefinition.id)) return [];
     seenPages.add(pageDefinition.id);
 
@@ -1921,12 +1937,12 @@ const alignTemplatePageSections = (
             (typeof pageBodyData.pretitle === "string"
               ? pageBodyData.pretitle
               : undefined),
-          title:
-            (savedBreadcrumbData.title as string | undefined) ||
-            pageDefinition.label ||
-            (typeof pageBodyData.title === "string"
-              ? pageBodyData.title
-              : undefined),
+          title: pageDefinition.label,
+          name: pageDefinition.label,
+          breadcrumbs: [
+            { label: "Home", href: "/" },
+            { label: pageDefinition.label },
+          ],
           desc:
             (savedBreadcrumbData.desc as string | undefined) ||
             (typeof pageBodyData.desc === "string"
@@ -1941,6 +1957,45 @@ const alignTemplatePageSections = (
       },
     };
     const attached: SectionItem[] = [breadcrumb, section];
+    const companionTypes = template.pageCompanions?.[pageDefinition.id] || [];
+    const pageSlug = normalizePageSlug(pageDefinition.id);
+    companionTypes.forEach((companionType) => {
+      if (companionType === "Breadcrumb" || companionType === "PageBanner") {
+        return;
+      }
+      const existsOnPage = bodiesWithMissing.some(
+        (item) =>
+          item.type === companionType &&
+          normalizePageSlug(item.page || "") === pageSlug,
+      );
+      if (existsOnPage) return;
+      const companionVariant = template.sectionVariants[companionType];
+      if (!companionVariant) return;
+      const saved = sections.find(
+        (item) =>
+          item.type === companionType &&
+          normalizePageSlug(item.page || "") === pageSlug,
+      );
+      const preview =
+        resolveLayoutPreview(companionVariant, category)?.data || {};
+      const savedVariant = saved?.variant || companionVariant;
+      const savedData =
+        (saved?.data?.[savedVariant] as Record<string, unknown> | undefined) ||
+        {};
+      attached.push({
+        id: saved?.id || `${companionType}-${pageDefinition.id}`,
+        page: pageDefinition.id,
+        type: companionType,
+        variant: companionVariant,
+        data: {
+          ...(saved?.data || {}),
+          [companionVariant]: mergeSectionContent(
+            preview as Record<string, unknown>,
+            savedData,
+          ) as SectionData,
+        },
+      });
+    });
     if (pageDefinition.sectionType === "MissionPage") {
       const savedMissionValues = savedMissionValuesByPage.get(
         normalizePageSlug(pageDefinition.id),
@@ -2113,7 +2168,10 @@ const alignTemplatePageSections = (
         },
       });
     }
-    if (pageDefinition.sectionType === "AboutPage") {
+    if (
+      pageDefinition.sectionType === "AboutPage" &&
+      !String(template.sectionVariants.Header || "").endsWith("-9")
+    ) {
       const savedAboutStats = savedAboutStatsByPage.get(
         normalizePageSlug(pageDefinition.id),
       );
@@ -2218,6 +2276,7 @@ const ensureMissingAboutPageCompanions = (
   let changed = false;
   getTemplatePages(template).forEach((pageDefinition) => {
     if (pageDefinition.sectionType !== "AboutPage") return;
+    if (template.pageCompanions?.[pageDefinition.id]) return;
     const slug = normalizePageSlug(pageDefinition.id);
     const bodyIndex = next.findIndex((section) => {
       const page = normalizePageSlug(section.page || "");
@@ -2693,6 +2752,38 @@ const readServiceItemsFromData = (data: SectionData): ServiceItem[] => {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
+  const eventServiceItems = Array.isArray(
+    (data as { items?: Array<Record<string, unknown>> }).items,
+  )
+    ? (data as { items: Array<Record<string, unknown>> }).items
+    : [];
+  if (eventServiceItems.length) {
+    return eventServiceItems
+      .map((item, index) => {
+        const title = String(item.title || "");
+        const tags = Array.isArray(item.tags)
+          ? item.tags.map((tag) => String(tag))
+          : [];
+        return {
+          id: `evento-service-${index}-${title || "service"}`,
+          title,
+          category: tags[0] || "Service",
+          desc: String(item.description || tags.join(", ") || ""),
+          content: "",
+          image: String(item.image || "/bg1.jpg"),
+          alt: title,
+          slug: createPageSlug(title) || `service-${index + 1}`,
+          order: index + 1,
+          active: true,
+          layout: "",
+          seoTitle: "",
+          seoDescription: "",
+          seoKeywords: "",
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
   const slides = Array.isArray(data.serviceSlides)
     ? data.serviceSlides
     : Array.isArray(data.productSlides)
@@ -2741,7 +2832,7 @@ const resolveManagerForSection = (
   if (
     id === "BlogPage" ||
     type === "BlogPage" ||
-    normalizePageSlug(section.page || "") === "blogs"
+    ["blogs", "blog"].includes(normalizePageSlug(section.page || ""))
   ) {
     return "Blogs";
   }
@@ -2758,7 +2849,8 @@ const resolveManagerForSection = (
   if (
     id === "EventPage" ||
     type === "EventPage" ||
-    (type === "Event" && page === "events")
+    (type === "Event" &&
+      (page === "events" || page === "event"))
   ) {
     return "Events";
   }
@@ -2772,7 +2864,8 @@ const resolveManagerForSection = (
   if (
     id === "TeamPage" ||
     type === "TeamPage" ||
-    (type === "Team" && (page === "teams" || page === "team"))
+    (type === "Team" &&
+      (page === "teams" || page === "team" || page === "our-team"))
   ) {
     return "Teams";
   }
@@ -2910,6 +3003,12 @@ const applyServicePageStateToData = (
     productItems,
     serviceSlides,
     productSlides: serviceSlides,
+    items: productItems.map((item) => ({
+      title: item.title,
+      image: item.image,
+      tags: item.category ? [item.category] : [],
+      description: item.desc,
+    })),
   };
 };
 
@@ -2921,7 +3020,7 @@ const addEventPageSection = (sections: SectionItem[], category: string) => {
       section.id === "EventPage" ||
       section.type === "EventPage" ||
       (section.type === "Event" &&
-        normalizePageSlug(section.page || "") === "events"),
+        ["event", "events"].includes(normalizePageSlug(section.page || ""))),
   );
 
   if (!hasEventPage) {
@@ -3034,6 +3133,38 @@ const readEventItemsFromData = (data: SectionData): EventItem[] => {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
+  const eventoEvents = Array.isArray(
+    (data as { events?: Array<Record<string, unknown>> }).events,
+  )
+    ? (data as { events: Array<Record<string, unknown>> }).events
+    : [];
+  if (eventoEvents.length) {
+    return eventoEvents
+      .map((item, index) => {
+        const title = String(item.title || "");
+        return {
+          id: `evento-event-${index}-${title || "event"}`,
+          title,
+          category: String(item.month || "Event"),
+          desc: String(item.description || item.location || ""),
+          content: "",
+          image: String(item.image || "/bg1.jpg"),
+          alt: title,
+          slug: createPageSlug(title) || `event-${index + 1}`,
+          order: index + 1,
+          active: true,
+          layout: "",
+          seoTitle: "",
+          seoDescription: "",
+          seoKeywords: "",
+          eventDate: String(item.date || ""),
+          eventTime: String(item.time || ""),
+          eventType: "upcoming" as const,
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
   const slides = Array.isArray(data.serviceSlides)
     ? data.serviceSlides
     : Array.isArray(data.productSlides)
@@ -3101,7 +3232,7 @@ const applyEventPageStateToData = (
   const orderedEvents = [...state.events].sort(
     (a, b) => (a.order ?? 0) - (b.order ?? 0),
   );
-  const productItems = orderedEvents.map((eventItem) => ({
+    const productItems: ProductCardData[] = orderedEvents.map((eventItem) => ({
     id: eventItem.id,
     title: eventItem.title,
     category: eventItem.category || "Event",
@@ -3156,6 +3287,16 @@ const applyEventPageStateToData = (
     productItems,
     serviceSlides,
     productSlides: serviceSlides,
+    events: visibleEvents.map((eventItem) => ({
+      date: eventItem.eventDate || "",
+      month: eventItem.category || "",
+      image: eventItem.image,
+      title: eventItem.title,
+      description: eventItem.desc,
+      location: eventItem.desc,
+      time: eventItem.eventTime || "",
+      link: `/event/${eventItem.slug || ""}`,
+    })),
   };
 };
 
@@ -3826,7 +3967,9 @@ const addTeamPageSection = (sections: SectionItem[], category: string) => {
       section.id === "TeamPage" ||
       section.type === "TeamPage" ||
       (section.type === "Team" &&
-        normalizePageSlug(section.page || "") === "teams"),
+        ["teams", "team", "our-team"].includes(
+          normalizePageSlug(section.page || ""),
+        )),
   );
 
   if (!hasTeamPage) {
@@ -3963,6 +4106,35 @@ const readTeamItemsFromData = (data: SectionData): TeamItem[] => {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
+  const members = Array.isArray(
+    (data as { members?: Array<Record<string, unknown>> }).members,
+  )
+    ? (data as { members: Array<Record<string, unknown>> }).members
+    : [];
+  if (members.length) {
+    return members
+      .map((item, index) => {
+        const title = String(item.name || item.title || "");
+        return {
+          id: `evento-team-${index}-${title || "team"}`,
+          title,
+          category: String(item.role || "Team"),
+          desc: String(item.description || ""),
+          content: "",
+          image: String(item.image || "/bg1.jpg"),
+          alt: title,
+          slug: createPageSlug(title) || `team-${index + 1}`,
+          order: index + 1,
+          active: true,
+          layout: "",
+          seoTitle: "",
+          seoDescription: "",
+          seoKeywords: "",
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
   return [];
 };
 
@@ -4015,6 +4187,41 @@ const readGalleryItemsFromData = (data: SectionData): GalleryItem[] => {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
+  const images = Array.isArray((data as { images?: unknown[] }).images)
+    ? (data as { images: unknown[] }).images
+    : [];
+  if (images.length) {
+    return images
+      .map((item, index) => {
+        if (typeof item === "string") {
+          return {
+            id: `evento-gallery-${index}`,
+            title: `Gallery ${index + 1}`,
+            category: "Gallery",
+            desc: "",
+            image: item,
+            alt: `Gallery ${index + 1}`,
+            order: index + 1,
+            active: true,
+          };
+        }
+        const row = (item || {}) as Record<string, unknown>;
+        const image = String(row.src || row.url || row.image || "");
+        const category = String(row.category || "Gallery");
+        return {
+          id: `evento-gallery-${index}-${category}`,
+          title: String(row.title || category || `Gallery ${index + 1}`),
+          category,
+          desc: String(row.desc || ""),
+          image: image || "/bg1.jpg",
+          alt: String(row.alt || row.title || category),
+          order: index + 1,
+          active: true,
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
   return [];
 };
 
@@ -4059,6 +4266,11 @@ const applyGalleryPageStateToData = (
     desc: state.desc,
     layout: state.layout,
     galleryItems,
+    images: galleryItems.map((item) => ({
+      src: item.image,
+      category: item.category || "Gallery",
+      title: item.title,
+    })),
   };
 };
 
@@ -4300,6 +4512,14 @@ const applyTeamPageStateToData = (
     productItems,
     serviceSlides,
     productSlides: serviceSlides,
+    members: productItems.map((item) => ({
+      name: item.title,
+      role: item.category,
+      description: item.desc,
+      image: item.image,
+      icon: "user",
+      social: { facebook: "#", instagram: "#", twitter: "#", linkedin: "#" },
+    })),
   };
 };
 
@@ -4649,7 +4869,7 @@ const renamePageSections = (
 
     return {
       ...section,
-      id: section.id.replace(
+      id: (section.id || "").replace(
         new RegExp(`${oldSlug}$`),
         newSlug,
       ),
@@ -8196,7 +8416,9 @@ function EditorPage({
           section.id === "TeamPage" ||
           section.type === "TeamPage" ||
           (section.type === "Team" &&
-            normalizePageSlug(section.page || "") === "teams"),
+            ["teams", "team", "our-team"].includes(
+              normalizePageSlug(section.page || ""),
+            )),
       );
 
     const emitTeamState = (items: SectionItem[]) => {
@@ -8260,7 +8482,9 @@ function EditorPage({
             section.type !== "TeamPage" &&
             !(
               section.type === "Team" &&
-              normalizePageSlug(section.page || "") === "teams"
+              ["teams", "team", "our-team"].includes(
+                normalizePageSlug(section.page || ""),
+              )
             )
           ) {
             return section;
@@ -8618,7 +8842,9 @@ function EditorPage({
           section.id === "EventPage" ||
           section.type === "EventPage" ||
           (section.type === "Event" &&
-            normalizePageSlug(section.page || "") === "events"),
+            ["event", "events"].includes(
+              normalizePageSlug(section.page || ""),
+            )),
       );
 
     const emitEventState = (items: SectionItem[]) => {
@@ -8682,7 +8908,9 @@ function EditorPage({
             section.type !== "EventPage" &&
             !(
               section.type === "Event" &&
-              normalizePageSlug(section.page || "") === "events"
+              ["event", "events"].includes(
+                normalizePageSlug(section.page || ""),
+              )
             )
           ) {
             return section;
@@ -11434,7 +11662,8 @@ function EditorPage({
           ? sectionsRef.current.filter(
               (section) =>
                 shellTypes.has(section.type) ||
-                normalizePageSlug(section.page || "") === currentPageSlug,
+                normalizePageSlug(section.page || "") === currentPageSlug ||
+            pageSlugsMatch(section.page || "", currentPageSlug),
             )
           : sectionsRef.current.filter((section) => !section.page);
 
@@ -12503,7 +12732,9 @@ function EditorPage({
               section.type !== "TeamPage" &&
               !(
                 section.type === "Team" &&
-                normalizePageSlug(section.page || "") === "teams"
+                ["teams", "team", "our-team"].includes(
+                normalizePageSlug(section.page || ""),
+              )
               )
             ) {
               return section;
@@ -12733,7 +12964,9 @@ function EditorPage({
               section.type !== "EventPage" &&
               !(
                 section.type === "Event" &&
-                normalizePageSlug(section.page || "") === "events"
+                ["event", "events"].includes(
+                normalizePageSlug(section.page || ""),
+              )
               )
             ) {
               return section;
@@ -13463,7 +13696,9 @@ function EditorPage({
             section.id === "EventPage" ||
             section.type === "EventPage" ||
             (section.type === "Event" &&
-              normalizePageSlug(section.page || "") === "events"),
+              ["event", "events"].includes(
+                normalizePageSlug(section.page || ""),
+              )),
           apply: (data) => {
             const state = buildEventPageState(data);
             const before = state.events.length;
@@ -13527,7 +13762,9 @@ function EditorPage({
             section.id === "TeamPage" ||
             section.type === "TeamPage" ||
             (section.type === "Team" &&
-              normalizePageSlug(section.page || "") === "teams"),
+              ["teams", "team", "our-team"].includes(
+              normalizePageSlug(section.page || ""),
+            )),
           apply: (data) => {
             const state = buildTeamPageState(data);
             const before = state.teamMembers.length;
@@ -13966,7 +14203,9 @@ function EditorPage({
             section.id === "EventPage" ||
             section.type === "EventPage" ||
             (section.type === "Event" &&
-              normalizePageSlug(section.page || "") === "events"),
+              ["event", "events"].includes(
+                normalizePageSlug(section.page || ""),
+              )),
           apply: (data) => {
             const state = buildEventPageState(data);
             let renamed = 0;
@@ -14053,7 +14292,9 @@ function EditorPage({
             section.id === "TeamPage" ||
             section.type === "TeamPage" ||
             (section.type === "Team" &&
-              normalizePageSlug(section.page || "") === "teams"),
+              ["teams", "team", "our-team"].includes(
+              normalizePageSlug(section.page || ""),
+            )),
           apply: (data) => {
             const state = buildTeamPageState(data);
             let renamed = 0;
@@ -15893,7 +16134,8 @@ function EditorPage({
           (section) =>
             pageShellSectionTypes.includes(section.type) ||
             section.type === "CountriesServe" ||
-            normalizePageSlug(section.page || "") === currentPageSlug,
+            normalizePageSlug(section.page || "") === currentPageSlug ||
+            pageSlugsMatch(section.page || "", currentPageSlug),
         )
       : syncedSections.filter((section) => !section.page),
     editorTemplate,

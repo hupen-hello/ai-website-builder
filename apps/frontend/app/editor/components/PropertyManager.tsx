@@ -1106,7 +1106,7 @@ export default function PropertyManager({
 
   const generatePropertyImage = async (
     field: Extract<PropertyAiField, "image" | "gallery">,
-    hintParts: string[],
+    hintParts: Array<string | undefined>,
     avoidSrcs: string[] = [],
   ) => {
     if (!draft.title.trim()) return;

@@ -1059,6 +1059,19 @@ const createDefaultSectionData = (
     };
   }
 
+  const categoryPack = categoryContent.categories[category]?.sections?.[
+    sectionType
+  ] as Record<string, unknown> | undefined;
+  if (categoryPack && typeof categoryPack === "object") {
+    const fromJson: Record<string, SectionData> = {};
+    Object.entries(categoryPack).forEach(([key, value]) => {
+      if (value && typeof value === "object" && !Array.isArray(value)) {
+        fromJson[key] = value as SectionData;
+      }
+    });
+    if (Object.keys(fromJson).length) return fromJson;
+  }
+
   return {};
 };
 
@@ -2245,7 +2258,7 @@ function pageVariantsFor(
     if (pageBodyType === "CareerPage") {
       next.CareerJobs = source.CareerJobs || "CareerJobs-5";
     }
-    if (pageBodyType === "AboutPage") {
+    if (pageBodyType === "AboutPage" && !String(pageBodyKey || "").endsWith("-9")) {
       next.Stats = source.Stats || "Stats-5";
       next.CTA = source.CTA || "CTA-5";
     }
@@ -2644,6 +2657,10 @@ export const buildSelectedConfig = (
                 ...variantData,
                 title: page.label,
                 name: page.label,
+                breadcrumbs: [
+                  { label: "Home", href: "/" },
+                  { label: page.label },
+                ],
                 homeText:
                   (typeof variantData.homeText === "string" &&
                     variantData.homeText) ||

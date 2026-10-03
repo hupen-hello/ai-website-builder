@@ -148,21 +148,21 @@ function ChatDayDivider({ label }: { label: string }) {
 
 function parseAttachments(value: unknown): SupportAttachment[] {
   if (!Array.isArray(value)) return [];
-  return value
-    .map((item) => {
-      if (!item || typeof item !== 'object') return null;
-      const row = item as Record<string, unknown>;
-      const name = typeof row.name === 'string' ? row.name : '';
-      const url = typeof row.url === 'string' ? row.url : '';
-      if (!name || !url) return null;
-      return {
-        name,
-        url,
-        size: typeof row.size === 'number' ? row.size : undefined,
-        mimeType: typeof row.mimeType === 'string' ? row.mimeType : undefined,
-      };
-    })
-    .filter((item): item is SupportAttachment => Boolean(item));
+  const attachments: SupportAttachment[] = [];
+  for (const item of value) {
+    if (!item || typeof item !== 'object') continue;
+    const row = item as Record<string, unknown>;
+    const name = typeof row.name === 'string' ? row.name : '';
+    const url = typeof row.url === 'string' ? row.url : '';
+    if (!name || !url) continue;
+    attachments.push({
+      name,
+      url,
+      size: typeof row.size === 'number' ? row.size : undefined,
+      mimeType: typeof row.mimeType === 'string' ? row.mimeType : undefined,
+    });
+  }
+  return attachments;
 }
 
 /** Keep one inbox row per support ticket. */
