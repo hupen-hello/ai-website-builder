@@ -82,6 +82,15 @@ function applyOnboardingHeaderMenuToSections<T extends SectionLike>(
       Object.entries(section.data || {}).map(([variant, variantData]) => {
         const current = (variantData || {}) as Record<string, unknown>;
         const existing = Array.isArray(current.menu) ? current.menu : [];
+        const navLinks = Array.isArray(current.navLinks)
+          ? (current.navLinks as Array<{ subLinks?: unknown[] }>)
+          : [];
+        const hasEventDropdowns = navLinks.some(
+          (link) => Array.isArray(link.subLinks) && link.subLinks.length > 0,
+        );
+        if (variant === "Header-9" && hasEventDropdowns) {
+          return [variant, current];
+        }
         if (!overwrite && existing.length) {
           return [variant, current];
         }

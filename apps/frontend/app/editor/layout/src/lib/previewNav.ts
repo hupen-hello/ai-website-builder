@@ -80,9 +80,13 @@ export const getPageSlugCandidates = (label: string) => {
   if (slug.includes("disclaimer")) aliases.push("disclaimer");
   if (slug.includes("sitemap")) aliases.push("sitemap");
 
-  return Array.from(
-    new Set([slug, withoutUs, lastSegment, ...aliases].filter(Boolean)),
-  );
+  // Keep "our-team" distinct from manager "teams" / "team".
+  const candidates = [slug, withoutUs, ...aliases];
+  if (slug !== "our-team") {
+    candidates.push(lastSegment);
+  }
+
+  return Array.from(new Set(candidates.filter(Boolean)));
 };
 
 export const pageSlugsMatch = (left: string, right: string) => {

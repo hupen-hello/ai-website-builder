@@ -28,6 +28,7 @@ import {
   FieldLabelWithAi,
   useManagerAiFields,
 } from "./managerAi";
+import HomeFeedToggle, { isShownOnHome } from "./HomeFeedToggle";
 import { usePreview } from "../layout/src/components/context/PreviewContext";
 import {
   getPageSeo,
@@ -62,6 +63,7 @@ export type ServiceItem = {
   slug?: string;
   order?: number;
   active?: boolean;
+  showOnHome?: boolean;
   layout?: string;
   seoTitle?: string;
   seoDescription?: string;
@@ -159,6 +161,7 @@ const emptyService = (order = 1, detailLayout = DEFAULT_SERVICE_DETAIL_LAYOUT): 
   slug: "",
   order,
   active: true,
+  showOnHome: true,
   layout: detailLayout,
   seoTitle: "",
   seoDescription: "",
@@ -669,6 +672,7 @@ export default function ServiceManager({
       slug: service.slug || createServiceSlug(service.title),
       order: service.order ?? 1,
       active: service.active !== false,
+      showOnHome: service.showOnHome !== false,
       layout: service.layout || localDetailLayout,
       seoTitle: service.seoTitle || "",
       seoDescription: service.seoDescription || "",
@@ -679,41 +683,44 @@ export default function ServiceManager({
 
   useEffect(() => {
     if (!ready) return;
-    if (typeof window === "undefined") return;
-    const STORAGE_KEY = "ai-builder-open-manager-item:Services";
-    const raw = window.sessionStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
-    window.sessionStorage.removeItem(STORAGE_KEY);
-
-    try {
-      const payload = JSON.parse(raw) as unknown;
-      const slug =
-        typeof (payload as any)?.slug === "string"
-          ? (payload as any).slug
-          : undefined;
-      const id =
-        typeof (payload as any)?.id === "string"
-          ? (payload as any).id
-          : undefined;
-      const title =
-        typeof (payload as any)?.title === "string"
-          ? (payload as any).title
-          : undefined;
-
-      const found = pageState.services.find((s) => {
-        if (id && s.id === id) return true;
-        if (slug && s.slug === slug) return true;
-        if (title && s.title === title) return true;
-        return false;
-      });
-
-      if (found) {
+    const openPending = () => {
+      const raw = window.sessionStorage.getItem(
+        "ai-builder-open-manager-item:Services",
+      );
+      if (!raw) return;
+      try {
+        const payload = JSON.parse(raw) as {
+          slug?: string;
+          id?: string;
+          title?: string;
+        };
+        const slug = payload.slug?.trim().toLowerCase();
+        const found = pageState.services.find((service) => {
+          if (payload.id && service.id === payload.id) return true;
+          const serviceSlug = (service.slug || createServiceSlug(service.title))
+            .trim()
+            .toLowerCase();
+          if (slug && serviceSlug === slug) return true;
+          if (
+            payload.title &&
+            service.title.trim().toLowerCase() === payload.title.trim().toLowerCase()
+          ) {
+            return true;
+          }
+          return false;
+        });
+        if (!found) return;
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Services");
         setActiveTab("services");
         openEdit(found);
+      } catch {
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Services");
       }
-    } catch {
-      // ignore malformed storage payload
-    }
+    };
+    openPending();
+    window.addEventListener("ai-builder-open-manager-item", openPending);
+    return () =>
+      window.removeEventListener("ai-builder-open-manager-item", openPending);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, pageState.services]);
 
@@ -810,6 +817,7 @@ export default function ServiceManager({
       slug,
       order: Math.max(1, Number(draft.order) || 1),
       active: draft.active !== false,
+      showOnHome: draft.showOnHome !== false,
       layout: draft.layout || localDetailLayout,
       seoTitle: draft.seoTitle?.trim() || title,
       seoDescription: draft.seoDescription?.trim() || draft.desc.trim(),
@@ -1040,8 +1048,9 @@ export default function ServiceManager({
                 </div>
               ) : null}
 
-              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                <div className="grid grid-cols-[42px_minmax(200px,1.4fr)_100px_70px_90px_100px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="min-w-[960px]">
+                <div className="grid grid-cols-[42px_minmax(200px,1.4fr)_90px_110px_80px_100px_110px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
                   <input
                     type="checkbox"
                     checked={
@@ -1065,17 +1074,18 @@ export default function ServiceManager({
                     className="h-4 w-4 rounded border-slate-300"
                   />
                   <span>Service</span>
-                  <span>Category</span>
-                  <span>Order</span>
-                  <span>Status</span>
-                  <span className="text-right">Actions</span>
+                  <span className="whitespace-nowrap">Home</span>
+                  <span className="whitespace-nowrap">Category</span>
+                  <span className="whitespace-nowrap">Order</span>
+                  <span className="whitespace-nowrap">Status</span>
+                  <span className="text-right whitespace-nowrap">Actions</span>
                 </div>
                 {pagedServices.map((service) => {
                   const isActive = service.active !== false;
                   return (
                     <div
                       key={service.id}
-                      className="grid grid-cols-[42px_minmax(200px,1.4fr)_100px_70px_90px_100px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
+                      className="grid grid-cols-[42px_minmax(200px,1.4fr)_90px_110px_80px_100px_110px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
                     >
                       <input
                         type="checkbox"
@@ -1108,6 +1118,20 @@ export default function ServiceManager({
                           </p>
                         </div>
                       </div>
+                      <HomeFeedToggle
+                        name={service.title}
+                        on={isShownOnHome(service.showOnHome)}
+                        onChange={(next) =>
+                          persist({
+                            ...pageState,
+                            services: pageState.services.map((item) =>
+                              item.id === service.id
+                                ? { ...item, showOnHome: next }
+                                : item,
+                            ),
+                          })
+                        }
+                      />
                       <span className="text-sm font-semibold text-blue-700">
                         {service.category || DEFAULT_SERVICE_CATEGORY}
                       </span>
@@ -1196,6 +1220,7 @@ export default function ServiceManager({
                     </div>
                   </div>
                 ) : null}
+                </div>
               </div>
             </section>
           )}

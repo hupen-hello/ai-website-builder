@@ -103,7 +103,6 @@ const CardShell = ({
 
 const ServiceCard = ({
   service,
-  index,
   compact = false,
 }: {
   service: EventSlide;
@@ -121,9 +120,6 @@ const ServiceCard = ({
           <Image
             src={service.image}
             alt={service.alt ?? service.title}
-            data-editor-media
-            data-editor-media-type="image"
-            data-editor-media-src={service.image}
             fill
             className="object-cover"
             sizes="(min-width: 768px) 33vw, 100vw"
@@ -132,14 +128,8 @@ const ServiceCard = ({
       ) : null}
       <div className={compact ? "p-4" : "p-5"}>
         <div className="flex flex-wrap items-center gap-2">
-          <p
-            className="text-xs font-bold uppercase tracking-[0.18em] theme-accent"
-            data-editor-inline-format-key={`service-page:${index}:category`}
-          >
-            <InlineRichText
-              value={service.category}
-              formatKey={`service-page:${index}:category`}
-            />
+          <p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
+            {service.category}
           </p>
           <span
             className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
@@ -158,21 +148,13 @@ const ServiceCard = ({
         )}
         <h3
           className={`mt-2 font-black ${compact ? "text-lg" : "mt-3 text-xl"}`}
-          data-editor-inline-format-key={`service-page:${index}:title`}
         >
-          <InlineRichText
-            value={service.title}
-            formatKey={`service-page:${index}:title`}
-          />
+          {service.title}
         </h3>
         <p
           className={`mt-2 text-sm leading-7 text-slate-600 ${compact ? "line-clamp-2" : "mt-3"}`}
-          data-editor-inline-format-key={`service-page:${index}:description`}
         >
-          <InlineRichText
-            value={service.desc}
-            formatKey={`service-page:${index}:description`}
-          />
+          {service.desc}
         </p>
         {service.href ? (
           <p className="mt-3 text-sm font-bold theme-accent">View details →</p>
@@ -342,9 +324,6 @@ export default function EventPage({ data = {} }: SectionProps) {
                     <Image
                       src={featured.image}
                       alt={featured.alt ?? featured.title}
-                      data-editor-media
-                      data-editor-media-type="image"
-                      data-editor-media-src={featured.image}
                       fill
                       className="object-cover"
                       sizes="(min-width: 768px) 55vw, 100vw"

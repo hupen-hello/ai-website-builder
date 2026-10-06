@@ -57,6 +57,7 @@ import {
   withTopbarLayoutSkin,
 } from "../../data/templateFlow";
 import { PageLink, usePreview } from "../context/PreviewContext";
+import { resolveEventBreadcrumbView } from "../../lib/eventBreadcrumb";
 import ImageLibraryPicker from "./ImageLibraryPicker";
 import {
   getSectionAnchorId,
@@ -91,6 +92,38 @@ type MenuItem = {
   children?: MenuItem[];
   menuType?: "link" | "dropdown" | "mega";
 };
+
+const menuFromEventNav = (
+  navLinks: Array<{
+    label?: string;
+    href?: string;
+    subLinks?: Array<{ label?: string; href?: string }>;
+  }>,
+): MenuItem[] =>
+  navLinks.map((link) => ({
+    label: link.label ?? "",
+    href: link.href ?? "#",
+    menuType: link.subLinks?.length ? "dropdown" : "link",
+    children: (link.subLinks ?? []).map((child) => ({
+      label: child.label ?? "",
+      href: child.href ?? "#",
+      menuType: "link" as const,
+    })),
+  }));
+
+const eventNavFromMenu = (menu: MenuItem[]) =>
+  menu.map((item) => ({
+    label: item.label,
+    href: item.href,
+    ...(item.children?.length
+      ? {
+          subLinks: item.children.map((child) => ({
+            label: child.label,
+            href: child.href,
+          })),
+        }
+      : {}),
+  }));
 
 type NavHrefPickerKind = "pages" | "sections" | "blogs" | "custom";
 type HrefPickerTarget =
@@ -391,6 +424,7 @@ const headerLayouts = [
   { id: "Header-2", name: "Header 2" },
   { id: "Header-5", name: "Realestate Header 1" },
   { id: "Header-6", name: "Realestate Header 2" },
+  { id: "Header-9", name: "Event Header" },
 ];
 
 const topbarLayouts = [
@@ -407,6 +441,7 @@ const bannerLayouts = [
   { id: "Banner-4", name: "Video Slider" },
   { id: "Banner-5", name: "Realestate Banner 1" },
   { id: "Banner-6", name: "Realestate Banner 2" },
+  { id: "Banner-9", name: "Event Banner" },
 ];
 
 const aboutLayouts = [
@@ -414,6 +449,7 @@ const aboutLayouts = [
   { id: "About-2", name: "About 2" },
   { id: "About-5", name: "Realestate About 1" },
   { id: "About-6", name: "Realestate About 2" },
+  { id: "About-9", name: "Event About" },
 ];
 
 const aboutPageLayouts = [
@@ -445,6 +481,7 @@ const breadcrumbLayouts = [
   { id: "Breadcrumb-3", name: "Breadcrumb 3" },
   { id: "Breadcrumb-4", name: "Breadcrumb 4" },
   { id: "Breadcrumb-5", name: "Realestate Inner Banner" },
+  { id: "Breadcrumb-9", name: "Event Page Banner" },
 ];
 
 const getDefaultBreadcrumbData = (variant: string): SectionData => {
@@ -481,6 +518,7 @@ const productLayouts = [
   { id: "Product-3", name: "Product 3" },
   { id: "Product-5", name: "Realestate Product 1" },
   { id: "Product-6", name: "Realestate Product 2" },
+  { id: "Product-9", name: "Event Services" },
 ];
 
 const formDetailLayouts = [
@@ -496,6 +534,7 @@ const footerLayouts = [
   { id: "Footer-1", name: "Footer 1" },
   { id: "Footer-5", name: "Realestate Footer 1" },
   { id: "Footer-6", name: "Realestate Footer 2" },
+  { id: "Footer-9", name: "Event Footer" },
 ];
 
 const layoutsBySection: Record<string, { id: string; name: string }[]> = {
@@ -749,6 +788,7 @@ const componentContentFieldsByVariant: Record<string, string[]> = {
   "Breadcrumb-3": ["pretitle", "homeLabel", "title", "desc", "backgroundImage", "backgroundImageTitle"],
   "Breadcrumb-4": ["homeLabel", "title", "desc", "breadcrumbBackgroundColor", "breadcrumbTextColor"],
   "Breadcrumb-5": ["pretitle", "title", "desc", "desc2"],
+  "Breadcrumb-9": ["title", "bgImage", "breadcrumbs"],
   "About-1": ["title", "desc", "backgroundImage", "backgroundImageTitle", "buttons"],
   "About-2": ["pretitle", "title", "subtitle", "desc", "backgroundImage", "backgroundImageTitle", "sideImage", "sideImageTitle", "philosophyTitle", "philosophyDesc", "buttons"],
   "About-3": ["title", "desc", "backgroundImage", "backgroundImageTitle", "buttons"],
@@ -962,6 +1002,18 @@ const componentContentFieldsByVariant: Record<string, string[]> = {
   "Testimonial-3": ["pretitle", "title", "testimonialItems"],
   "Testimonial-5": ["pretitle", "title", "desc", "testimonialItems"],
   "Testimonial-6": ["pretitle", "title", "desc", "testimonialItems"],
+  "Testimonial-9": ["subtitle", "title", "description", "reviews"],
+  "TestimonialPage-9": [
+    "subtitle",
+    "titlePart1",
+    "titleHighlight",
+    "titlePart2",
+    "description",
+    "trustBadgeText1",
+    "trustBadgeHighlight",
+    "trustBadgeText2",
+    "reviews",
+  ],
   "FormDetail-1": ["pretitle", "title", "desc", "backgroundImage", "backgroundImageTitle", "sideImage", "galleryItems", "formFields", "formSubmitLabel"],
   "FormDetail-2": ["title", "formFields", "formSubmitLabel"],
   "FormDetail-3": ["title", "desc", "phone", "email", "location", "formFields", "formSubmitLabel"],
@@ -1916,6 +1968,10 @@ const specializedContentFieldSchemas: Record<string, HandledFieldObject> = {
     headerGradientColor: true,
     headerTextColor: true,
     menu: true,
+    navLinks: true,
+    ctaText: true,
+    ctaLink: true,
+    topbar: true,
     buttons: {
       $items: {
         label: true,
@@ -1931,8 +1987,10 @@ const specializedContentFieldSchemas: Record<string, HandledFieldObject> = {
     backgroundImage: true,
     backgroundImageTitle: true,
     pretitle: true,
+    superTitle: true,
     title: true,
     desc: true,
+    description: true,
     overlayColor: true,
     titleColor: true,
     bannerBackgroundMode: true,
@@ -1940,6 +1998,11 @@ const specializedContentFieldSchemas: Record<string, HandledFieldObject> = {
     bannerGradientColor: true,
     backgroundVideo: true,
     bannerHeight: true,
+    bgImage: true,
+    primaryCta: true,
+    primaryCtaLink: true,
+    videoCta: true,
+    videoLink: true,
     buttons: {
       $items: {
         label: true,
@@ -2092,6 +2155,13 @@ const userManageableCollectionFields = new Set([
   "formFields",
   "properties",
   "items",
+  "reviews",
+  "blogs",
+  "images",
+  "navLinks",
+  "quickLinks",
+  "servicesLinks",
+  "usefulLinks",
   "listings",
   "services",
   "members",
@@ -2108,10 +2178,13 @@ const userManageableCollectionFields = new Set([
   "awards",
 ]);
 
-const formatFieldLabel = (fieldName: string) =>
-  fieldName
+const formatFieldLabel = (fieldName: string) => {
+  if (fieldName === "bgImage") return "Background image";
+  if (fieldName === "breadcrumbs") return "Breadcrumbs";
+  return fieldName
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (letter) => letter.toUpperCase());
+};
 
 const getCollectionItemSummary = (item: unknown) => {
   if (!item || typeof item !== "object") return undefined;
@@ -2124,6 +2197,8 @@ const getCollectionItemSummary = (item: unknown) => {
     record.productTitle,
     record.quote,
     record.desc,
+    record.author,
+    record.text,
   ];
   for (const candidate of candidates) {
     if (typeof candidate === "string" && candidate.trim()) {
@@ -2361,6 +2436,10 @@ const GenericFieldEditor = ({
           const isPromiseItem = path.length === 2 && path[0] === "promises";
           const isFaqItem = path.length === 2 && path[0] === "faqItems";
           const isFormFieldItem = path.length === 2 && path[0] === "formFields";
+          const isBreadcrumbItem =
+            sectionType === "Breadcrumb" &&
+            path.length === 2 &&
+            path[0] === "breadcrumbs";
 
           if (isProductItem) {
             const existingLinkIndex = entries.findIndex(
@@ -2561,6 +2640,16 @@ const GenericFieldEditor = ({
               ([key]) => key === "question" || key === "answer",
             );
             sortObjectEntriesByPreferredOrder(entries, ["question", "answer"]);
+          }
+
+          if (isBreadcrumbItem) {
+            if (!entries.some(([key]) => key === "href")) {
+              entries = [...entries, ["href", ""]];
+            }
+            entries = entries.filter(
+              ([key]) => key === "label" || key === "href",
+            );
+            sortObjectEntriesByPreferredOrder(entries, ["label", "href"]);
           }
 
           if (isFormFieldItem) {
@@ -3049,7 +3138,14 @@ export default function EditSectionModal({
   const activeHeaderData = (currentSection?.data?.[activeVariant] ??
     (activeSectionType === "Header" ? fallbackVariantData : undefined)) as
     | {
-      logo?: string;
+      logo?:
+        | string
+        | {
+            initials?: string;
+            main?: string;
+            sub?: string;
+            tagline?: string;
+          };
       logoImage?: string;
       logoImageTitle?: string;
       headerBackgroundType?: HeaderBackgroundType;
@@ -3068,6 +3164,13 @@ export default function EditSectionModal({
         headerActiveLineGap?: number;
         headerActiveMenuPadding?: number;
         menu?: MenuItem[];
+        navLinks?: Array<{
+          label?: string;
+          href?: string;
+          subLinks?: Array<{ label?: string; href?: string }>;
+        }>;
+        ctaText?: string;
+        ctaLink?: string;
         buttons?: ButtonData[];
       }
     | undefined;
@@ -3091,6 +3194,13 @@ export default function EditSectionModal({
         bannerHeight?: number;
         bannerSlides?: BannerSlideData[];
         buttons?: ButtonData[];
+        superTitle?: string;
+        description?: string;
+        bgImage?: string;
+        primaryCta?: string;
+        primaryCtaLink?: string;
+        videoCta?: string;
+        videoLink?: string;
       }
     | undefined;
 
@@ -3109,12 +3219,38 @@ export default function EditSectionModal({
   const bannerSlideAccordion = useContentAccordion(
     (activeBannerData?.bannerSlides ?? []).length,
   );
-  const bannerButtonAccordion = useContentAccordion(
-    (activeBannerData?.buttons ?? []).length,
-  );
-  const headerButtonAccordion = useContentAccordion(
-    (activeHeaderData?.buttons ?? []).length,
-  );
+  const resolvedBannerButtons =
+    (activeBannerData?.buttons ?? []).length > 0
+      ? (activeBannerData?.buttons ?? [])
+      : activeBannerData?.primaryCta
+        ? [
+            {
+              label: activeBannerData.primaryCta,
+              href: activeBannerData.primaryCtaLink || "#",
+              variant: "primary" as const,
+              icon: "none",
+              iconPosition: "after" as const,
+              openInNewTab: false,
+            },
+          ]
+        : [];
+  const resolvedHeaderButtons =
+    (activeHeaderData?.buttons ?? []).length > 0
+      ? (activeHeaderData?.buttons ?? [])
+      : activeHeaderData?.ctaText
+        ? [
+            {
+              label: activeHeaderData.ctaText,
+              href: activeHeaderData.ctaLink || "#",
+              variant: "primary" as const,
+              icon: "none",
+              iconPosition: "after" as const,
+              openInNewTab: false,
+            },
+          ]
+        : [];
+  const bannerButtonAccordion = useContentAccordion(resolvedBannerButtons.length);
+  const headerButtonAccordion = useContentAccordion(resolvedHeaderButtons.length);
   const formFieldAccordion = useContentAccordion(
     (activeFormDetailData?.formFields ?? []).length,
   );
@@ -3125,12 +3261,25 @@ export default function EditSectionModal({
           ...(activeGenericData ?? {}),
         }
       : activeGenericData;
+  const eventBreadcrumbEditorData =
+    activeVariant === "Breadcrumb-9"
+      ? resolveEventBreadcrumbView({
+          currentPage,
+          pageSlug: currentSection?.page,
+          data: (editableGenericData ?? {}) as Record<string, unknown>,
+        })
+      : null;
   const activeComponentContentFields =
     componentContentFieldsByVariant[activeVariant];
   const knownSectionContentFields =
     knownContentFieldsBySection[activeSectionType];
   const isContentFieldVisible = (field: string) =>
     !field.startsWith("__") &&
+    !(
+      field === "testimonialItems" &&
+      (activeVariant === "Testimonial-9" ||
+        activeVariant === "TestimonialPage-9")
+    ) &&
     (!activeComponentContentFields ||
     activeComponentContentFields.includes(field) ||
       !knownSectionContentFields?.has(field));
@@ -3305,6 +3454,13 @@ export default function EditSectionModal({
       ]);
     }
     if (activeSectionType === "Breadcrumb") {
+      if (activeVariant === "Breadcrumb-9" && eventBreadcrumbEditorData) {
+        return [
+          ["title", eventBreadcrumbEditorData.title],
+          ["bgImage", eventBreadcrumbEditorData.bgImage],
+          ["breadcrumbs", eventBreadcrumbEditorData.breadcrumbs],
+        ];
+      }
       const breadcrumbEntries = [...entries];
       if (
         activeComponentContentFields?.includes("desc") &&
@@ -3412,7 +3568,29 @@ export default function EditSectionModal({
         )
     : [];
 
-  const menuItems = activeHeaderData?.menu ?? [];
+  const menuItems = (() => {
+    const menu = activeHeaderData?.menu ?? [];
+    const fromNav = menuFromEventNav(activeHeaderData?.navLinks ?? []);
+    const menuHasDropdowns = menu.some(
+      (item) => Array.isArray(item.children) && item.children.length > 0,
+    );
+    const navHasDropdowns = fromNav.some(
+      (item) => Array.isArray(item.children) && item.children.length > 0,
+    );
+    if (activeVariant === "Header-9" && navHasDropdowns && !menuHasDropdowns) {
+      return fromNav;
+    }
+    if (menu.length > 0) return menu;
+    return fromNav;
+  })();
+  const eventLogo =
+    activeHeaderData?.logo && typeof activeHeaderData.logo === "object"
+      ? activeHeaderData.logo
+      : null;
+  const headerLogoText =
+    typeof activeHeaderData?.logo === "string"
+      ? activeHeaderData.logo
+      : eventLogo?.main ?? "";
   const navSectionOptions = useMemo(() => {
     const options: Array<{ label: string; href: string }> = [];
     const seen = new Set<string>();
@@ -3718,14 +3896,21 @@ export default function EditSectionModal({
   const bannerGradientColor =
     activeBannerData?.bannerGradientColor ?? "#0ea5e9";
   const bannerHeight = activeBannerData?.bannerHeight ?? 70;
-  const hasBannerImageField = bannerBackgroundMode === "image";
+  const isEventBanner = activeVariant === "Banner-9";
+  const hasBannerImageField =
+    bannerBackgroundMode === "image" ||
+    isEventBanner ||
+    "bgImage" in (activeBannerData ?? {});
   const hasBannerVideoField = bannerBackgroundMode === "video";
   const hasBannerColorField =
     bannerBackgroundMode === "solid" || bannerBackgroundMode === "gradient";
-  const hasBannerButtonsField = "buttons" in (activeBannerData ?? {});
+  const hasBannerButtonsField =
+    "buttons" in (activeBannerData ?? {}) ||
+    "primaryCta" in (activeBannerData ?? {});
   const hasBannerMediaField =
     hasBannerImageField || hasBannerVideoField || hasBannerColorField;
-  const hasBannerHeightField = "bannerHeight" in (activeBannerData ?? {});
+  const hasBannerHeightField =
+    "bannerHeight" in (activeBannerData ?? {}) || isEventBanner;
   const hasBannerSlidesField = Array.isArray(activeBannerData?.bannerSlides);
   const isRealestateCategory =
     (category || "").trim().toLowerCase() === "realestate";
@@ -3741,6 +3926,7 @@ export default function EditSectionModal({
   const isSimpleBanner =
     activeVariant === "Banner-1" ||
     activeVariant === "Banner-2" ||
+    activeVariant === "Banner-9" ||
     (isRealestateCategory &&
       (activeVariant === "Banner-4" || activeVariant === "Banner-5"));
 
@@ -4048,26 +4234,66 @@ export default function EditSectionModal({
 
     setHasChanges(true);
     setLastChangedSection(activeSectionKey);
+    const nextHeaderData = {
+      ...baseHeaderData,
+      ...newData,
+    };
+    if (Array.isArray(nextHeaderData.menu)) {
+      const fromMenu = eventNavFromMenu(nextHeaderData.menu as MenuItem[]);
+      const existingNav = menuFromEventNav(activeHeaderData?.navLinks ?? []);
+      const menuHasDropdowns = fromMenu.some(
+        (item) => Array.isArray(item.children) && item.children.length > 0,
+      );
+      const navHasDropdowns = existingNav.some(
+        (item) => Array.isArray(item.children) && item.children.length > 0,
+      );
+      if (activeVariant === "Header-9" && navHasDropdowns && !menuHasDropdowns) {
+        nextHeaderData.navLinks = activeHeaderData?.navLinks;
+        nextHeaderData.menu = existingNav;
+      } else {
+        nextHeaderData.navLinks = fromMenu;
+      }
+    }
+    if (
+      Array.isArray(nextHeaderData.buttons) &&
+      (activeVariant === "Header-9" || "ctaText" in baseHeaderData)
+    ) {
+      const first = (nextHeaderData.buttons as ButtonData[])[0];
+      nextHeaderData.ctaText = first?.label ?? nextHeaderData.ctaText;
+      nextHeaderData.ctaLink = first?.href ?? nextHeaderData.ctaLink;
+    }
     onUpdateSectionData(activeSectionKey, {
       ...currentSection.data,
-      [activeVariant]: {
-        ...baseHeaderData,
-        ...newData,
-      },
+      [activeVariant]: nextHeaderData,
     });
   };
 
   const updateActiveBannerData = (newData: Record<string, unknown>) => {
     if (!currentSection || !activeBannerData) return;
 
+    const merged: Record<string, unknown> = {
+      ...activeBannerData,
+      ...newData,
+    };
+    if ("pretitle" in newData) merged.superTitle = newData.pretitle;
+    if ("superTitle" in newData) merged.pretitle = newData.superTitle;
+    if ("desc" in newData) merged.description = newData.desc;
+    if ("description" in newData) merged.desc = newData.description;
+    if ("backgroundImage" in newData) merged.bgImage = newData.backgroundImage;
+    if ("bgImage" in newData) merged.backgroundImage = newData.bgImage;
+    if (Array.isArray(newData.buttons)) {
+      const first = (newData.buttons as ButtonData[])[0];
+      if (first) {
+        merged.primaryCta = first.label;
+        merged.primaryCtaLink = first.href;
+      }
+    }
+
     setHasChanges(true);
     setLastChangedSection(activeSectionKey);
     onUpdateSectionData(activeSectionKey, {
       ...currentSection.data,
-      [activeVariant]: {
-        ...activeBannerData,
-        ...newData,
-      },
+      [activeVariant]: merged,
     });
   };
 
@@ -4202,8 +4428,17 @@ export default function EditSectionModal({
       (fallbackVariantData as SectionData | undefined);
     if (!baseGenericData) return;
 
+    let sourceValue = baseGenericData[field as keyof SectionData];
+    if (
+      field === "breadcrumbs" &&
+      !Array.isArray(sourceValue) &&
+      eventBreadcrumbEditorData
+    ) {
+      sourceValue = eventBreadcrumbEditorData.breadcrumbs;
+    }
+
     const nextValue = setValueAtPath(
-      baseGenericData[field as keyof SectionData],
+      sourceValue,
       nestedPath,
       value,
     );
@@ -4257,7 +4492,12 @@ export default function EditSectionModal({
     const [field] = path;
     if (typeof field !== "string") return;
 
-    const items = activeGenericData?.[field as keyof SectionData];
+    const storedItems = activeGenericData?.[field as keyof SectionData];
+    const items = Array.isArray(storedItems)
+      ? storedItems
+      : field === "breadcrumbs" && eventBreadcrumbEditorData
+        ? eventBreadcrumbEditorData.breadcrumbs
+        : undefined;
     if (!Array.isArray(items)) return;
     if (field === "features" && items.length >= 4) return;
     if (field === "whyChooseUsItems" && items.length >= 4) return;
@@ -4399,6 +4639,10 @@ export default function EditSectionModal({
       promises: {
         title: "New point",
       },
+      breadcrumbs: {
+        label: "New page",
+        href: "",
+      },
       formFields:
         activeSectionType === "CareerJobs"
           ? {
@@ -4430,7 +4674,12 @@ export default function EditSectionModal({
     const [field] = path;
     if (typeof field !== "string") return;
 
-    const items = activeGenericData?.[field as keyof SectionData];
+    const storedItems = activeGenericData?.[field as keyof SectionData];
+    const items = Array.isArray(storedItems)
+      ? storedItems
+      : field === "breadcrumbs" && eventBreadcrumbEditorData
+        ? eventBreadcrumbEditorData.breadcrumbs
+        : undefined;
     if (!Array.isArray(items)) return;
 
     updateGenericField(
@@ -4731,6 +4980,10 @@ export default function EditSectionModal({
   };
 
   const updateHeaderLogo = (logo: string) => {
+    if (eventLogo) {
+      updateActiveHeaderData({ logo: { ...eventLogo, main: logo } });
+      return;
+    }
     updateActiveHeaderData({ logo });
   };
 
@@ -4758,7 +5011,7 @@ export default function EditSectionModal({
     value: string | boolean,
   ) => {
     const nextValue = field === "label" && typeof value === "string" ? limitLinkText(value) : value;
-    const updatedButtons = (activeHeaderData?.buttons ?? []).map(
+    const updatedButtons = (resolvedHeaderButtons ?? []).map(
       (button, buttonIndex) =>
         buttonIndex === index ? { ...button, [field]: nextValue } : button,
     );
@@ -4767,10 +5020,10 @@ export default function EditSectionModal({
   };
 
   const addHeaderButton = () => {
-    if ((activeHeaderData?.buttons ?? []).length >= MAX_HEADER_BUTTONS) return;
+    if (resolvedHeaderButtons.length >= MAX_HEADER_BUTTONS) return;
 
     const updatedButtons = [
-      ...(activeHeaderData?.buttons ?? []),
+      ...resolvedHeaderButtons,
       { label: "New Button", href: "#", variant: "primary", icon: "none", iconPosition: "after", openInNewTab: false },
     ];
 
@@ -4778,7 +5031,7 @@ export default function EditSectionModal({
   };
 
   const deleteHeaderButton = (index: number) => {
-    const updatedButtons = (activeHeaderData?.buttons ?? []).filter(
+    const updatedButtons = resolvedHeaderButtons.filter(
       (_, buttonIndex) => buttonIndex !== index,
     );
 
@@ -4890,7 +5143,7 @@ export default function EditSectionModal({
     value: string | boolean,
   ) => {
     const nextValue = field === "label" && typeof value === "string" ? limitLinkText(value) : value;
-    const updatedButtons = (activeBannerData?.buttons ?? []).map(
+    const updatedButtons = resolvedBannerButtons.map(
       (button, buttonIndex) =>
         buttonIndex === index ? { ...button, [field]: nextValue } : button,
     );
@@ -4899,10 +5152,10 @@ export default function EditSectionModal({
   };
 
   const addBannerButton = () => {
-    if ((activeBannerData?.buttons ?? []).length >= MAX_BANNER_BUTTONS) return;
+    if (resolvedBannerButtons.length >= MAX_BANNER_BUTTONS) return;
 
     const updatedButtons = [
-      ...(activeBannerData?.buttons ?? []),
+      ...resolvedBannerButtons,
       { label: "New Button", href: "#", icon: "none", iconPosition: "after", openInNewTab: false },
     ];
 
@@ -4910,7 +5163,7 @@ export default function EditSectionModal({
   };
 
   const deleteBannerButton = (index: number) => {
-    const updatedButtons = (activeBannerData?.buttons ?? []).filter(
+    const updatedButtons = resolvedBannerButtons.filter(
       (_, buttonIndex) => buttonIndex !== index,
     );
 
@@ -5132,14 +5385,14 @@ export default function EditSectionModal({
   };
 
   const openHeaderButtonHrefPicker = (index: number) => {
-    const currentHref = activeHeaderData?.buttons?.[index]?.href ?? "";
+    const currentHref = resolvedHeaderButtons[index]?.href ?? "";
     setHrefPicker({ source: "header-button", index });
     setHrefPickerKind(detectNavHrefPickerKind(currentHref));
     setHrefPickerValue(currentHref);
   };
 
   const openBannerButtonHrefPicker = (index: number) => {
-    const currentHref = activeBannerData?.buttons?.[index]?.href ?? "";
+    const currentHref = resolvedBannerButtons[index]?.href ?? "";
     setHrefPicker({ source: "banner-button", index });
     setHrefPickerKind(detectNavHrefPickerKind(currentHref));
     setHrefPickerValue(currentHref);
@@ -5945,11 +6198,51 @@ export default function EditSectionModal({
                       Logo Text
                     </label>
                     <input
-                      value={activeHeaderData?.logo ?? ""}
+                      value={headerLogoText}
                       onChange={(event) => updateHeaderLogo(event.target.value)}
                       className="h-9 w-full rounded-lg border border-slate-200 bg-white px-2.5 text-xs text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#315ff4] focus:ring-2 focus:ring-[#315ff4]/15"
                       placeholder="Your brand name…"
                     />
+                    {eventLogo ? (
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label className={contentFieldLabelClass}>Initials</label>
+                          <input
+                            value={eventLogo.initials ?? ""}
+                            onChange={(event) =>
+                              updateActiveHeaderData({
+                                logo: { ...eventLogo, initials: event.target.value },
+                              })
+                            }
+                            className={contentFieldInputClass}
+                          />
+                        </div>
+                        <div>
+                          <label className={contentFieldLabelClass}>Sub brand</label>
+                          <input
+                            value={eventLogo.sub ?? ""}
+                            onChange={(event) =>
+                              updateActiveHeaderData({
+                                logo: { ...eventLogo, sub: event.target.value },
+                              })
+                            }
+                            className={contentFieldInputClass}
+                          />
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label className={contentFieldLabelClass}>Tagline</label>
+                          <input
+                            value={eventLogo.tagline ?? ""}
+                            onChange={(event) =>
+                              updateActiveHeaderData({
+                                logo: { ...eventLogo, tagline: event.target.value },
+                              })
+                            }
+                            className={contentFieldInputClass}
+                          />
+                        </div>
+                      </div>
+                    ) : null}
 
                     <div className="space-y-2">
                       <span className={contentFieldLabelClass}>
@@ -6006,7 +6299,7 @@ export default function EditSectionModal({
                           Header buttons
                         </h4>
                         <p className="mt-0.5 text-[10px] text-slate-500">
-                          {(activeHeaderData?.buttons ?? []).length}/
+                          {resolvedHeaderButtons.length}/
                           {MAX_HEADER_BUTTONS} action buttons
                         </p>
                       </div>
@@ -6015,7 +6308,7 @@ export default function EditSectionModal({
                         type="button"
                         onClick={addHeaderButton}
                         disabled={
-                          (activeHeaderData?.buttons ?? []).length >=
+                          resolvedHeaderButtons.length >=
                           MAX_HEADER_BUTTONS
                         }
                         className={`${contentAddButtonClass} disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none`}
@@ -6026,7 +6319,7 @@ export default function EditSectionModal({
                     </div>
 
                     <div className="space-y-3">
-                      {(activeHeaderData?.buttons ?? []).map((button, index) => (
+                      {resolvedHeaderButtons.map((button, index) => (
                         <ContentAccordionItem
                           key={index}
                           title={`Button ${index + 1}`}
@@ -6286,8 +6579,10 @@ export default function EditSectionModal({
 
                   {isSimpleBanner &&
                   ("pretitle" in (activeBannerData ?? {}) ||
+                    "superTitle" in (activeBannerData ?? {}) ||
                     "title" in (activeBannerData ?? {}) ||
-                    "desc" in (activeBannerData ?? {})) ? (
+                    "desc" in (activeBannerData ?? {}) ||
+                    "description" in (activeBannerData ?? {})) ? (
                     <div className="mb-1 flex items-center gap-2">
                       <span className="grid size-7 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-100">
                         <FileText size={14} />
@@ -6303,13 +6598,19 @@ export default function EditSectionModal({
                     </div>
                   ) : null}
 
-                  {isSimpleBanner && "pretitle" in (activeBannerData ?? {}) && (
+                  {isSimpleBanner &&
+                    ("pretitle" in (activeBannerData ?? {}) ||
+                      "superTitle" in (activeBannerData ?? {})) && (
                     <ContentFieldCard
                       label="Pretitle"
                       hint="Short eyebrow above the main headline"
                     >
                       <input
-                        value={activeBannerData?.pretitle ?? ""}
+                        value={
+                          activeBannerData?.pretitle ??
+                          activeBannerData?.superTitle ??
+                          ""
+                        }
                         onChange={(event) =>
                           updateBannerField("pretitle", event.target.value)
                         }
@@ -6335,13 +6636,19 @@ export default function EditSectionModal({
                     </ContentFieldCard>
                   )}
 
-                  {isSimpleBanner && "desc" in (activeBannerData ?? {}) && (
+                  {isSimpleBanner &&
+                    ("desc" in (activeBannerData ?? {}) ||
+                      "description" in (activeBannerData ?? {})) && (
                     <ContentFieldCard
                       label="Description"
                       hint="Supporting line under the title"
                     >
                       <textarea
-                        value={activeBannerData?.desc ?? ""}
+                        value={
+                          activeBannerData?.desc ??
+                          activeBannerData?.description ??
+                          ""
+                        }
                         onChange={(event) =>
                           updateBannerField("desc", event.target.value)
                         }
@@ -6785,17 +7092,22 @@ export default function EditSectionModal({
                             <div className="mt-2 grid gap-3 sm:grid-cols-[minmax(0,1fr)_9rem] sm:items-start">
                               <ContentMediaPickButton
                                 hasFile={Boolean(
-                                  activeBannerData?.backgroundImage,
+                                  activeBannerData?.backgroundImage ||
+                                    activeBannerData?.bgImage,
                                 )}
                                 mediaKind="image"
                                 fileLabel={getMediaUploadLabel(
-                                    activeBannerData?.backgroundImage ?? "",
+                                    activeBannerData?.backgroundImage ||
+                                      activeBannerData?.bgImage ||
+                                      "",
                                     "image",
                                   )}
                                 onClick={() =>
                                   openImagePicker(
                                     "Banner Background Image",
-                                    activeBannerData?.backgroundImage ?? "",
+                                    activeBannerData?.backgroundImage ||
+                                      activeBannerData?.bgImage ||
+                                      "",
                                     (source, fileName) =>
                                       updateActiveBannerData({
                                         bannerBackgroundMode: "image",
@@ -6808,7 +7120,11 @@ export default function EditSectionModal({
                                 }
                               />
                               <MediaUploadPreview
-                                src={activeBannerData?.backgroundImage ?? ""}
+                                src={
+                                  activeBannerData?.backgroundImage ||
+                                  activeBannerData?.bgImage ||
+                                  ""
+                                }
                                 type="image"
                               />
                             </div>
@@ -6946,7 +7262,7 @@ export default function EditSectionModal({
                             Banner buttons
                         </h4>
                           <p className="mt-0.5 text-[10px] text-slate-500">
-                            {(activeBannerData?.buttons ?? []).length}/
+                            {resolvedBannerButtons.length}/
                             {MAX_BANNER_BUTTONS} CTAs added
                           </p>
                         </div>
@@ -6955,7 +7271,7 @@ export default function EditSectionModal({
                           type="button"
                           onClick={addBannerButton}
                           disabled={
-                            (activeBannerData?.buttons ?? []).length >=
+                            resolvedBannerButtons.length >=
                             MAX_BANNER_BUTTONS
                           }
                           className={`${contentAddButtonClass} disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none`}
@@ -6966,7 +7282,7 @@ export default function EditSectionModal({
                       </div>
 
                       <div className="space-y-3">
-                        {(activeBannerData?.buttons ?? []).map(
+                        {resolvedBannerButtons.map(
                           (button, index) => (
                             <ContentAccordionItem
                               key={index}

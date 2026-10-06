@@ -28,6 +28,7 @@ import {
   FieldLabelWithAi,
   useManagerAiFields,
 } from "./managerAi";
+import HomeFeedToggle, { isShownOnHome } from "./HomeFeedToggle";
 import { usePreview } from "../layout/src/components/context/PreviewContext";
 import {
   getPageSeo,
@@ -62,6 +63,7 @@ export type EventItem = {
   slug?: string;
   order?: number;
   active?: boolean;
+  showOnHome?: boolean;
   layout?: string;
   seoTitle?: string;
   seoDescription?: string;
@@ -174,6 +176,7 @@ const emptyEvent = (order = 1, detailLayout = DEFAULT_EVENT_DETAIL_LAYOUT): Even
   slug: "",
   order,
   active: true,
+  showOnHome: true,
   layout: detailLayout,
   seoTitle: "",
   seoDescription: "",
@@ -683,6 +686,7 @@ export default function EventManager({
       slug: eventItem.slug || createEventSlug(eventItem.title),
       order: eventItem.order ?? 1,
       active: eventItem.active !== false,
+      showOnHome: eventItem.showOnHome !== false,
       layout: eventItem.layout || localDetailLayout,
       seoTitle: eventItem.seoTitle || "",
       seoDescription: eventItem.seoDescription || "",
@@ -693,6 +697,49 @@ export default function EventManager({
     });
     setShowComposer(true);
   };
+
+  useEffect(() => {
+    if (!ready) return;
+    const openPending = () => {
+      const raw = window.sessionStorage.getItem(
+        "ai-builder-open-manager-item:Events",
+      );
+      if (!raw) return;
+      try {
+        const payload = JSON.parse(raw) as {
+          slug?: string;
+          id?: string;
+          title?: string;
+        };
+        const slug = payload.slug?.trim().toLowerCase();
+        const found = pageState.events.find((item) => {
+          if (payload.id && item.id === payload.id) return true;
+          const itemSlug = (item.slug || createEventSlug(item.title))
+            .trim()
+            .toLowerCase();
+          if (slug && itemSlug === slug) return true;
+          if (
+            payload.title &&
+            item.title.trim().toLowerCase() === payload.title.trim().toLowerCase()
+          ) {
+            return true;
+          }
+          return false;
+        });
+        if (!found) return;
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Events");
+        setActiveTab("events");
+        openEdit(found);
+      } catch {
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Events");
+      }
+    };
+    openPending();
+    window.addEventListener("ai-builder-open-manager-item", openPending);
+    return () =>
+      window.removeEventListener("ai-builder-open-manager-item", openPending);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, pageState.events]);
 
   const closeComposer = () => {
     setShowComposer(false);
@@ -787,6 +834,7 @@ export default function EventManager({
       slug,
       order: Math.max(1, Number(draft.order) || 1),
       active: draft.active !== false,
+      showOnHome: draft.showOnHome !== false,
       layout: draft.layout || localDetailLayout,
       seoTitle: draft.seoTitle?.trim() || title,
       seoDescription: draft.seoDescription?.trim() || draft.desc.trim(),
@@ -1054,8 +1102,9 @@ export default function EventManager({
                 </div>
               ) : null}
 
-              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                <div className="grid grid-cols-[42px_minmax(180px,1.3fr)_90px_110px_70px_90px_100px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="min-w-[1040px]">
+                <div className="grid grid-cols-[42px_minmax(180px,1.3fr)_90px_90px_130px_80px_100px_110px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
                   <input
                     type="checkbox"
                     checked={
@@ -1079,11 +1128,12 @@ export default function EventManager({
                     className="h-4 w-4 rounded border-slate-300"
                   />
                   <span>Event</span>
-                  <span>Type</span>
-                  <span>Date / Time</span>
-                  <span>Order</span>
-                  <span>Status</span>
-                  <span className="text-right">Actions</span>
+                  <span className="whitespace-nowrap">Home</span>
+                  <span className="whitespace-nowrap">Type</span>
+                  <span className="whitespace-nowrap">Date / Time</span>
+                  <span className="whitespace-nowrap">Order</span>
+                  <span className="whitespace-nowrap">Status</span>
+                  <span className="text-right whitespace-nowrap">Actions</span>
                 </div>
                 {pagedEvents.map((item) => {
                   const isActive = item.active !== false;
@@ -1097,7 +1147,7 @@ export default function EventManager({
                   return (
                     <div
                       key={item.id}
-                      className="grid grid-cols-[42px_minmax(180px,1.3fr)_90px_110px_70px_90px_100px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
+                      className="grid grid-cols-[42px_minmax(180px,1.3fr)_90px_90px_130px_80px_100px_110px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
                     >
                       <input
                         type="checkbox"
@@ -1130,6 +1180,20 @@ export default function EventManager({
                           </p>
                         </div>
                       </div>
+                      <HomeFeedToggle
+                        name={item.title}
+                        on={isShownOnHome(item.showOnHome)}
+                        onChange={(next) =>
+                          persist({
+                            ...pageState,
+                            events: pageState.events.map((eventItem) =>
+                              eventItem.id === item.id
+                                ? { ...eventItem, showOnHome: next }
+                                : eventItem,
+                            ),
+                          })
+                        }
+                      />
                       <span
                         className={`text-sm font-semibold ${
                           normalizeEventType(item.eventType) === "past"
@@ -1227,6 +1291,7 @@ export default function EventManager({
                     </div>
                   </div>
                 ) : null}
+                </div>
               </div>
             </section>
           )}

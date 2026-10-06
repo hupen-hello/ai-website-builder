@@ -118,7 +118,6 @@ const CardShell = ({
 
 const PropertyCard = ({
   property,
-  index,
   compact = false,
 }: {
   property: PropertySlide;
@@ -139,9 +138,6 @@ const PropertyCard = ({
             <Image
               src={property.image}
               alt={property.alt ?? property.title}
-              data-editor-media
-              data-editor-media-type="image"
-              data-editor-media-src={property.image}
               fill
               className="object-cover"
               sizes="(min-width: 768px) 33vw, 100vw"
@@ -150,14 +146,8 @@ const PropertyCard = ({
         ) : null}
         <div className={compact ? "p-4" : "p-5"}>
           <div className="flex flex-wrap items-center gap-2">
-            <p
-              className="text-xs font-bold uppercase tracking-[0.18em] theme-accent"
-              data-editor-inline-format-key={`service-page:${index}:category`}
-            >
-              <InlineRichText
-                value={property.category}
-                formatKey={`service-page:${index}:category`}
-              />
+            <p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
+              {property.category}
             </p>
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
@@ -179,24 +169,16 @@ const PropertyCard = ({
           ) : null}
           <h3
             className={`mt-2 font-black ${compact ? "text-lg" : "mt-3 text-xl"}`}
-            data-editor-inline-format-key={`service-page:${index}:title`}
           >
-            <InlineRichText
-              value={property.title}
-              formatKey={`service-page:${index}:title`}
-            />
+            {property.title}
           </h3>
           {property.address ? (
             <p className="mt-1 text-sm text-slate-500">{property.address}</p>
           ) : null}
           <p
             className={`mt-2 text-sm leading-7 text-slate-600 ${compact ? "line-clamp-2" : "mt-3"}`}
-            data-editor-inline-format-key={`service-page:${index}:description`}
           >
-            <InlineRichText
-              value={property.desc}
-              formatKey={`service-page:${index}:description`}
-            />
+            {property.desc}
           </p>
           {property.href ? (
             <p className="mt-3 text-sm font-bold theme-accent">
@@ -369,9 +351,6 @@ export default function PropertyPage({ data = {} }: SectionProps) {
                     <Image
                       src={featured.image}
                       alt={featured.alt ?? featured.title}
-                      data-editor-media
-                      data-editor-media-type="image"
-                      data-editor-media-src={featured.image}
                       fill
                       className="object-cover"
                       sizes="(min-width: 768px) 55vw, 100vw"

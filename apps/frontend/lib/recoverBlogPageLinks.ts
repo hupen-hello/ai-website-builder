@@ -65,22 +65,31 @@ type BlogItemLike = {
   title?: string;
   label?: string;
   href?: string;
+  link?: string;
   slug?: string;
+  id?: string | number;
   image?: string;
   excerpt?: string;
   desc?: string;
   body?: string;
   content?: string;
   date?: string;
+  dateLine1?: string;
+  dateLine2?: string;
+  dateLine3?: string;
   category?: string;
   author?: string;
+  readTime?: string;
 };
 
 const slugFromBlogItem = (item: BlogItemLike) => {
   const explicit = (item.slug || "").trim();
   if (explicit) return blogSlugFromSectionPage(explicit);
 
-  const href = (item.href || "").trim();
+  const id = String(item.id ?? "").trim();
+  if (id && !["blog", "blogs"].includes(id.toLowerCase())) return id;
+
+  const href = (item.href || item.link || "").trim();
   if (href) {
     const last =
       href
@@ -110,8 +119,10 @@ const readBlogItemsFromSection = (section: BlogSectionLike): BlogItemLike[] => {
   const variant = section.variant;
   const variantKeys = [
     variant,
+    "Blog-9",
     "Blog-5",
     "Blog-1",
+    "BlogPage-9",
     "BlogPage-1",
     "BlogPage-6",
     ...Object.keys(data),
@@ -125,7 +136,8 @@ const readBlogItemsFromSection = (section: BlogSectionLike): BlogItemLike[] => {
     if (!variantData || typeof variantData !== "object") continue;
     const raw =
       (variantData as Record<string, unknown>).blogItems ??
-      (variantData as Record<string, unknown>).galleryItems;
+      (variantData as Record<string, unknown>).galleryItems ??
+      (variantData as Record<string, unknown>).blogs;
     if (!Array.isArray(raw)) continue;
     const items = raw.filter(
       (entry): entry is BlogItemLike =>
@@ -136,14 +148,36 @@ const readBlogItemsFromSection = (section: BlogSectionLike): BlogItemLike[] => {
   return [];
 };
 
-const blogItemToLink = (item: BlogItemLike): BlogLinkLike | null => {
+const dateFromEventBlog = (item: BlogItemLike) => {
+  const composed = [item.dateLine1, item.dateLine2, item.dateLine3]
+    .map((part) => (part || "").trim())
+    .filter(Boolean)
+    .join(" ");
+  return (item.date || "").trim() || composed || undefined;
+};
+
+const blogLayoutFromSection = (section: BlogSectionLike) => {
+  const variant = (section.variant || "").trim();
+  if (variant.startsWith("BlogPage-")) return variant;
+  if (variant === "Blog-9") return "BlogPage-9";
+  if (variant.startsWith("Blog-") && variant !== "Blog-1") {
+    const n = variant.slice("Blog-".length);
+    if (n) return `BlogPage-${n}`;
+  }
+  return "BlogPage-1";
+};
+
+const blogItemToLink = (
+  item: BlogItemLike,
+  layout = "BlogPage-1",
+): BlogLinkLike | null => {
   const title = (item.title || item.label || "").trim();
   if (!title) return null;
 
   const slug = slugFromBlogItem(item);
   if (!slug) return null;
 
-  const excerpt = (item.excerpt || item.desc || "").trim();
+  const excerpt = (item.excerpt || item.desc || item.readTime || "").trim();
   const content = (item.body || item.content || excerpt).trim();
 
   return {
@@ -152,13 +186,13 @@ const blogItemToLink = (item: BlogItemLike): BlogLinkLike | null => {
     kind: "blog",
     hidden: false,
     slug,
-    layout: "BlogPage-1",
+    layout,
     author: item.author?.trim() || "Website author",
     image: typeof item.image === "string" ? item.image : undefined,
     shortDescription: excerpt || undefined,
     longDescription: content || undefined,
     category: item.category?.trim() || "General",
-    createdAt: item.date?.trim() || undefined,
+    createdAt: dateFromEventBlog(item),
   };
 };
 
@@ -238,8 +272,9 @@ export function recoverBlogPageLinksFromSections<T extends BlogLinkLike>(
 
   for (const section of sections || []) {
     if (!isHomeBlogSection(section) && !isBlogListingSection(section)) continue;
+    const layout = blogLayoutFromSection(section);
     for (const item of readBlogItemsFromSection(section)) {
-      const link = blogItemToLink(item);
+      const link = blogItemToLink(item, layout);
       if (link) rememberBlogLink(link);
     }
   }

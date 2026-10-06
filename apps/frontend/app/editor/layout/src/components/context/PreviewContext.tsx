@@ -52,6 +52,7 @@ export type PageLink = {
   seoKeywords?: string;
   createdAt?: string;
   order?: number;
+  showOnHome?: boolean;
 };
 
 export type EditorPanel =
@@ -80,6 +81,14 @@ function pageLinkLabels(links: PageLink[]): Set<string> {
     for (const item of items) {
       const label = (item.label || "").trim();
       if (label) labels.add(label.toLowerCase());
+      const href = (item.href || "").trim().toLowerCase();
+      if (href.startsWith("#page-")) {
+        const slug = href.slice("#page-".length);
+        if (slug) {
+          labels.add(slug);
+          labels.add(slug.replace(/-/g, " "));
+        }
+      }
       if (item.children?.length) walk(item.children);
     }
   };
@@ -118,6 +127,7 @@ const slimPageLinkForStorage = (link: PageLink): PageLink => {
     seoKeywords: link.seoKeywords,
     createdAt: link.createdAt,
     order: link.order,
+    showOnHome: link.showOnHome,
     children: link.children?.map(slimPageLinkForStorage),
   };
 };

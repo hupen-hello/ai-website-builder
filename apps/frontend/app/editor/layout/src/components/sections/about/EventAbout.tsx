@@ -4,6 +4,7 @@ import type { SectionProps } from "../../../types/section";
 import { motion } from "framer-motion";
 import { SectionDivider } from "./EventSectionDivider";
 import { mergeEventData, mediaUrl } from "./eventPageDefaults";
+import InlineRichText from "../../builder/InlineRichText";
 export default function AboutEvent1({ data = {} }: SectionProps) {
   data = mergeEventData(data, "about", "About", "AboutEvent1");
   const images = (Array.isArray(data.images) ? data.images : [])
@@ -26,7 +27,9 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
           >
             <h5 className="text-[#6b3c9b] font-bold tracking-[0.2em] text-xs sm:text-sm uppercase flex items-center justify-center gap-6">
               <span className="w-12 h-[2px] bg-[#6b3c9b]/40"></span>
-              {data.subtitle}
+              <span data-editor-inline-format-key="event-about:subtitle">
+                <InlineRichText value={String(data.subtitle || "")} formatKey="event-about:subtitle" />
+              </span>
               <span className="w-12 h-[2px] bg-[#6b3c9b]/40"></span>
             </h5>
           </motion.div>
@@ -36,21 +39,9 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1a0b2e] leading-[1.15]"
+            data-editor-inline-format-key="event-about:title"
           >
-            {String(data.title || "").split(".").map((part, i, arr) => {
-              if (!part.trim()) return null;
-              return (
-                <React.Fragment key={i}>
-                  {i === 0 ? (
-                    <span className="font-medium">{part}. </span>
-                  ) : (
-                    <span className="italic text-[#6b3c9b] font-normal">
-                      {part}.
-                    </span>
-                  )}
-                </React.Fragment>
-              );
-            })}
+            <InlineRichText value={String(data.title || "")} formatKey="event-about:title" />
           </motion.h2>
         </div>
 
@@ -66,18 +57,15 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
           >
             {" "}
             {/* Divider with diamond */} <SectionDivider className="mb-6" />{" "}
-            <p className="text-slate-600 text-base leading-relaxed mb-5">
-              {" "}
-              {data.description1}{" "}
-            </p>{" "}
-            <p className="text-slate-600 text-base leading-relaxed mb-8">
-              {" "}
-              {data.description2}{" "}
-            </p>{" "}
-            <p className="text-[28px] text-[34px] text-[#32174d] font-serif italic font-light leading-tight">
-              {" "}
-              {data.cursiveText}{" "}
-            </p>{" "}
+            <p className="text-slate-600 text-base leading-relaxed mb-5" data-editor-inline-format-key="event-about:description1">
+              <InlineRichText value={String(data.description1 || "")} formatKey="event-about:description1" />
+            </p>
+            <p className="text-slate-600 text-base leading-relaxed mb-8" data-editor-inline-format-key="event-about:description2">
+              <InlineRichText value={String(data.description2 || "")} formatKey="event-about:description2" />
+            </p>
+            <p className="text-[28px] text-[34px] text-[#32174d] font-serif italic font-light leading-tight" data-editor-inline-format-key="event-about:cursive">
+              <InlineRichText value={String(data.cursiveText || "")} formatKey="event-about:cursive" />
+            </p>
           </motion.div>{" "}
           {/* Image Collage */}{" "}
           <div className="relative h-[400px] md:h-[480px] w-full flex gap-4 mt-12 lg:mt-0">
@@ -95,6 +83,9 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
                 src={String(images[0] || "")}
                 alt="Event Image 1"
                 className="w-full h-full object-cover"
+                data-editor-media
+                data-editor-media-type="image"
+                data-editor-media-src={String(images[0] || "")}
               />{" "}
             </motion.div>{" "}
             {/* Right Images */}{" "}
@@ -112,6 +103,9 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
                   src={String(images[1] || images[0] || "")}
                   alt="Event Image 2"
                   className="w-full h-full object-cover"
+                  data-editor-media
+                  data-editor-media-type="image"
+                  data-editor-media-src={String(images[1] || images[0] || "")}
                 />{" "}
               </motion.div>{" "}
               <motion.div
@@ -126,6 +120,9 @@ export default function AboutEvent1({ data = {} }: SectionProps) {
                   src={String(images[2] || images[0] || "")}
                   alt="Event Image 3"
                   className="w-full h-full object-cover"
+                  data-editor-media
+                  data-editor-media-type="image"
+                  data-editor-media-src={String(images[2] || images[0] || "")}
                 />{" "}
               </motion.div>{" "}
             </div>{" "}

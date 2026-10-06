@@ -27,6 +27,7 @@ import {
   FieldLabelWithAi,
   useManagerAiFields,
 } from "./managerAi";
+import HomeFeedToggle, { isShownOnHome } from "./HomeFeedToggle";
 import { usePreview } from "../layout/src/components/context/PreviewContext";
 import {
   getPageSeo,
@@ -55,6 +56,7 @@ export type GalleryItem = {
   alt?: string;
   order?: number;
   active?: boolean;
+  showOnHome?: boolean;
 };
 
 export type GalleryPageState = {
@@ -79,6 +81,7 @@ const emptyGalleryItem = (order = 1): GalleryItem => ({
   alt: "",
   order,
   active: true,
+  showOnHome: true,
 });
 
 const emptyPageState = (): GalleryPageState => ({
@@ -508,9 +511,55 @@ export default function GalleryManager({
       ...item,
       order: item.order ?? 1,
       active: item.active !== false,
+      showOnHome: item.showOnHome !== false,
     });
     setShowComposer(true);
   };
+
+  useEffect(() => {
+    if (!ready) return;
+    const openPending = () => {
+      const raw = window.sessionStorage.getItem(
+        "ai-builder-open-manager-item:Gallery",
+      );
+      if (!raw) return;
+      try {
+        const payload = JSON.parse(raw) as {
+          id?: string;
+          title?: string;
+          image?: string;
+        };
+        const found = pageState.galleryItems.find((item) => {
+          if (payload.id && item.id === payload.id) return true;
+          if (
+            payload.image &&
+            item.image &&
+            item.image.trim() === payload.image.trim()
+          ) {
+            return true;
+          }
+          if (
+            payload.title &&
+            item.title.trim().toLowerCase() === payload.title.trim().toLowerCase()
+          ) {
+            return true;
+          }
+          return false;
+        });
+        if (!found) return;
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Gallery");
+        setActiveTab("gallery");
+        openEdit(found);
+      } catch {
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Gallery");
+      }
+    };
+    openPending();
+    window.addEventListener("ai-builder-open-manager-item", openPending);
+    return () =>
+      window.removeEventListener("ai-builder-open-manager-item", openPending);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, pageState.galleryItems]);
 
   function closeComposer() {
     setShowComposer(false);
@@ -568,6 +617,7 @@ export default function GalleryManager({
       alt: draft.alt?.trim() || title,
       order: Math.max(1, Number(draft.order) || 1),
       active: draft.active !== false,
+      showOnHome: draft.showOnHome !== false,
     };
 
     const galleryItems = editingId
@@ -793,8 +843,9 @@ export default function GalleryManager({
                 </div>
               ) : null}
 
-              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                <div className="grid grid-cols-[42px_minmax(220px,1.5fr)_110px_70px_90px_100px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="min-w-[960px]">
+                <div className="grid grid-cols-[42px_minmax(220px,1.5fr)_90px_110px_80px_100px_110px] border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
                   <input
                     type="checkbox"
                     checked={
@@ -818,17 +869,18 @@ export default function GalleryManager({
                     className="h-4 w-4 rounded border-slate-300"
                   />
                   <span>Gallery item</span>
-                  <span>Category</span>
-                  <span>Order</span>
-                  <span>Status</span>
-                  <span className="text-right">Actions</span>
+                  <span className="whitespace-nowrap">Home</span>
+                  <span className="whitespace-nowrap">Category</span>
+                  <span className="whitespace-nowrap">Order</span>
+                  <span className="whitespace-nowrap">Status</span>
+                  <span className="text-right whitespace-nowrap">Actions</span>
                 </div>
                 {pagedGalleryItems.map((item) => {
                   const isActive = item.active !== false;
                   return (
                     <div
                       key={item.id}
-                      className="grid grid-cols-[42px_minmax(220px,1.5fr)_110px_70px_90px_100px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
+                      className="grid grid-cols-[42px_minmax(220px,1.5fr)_90px_110px_80px_100px_110px] items-center border-b border-slate-200 px-5 py-4 last:border-b-0"
                     >
                       <input
                         type="checkbox"
@@ -861,6 +913,20 @@ export default function GalleryManager({
                           </p>
                         </div>
                       </div>
+                      <HomeFeedToggle
+                        name={item.title}
+                        on={isShownOnHome(item.showOnHome)}
+                        onChange={(next) =>
+                          persist({
+                            ...pageState,
+                            galleryItems: pageState.galleryItems.map((row) =>
+                              row.id === item.id
+                                ? { ...row, showOnHome: next }
+                                : row,
+                            ),
+                          })
+                        }
+                      />
                       <span className="text-sm text-slate-600">
                         {item.category || DEFAULT_GALLERY_CATEGORY}
                       </span>
@@ -946,6 +1012,7 @@ export default function GalleryManager({
                     </div>
                   </div>
                 ) : null}
+                </div>
               </div>
             </section>
           )}

@@ -2,7 +2,6 @@
 import React from "react";
 import type { SectionProps } from "../../../types/section";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   User,
   Edit,
@@ -12,6 +11,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { OurTeamData } from "../about/eventTypes";
+import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 const Facebook = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,37 @@ const getIcon = (iconName: string) => {
       return <User size={20} className="text-white" />;
   }
 };
-export default function OurTeamEvent1({ data = {} }: SectionProps) {
+export default function OurTeamEvent1({ data = {}, editorMode }: SectionProps) {
+  const rawMembers = Array.isArray(data.members) ? data.members : [];
+  const usedSlugs = new Set<string>();
+  const members = rawMembers.map((member: Record<string, unknown>, index: number) => {
+    const name = String(member.name || member.title || "");
+    const base =
+      String(member.slug || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") ||
+      name
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") ||
+      `team-${index + 1}`;
+    let slug = base;
+    let n = 2;
+    while (usedSlugs.has(slug)) {
+      slug = `${base}-${n}`;
+      n += 1;
+    }
+    usedSlugs.add(slug);
+    return {
+      ...member,
+      name,
+      slug,
+      href: `#master-detail/team/${encodeURIComponent(slug)}`,
+    };
+  });
   return (
     <section className="py-12 lg:py-12 bg-[#fdfafb] relative overflow-hidden">
       {" "}
@@ -135,14 +165,24 @@ export default function OurTeamEvent1({ data = {} }: SectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="flex flex-col bg-white rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(107,60,155,0.1)] transition-all duration-500 pb-8 group relative"
+                data-editor-no-inline="true"
+                className="flex flex-col bg-white rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(107,60,155,0.1)] transition-all duration-500 pb-8 group relative cursor-pointer"
               >
                 {" "}
-                {/* Link that covers the card except social icons */}{" "}
-                <Link
-                  href="/team-detail"
-                  className="absolute inset-0 z-0"
-                ></Link>
+                <a
+                  href={member.href}
+                  className="absolute inset-0 z-30"
+                  aria-label={member.name}
+                  onClick={(event) => {
+                    handleManagerCardClick(event, editorMode, "Teams", {
+                      id: typeof member.id === "string" ? member.id : undefined,
+                      slug: member.slug,
+                      title: member.name,
+                    });
+                  }}
+                >
+                  <span className="absolute inset-0" aria-hidden="true" />
+                </a>
                 {/* Image Section */}{" "}
                 <div className="p-[14px] relative pointer-events-none z-10">
                   {" "}

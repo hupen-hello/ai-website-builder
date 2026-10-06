@@ -45,9 +45,17 @@ export default function FooterEvent1({
   data,
   logoData,
 }: {
-  data: FooterData;
+  data?: Partial<FooterData>;
   logoData?: any;
 }) {
+  const about = data?.about || { description: "" };
+  const contact = data?.contact || { address: "", phone: "", email: "", website: "" };
+  const quickLinks = Array.isArray(data?.quickLinks) ? data.quickLinks : [];
+  const servicesLinks = Array.isArray(data?.servicesLinks) ? data.servicesLinks : [];
+  const usefulLinks = Array.isArray(data?.usefulLinks) ? data.usefulLinks : [];
+  const newsletter = data?.newsletter || { title: "", description: "", placeholder: "" };
+  const social = data?.social || { facebook: "#", instagram: "#", linkedin: "#" };
+  const logoSrc = String(logoData?.logoImage || "/logo/logo-event.png");
   return (
     <footer className="bg-[#0b0410] text-white/70 font-sans relative overflow-hidden">
       {" "}
@@ -77,15 +85,18 @@ export default function FooterEvent1({
               <Link href="/" className="flex items-center gap-4">
                 {" "}
                 <img
-                  src="/logo/logo-event.png"
+                  src={logoSrc}
                   alt="Event Logo"
                   className="h-16 w-auto object-contain brightness-0 invert opacity-90"
+                  data-editor-media="logo"
+                  data-editor-media-type="image"
+                  data-editor-media-src={logoSrc}
                 />{" "}
               </Link>{" "}
             </div>{" "}
             <p className="mb-8 leading-relaxed text-[13px] whitespace-pre-line text-white/80">
               {" "}
-              {data.about.description}{" "}
+              {about.description}{" "}
             </p>{" "}
             <div className="h-[1px] w-[40px] bg-white/20 mb-8"></div>{" "}
             <div className="space-y-5 text-[13px]">
@@ -97,7 +108,7 @@ export default function FooterEvent1({
                   <MapPin size={14} className="text-purple-400" />{" "}
                 </div>{" "}
                 <span className="leading-relaxed whitespace-pre-line text-white/80 pt-0.5">
-                  {data.contact.address}
+                  {contact.address}
                 </span>{" "}
               </div>{" "}
               <div className="flex items-center gap-4">
@@ -107,11 +118,11 @@ export default function FooterEvent1({
                   <Phone size={14} className="text-purple-400" />{" "}
                 </div>{" "}
                 <a
-                  href={`tel:${data.contact.phone.replace(/[^0-9+]/g, "")}`}
+                  href={`tel:${(contact.phone || "").replace(/[^0-9+]/g, "")}`}
                   className="hover:text-purple-300 transition-colors text-white/80 pt-0.5"
                 >
                   {" "}
-                  {data.contact.phone}{" "}
+                  {contact.phone}{" "}
                 </a>{" "}
               </div>{" "}
             </div>{" "}
@@ -126,7 +137,7 @@ export default function FooterEvent1({
             <Divider />{" "}
             <ul className="space-y-4">
               {" "}
-              {data.quickLinks.map((link, idx) => (
+              {quickLinks.map((link, idx) => (
                 <li key={idx}>
                   {" "}
                   <Link
@@ -154,7 +165,7 @@ export default function FooterEvent1({
             <Divider />{" "}
             <ul className="space-y-4">
               {" "}
-              {data.servicesLinks.map((link, idx) => (
+              {servicesLinks.map((link, idx) => (
                 <li key={idx}>
                   {" "}
                   <Link
@@ -182,7 +193,7 @@ export default function FooterEvent1({
             <Divider />{" "}
             <ul className="space-y-4">
               {" "}
-              {data.usefulLinks.map((link, idx) => (
+              {usefulLinks.map((link, idx) => (
                 <li key={idx}>
                   {" "}
                   <Link
@@ -205,12 +216,12 @@ export default function FooterEvent1({
             {" "}
             <h4 className="text-white font-semibold tracking-[0.05em] text-[13px] mb-2 uppercase">
               {" "}
-              {data.newsletter.title}{" "}
+              {newsletter.title}{" "}
             </h4>{" "}
             <LineDivider />{" "}
             <p className="text-[12px] mb-6 text-white/80 leading-relaxed pr-4">
               {" "}
-              {data.newsletter.description}{" "}
+              {newsletter.description}{" "}
             </p>{" "}
             <form
               className="flex rounded-md overflow-hidden mb-12 h-10 border border-white/20"
@@ -219,7 +230,7 @@ export default function FooterEvent1({
               {" "}
               <input
                 type="email"
-                placeholder={data.newsletter.placeholder}
+                placeholder={newsletter.placeholder}
                 className="bg-transparent border-r-0 text-white text-[13px] px-4 flex-grow outline-none w-full placeholder:text-white/40 focus:border-[#9d5baf]/50 transition-colors"
               />{" "}
               <button
@@ -238,7 +249,7 @@ export default function FooterEvent1({
             <div className="flex items-center gap-3">
               {" "}
               <Link
-                href={data.social.facebook}
+                href={social.facebook}
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#9d5baf] hover:border-[#9d5baf] hover:text-white transition-colors"
               >
                 {" "}
@@ -257,7 +268,7 @@ export default function FooterEvent1({
                 </svg>{" "}
               </Link>{" "}
               <Link
-                href={data.social.instagram}
+                href={social.instagram}
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#9d5baf] hover:border-[#9d5baf] hover:text-white transition-colors"
               >
                 {" "}
@@ -278,7 +289,7 @@ export default function FooterEvent1({
                 </svg>{" "}
               </Link>{" "}
               <Link
-                href={data.social.linkedin}
+                href={social.linkedin}
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#9d5baf] hover:border-[#9d5baf] hover:text-white transition-colors"
               >
                 {" "}
@@ -298,9 +309,9 @@ export default function FooterEvent1({
                   <circle cx="4" cy="4" r="2" />
                 </svg>{" "}
               </Link>{" "}
-              {data.social.youtube && (
+              {social.youtube && (
                 <Link
-                  href={data.social.youtube}
+                  href={social.youtube}
                   className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#9d5baf] hover:border-[#9d5baf] hover:text-white transition-colors"
                 >
                   {" "}
@@ -331,9 +342,9 @@ export default function FooterEvent1({
           {" "}
           <p className="text-[12px] text-white/60 tracking-wide">
             {" "}
-            {data.copyright}{" "}
+            {data?.copyright}{" "}
           </p>{" "}
-          {data.bottomTagline && (
+          {data?.bottomTagline && (
             <div className="flex items-center gap-4 hidden lg:flex">
               {" "}
               <div className="w-1.5 h-1.5 rotate-45 bg-[#9d5baf]"></div>{" "}
@@ -353,7 +364,7 @@ export default function FooterEvent1({
               className="text-[#9d5baf] fill-[#9d5baf]"
             /> by{" "}
             <span className="text-white/80 font-medium">
-              {data.designer || "EVENTS STUDIO"}
+              {data?.designer || "EVENTS STUDIO"}
             </span>{" "}
           </div>{" "}
         </div>{" "}

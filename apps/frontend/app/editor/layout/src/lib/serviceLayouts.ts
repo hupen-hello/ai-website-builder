@@ -49,6 +49,13 @@ export const SERVICE_INDEX_LAYOUTS: ServiceLayoutOption[] = [
     preview: "grid",
     image: "/bg2.jpg",
   },
+  {
+    id: "ServicePage-9",
+    name: "Event services grid",
+    description: "Evenha-style service cards from your event template.",
+    preview: "cards",
+    image: "/bg1.jpg",
+  },
 ];
 
 /** Individual service detail page layouts. */

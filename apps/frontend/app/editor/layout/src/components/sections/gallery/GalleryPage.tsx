@@ -66,11 +66,10 @@ const PageHeader = ({ data }: { data: SectionProps["data"] }) => (
 
 const ItemCaption = ({
   item,
-  index,
   variant = "overlay",
 }: {
   item: GalleryItemData;
-  index: number;
+  index?: number;
   variant?: "overlay" | "below";
 }) => {
   const title = item.title ?? "";
@@ -82,26 +81,10 @@ const ItemCaption = ({
     return (
       <div className="px-1 pt-3">
         {title ? (
-          <h2
-            className="text-sm font-semibold text-slate-900"
-            data-editor-inline-format-key={`gallery-page:${index}:title`}
-          >
-            <InlineRichText
-              value={title}
-              formatKey={`gallery-page:${index}:title`}
-            />
-          </h2>
+          <h2 className="text-sm font-semibold text-slate-900">{title}</h2>
         ) : null}
         {caption ? (
-          <p
-            className="mt-1 text-sm text-slate-500"
-            data-editor-inline-format-key={`gallery-page:${index}:description`}
-          >
-            <InlineRichText
-              value={caption}
-              formatKey={`gallery-page:${index}:description`}
-            />
-          </p>
+          <p className="mt-1 text-sm text-slate-500">{caption}</p>
         ) : null}
       </div>
     );
@@ -110,26 +93,10 @@ const ItemCaption = ({
   return (
     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 text-white">
       {title ? (
-        <h2
-          className="text-lg font-semibold"
-          data-editor-inline-format-key={`gallery-page:${index}:title`}
-        >
-          <InlineRichText
-            value={title}
-            formatKey={`gallery-page:${index}:title`}
-          />
-        </h2>
+        <h2 className="text-lg font-semibold">{title}</h2>
       ) : null}
       {caption ? (
-        <p
-          className="mt-1 line-clamp-2 text-sm text-white/80"
-          data-editor-inline-format-key={`gallery-page:${index}:description`}
-        >
-          <InlineRichText
-            value={caption}
-            formatKey={`gallery-page:${index}:description`}
-          />
-        </p>
+        <p className="mt-1 line-clamp-2 text-sm text-white/80">{caption}</p>
       ) : null}
     </div>
   );
@@ -137,12 +104,11 @@ const ItemCaption = ({
 
 const GalleryImage = ({
   item,
-  index,
   className = "relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-100",
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
 }: {
   item: GalleryItemData;
-  index: number;
+  index?: number;
   className?: string;
   sizes?: string;
 }) => (
@@ -150,9 +116,6 @@ const GalleryImage = ({
     <Image
       src={item.image}
       alt={item.alt ?? item.title ?? ""}
-      data-editor-media
-      data-editor-media-type="image"
-      data-editor-media-src={item.image}
       fill
       sizes={sizes}
       className="object-cover transition duration-500 group-hover:scale-105"
@@ -210,9 +173,6 @@ function SliderGallery({ items }: { items: GalleryItemData[] }) {
         <Image
           src={current.image}
           alt={current.alt ?? current.title ?? ""}
-          data-editor-media
-          data-editor-media-type="image"
-          data-editor-media-src={current.image}
           fill
           priority
           sizes="100vw"

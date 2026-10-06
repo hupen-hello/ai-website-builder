@@ -4,6 +4,7 @@ import type { SectionProps } from "../../../types/section";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react";
 import { SectionDivider } from "../about/EventSectionDivider";
+import InlineRichText from "../../builder/InlineRichText";
 interface Review {
   text: string;
   author: string;
@@ -20,20 +21,23 @@ interface TestimonialsData {
 export default function TestimonialsEvent1({
   data,
 }: {
-  data: TestimonialsData;
+  data?: TestimonialsData;
 }) {
+  const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const nextReview = () => {
+    if (!reviews.length) return;
     setDirection(1);
     setCurrentIndex((prev) =>
-      prev === data.reviews.length - 1 ? 0 : prev + 1,
+      prev === reviews.length - 1 ? 0 : prev + 1,
     );
   };
   const prevReview = () => {
+    if (!reviews.length) return;
     setDirection(-1);
     setCurrentIndex((prev) =>
-      prev === 0 ? data.reviews.length - 1 : prev - 1,
+      prev === 0 ? reviews.length - 1 : prev - 1,
     );
   };
   const variants = {
@@ -61,7 +65,9 @@ export default function TestimonialsEvent1({
           >
             <h5 className="text-[#6b3c9b] font-bold tracking-[0.2em] text-xs sm:text-sm uppercase flex items-center justify-center gap-6">
               <span className="w-12 h-[2px] bg-[#6b3c9b]/40"></span>
-              {data.subtitle}
+              <span data-editor-inline-format-key="event-testimonial:subtitle">
+                <InlineRichText value={String(data?.subtitle || "")} formatKey="event-testimonial:subtitle" />
+              </span>
               <span className="w-12 h-[2px] bg-[#6b3c9b]/40"></span>
             </h5>
           </motion.div>
@@ -71,19 +77,9 @@ export default function TestimonialsEvent1({
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1a0b2e] leading-[1.2]"
+            data-editor-inline-format-key="event-testimonial:title"
           >
-            {data.title.split("Clients").map((part, i) => (
-              <React.Fragment key={i}>
-                {i === 0 && (
-                  <span className="font-medium">{part} Clients </span>
-                )}
-                {i === 1 && (
-                  <span className="italic text-[#32174d] font-normal">
-                    {part.trim()}
-                  </span>
-                )}
-              </React.Fragment>
-            ))}
+            <InlineRichText value={String(data?.title || "")} formatKey="event-testimonial:title" />
           </motion.h2>
         </div>
 
@@ -98,9 +94,8 @@ export default function TestimonialsEvent1({
             className="col-span-1 lg:col-span-5 pr-0 lg:pr-8"
           >
             {" "}
-            <p className="text-slate-600 text-base leading-relaxed mb-10 border-l-2 border-purple-200 pl-4">
-              {" "}
-              {data.description}{" "}
+            <p className="text-slate-600 text-base leading-relaxed mb-10 border-l-2 border-purple-200 pl-4" data-editor-inline-format-key="event-testimonial:description">
+              <InlineRichText value={String(data?.description || "")} formatKey="event-testimonial:description" />
             </p>{" "}
             <div className="flex gap-4">
               {" "}
@@ -144,6 +139,7 @@ export default function TestimonialsEvent1({
             </div>{" "}
             <div className="bg-white border border-purple-100 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative z-10 overflow-hidden min-h-[380px] flex items-center">
               {" "}
+              {reviews[currentIndex] ? (
               <AnimatePresence mode="wait" custom={direction}>
                 {" "}
                 <motion.div
@@ -164,20 +160,20 @@ export default function TestimonialsEvent1({
                         key={i}
                         size={20}
                         className={
-                          i < data.reviews[currentIndex].rating
+                          i < reviews[currentIndex].rating
                             ? "fill-purple-900 text-purple-900"
                             : "text-gray-300"
                         }
                       />
                     ))}{" "}
                   </div>{" "}
-                  <p className="text-slate-600 text-base leading-relaxed  italic mb-10 relative">
+                  <p className="text-slate-600 text-base leading-relaxed  italic mb-10 relative" data-editor-inline-format-key={`event-testimonial:${currentIndex}:text`}>
                     {" "}
                     <Quote
                       size={40}
                       className="absolute -top-6 -left-6 text-purple-100 -z-10 rotate-180"
                     />
-                    "{data.reviews[currentIndex].text}"{" "}
+                    <InlineRichText value={String(reviews[currentIndex].text || "")} formatKey={`event-testimonial:${currentIndex}:text`} />
                     <Quote
                       size={20}
                       className="inline ml-2 text-purple-900 align-top"
@@ -186,22 +182,26 @@ export default function TestimonialsEvent1({
                   <div className="flex items-center gap-4">
                     {" "}
                     <img
-                      src={data.reviews[currentIndex].image}
-                      alt={data.reviews[currentIndex].author}
+                      src={reviews[currentIndex].image}
+                      alt={reviews[currentIndex].author}
                       className="w-16 h-16 rounded-full object-cover shadow-md"
+                      data-editor-media
+                      data-editor-media-type="image"
+                      data-editor-media-src={reviews[currentIndex].image}
                     />{" "}
                     <div>
                       {" "}
-                      <h4 className="font-bold text-gray-900 text-lg">
-                        {data.reviews[currentIndex].author}
+                      <h4 className="font-bold text-gray-900 text-lg" data-editor-inline-format-key={`event-testimonial:${currentIndex}:author`}>
+                        <InlineRichText value={String(reviews[currentIndex].author || "")} formatKey={`event-testimonial:${currentIndex}:author`} />
                       </h4>{" "}
                       <p className="text-slate-600 text-base leading-relaxed uppercase tracking-wider">
-                        {data.reviews[currentIndex].role}
+                        {reviews[currentIndex].role}
                       </p>{" "}
                     </div>{" "}
                   </div>{" "}
                 </motion.div>{" "}
-              </AnimatePresence>{" "}
+              </AnimatePresence>
+              ) : null}{" "}
             </div>{" "}
           </motion.div>{" "}
         </div>{" "}

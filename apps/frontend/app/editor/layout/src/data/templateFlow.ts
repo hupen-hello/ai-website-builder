@@ -634,9 +634,11 @@ const mergeCategoryData = (
           ...resolveVariantContent(categoryPack, variant),
         },
         (defaultsByVariant[variant] ||
-          defaultsByVariant[`${section.type}-1`] ||
-          Object.values(defaultsByVariant)[0] ||
-          {}) as Record<string, unknown>,
+          (variant.endsWith("-9")
+            ? {}
+            : defaultsByVariant[`${section.type}-1`] ||
+              Object.values(defaultsByVariant)[0] ||
+              {})) as Record<string, unknown>,
       );
 
       if (!Object.keys(merged).length) {
@@ -1211,6 +1213,7 @@ export const createServicePageSection = (category: string): SectionItem => {
       "ServicePage-4": forVariant("ServicePage-4"),
       "ServicePage-5": forVariant("ServicePage-5"),
       "ServicePage-6": forVariant("ServicePage-6"),
+      "ServicePage-9": forVariant("ServicePage-9"),
     },
   };
 };
@@ -2143,7 +2146,7 @@ export const getThemeManagerVisibility = (
       ["portfolio", "portfolios", "project", "projects"],
       ["PortfolioPage"],
     ),
-    teams: has(["team", "teams"], ["TeamPage"]),
+    teams: has(["team", "teams", "our-team"], ["TeamPage"]),
     gallery: has(["gallery"], ["GalleryPage"]),
     countries: has(
       ["countries", "countries-we-serve"],

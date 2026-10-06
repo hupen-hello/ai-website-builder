@@ -12,6 +12,7 @@ type PageLinkLike = {
   slug?: string;
   createdAt?: string;
   featured?: boolean;
+  showOnHome?: boolean;
   children?: PageLinkLike[];
 };
 
@@ -49,6 +50,8 @@ const slugFromHref = (href: string) => {
   if (!last || GENERIC_HREF_SLUGS.has(last.toLowerCase())) return "";
   return last;
 };
+
+export const isShownOnHome = (item: RecordItem) => item.showOnHome !== false;
 
 export const itemSlug = (item: RecordItem) =>
   text(item.slug) ||
@@ -89,11 +92,59 @@ const findLibraryItems = (
   const primary = records(data[field]).filter((item) => item.active !== false);
   if (primary.length) return primary;
   if (field === "productItems") {
+    const fromEventItems = records(data.items)
+      .filter((item) => item.active !== false)
+      .map((item, index) => {
+        const tags = Array.isArray(item.tags)
+          ? item.tags.map((tag) => String(tag))
+          : [];
+        const title = text(item.title);
+        return {
+          ...item,
+          title,
+          image: text(item.image),
+          desc: text(item.desc, text(item.description, tags.join(", "))),
+          category: text(item.category, tags[0] || "Service"),
+          slug: itemSlug(item) || slugifyHomeItem(title) || `service-${index + 1}`,
+          active: true,
+          showOnHome: item.showOnHome !== false,
+        };
+      });
+    if (fromEventItems.length) return fromEventItems;
     const fromListings = records(data.listings).filter(
       (item) => item.active !== false,
     );
     if (fromListings.length) return fromListings;
     return records(data.projectItems).filter((item) => item.active !== false);
+  }
+  if (field === "blogItems") {
+    return records(data.blogs)
+      .filter((item) => item.active !== false)
+      .map((item, index) => {
+        const title = text(item.title, text(item.label));
+        const slug =
+          itemSlug(item) ||
+          text(item.id) ||
+          slugifyHomeItem(title) ||
+          `blog-${index + 1}`;
+        const date = [
+          text(item.date),
+          [text(item.dateLine1), text(item.dateLine2), text(item.dateLine3)]
+            .filter(Boolean)
+            .join(" "),
+        ].find((value) => value.trim()) || "";
+        return {
+          ...item,
+          title,
+          image: text(item.image),
+          excerpt: text(item.excerpt, text(item.desc, text(item.readTime))),
+          category: text(item.category, "General"),
+          slug,
+          href: text(item.href, text(item.link, `/blog/${slug}`)),
+          date,
+          active: true,
+        };
+      });
   }
   return [];
 };
@@ -270,6 +321,26 @@ const mapPortfolioToCity = (item: RecordItem, fallback?: RecordItem) => {
   };
 };
 
+const mapBlogToEventCard = (item: RecordItem, fallback?: RecordItem) => {
+  const title = text(item.title, text(item.label, text(fallback?.title)));
+  const slug = itemSlug(item) || itemSlug(fallback || {}) || slugifyHomeItem(title);
+  const date = text(item.date, text(item.createdAt, text(fallback?.date)));
+  const dateParts = date.split(/\s+/).filter(Boolean);
+  return {
+    ...fallback,
+    ...item,
+    id: text(item.id, text(fallback?.id, slug)),
+    image: text(item.image, text(fallback?.image)),
+    dateLine1: text(item.dateLine1, text(fallback?.dateLine1, dateParts[0] || "")),
+    dateLine2: text(item.dateLine2, text(fallback?.dateLine2, dateParts[1] || "")),
+    dateLine3: text(item.dateLine3, text(fallback?.dateLine3, dateParts[2] || "")),
+    category: text(item.category, text(fallback?.category, "General")),
+    readTime: text(item.readTime, text(fallback?.readTime, "5 Min Read")),
+    title,
+    link: text(item.link, text(item.href, text(fallback?.link, `/blog/${slug}`))),
+  };
+};
+
 const mapBlogToHomePost = (item: RecordItem, fallback?: RecordItem) => {
   const title = text(item.title, text(item.label, text(fallback?.title)));
   const slug = itemSlug(item) || itemSlug(fallback || {}) || slugifyHomeItem(title);
@@ -353,6 +424,7 @@ const blogRecordsFromLinks = (pageLinks: PageLinkLike[] = []) => {
       slug: text(link.slug) || slugFromHref(text(link.href)) || slugifyHomeItem(text(link.label)),
       createdAt: text(link.createdAt),
       featured: link.featured === true,
+      showOnHome: link.showOnHome !== false,
     }));
 };
 
@@ -360,6 +432,33 @@ const isRentItem = (item: RecordItem) => {
   const listingType = text(item.listingType).toLowerCase();
   const category = text(item.category).toLowerCase();
   return listingType.includes("rent") || category.includes("rent");
+};
+
+const mapServiceToEventItem = (item: RecordItem, fallback?: RecordItem) => {
+  const title = text(
+    item.title,
+    text(item.productTitle, text(fallback?.title, text(fallback?.productTitle))),
+  );
+  const fallbackTags = Array.isArray(fallback?.tags)
+    ? fallback.tags.map((tag) => String(tag))
+    : [];
+  const tags = Array.isArray(item.tags)
+    ? item.tags.map((tag) => String(tag))
+    : text(item.category)
+      ? [text(item.category)]
+      : fallbackTags;
+  return {
+    ...fallback,
+    ...item,
+    title,
+    image: text(item.image, text(fallback?.image)),
+    tags,
+    description: text(
+      item.description,
+      text(item.desc, text(item.productInfoDesc, text(fallback?.description))),
+    ),
+    slug: itemSlug(item) || slugifyHomeItem(title),
+  };
 };
 
 const mapServiceToSlide = (item: RecordItem, fallback?: RecordItem) => {
@@ -488,13 +587,37 @@ export const overlayManagerHomeFeed = (
   }
 
   if (section.type === "Blog" && !section.page) {
+    const localBlogs = records(data.blogs);
+    const source = (blogLibrary.length ? blogLibrary : localBlogs).filter(
+      isShownOnHome,
+    );
     const blogItems = mergeFeed(
       records(data.blogItems),
-      blogLibrary,
+      source,
       mapBlogToHomePost,
       true,
     );
+    const eventBlogs = mapLibraryToLocalList(source, localBlogs, mapBlogToEventCard);
+    const isEventBlog = String(section.variant || "").startsWith("Blog-9");
+    if (isEventBlog) {
+      if (eventBlogs.length) {
+        return { blogs: eventBlogs, ...(blogItems.length ? { blogItems } : {}) };
+      }
+      if (localBlogs.length) return { blogs: localBlogs };
+    }
     return blogItems.length ? { blogItems } : {};
+  }
+
+  if (
+    isHomeFeedType(section, "BlogPage", "BlogPage-") &&
+    ["", "blog", "blogs"].includes(String(section.page || "").trim().toLowerCase())
+  ) {
+    const localBlogs = records(data.blogs);
+    const source = blogLibrary.length ? blogLibrary : localBlogs;
+    const eventBlogs = mapLibraryToLocalList(source, localBlogs, mapBlogToEventCard);
+    if (String(section.variant || "").startsWith("BlogPage-9") && eventBlogs.length) {
+      return { blogs: eventBlogs };
+    }
   }
 
   if (
@@ -529,7 +652,44 @@ export const overlayManagerHomeFeed = (
       localSlides,
       mapServiceToSlide,
     );
-    return productSlides.length ? { productSlides, serviceSlides: productSlides } : {};
+    const items = mapLibraryToLocalList(
+      library,
+      records(data.items),
+      mapServiceToEventItem,
+    );
+    if (!productSlides.length && !items.length && !library.length) return {};
+    return {
+      ...(productSlides.length
+        ? { productSlides, serviceSlides: productSlides }
+        : {}),
+      ...(library.length ? { productItems: library } : {}),
+      ...(items.length ? { items } : {}),
+    };
+  }
+
+  if (
+    section.type === "Product" &&
+    !section.page &&
+    (String(section.variant || "").startsWith("Product-9") ||
+      String(section.id || "") === "Product")
+  ) {
+    const localItems = records(data.items);
+    const library = findLibraryItems(
+      sections,
+      "ServicePage",
+      "ServicePage-",
+    ).filter(isShownOnHome);
+    const source = library.length ? library : localItems.filter(isShownOnHome);
+    const items = mapLibraryToLocalList(
+      source,
+      localItems,
+      mapServiceToEventItem,
+    );
+    if (!source.length && !items.length) return { items: [] };
+    return {
+      ...(source.length ? { productItems: source } : {}),
+      items,
+    };
   }
 
   if (isHomeFeedType(section, "PortfolioPage", "PortfolioPage-")) {
@@ -638,7 +798,31 @@ export const syncHomeCardsIntoManagers = (sections: SectionItem[]): SectionItem[
     })),
   ]);
   const serviceData = readVariantData(servicePage);
+  const productHome = sections.find(
+    (section) => section.type === "Product" && !section.page,
+  );
+  const productHomeData = readVariantData(productHome);
+  const eventItemsToLibrary = (value: unknown) =>
+    records(value).map((item, index) => {
+      const tags = Array.isArray(item.tags)
+        ? item.tags.map((tag) => String(tag))
+        : [];
+      const title = text(item.title);
+      return {
+        ...item,
+        title,
+        image: text(item.image),
+        desc: text(item.desc, text(item.description, tags.join(", "))),
+        category: text(item.category, tags[0] || "Service"),
+        slug: itemSlug(item) || slugifyHomeItem(title) || `service-${index + 1}`,
+        active: item.active !== false,
+      };
+    });
   next = patchLibrarySection(next, "ServicePage", "ServicePage-", [
+    ...records(serviceData.productItems),
+    ...eventItemsToLibrary(serviceData.items),
+    ...eventItemsToLibrary(productHomeData.items),
+    ...records(productHomeData.productItems),
     ...slidesToLibraryItems(records(serviceData.productSlides)),
     ...slidesToLibraryItems(records(serviceData.serviceSlides)),
   ]);

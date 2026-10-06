@@ -1077,6 +1077,7 @@ function SidebarContent({
         }),
       order: input.order,
       hidden: input.hidden,
+      showOnHome: input.showOnHome !== false,
     };
     const hasBlogPosts = pageLinks.some((page) => page.kind === "blog");
     const hasBlogsNavigation = pageLinks.some(

@@ -2,13 +2,17 @@ export type ManagerCardTarget =
   | "Properties"
   | "Blogs"
   | "Services"
-  | "Portfolio";
+  | "Portfolio"
+  | "Teams"
+  | "Events"
+  | "Gallery";
 
 export type ManagerCardItem = {
   slug?: string;
   href?: string;
   id?: string;
   title?: string;
+  image?: string;
 };
 
 export const openManagerForCard = (
@@ -26,6 +30,11 @@ export const openManagerForCard = (
   window.dispatchEvent(
     new CustomEvent("ai-builder-open-manager", {
       detail: { manager, preservePage: true },
+    }),
+  );
+  window.dispatchEvent(
+    new CustomEvent("ai-builder-open-manager-item", {
+      detail: { manager, item },
     }),
   );
 };

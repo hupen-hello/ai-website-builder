@@ -4,69 +4,14 @@ import type { SectionProps } from "../../../types/section";
 import { motion } from "framer-motion";
 import { Breadcrumb } from "./EventBreadcrumbNav";
 import { useOptionalPreview } from "../../context/PreviewContext";
-import { eventVariant } from "../about/eventPageDefaults";
-
-const BANNER_BY_SLUG: Record<string, string> = {
-  "about-us": "PageBannerEvent1",
-  about: "PageBannerEvent1",
-  mission: "MissionPageBanner",
-  vision: "VisionPageBanner",
-  awards: "AwardsPageBanner",
-  "our-story": "OurStoryPageBanner",
-  "our-team": "OurTeamPageBanner",
-  "team-detail": "TeamDetailPageBanner",
-  "why-choose-us": "WhyChooseUsPageBanner",
-  services: "ServicesPageBanner",
-  "services-detail": "ServiceDetailPageBanner",
-  event: "EventsPageBanner",
-  events: "EventsPageBanner",
-  "event-detail": "EventDetailPageBanner",
-  gallery: "GalleryPageBanner",
-  testimonials: "TestimonialsPageBanner",
-  partners: "PartnersPageBanner",
-  faqs: "FaqsPageBanner",
-  faq: "FaqsPageBanner",
-  career: "CareerPageBanner",
-  "career-detail": "CareerDetailPageBanner",
-  "get-a-quote": "GetAQuotePageBanner",
-  blog: "BlogPageBanner",
-  blogs: "BlogPageBanner",
-  "blog-detail": "BlogDetailPageBanner",
-  "terms-conditions": "TermsPageBanner",
-  "privacy-policy": "PrivacyPageBanner",
-  disclaimer: "DisclaimerPageBanner",
-  "refund-cancellation": "RefundPageBanner",
-  "cookies-policy": "CookiesPageBanner",
-  contact: "ContactPageBanner",
-  sitemap: "SitemapPageBanner",
-};
-
-function slugFromLabel(label: string) {
-  return label.trim().toLowerCase().replace(/\s+/g, "-");
-}
+import { resolveEventBreadcrumbView } from "../../../lib/eventBreadcrumb";
 
 export default function PageBannerEvent1({ data = {} }: SectionProps) {
   const preview = useOptionalPreview();
-  const current =
-    preview?.currentPage && preview.currentPage.toLowerCase() !== "home"
-      ? preview.currentPage
-      : "";
-  const slug = slugFromLabel(current || String(data.title || ""));
-  const banner = eventVariant(
-    "PageBanner",
-    BANNER_BY_SLUG[slug] || "PageBannerEvent1",
-  );
-  const title =
-    current ||
-    (typeof data.title === "string" && data.title !== "About Us"
-      ? data.title
-      : "") ||
-    String(banner.title || data.title || "");
-  const bgImage = String(data.bgImage || banner.bgImage || "");
-  const breadcrumbs = [
-    { label: "Home", href: "/" },
-    { label: title },
-  ];
+  const { title, bgImage, breadcrumbs } = resolveEventBreadcrumbView({
+    currentPage: preview?.currentPage,
+    data: data as Record<string, unknown>,
+  });
 
   return (
     <section className="relative py-12 lg:py-12 flex items-center justify-center overflow-hidden">

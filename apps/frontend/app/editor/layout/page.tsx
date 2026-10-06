@@ -67,6 +67,7 @@ import { normalizeBlogIndexLayout } from "./src/lib/blogLayouts";
 import ServiceDetailArticle from "./src/components/sections/service/ServiceDetailArticle";
 import RelatedCountryListingsSlider from "./src/components/sections/countriesserve/RelatedCountryListingsSlider";
 import EventDetailArticle from "./src/components/sections/event/EventDetailArticle";
+import EventTeamDetailPage from "./src/components/sections/team/EventTeamDetailPage";
 import PortfolioDetailArticle from "./src/components/sections/portfolio/PortfolioDetailArticle";
 import TeamDetailArticle from "./src/components/sections/team/TeamDetailArticle";
 import PropertyDetailArticle from "./src/components/sections/property/PropertyDetailArticle";
@@ -357,7 +358,7 @@ const createBlogPageSection = (
     link.longDescription?.trim() || "Write the full blog content here.";
   const category = link.category?.trim() || "General";
   const variant =
-    link.layout && /^BlogPage-[1-5]$/.test(link.layout)
+    link.layout && /^BlogPage-\d+$/.test(link.layout)
       ? link.layout
       : "BlogPage-1";
 
@@ -382,6 +383,9 @@ const createBlogPageSection = (
       "BlogPage-3": { ...variantData, layout: "BlogPage-3" },
       "BlogPage-4": { ...variantData, layout: "BlogPage-4" },
       "BlogPage-5": { ...variantData, layout: "BlogPage-5" },
+      ...(variant === "BlogPage-9"
+        ? { "BlogPage-9": { ...variantData, layout: "BlogPage-9" } }
+        : {}),
     },
   } as SectionItem;
 };
@@ -765,14 +769,12 @@ const isTeamPageLink = (link: {
   return (
     slug === "teams" ||
     slug === "team" ||
-    slug === "our-team" ||
     href === "#page-team" ||
     href === "#page-teams" ||
     href === "#team" ||
     href === "#teams" ||
     (link.label || "").trim().toLowerCase() === "team" ||
-    (link.label || "").trim().toLowerCase() === "teams" ||
-    (link.label || "").trim().toLowerCase() === "our team"
+    (link.label || "").trim().toLowerCase() === "teams"
   );
 };
 
@@ -2723,9 +2725,8 @@ const addServicePageSection = (sections: SectionItem[], category: string) => {
 };
 
 const readServiceItemsFromData = (data: SectionData): ServiceItem[] => {
-  // productItems is the source of truth once present â€” even when empty (user deleted all).
-  if (Array.isArray(data.productItems)) {
-    return data.productItems
+  const mapProductItems = (rows: SectionData["productItems"]): ServiceItem[] =>
+    (rows ?? [])
       .map((item, index) => ({
         id:
           (typeof item.id === "string" && item.id) ||
@@ -2748,8 +2749,13 @@ const readServiceItemsFromData = (data: SectionData): ServiceItem[] => {
           typeof item.seoDescription === "string" ? item.seoDescription : "",
         seoKeywords:
           typeof item.seoKeywords === "string" ? item.seoKeywords : "",
+        showOnHome: item.showOnHome !== false,
       }))
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+  // Empty productItems must not hide Event `items` (Evenha home / ServicePage-9).
+  if (Array.isArray(data.productItems) && data.productItems.length) {
+    return mapProductItems(data.productItems);
   }
 
   const eventServiceItems = Array.isArray(
@@ -2779,6 +2785,7 @@ const readServiceItemsFromData = (data: SectionData): ServiceItem[] => {
           seoTitle: "",
           seoDescription: "",
           seoKeywords: "",
+          showOnHome: item.showOnHome !== false,
         };
       })
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
@@ -2842,6 +2849,8 @@ const resolveManagerForSection = (
   if (
     id === "ServicePage" ||
     type === "ServicePage" ||
+    (type === "Product" &&
+      String(section.variant || "").startsWith("Product-9")) ||
     (type === "Service" && (page === "service" || page === "services"))
   ) {
     return "Services";
@@ -2949,6 +2958,7 @@ const applyServicePageStateToData = (
     seoTitle: service.seoTitle || "",
     seoDescription: service.seoDescription || "",
     seoKeywords: service.seoKeywords || "",
+    showOnHome: service.showOnHome !== false,
   }));
 
   const visibleServices = orderedServices.filter(
@@ -3008,6 +3018,8 @@ const applyServicePageStateToData = (
       image: item.image,
       tags: item.category ? [item.category] : [],
       description: item.desc,
+      slug: item.slug,
+      showOnHome: item.showOnHome !== false,
     })),
   };
 };
@@ -3129,6 +3141,7 @@ const readEventItemsFromData = (data: SectionData): EventItem[] => {
         eventDate: typeof item.eventDate === "string" ? item.eventDate : "",
         eventTime: typeof item.eventTime === "string" ? item.eventTime : "",
         eventType: item.eventType === "past" ? "past" : "upcoming",
+        showOnHome: item.showOnHome !== false,
       }))
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
@@ -3160,6 +3173,7 @@ const readEventItemsFromData = (data: SectionData): EventItem[] => {
           eventDate: String(item.date || ""),
           eventTime: String(item.time || ""),
           eventType: "upcoming" as const,
+          showOnHome: item.showOnHome !== false,
         };
       })
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
@@ -3254,6 +3268,7 @@ const applyEventPageStateToData = (
     eventDate: eventItem.eventDate || "",
     eventTime: eventItem.eventTime || "",
     eventType: eventItem.eventType === "past" ? "past" : "upcoming",
+    showOnHome: eventItem.showOnHome !== false,
   }));
 
   const visibleEvents = orderedEvents.filter(
@@ -3288,6 +3303,8 @@ const applyEventPageStateToData = (
     serviceSlides,
     productSlides: serviceSlides,
     events: visibleEvents.map((eventItem) => ({
+      id: eventItem.id,
+      slug: eventItem.slug || createPageSlug(eventItem.title) || eventItem.id,
       date: eventItem.eventDate || "",
       month: eventItem.category || "",
       image: eventItem.image,
@@ -4078,7 +4095,55 @@ const addTeamPageSection = (sections: SectionItem[], category: string) => {
 };
 
 const readTeamItemsFromData = (data: SectionData): TeamItem[] => {
-  if (Array.isArray(data.productItems)) {
+  const members = Array.isArray(
+    (data as { members?: Array<Record<string, unknown>> }).members,
+  )
+    ? (data as { members: Array<Record<string, unknown>> }).members
+    : [];
+  if (members.length) {
+    const used = new Set<string>();
+    return members
+      .map((item, index) => {
+        const title = String(item.name || item.title || "");
+        const base =
+          (typeof item.slug === "string" && item.slug.trim()) ||
+          createPageSlug(title) ||
+          `team-${index + 1}`;
+        let slug = createPageSlug(base) || `team-${index + 1}`;
+        let n = 2;
+        while (used.has(slug)) {
+          slug = `${createPageSlug(base) || "team"}-${n}`;
+          n += 1;
+        }
+        used.add(slug);
+        return {
+          id:
+            (typeof item.id === "string" && item.id) ||
+            `evento-team-${index}-${title || "team"}`,
+          title,
+          category: String(item.role || item.category || "Team"),
+          desc: String(
+            item.shortDescription || item.description || item.desc || "",
+          ),
+          content: typeof item.content === "string" ? item.content : "",
+          image: String(item.image || "/bg1.jpg"),
+          alt: String(item.alt || title || ""),
+          slug,
+          order: typeof item.order === "number" ? item.order : index + 1,
+          active: item.active !== false,
+          layout: typeof item.layout === "string" ? item.layout : "",
+          seoTitle: typeof item.seoTitle === "string" ? item.seoTitle : "",
+          seoDescription:
+            typeof item.seoDescription === "string" ? item.seoDescription : "",
+          seoKeywords:
+            typeof item.seoKeywords === "string" ? item.seoKeywords : "",
+          showOnHome: item.showOnHome !== false,
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
+  if (Array.isArray(data.productItems) && data.productItems.length) {
     return data.productItems
       .map((item, index) => ({
         id:
@@ -4102,36 +4167,8 @@ const readTeamItemsFromData = (data: SectionData): TeamItem[] => {
           typeof item.seoDescription === "string" ? item.seoDescription : "",
         seoKeywords:
           typeof item.seoKeywords === "string" ? item.seoKeywords : "",
+        showOnHome: item.showOnHome !== false,
       }))
-      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-  }
-
-  const members = Array.isArray(
-    (data as { members?: Array<Record<string, unknown>> }).members,
-  )
-    ? (data as { members: Array<Record<string, unknown>> }).members
-    : [];
-  if (members.length) {
-    return members
-      .map((item, index) => {
-        const title = String(item.name || item.title || "");
-        return {
-          id: `evento-team-${index}-${title || "team"}`,
-          title,
-          category: String(item.role || "Team"),
-          desc: String(item.description || ""),
-          content: "",
-          image: String(item.image || "/bg1.jpg"),
-          alt: title,
-          slug: createPageSlug(title) || `team-${index + 1}`,
-          order: index + 1,
-          active: true,
-          layout: "",
-          seoTitle: "",
-          seoDescription: "",
-          seoKeywords: "",
-        };
-      })
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
@@ -4183,6 +4220,7 @@ const readGalleryItemsFromData = (data: SectionData): GalleryItem[] => {
         alt: item.alt || item.title || "",
         order: typeof item.order === "number" ? item.order : index + 1,
         active: item.active !== false,
+        showOnHome: item.showOnHome !== false,
       }))
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
@@ -4258,6 +4296,7 @@ const applyGalleryPageStateToData = (
     alt: item.alt || item.title,
     order: item.order ?? 1,
     active: item.active !== false,
+    showOnHome: item.showOnHome !== false,
   }));
   return {
     ...current,
@@ -4482,6 +4521,7 @@ const applyTeamPageStateToData = (
     seoTitle: teamMember.seoTitle || "",
     seoDescription: teamMember.seoDescription || "",
     seoKeywords: teamMember.seoKeywords || "",
+    showOnHome: teamMember.showOnHome !== false,
   }));
 
   const visible = ordered.filter((item) => item.active !== false);
@@ -4513,10 +4553,14 @@ const applyTeamPageStateToData = (
     serviceSlides,
     productSlides: serviceSlides,
     members: productItems.map((item) => ({
+      id: item.id,
       name: item.title,
       role: item.category,
       description: item.desc,
       image: item.image,
+      slug: item.slug,
+      showOnHome: item.showOnHome !== false,
+      active: item.active !== false,
       icon: "user",
       social: { facebook: "#", instagram: "#", twitter: "#", linkedin: "#" },
     })),
@@ -6743,6 +6787,7 @@ const replaceHintedMediaValue = (
 ): { value: SectionData; replaced: boolean } => {
   const fieldByRole: Record<string, string> = {
     background: "backgroundImage",
+    bgImage: "bgImage",
     side: "sideImage",
     logo: "logoImage",
   };
@@ -8058,18 +8103,39 @@ function EditorPage({
             ["service", "services"].includes(normalizePageSlug(section.page || ""))),
       );
 
+    const findProductHomeSection = (items: SectionItem[]) =>
+      items.find(
+        (section) =>
+          section.type === "Product" &&
+          !section.page &&
+          String(section.variant || "").startsWith("Product-9"),
+      );
+
     const emitServiceState = (items: SectionItem[]) => {
       const section = findServiceSection(items);
-      if (!section) return;
+      const productHome = findProductHomeSection(items);
       const data =
-        (section.data[section.variant] as SectionData | undefined) ??
-        (section.data["ServicePage-1"] as SectionData | undefined) ??
+        (section?.data[section.variant] as SectionData | undefined) ??
+        (section?.data["ServicePage-1"] as SectionData | undefined) ??
         ({} as SectionData);
+      const homeData =
+        (productHome?.data[productHome.variant] as SectionData | undefined) ??
+        ({} as SectionData);
+      const state = buildServicePageState(data);
+      const homeServices = readServiceItemsFromData(homeData);
+      const services =
+        homeServices.length > 0 ? homeServices : state.services;
       window.dispatchEvent(
         new CustomEvent("ai-builder-service-page-state", {
           detail: {
-            ...buildServicePageState(data),
-            layout: section.variant || "ServicePage-1",
+            ...state,
+            title: state.title || String(homeData.title || ""),
+            subtitle: state.subtitle || String(homeData.subtitle || ""),
+            desc:
+              state.desc ||
+              String(homeData.description || homeData.desc || ""),
+            services,
+            layout: section?.variant || productHome?.variant || "ServicePage-1",
           },
         }),
       );
@@ -8108,13 +8174,19 @@ function EditorPage({
     const handleServicePageQuery = () => {
       const current = sectionsRef.current;
       const section = findServiceSection(current);
-      if (!section) return;
+      const productHome = findProductHomeSection(current);
+      if (!section && !productHome) return;
       const data =
-        (section.data[section.variant] as SectionData | undefined) ??
-        (section.data["ServicePage-1"] as SectionData | undefined) ??
+        (section?.data[section.variant] as SectionData | undefined) ??
+        (section?.data["ServicePage-1"] as SectionData | undefined) ??
+        ({} as SectionData);
+      const homeData =
+        (productHome?.data[productHome.variant] as SectionData | undefined) ??
         ({} as SectionData);
       const state = buildServicePageState(data);
-      const menuPayload = state.services.map((service) => ({
+      const homeServices = readServiceItemsFromData(homeData);
+      const services = homeServices.length > 0 ? homeServices : state.services;
+      const menuPayload = services.map((service) => ({
         title: service.title,
         slug:
           service.slug ||
@@ -8190,8 +8262,30 @@ function EditorPage({
             ),
           };
         });
+        const withHome = next.map((section) => {
+          if (
+            section.type !== "Product" ||
+            section.page ||
+            !String(section.variant || "").startsWith("Product-9")
+          ) {
+            return section;
+          }
+          const currentData =
+            (section.data[section.variant] as SectionData | undefined) ??
+            ({} as SectionData);
+          return {
+            ...section,
+            data: {
+              ...section.data,
+              [section.variant]: applyServicePageStateToData(currentData, {
+                ...detail,
+                layout: section.variant,
+              }),
+            },
+          };
+        });
         return pruneMasterHeaderSubmenuToItems(
-          next,
+          withHome,
           "service",
           (detail.services || []).map((service) => ({
             title: service.title,
@@ -16379,7 +16473,9 @@ function EditorPage({
           item.id === "TeamPage" ||
           item.type === "TeamPage" ||
           (item.type === "Team" &&
-            normalizePageSlug(item.page || "") === "teams"),
+            ["teams", "team", "our-team"].includes(
+              normalizePageSlug(item.page || ""),
+            )),
       );
       if (!section) return null;
       const data =
@@ -16390,6 +16486,56 @@ function EditorPage({
         (row) => matchSlug(row.slug) || matchSlug(createPageSlug(row.title)),
       );
       if (!item) return null;
+      const eventMembers = Array.isArray(
+        (data as { members?: Array<Record<string, unknown>> }).members,
+      )
+        ? (data as { members: Array<Record<string, unknown>> }).members
+        : [];
+      const eventMember =
+        eventMembers.find((row, index) => {
+          const title = String(row.name || row.title || "");
+          const memberSlug =
+            String(row.slug || "").trim() ||
+            createPageSlug(title) ||
+            `team-${index + 1}`;
+          return matchSlug(memberSlug) || matchSlug(createPageSlug(title));
+        }) || {};
+      const useEventDetail =
+        String(section.variant || "").startsWith("TeamPage-9") ||
+        String(section.variant || "").startsWith("TeamDetail-9");
+      if (useEventDetail) {
+        const detailSection = sectionsRef.current.find(
+          (row) =>
+            row.type === "TeamDetail" ||
+            String(row.variant || "").startsWith("TeamDetail-9"),
+        );
+        const detailData =
+          (detailSection?.data?.[detailSection.variant] as
+            | Record<string, unknown>
+            | undefined) ||
+          (detailSection?.data?.["TeamDetail-9"] as
+            | Record<string, unknown>
+            | undefined) ||
+          {};
+        return (
+          <EventTeamDetailPage
+            key={`master-detail-${master}-${slug}`}
+            data={{
+              ...detailData,
+              ...eventMember,
+              name: item.title,
+              role: String(eventMember.role || item.category || ""),
+              shortDescription: String(
+                eventMember.shortDescription ||
+                  eventMember.description ||
+                  item.desc ||
+                  "",
+              ),
+              image: String(eventMember.image || item.image || ""),
+            }}
+          />
+        );
+      }
       return (
         <TeamDetailArticle
           key={`master-detail-${master}-${slug}`}

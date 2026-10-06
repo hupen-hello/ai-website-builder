@@ -5,7 +5,16 @@ import { motion } from "framer-motion";
 import { CalendarDays, MapPin, Clock, ArrowRight } from "lucide-react";
 import { EventsListData } from "../about/eventTypes";
 import Link from "next/link";
-export default function EventsListEvent1({ data = {} }: SectionProps) {
+import { handleManagerCardClick } from "../../../lib/editorManagerCards";
+
+const slugify = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export default function EventsListEvent1({ data = {}, editorMode }: SectionProps) {
   return (
     <section className="bg-[#fafafa] py-12 lg:py-12 relative">
       {" "}
@@ -71,15 +80,33 @@ export default function EventsListEvent1({ data = {} }: SectionProps) {
         {/* Events List */}{" "}
         <div className="flex flex-col gap-8">
           {" "}
-          {data.events.map((event, idx) => (
+          {data.events.map((event, idx) => {
+            const row = event as typeof event & { id?: string; slug?: string };
+            const slug = String(row.slug || slugify(event.title) || `event-${idx + 1}`);
+            return (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-white rounded-[32px] p-6 md:p-8 flex flex-col lg:flex-row items-center gap-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300 border border-gray-50"
+              data-editor-no-inline="true"
+              className="relative bg-white rounded-[32px] p-6 md:p-8 flex flex-col lg:flex-row items-center gap-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300 border border-gray-50 cursor-pointer"
             >
+              <Link
+                href={event.link || "#"}
+                aria-label={event.title}
+                className="absolute inset-0 z-20"
+                onClick={(clickEvent) =>
+                  handleManagerCardClick(clickEvent, editorMode, "Events", {
+                    id: row.id,
+                    slug,
+                    title: event.title,
+                  })
+                }
+              >
+                <span className="absolute inset-0" aria-hidden="true" />
+              </Link>
               {" "}
               {/* Left: Date Block */}{" "}
               <div className="bg-[#f9f5ff] rounded-2xl p-6 min-w-[140px] flex flex-col items-center justify-center text-center shrink-0 h-[180px]">
@@ -140,9 +167,8 @@ export default function EventsListEvent1({ data = {} }: SectionProps) {
                       </span>{" "}
                     </div>{" "}
                   </div>{" "}
-                  <Link
-                    href={event.link}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent hover:bg-[#6b3c9b] border border-[#6b3c9b] text-[#6b3c9b] hover:text-white text-[14px] font-medium rounded-full transition-colors duration-300 w-fit group"
+                  <span
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-[#6b3c9b] text-[#6b3c9b] text-[14px] font-medium rounded-full w-fit"
                   >
                     {" "}
                     View More{" "}
@@ -150,11 +176,12 @@ export default function EventsListEvent1({ data = {} }: SectionProps) {
                       size={18}
                       className="transition-transform group-hover:translate-x-1"
                     />{" "}
-                  </Link>{" "}
+                  </span>{" "}
                 </div>{" "}
               </div>{" "}
             </motion.div>
-          ))}{" "}
+            );
+          })}{" "}
         </div>{" "}
       </div>{" "}
     </section>

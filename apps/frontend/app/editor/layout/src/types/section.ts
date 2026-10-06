@@ -131,6 +131,8 @@ export type ProductCardData = {
   order?: number;
   /** When false the service is hidden on the published page. */
   active?: boolean;
+  /** When false the item is hidden from the Home teaser, not the listing page. */
+  showOnHome?: boolean;
   layout?: string;
   seoTitle?: string;
   seoDescription?: string;

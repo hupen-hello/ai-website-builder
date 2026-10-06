@@ -7,12 +7,11 @@ import { MapPin, Phone, Mail, ArrowRight, ChevronDown, Menu, X } from "lucide-re
 import { motion, AnimatePresence } from "framer-motion";
 import { useOptionalPreview } from "../../context/PreviewContext";
 import {
-  getPageLabelFromHref,
   getPageRouteFromHref,
-  getPageSlugCandidates,
   pageSlugsMatch,
   scrollTemplateToTop,
 } from "../../../lib/previewNav";
+import { resolveEventHeaderNav, tryOpenEventListingHref, eventHrefToEditorTarget } from "../../../lib/eventHeaderNav";
 interface HeaderData {
   logo: { initials: string; main: string; sub: string; tagline: string };
   topbar: {
@@ -39,37 +38,44 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
   const preview = useOptionalPreview();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const navLinks = Array.isArray(data.navLinks) ? data.navLinks : [];
+  const navLinks = resolveEventHeaderNav(data).map((link) => {
+    const mapped = eventHrefToEditorTarget(link.href, link.label);
+    return {
+      ...link,
+      href: mapped.href,
+      subLinks: (link.subLinks || []).map((child) => ({
+        ...child,
+        href: eventHrefToEditorTarget(child.href, child.label).href,
+      })),
+    };
+  });
+  const topbar = (data.topbar || {}) as HeaderData["topbar"];
+  const social = topbar.social || {
+    facebook: "#",
+    instagram: "#",
+    pinterest: "#",
+    linkedin: "#",
+  };
+  const headerButtons = Array.isArray(data.buttons) ? data.buttons : [];
+  const ctaText = headerButtons[0]?.label || data.ctaText || "GET A QUOTE";
+  const ctaLink = headerButtons[0]?.href || data.ctaLink || "/get-a-quote";
+  const logoSrc = String(data.logoImage || "/logo/logo-event.png");
 
   const resolvePageLabel = (href: string, fallback: string) => {
-    const route = getPageRouteFromHref(href || "");
-    if (!route) return "Home";
-    const parts = route.split("/").filter(Boolean);
-    const slug =
-      parts.length > 1 ? `${parts[0].replace(/s$/, "")}-detail` : parts[0];
-    const candidates = new Set([
-      ...getPageSlugCandidates(slug),
-      ...getPageSlugCandidates(parts[0] || slug),
-      slug,
-    ]);
+    const target = eventHrefToEditorTarget(href, fallback);
+    if (target.kind === "home") return "Home";
+    const slug = target.href.replace(/^#page-/i, "").toLowerCase();
     const match = (preview?.pageLinks || []).find((link) => {
-      const hrefSlug = getPageRouteFromHref(link.href || "").replace(
-        /^page-/,
-        "",
-      );
+      const hrefSlug = getPageRouteFromHref(link.href || "")
+        .replace(/^page-/, "")
+        .toLowerCase();
       const labelSlug = (link.label || "")
         .trim()
         .toLowerCase()
         .replace(/\s+/g, "-");
-      return (
-        candidates.has(hrefSlug) ||
-        candidates.has(labelSlug) ||
-        pageSlugsMatch(slug, hrefSlug) ||
-        pageSlugsMatch(slug, labelSlug) ||
-        pageSlugsMatch(fallback, link.label || "")
-      );
+      return hrefSlug === slug || labelSlug === slug || pageSlugsMatch(fallback, link.label || "");
     });
-    return match?.label || getPageLabelFromHref(href, fallback);
+    return match?.label || fallback;
   };
 
   const handleNavigate = (
@@ -77,8 +83,14 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
     href: string,
     label: string,
   ) => {
-    if (!preview) return;
     event.preventDefault();
+    event.stopPropagation();
+    if (!preview) return;
+    if (tryOpenEventListingHref(href, preview)) {
+      setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
+      return;
+    }
     preview.setCurrentPage(resolvePageLabel(href, label));
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
@@ -126,17 +138,17 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
           <div className="flex items-center gap-2 pr-6 hover:text-white transition-colors cursor-pointer">
             {" "}
             <MapPin size={14} className="text-white/60" />{" "}
-            <span>{data.topbar.address}</span>{" "}
+            <span data-editor-inline-format-key="event-header:address">{topbar.address}</span>{" "}
           </div>{" "}
           <div className="flex items-center gap-2 px-6 hover:text-white transition-colors cursor-pointer">
             {" "}
             <Phone size={14} className="text-white/60" />{" "}
-            <span>{data.topbar.phone}</span>{" "}
+            <span data-editor-inline-format-key="event-header:phone">{topbar.phone}</span>{" "}
           </div>{" "}
           <div className="flex items-center gap-2 pl-6 hover:text-white transition-colors cursor-pointer">
             {" "}
             <Mail size={14} className="text-white/60" />{" "}
-            <span>{data.topbar.email}</span>{" "}
+            <span data-editor-inline-format-key="event-header:email">{topbar.email}</span>{" "}
           </div>{" "}
         </div>{" "}
         <div className="flex items-center gap-4 mt-2 md:mt-0">
@@ -145,7 +157,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
           <div className="flex items-center gap-4">
             {" "}
             <Link
-              href={data.topbar.social.facebook}
+              href={social.facebook}
               className="hover:text-white transition-colors"
             >
               {" "}
@@ -164,7 +176,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
               </svg>{" "}
             </Link>{" "}
             <Link
-              href={data.topbar.social.instagram}
+              href={social.instagram}
               className="hover:text-white transition-colors"
             >
               {" "}
@@ -185,7 +197,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
               </svg>{" "}
             </Link>{" "}
             <Link
-              href={data.topbar.social.pinterest}
+              href={social.pinterest}
               className="hover:text-white transition-colors"
             >
               {" "}
@@ -207,7 +219,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
               </svg>{" "}
             </Link>{" "}
             <Link
-              href={data.topbar.social.linkedin}
+              href={social.linkedin}
               className="hover:text-white transition-colors"
             >
               {" "}
@@ -243,13 +255,16 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
         >
           {" "}
           <img
-            src="/logo/logo-event.png"
+            src={logoSrc}
             alt="Event Logo"
             className="h-16 md:h-16 lg:h-20 w-auto object-contain"
+            data-editor-media="logo"
+            data-editor-media-type="image"
+            data-editor-media-src={logoSrc}
           />{" "}
         </Link>{" "}
         {/* Navigation Links */}{" "}
-        <nav className="hidden lg:flex items-center gap-8 z-50">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 z-50 flex-nowrap [overflow-wrap:normal]">
           {" "}
           {navLinks.map((link, idx) => {
             const isActive = isCurrent(link.href, link.label);
@@ -271,21 +286,21 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
                   onClick={(event) =>
                     handleNavigate(event, link.href, link.label)
                   }
-                  className={`text-[13px] font-bold uppercase tracking-wider transition-colors py-4 flex items-center gap-1 ${isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}`}
+                  className={`text-[13px] font-bold uppercase tracking-wider whitespace-nowrap [overflow-wrap:normal] transition-colors py-4 flex items-center gap-1 ${isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}`}
                 >
                   {" "}
                   {link.label}{" "}
-                  {link.subLinks && (
+                  {link.subLinks?.length ? (
                     <ChevronDown
                       size={14}
                       className={`opacity-70 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     />
-                  )}{" "}
+                  ) : null}{" "}
                   {isActive && (
                     <span className="absolute bottom-2 left-0 w-full h-[2px] bg-purple-700 rounded-full" />
                   )}{" "}
                 </Link>{" "}
-                {link.subLinks && (
+                {link.subLinks?.length ? (
                   <div
                     className={`absolute top-full left-0 min-w-[220px] bg-white shadow-xl rounded-b-md transition-all duration-200 origin-top border-t-2 border-purple-700 z-50 ${
                       isOpen
@@ -311,7 +326,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
                       ))}{" "}
                     </div>{" "}
                   </div>
-                )}{" "}
+                ) : null}{" "}
               </div>
             );
           })}{" "}
@@ -320,14 +335,15 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
         <div className="flex items-center gap-4">
           {" "}
           <Link
-            href={data.ctaLink}
+            href={ctaLink}
             onClick={(event) =>
-              handleNavigate(event, String(data.ctaLink || "/get-a-quote"), data.ctaText || "Get a Quote")
+              handleNavigate(event, String(ctaLink), String(ctaText))
             }
             className="hidden lg:flex items-center gap-2 bg-[#421d6e] hover:bg-[#2b1049] text-white text-[13px] font-semibold px-7 py-3.5 rounded-sm transition-colors uppercase tracking-wider"
+            data-editor-inline-format-key="event-header:cta"
           >
             {" "}
-            {data.ctaText} <ArrowRight size={16} />{" "}
+            {ctaText} <ArrowRight size={16} />{" "}
           </Link>{" "}
           
           <button 
@@ -361,9 +377,12 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
             >
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
                 <img
-                  src="/logo/logo-event.png"
+                  src={logoSrc}
                   alt="Event Logo"
                   className="h-10 w-auto object-contain"
+                  data-editor-media="logo"
+                  data-editor-media-type="image"
+                  data-editor-media-src={logoSrc}
                 />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -386,7 +405,7 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
                       {link.label}
                     </Link>
                     
-                    {link.subLinks && (
+                    {link.subLinks?.length ? (
                       <div className="flex flex-col pl-8 py-2 gap-2 border-l-2 border-gray-100 ml-6">
                         {link.subLinks.map((subLink, subIdx) => (
                           <Link
@@ -401,30 +420,26 @@ export default function HeaderEvent1({ data = {} }: SectionProps) {
                           </Link>
                         ))}
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 ))}
 
                 <div className="mt-8 px-4">
                   <Link
-                    href={data.ctaLink}
+                    href={ctaLink}
                     onClick={(event) =>
-                      handleNavigate(
-                        event,
-                        String(data.ctaLink || "/get-a-quote"),
-                        data.ctaText || "Get a Quote",
-                      )
+                      handleNavigate(event, String(ctaLink), String(ctaText))
                     }
                     className="flex items-center justify-center gap-2 w-full bg-[#421d6e] hover:bg-[#2b1049] text-white text-[13px] font-semibold px-7 py-4 rounded-sm transition-colors uppercase tracking-wider"
                   >
-                    {data.ctaText} <ArrowRight size={16} />
+                    {ctaText} <ArrowRight size={16} />
                   </Link>
                 </div>
 
                 <div className="mt-10 px-4 flex justify-center gap-6">
-                  <Link href={data.topbar.social.facebook} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></Link>
-                  <Link href={data.topbar.social.instagram} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></Link>
-                  <Link href={data.topbar.social.linkedin} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></Link>
+                  <Link href={social.facebook} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></Link>
+                  <Link href={social.instagram} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></Link>
+                  <Link href={social.linkedin} className="text-gray-400 hover:text-purple-700"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></Link>
                 </div>
               </div>
             </motion.div>

@@ -14400,10 +14400,6 @@
                     "href": "/our-team"
                   },
                   {
-                    "label": "Team Detail",
-                    "href": "/team-detail"
-                  },
-                  {
                     "label": "Why Choose Us",
                     "href": "/why-choose-us"
                   }
@@ -14506,10 +14502,6 @@
                   {
                     "label": "Blog / News",
                     "href": "/blog"
-                  },
-                  {
-                    "label": "Blog Detail",
-                    "href": "/blog/1"
                   }
                 ]
               },
@@ -14542,7 +14534,8 @@
             "primaryCtaLink": "#contact",
             "videoCta": "Watch Our Story",
             "videoLink": "#video",
-            "bgImage": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop"
+            "bgImage": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+            "bannerHeight": 75
           }
         },
         "About": {

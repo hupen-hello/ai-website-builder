@@ -4,6 +4,8 @@ import type { SectionProps } from "../../../types/section";
 import Image from "next/image";
 import Link from "next/link";
 import { Folder, Clock, ArrowRight } from "lucide-react";
+import InlineRichText from "../../builder/InlineRichText";
+import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 export interface BlogEvent1Props {
   data: {
     subtitle: string;
@@ -19,10 +21,42 @@ export interface BlogEvent1Props {
       readTime: string;
       title: string;
       link: string;
+      href?: string;
+      slug?: string;
+      id?: string;
     }[];
   };
 }
-export default function BlogEvent1({ data }: BlogEvent1Props) {
+export default function BlogEvent1({
+  data,
+  editorMode,
+}: {
+  data?: BlogEvent1Props["data"] & { blogItems?: BlogEvent1Props["data"]["blogs"] };
+  editorMode?: boolean;
+}) {
+  const rawBlogs = Array.isArray(data?.blogs) ? data.blogs : [];
+  const fromItems = Array.isArray(data?.blogItems) ? data.blogItems : [];
+  const blogs = (rawBlogs.length ? rawBlogs : fromItems).map((item, index) => {
+    const title = String(item?.title || "");
+    const rawLink = String(item?.link || item?.href || "");
+    const slug =
+      String(item?.slug || item?.id || "")
+        .trim() ||
+      rawLink.split("/").filter(Boolean).pop() ||
+      String(index + 1);
+    const href = `#page-blog-${slug}`;
+    return {
+      image: String(item?.image || ""),
+      dateLine1: String(item?.dateLine1 || ""),
+      dateLine2: String(item?.dateLine2 || ""),
+      dateLine3: String(item?.dateLine3 || ""),
+      category: String(item?.category || ""),
+      readTime: String(item?.readTime || "5 Min Read"),
+      title,
+      slug,
+      link: href,
+    };
+  });
   return (
     <section className="py-12 bg-[#faf8fd]">
       {" "}
@@ -35,30 +69,28 @@ export default function BlogEvent1({ data }: BlogEvent1Props) {
             {" "}
             <div className="h-[1px] w-8 bg-purple-300"></div>{" "}
             <div className="w-1.5 h-1.5 rotate-45 bg-purple-700"></div>{" "}
-            <span className="text-purple-900 font-bold uppercase tracking-[0.2em] text-sm">
-              {" "}
-              {data.subtitle}{" "}
+            <span className="text-purple-900 font-bold uppercase tracking-[0.2em] text-sm" data-editor-inline-format-key="event-blog:subtitle">
+              <InlineRichText value={String(data?.subtitle || "")} formatKey="event-blog:subtitle" />
             </span>{" "}
             <div className="w-1.5 h-1.5 rotate-45 bg-purple-700"></div>{" "}
             <div className="h-[1px] w-8 bg-purple-300"></div>{" "}
           </div>{" "}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1a0b2e]  leading-tight mb-6">
-            {" "}
-            {data.titlePart1}{" "}
-            <span className="font-['Playfair_Display'] italic text-purple-800 block mt-2">
-              {" "}
-              {data.titleHighlight}{" "}
-            </span>{" "}
-          </h2>{" "}
-          <p className="text-slate-600 text-base leading-relaxed max-w-xl mx-auto">
-            {" "}
-            {data.description}{" "}
+            <span data-editor-inline-format-key="event-blog:titlePart1">
+              <InlineRichText value={String(data?.titlePart1 || "")} formatKey="event-blog:titlePart1" />
+            </span>
+            <span className="font-['Playfair_Display'] italic text-purple-800 block mt-2" data-editor-inline-format-key="event-blog:titleHighlight">
+              <InlineRichText value={String(data?.titleHighlight || "")} formatKey="event-blog:titleHighlight" />
+            </span>
+          </h2>
+          <p className="text-slate-600 text-base leading-relaxed max-w-xl mx-auto" data-editor-inline-format-key="event-blog:description">
+            <InlineRichText value={String(data?.description || "")} formatKey="event-blog:description" />
           </p>{" "}
         </div>{" "}
         {/* Blog Grid */}{" "}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {" "}
-          {data.blogs.map((blog, idx) => (
+          {blogs.map((blog, idx) => (
             <div
               key={idx}
               className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
@@ -108,7 +140,17 @@ export default function BlogEvent1({ data }: BlogEvent1Props) {
                 {/* Title */}{" "}
                 <h3 className="text-xl font-serif font-bold text-slate-900 leading-snug mb-6 group-hover:text-purple-700 transition-colors">
                   {" "}
-                  <Link href={blog.link} className="focus:outline-none">
+                  <Link
+                    href={blog.link}
+                    className="focus:outline-none"
+                    onClick={(event) => {
+                      handleManagerCardClick(event, editorMode, "Blogs", {
+                        slug: blog.slug,
+                        href: blog.link,
+                        title: blog.title,
+                      });
+                    }}
+                  >
                     {" "}
                     <span
                       className="absolute inset-0"
@@ -123,6 +165,13 @@ export default function BlogEvent1({ data }: BlogEvent1Props) {
                   <Link
                     href={blog.link}
                     className="inline-flex items-center text-sm font-bold text-[#3b157b] group-hover:text-purple-600 transition-colors relative z-10"
+                    onClick={(event) => {
+                      handleManagerCardClick(event, editorMode, "Blogs", {
+                        slug: blog.slug,
+                        href: blog.link,
+                        title: blog.title,
+                      });
+                    }}
                   >
                     {" "}
                     Read More{" "}

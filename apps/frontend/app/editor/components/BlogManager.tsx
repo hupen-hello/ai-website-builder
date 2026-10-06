@@ -42,6 +42,7 @@ import {
   normalizeBlogIndexLayout,
   type BlogLayoutOption,
 } from "../layout/src/lib/blogLayouts";
+import HomeFeedToggle, { isShownOnHome } from "./HomeFeedToggle";
 
 type BlogTab = "posts" | "categories" | "layouts" | "seo";
 type LayoutPane = "index" | "detail";
@@ -102,6 +103,7 @@ export type NewBlogPostInput = {
   hidden: boolean;
   slug: string;
   createdAt?: string;
+  showOnHome?: boolean;
 };
 
 type BlogManagerProps = {
@@ -629,26 +631,41 @@ export default function BlogManager({
   };
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const STORAGE_KEY = "ai-builder-open-manager-item:Blogs";
-    const raw = window.sessionStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
-
-    window.sessionStorage.removeItem(STORAGE_KEY);
-    try {
-      const payload = JSON.parse(raw) as unknown;
-      const href =
-        typeof (payload as any)?.href === "string"
-          ? ((payload as any).href as string)
-          : undefined;
-      if (!href) return;
-      const found = blogs.find((b) => b.href === href);
-      if (!found) return;
-
-      openEditComposer(found);
-    } catch {
-      // ignore malformed storage payload
-    }
+    const openPending = () => {
+      const raw = window.sessionStorage.getItem(
+        "ai-builder-open-manager-item:Blogs",
+      );
+      if (!raw || !blogs.length) return;
+      try {
+        const payload = JSON.parse(raw) as {
+          href?: string;
+          slug?: string;
+          title?: string;
+        };
+        const slug = payload.slug?.trim().toLowerCase();
+        const href = payload.href?.trim().toLowerCase();
+        const found = blogs.find((blog) => {
+          if (href && blog.href.trim().toLowerCase() === href) return true;
+          if (slug && (blog.slug || "").trim().toLowerCase() === slug) return true;
+          if (
+            payload.title &&
+            blog.label.trim().toLowerCase() === payload.title.trim().toLowerCase()
+          ) {
+            return true;
+          }
+          return false;
+        });
+        if (!found) return;
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Blogs");
+        openEditComposer(found);
+      } catch {
+        window.sessionStorage.removeItem("ai-builder-open-manager-item:Blogs");
+      }
+    };
+    openPending();
+    window.addEventListener("ai-builder-open-manager-item", openPending);
+    return () =>
+      window.removeEventListener("ai-builder-open-manager-item", openPending);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blogs]);
 
@@ -673,6 +690,9 @@ export default function BlogManager({
       hidden: draftStatus === "hidden",
       slug,
       createdAt: formatBlogCardDate(draftCreatedAt || todayDateInput()),
+      showOnHome: editingHref
+        ? isShownOnHome(blogs.find((item) => item.href === editingHref)?.showOnHome)
+        : true,
     };
 
     if (editingHref) {
@@ -692,6 +712,7 @@ export default function BlogManager({
         slug: payload.slug,
         createdAt: payload.createdAt,
         href: `#page-blog-${payload.slug}`,
+        showOnHome: payload.showOnHome,
       });
     } else {
       onAddBlog(payload);
@@ -992,7 +1013,7 @@ export default function BlogManager({
               ) : null}
 
               <div className="min-w-[860px]">
-                <div className="grid grid-cols-[42px_minmax(280px,1fr)_120px_100px_140px] items-center border-b border-slate-200 bg-slate-50 px-6 py-3 text-sm font-semibold text-slate-600">
+                <div className="grid grid-cols-[42px_minmax(280px,1fr)_90px_120px_100px_140px] items-center border-b border-slate-200 bg-slate-50 px-6 py-3 text-sm font-semibold text-slate-600">
                   <input
                     type="checkbox"
                     checked={
@@ -1004,6 +1025,7 @@ export default function BlogManager({
                     className="h-4 w-4 rounded border-slate-300"
                   />
                   <span>Posts ({filteredBlogs.length})</span>
+                  <span>Home</span>
                   <span>Status</span>
                   <span>Order</span>
                   <span className="text-right">Actions</span>
@@ -1020,7 +1042,7 @@ export default function BlogManager({
                   return (
                     <div
                       key={blog.href}
-                      className="grid min-h-[108px] grid-cols-[42px_minmax(280px,1fr)_120px_100px_140px] items-center border-b border-slate-200 px-6 py-4"
+                      className="grid min-h-[108px] grid-cols-[42px_minmax(280px,1fr)_90px_120px_100px_140px] items-center border-b border-slate-200 px-6 py-4"
                     >
                       <input
                         type="checkbox"
@@ -1047,6 +1069,13 @@ export default function BlogManager({
                           </p>
                         </div>
                       </div>
+                      <HomeFeedToggle
+                        name={blog.label}
+                        on={isShownOnHome(blog.showOnHome)}
+                        onChange={(next) =>
+                          onUpdateBlog(blog.href, { showOnHome: next })
+                        }
+                      />
                       <div>
                         <span
                           className={`inline-flex rounded-md px-2.5 py-1 text-xs font-semibold ${

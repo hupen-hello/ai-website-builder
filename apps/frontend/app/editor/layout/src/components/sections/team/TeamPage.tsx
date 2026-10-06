@@ -90,7 +90,6 @@ const CardShell = ({
 
 const TeamCard = ({
   item,
-  index,
   compact = false,
 }: {
   item: TeamSlide;
@@ -108,9 +107,6 @@ const TeamCard = ({
           <Image
             src={item.image}
             alt={item.alt ?? item.title}
-            data-editor-media
-            data-editor-media-type="image"
-            data-editor-media-src={item.image}
             fill
             className="object-cover"
             sizes="(min-width: 768px) 33vw, 100vw"
@@ -118,32 +114,18 @@ const TeamCard = ({
         </div>
       ) : null}
       <div className={compact ? "p-4" : "p-5"}>
-        <p
-          className="text-xs font-bold uppercase tracking-[0.18em] theme-accent"
-          data-editor-inline-format-key={`team-page:${index}:category`}
-        >
-          <InlineRichText
-            value={item.category}
-            formatKey={`team-page:${index}:category`}
-          />
+        <p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
+          {item.category}
         </p>
         <h3
           className={`font-black ${compact ? "mt-2 text-lg" : "mt-3 text-xl"}`}
-          data-editor-inline-format-key={`team-page:${index}:title`}
         >
-          <InlineRichText
-            value={item.title}
-            formatKey={`team-page:${index}:title`}
-          />
+          {item.title}
         </h3>
         <p
           className={`text-sm leading-7 text-slate-600 ${compact ? "mt-2 line-clamp-2" : "mt-3"}`}
-          data-editor-inline-format-key={`team-page:${index}:description`}
         >
-          <InlineRichText
-            value={item.desc}
-            formatKey={`team-page:${index}:description`}
-          />
+          {item.desc}
         </p>
         {item.href ? (
           <p className="mt-3 text-sm font-bold theme-accent">View details →</p>
@@ -310,9 +292,6 @@ export default function TeamPage({ data = {} }: SectionProps) {
                     <Image
                       src={featured.image}
                       alt={featured.alt ?? featured.title}
-                      data-editor-media
-                      data-editor-media-type="image"
-                      data-editor-media-src={featured.image}
                       fill
                       className="object-cover"
                       sizes="(min-width: 768px) 55vw, 100vw"

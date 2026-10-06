@@ -12,8 +12,14 @@ import {
   RefreshCcw,
 } from "lucide-react";
 import { mergeEventData, eventVariant, mediaUrl } from "../about/eventPageDefaults";
+import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 
-type GalleryImage = { src: string; category: string };
+type GalleryImage = {
+  src: string;
+  category: string;
+  id?: string;
+  title?: string;
+};
 
 function normalizeImages(images: unknown): GalleryImage[] {
   const list = Array.isArray(images)
@@ -33,6 +39,13 @@ function normalizeImages(images: unknown): GalleryImage[] {
         return {
           src,
           category: String(row.category || "All Events"),
+          id: typeof row.id === "string" ? row.id : undefined,
+          title:
+            typeof row.title === "string" && row.title.trim()
+              ? row.title
+              : typeof row.alt === "string"
+                ? row.alt
+                : "",
         };
       }
       return null;
@@ -72,7 +85,10 @@ const getTabIcon = (tab: string) => {
       return null;
   }
 };
-export default function ImageGallery1({ data }: ImageGallery1Props) {
+export default function ImageGallery1({
+  data,
+  editorMode,
+}: ImageGallery1Props & { editorMode?: boolean }) {
   data = mergeEventData(
     (data || {}) as Record<string, unknown>,
     "gallery",
@@ -151,8 +167,23 @@ export default function ImageGallery1({ data }: ImageGallery1Props) {
           {filteredImages.map((img, idx) => (
             <div
               key={idx}
+              data-editor-no-inline="true"
               className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer"
             >
+              <button
+                type="button"
+                aria-label={img.title || img.category}
+                className="absolute inset-0 z-20 cursor-pointer"
+                onClick={(event) =>
+                  handleManagerCardClick(event, editorMode, "Gallery", {
+                    id: img.id,
+                    title: img.title || img.category,
+                    image: img.src,
+                  })
+                }
+              >
+                <span className="absolute inset-0" aria-hidden="true" />
+              </button>
               {" "}
               <img
                 src={img.src}
