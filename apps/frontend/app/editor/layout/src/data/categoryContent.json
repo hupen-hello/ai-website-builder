@@ -975,6 +975,149 @@
           "Breadcrumb"
         ]
       }
+    },
+    {
+      "id": "template-service-1",
+      "numericId": 16,
+      "title": "Service · AviCare",
+      "type": "Multiple Pages Website",
+      "image": "/banner/banner.webp",
+      "previewimage": "/banner/banner.webp",
+      "preview_description": "AviCare appliance repair multi-page theme.",
+      "prebuilt_pages": 10,
+      "sectionVariants": {
+        "Header": "Header-10",
+        "Banner": "Banner-10",
+        "About": "About-10",
+        "Product": "Product-10",
+        "Stats": "Stats-10",
+        "Blog": "Blog-10",
+        "Testimonial": "Testimonial-10",
+        "Footer": "Footer-10",
+        "Breadcrumb": "Breadcrumb-10",
+        "AboutPage": "AboutPage-10",
+        "Team": "Team-10",
+        "FAQ": "FAQ-10",
+        "ServicePage": "ServicePage-10",
+        "ServiceDetail": "ServiceDetail-10",
+        "GalleryPage": "GalleryPage-10",
+        "BlogPage": "BlogPage-10",
+        "BlogDetail": "BlogDetail-10",
+        "ContactPage": "ContactPage-10",
+        "EnquiryPage": "EnquiryPage-10",
+        "ErrorPage": "ErrorPage-10"
+      },
+      "variables": {
+        "--color-bg-main": "#ffffff",
+        "--color-bg-card": "#ffffff",
+        "--color-bg-alt": "#f0f7ff",
+        "--color-primary": "#051c4a",
+        "--color-accent": "#007bff",
+        "--color-accent-light": "#66b0ff",
+        "--color-text": "#1a202c",
+        "--color-text-light": "#4a5568",
+        "--color-border": "#e2e8f0",
+        "--font-heading": "Poppins, sans-serif",
+        "--font-body": "Poppins, sans-serif",
+        "--font-poppins": "Poppins, sans-serif",
+        "--primary-bg": "#007bff",
+        "--primary-text": "#ffffff",
+        "--secondary-bg": "#ffffff",
+        "--secondary-text": "#051c4a",
+        "--header-bg": "#ffffff",
+        "--header-text": "#051c4a",
+        "--hero-bg": "#051c4a",
+        "--hero-title": "#ffffff"
+      },
+      "homeSectionOrder": [
+        "Header",
+        "Banner",
+        "About",
+        "Product",
+        "Stats",
+        "Blog",
+        "Testimonial",
+        "Footer"
+      ],
+      "pages": [
+        {
+          "id": "about",
+          "label": "About Us",
+          "sectionType": "AboutPage"
+        },
+        {
+          "id": "services",
+          "label": "Services",
+          "sectionType": "ServicePage"
+        },
+        {
+          "id": "service-detail",
+          "label": "Service Detail",
+          "sectionType": "ServiceDetail"
+        },
+        {
+          "id": "gallery",
+          "label": "Gallery",
+          "sectionType": "GalleryPage"
+        },
+        {
+          "id": "blog",
+          "label": "Blog",
+          "sectionType": "BlogPage"
+        },
+        {
+          "id": "blog-detail",
+          "label": "Blog Detail",
+          "sectionType": "BlogDetail"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "sectionType": "ContactPage"
+        },
+        {
+          "id": "enquiry",
+          "label": "Enquiry",
+          "sectionType": "EnquiryPage"
+        },
+        {
+          "id": "404",
+          "label": "404",
+          "sectionType": "ErrorPage"
+        }
+      ],
+      "pageCompanions": {
+        "404": [
+          "Breadcrumb"
+        ],
+        "about": [
+          "Breadcrumb",
+          "Stats",
+          "Team",
+          "FAQ"
+        ],
+        "services": [
+          "Breadcrumb"
+        ],
+        "service-detail": [
+          "Breadcrumb"
+        ],
+        "gallery": [
+          "Breadcrumb"
+        ],
+        "blog": [
+          "Breadcrumb"
+        ],
+        "blog-detail": [
+          "Breadcrumb"
+        ],
+        "contact": [
+          "Breadcrumb"
+        ],
+        "enquiry": [
+          "Breadcrumb"
+        ]
+      }
     }
   ],
   "common": {
@@ -17237,6 +17380,2943 @@
               },
               "submitText": "Send A Message"
             }
+          }
+        }
+      }
+    },
+    "Service": {
+      "slug": "service",
+      "icon": "wrench",
+      "description": "Build an appliance repair website",
+      "templates": [
+        "template-service-1"
+      ],
+      "sections": {
+        "Header": {
+          "Header-10": {
+            "logo": "/main logo/logo2.webp",
+            "logoAlt": "AviCare HVAC",
+            "contactInfoLeft": [
+              {
+                "id": "ci-phone",
+                "icon": "FiPhoneCall",
+                "label": "Call for help:",
+                "value": "+1 000000000"
+              },
+              {
+                "id": "ci-email",
+                "icon": "FiMail",
+                "label": "Mail to us:",
+                "value": "info@xyz.com"
+              }
+            ],
+            "contactInfoRight": [
+              {
+                "id": "ci-location",
+                "icon": "FiMapPin",
+                "label": "Our Location:",
+                "value": "123 Main St, New York, NY, USA"
+              }
+            ],
+            "navLinksLeft": [
+              {
+                "id": "nl-home",
+                "label": "Home",
+                "url": "/"
+              },
+              {
+                "id": "nl-about",
+                "label": "About Us",
+                "url": "/about"
+              },
+              {
+                "id": "nl-services",
+                "label": "Our Services",
+                "url": "/services",
+                "subLinks": [
+                  {
+                    "id": "nl-services-main",
+                    "label": "Services",
+                    "url": "/services"
+                  },
+                  {
+                    "id": "nl-services-detail",
+                    "label": "Service Detail",
+                    "url": "/services/HVAC & AC-installation"
+                  }
+                ]
+              },
+              {
+                "id": "nl-gallery",
+                "label": "Gallery",
+                "url": "/gallery"
+              }
+            ],
+            "navLinksRight": [
+              {
+                "id": "nl-blogs",
+                "label": "Our Blogs",
+                "url": "/blog",
+                "subLinks": [
+                  {
+                    "id": "nl-blogs-main",
+                    "label": "Blogs",
+                    "url": "/blog"
+                  },
+                  {
+                    "id": "nl-blogs-detail",
+                    "label": "Blog Detail",
+                    "url": "/blog/b1"
+                  }
+                ]
+              },
+              {
+                "id": "nl-contact",
+                "label": "Contact",
+                "url": "/contact"
+              }
+            ],
+            "contactButton": {
+              "text": "Call Now",
+              "url": "tel:+1000000000",
+              "icon": "FiPhoneCall"
+            }
+          }
+        },
+        "Banner": {
+          "Banner-10": {
+            "subtitle": "STAY COMFORTABLE ALL YEAR ROUND",
+            "title1": "Expert Heating & AC",
+            "title2": "Repair Services",
+            "title3": "",
+            "description": "Fast, reliable and professional service for your home comfort. We keep your space perfectly cool in summer and warm in winter.",
+            "image1": "/banner/banner.webp",
+            "image2": "/banner/hero-circle1.png",
+            "image3": "/banner/hero-circle2.png",
+            "button": {
+              "text": "Contact Us",
+              "url": "/contact"
+            }
+          }
+        },
+        "About": {
+          "About-10": {
+            "subtitle": "ABOUT US",
+            "title1": "About",
+            "title2": "Us",
+            "description": "At Avicare, we are committed to providing reliable, efficient and affordable heating and AC repair services for homes and businesses. With a team of skilled technicians and a customer-first approach, we ensure your comfort all year round.",
+            "features": [
+              {
+                "id": "f1",
+                "icon": "FaCog",
+                "title": "30 Years of Experience",
+                "description": "With decades of industry experience, we have built a strong reputation for quality service and customer trust."
+              },
+              {
+                "id": "f2",
+                "icon": "FaBullseye",
+                "title": "Our Mission",
+                "description": "To deliver high-quality heating and AC solutions with honesty, reliability and complete customer satisfaction."
+              },
+              {
+                "id": "f3",
+                "icon": "FaLeaf",
+                "title": "Our Vision",
+                "description": "To be the most trusted and preferred HVAC service provider, known for excellence and innovation."
+              },
+              {
+                "id": "f4",
+                "icon": "FaSnowflake",
+                "title": "What We Do",
+                "description": "We provide installation, repair, maintenance and servicing for all types of heating and cooling systems."
+              }
+            ],
+            "button": {
+              "text": "Read More",
+              "url": "/about"
+            },
+            "imageMain": "/about/about.webp"
+          }
+        },
+        "Product": {
+          "Product-10": {
+            "subtitle": "OUR SERVICES",
+            "title1": "Expert",
+            "title2": "HVAC & AC",
+            "description": "We provide complete heating and air conditioning solutions for homes and businesses.",
+            "button": {
+              "text": "View More ->",
+              "url": "/services"
+            },
+            "services": [
+              {
+                "id": "s1",
+                "title": "AC Installation",
+                "description": "Professional AC installation for homes and offices with best quality products and expert support.",
+                "image": "/service/1.webp",
+                "icon": "",
+                "url": "/services/ac-installation"
+              },
+              {
+                "id": "s2",
+                "title": "AC Repair",
+                "description": "Fast and reliable AC repair services to fix all types of cooling problems quickly and efficiently.",
+                "image": "/service/2.webp",
+                "icon": "",
+                "url": "/services/ac-repair"
+              },
+              {
+                "id": "s3",
+                "title": "AC Cleaning",
+                "description": "Deep cleaning services to improve air quality, performance and cooling efficiency.",
+                "image": "/service/3.webp",
+                "icon": "",
+                "url": "/services/ac-cleaning"
+              },
+              {
+                "id": "s4",
+                "title": "AC Maintenance",
+                "description": "Regular maintenance to keep your AC system running smoothly and extend its lifespan.",
+                "image": "/service/4.webp",
+                "icon": "",
+                "url": "/services/ac-maintenance"
+              },
+              {
+                "id": "s5",
+                "title": "Heating Services",
+                "description": "Complete heating solutions including installation, repair and maintenance for all heating systems.",
+                "image": "/service/5.webp",
+                "icon": "",
+                "url": "/services/heating-services"
+              },
+              {
+                "id": "s6",
+                "title": "HVAC Solutions",
+                "description": "End-to-end HVAC solutions for better airflow, energy efficiency and year-round comfort.",
+                "image": "/service/6.webp",
+                "icon": "",
+                "url": "/services/hvac-solutions"
+              }
+            ],
+            "title3": "Services"
+          }
+        },
+        "Stats": {
+          "Stats-10": {
+            "subtitle": "OUR ACHIEVEMENTS",
+            "title1": "Numbers That Build",
+            "title2": "Our Trust",
+            "title3": "",
+            "description": "We take pride in delivering reliable, professional and affordable AC repair services. Here's a look at our journey so far.",
+            "bgImage": "/other/achiev.webp",
+            "achievements": [
+              {
+                "id": "a1",
+                "icon": "FaUsers",
+                "value": "2900+",
+                "label": "Satisfied Clients"
+              },
+              {
+                "id": "a2",
+                "icon": "FaAward",
+                "value": "57",
+                "label": "Awards Won"
+              },
+              {
+                "id": "a3",
+                "icon": "FaUserTie",
+                "value": "445",
+                "label": "Professionals"
+              },
+              {
+                "id": "a4",
+                "icon": "FaHome",
+                "value": "150",
+                "label": "Branches"
+              },
+              {
+                "id": "a5",
+                "icon": "MdAir",
+                "value": "7238",
+                "label": "AC Installations"
+              }
+            ]
+          }
+        },
+        "Blog": {
+          "Blog-10": {
+            "subtitle": "LATEST TIPS & INSIGHTS",
+            "title1": "Our Latest",
+            "title2": "Blog Posts",
+            "description": "Stay informed with helpful tips, expert advice and the latest updates on AC repair, maintenance and home comfort.",
+            "button": {
+              "text": "View All Blogs ->",
+              "url": "/blog"
+            },
+            "blogs": [
+              {
+                "id": "b1",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b1",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog/b2"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog/b3"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog/b2"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog/b3"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home's Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ],
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "b2",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b2",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b3",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b3",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b4",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b4",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b5",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b5",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b6",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b6",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b7",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b7",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b8",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b8",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b9",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b9",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "sidebarCta": {
+              "title1": "Need Professional",
+              "title2": "HVAC Help?",
+              "description": "Our experienced team is ready to assist you with all your HVAC & AC needs. Get in touch today for a quick and reliable solution.",
+              "buttonText": "Enquire Now ->",
+              "buttonUrl": "/enquiry"
+            }
+          }
+        },
+        "Testimonial": {
+          "Testimonial-10": {
+            "subtitle": "TESTIMONIALS",
+            "title1": "What Our",
+            "title2": "Clients Say",
+            "description": "Your satisfaction is our biggest reward. Here's what our happy customers have to say about our heating & AC repair services.",
+            "bgImage": "/other/achiev.webp",
+            "testimonials": [
+              {
+                "id": "t1",
+                "name": "Priya Sharma",
+                "location": "Noida, UP",
+                "quote": "I am really impressed with the service from Avicare. The technician arrived on time, fixed my AC issue quickly and explained everything clearly. Very professional and friendly team. Highly recommended!",
+                "rating": 5,
+                "avatar": "/team/1.jpg"
+              },
+              {
+                "id": "t2",
+                "name": "Rahul Verma",
+                "location": "Gurgaon, HR",
+                "quote": "Excellent service! The team was very punctual and solved my AC problem in no time. The pricing was fair and the technician was knowledgeable. I will definitely use Avicare again.",
+                "rating": 5,
+                "avatar": "/team/2.jpg"
+              },
+              {
+                "id": "t3",
+                "name": "Neha Kapoor",
+                "location": "Delhi",
+                "quote": "Great experience! My AC was not working, and they came the same day. The technician was polite, skilled and got it working perfectly. Very reliable and trustworthy service.",
+                "rating": 5,
+                "avatar": "/team/3.jpg"
+              },
+              {
+                "id": "t4",
+                "name": "Amit Kumar",
+                "location": "Faridabad",
+                "quote": "Very quick response and top-notch service. My AC cooling was completely gone, but the Avicare team identified the issue instantly and fixed it within an hour.",
+                "rating": 5,
+                "avatar": "/team/4.jpg"
+              },
+              {
+                "id": "t5",
+                "name": "Sonia Gupta",
+                "location": "Ghaziabad",
+                "quote": "I booked an AC servicing and they did a very thorough job. Everything was cleaned properly and the AC runs like new now. Will recommend them to my family.",
+                "rating": 5,
+                "avatar": "/team/1.jpg"
+              }
+            ]
+          }
+        },
+        "Footer": {
+          "Footer-10": {
+            "logoAlt": "AviCare HVAC",
+            "brandTitle": "AviCare",
+            "copyrightText": "© 2026 AviCare. All Rights Reserved.Powered by Lestow",
+            "description": "At AviCare, we provide reliable and professional HVAC & AC solutions for homes and businesses. From small repairs to complete installations, our team is committed to quality service and customer satisfaction.",
+            "hoursTitle": "Working Hours",
+            "hoursDays": "Mon - Sat:",
+            "hours": "9:00 AM - 7:00 PM\nSunday: Closed",
+            "socialLinks": [
+              {
+                "id": "fs1",
+                "icon": "FaFacebookF",
+                "url": "https://www.facebook.com"
+              },
+              {
+                "id": "fs2",
+                "icon": "FaInstagram",
+                "url": "https://www.instagram.com"
+              },
+              {
+                "id": "fs3",
+                "icon": "FaLinkedinIn",
+                "url": "https://www.linkedin.com"
+              },
+              {
+                "id": "fs4",
+                "icon": "FaYoutube",
+                "url": "https://www.youtube.com"
+              }
+            ],
+            "quickLinks": [
+              {
+                "id": "ql1",
+                "label": "Home",
+                "url": "/"
+              },
+              {
+                "id": "ql2",
+                "label": "About Us",
+                "url": "/about"
+              },
+              {
+                "id": "ql3",
+                "label": "Our Services",
+                "url": "/services"
+              },
+              {
+                "id": "ql4",
+                "label": "Blog",
+                "url": "/blog"
+              },
+              {
+                "id": "ql5",
+                "label": "Contact Us",
+                "url": "/contact"
+              }
+            ],
+            "servicesLinks": [
+              {
+                "id": "sl1",
+                "label": "HVAC Installation",
+                "url": "/services/HVAC & AC-installation"
+              },
+              {
+                "id": "sl2",
+                "label": "Leak Detection",
+                "url": "/services/leak-detection"
+              },
+              {
+                "id": "sl3",
+                "label": "Pipe & Drain Cleaning",
+                "url": "/services/pipe-drain-cleaning"
+              },
+              {
+                "id": "sl4",
+                "label": "General HVAC Repair",
+                "url": "/services/general-repair"
+              },
+              {
+                "id": "sl5",
+                "label": "Water Heater Services",
+                "url": "/services/water-heater"
+              },
+              {
+                "id": "sl6",
+                "label": "Bathroom Fixtures",
+                "url": "/services/bathroom-fixture"
+              }
+            ],
+            "contactInfo": {
+              "address": "123 Main St, New York, NY, USA",
+              "phone": "+1 000000000",
+              "email": "info@xyz.com"
+            },
+            "instagram": [
+              "/service/1.jpg",
+              "/service/2.jpg",
+              "/service/3.jpg",
+              "/service/4.jpg",
+              "/service/5.jpg",
+              "/service/6.jpg"
+            ],
+            "satisfactionTitle": "100% Customer Satisfaction",
+            "satisfactionDesc": "Trusted by 10,000+ Happy Customers",
+            "quickLinksTitle": "Quick Links",
+            "getInTouchTitle": "Get In Touch",
+            "callNowText": "Call Now 24/7",
+            "emailReplyText": "We reply within 1 hour",
+            "servicesTitle": "Our Services",
+            "stayConnectedTitle": "Stay Connected",
+            "stayConnectedDesc": "Get the latest updates, offers and home maintenance tips.",
+            "newsletterTitle": "Expert Tips & Guides",
+            "newsletterDesc": "Save energy, improve efficiency and extend your appliance life.",
+            "badge1": "Skilled\\nTechnicians",
+            "badge2": "Affordable\\nPricing",
+            "badge3": "24/7\\nSupport",
+            "logo": "/main logo/logo2.webp"
+          }
+        },
+        "Breadcrumb": {
+          "Breadcrumb-10": {
+            "title": "About Us",
+            "bgImage": "/main logo/breadcrumb.jpg",
+            "paths": [
+              {
+                "label": "Home",
+                "url": "/"
+              },
+              {
+                "label": "About Us"
+              }
+            ]
+          }
+        },
+        "AboutPage": {
+          "AboutPage-10": {
+            "subtitle": "ABOUT US",
+            "subtitle2": "Heating & Air Conditioning",
+            "title1": "Family",
+            "title2": "Business",
+            "description": "AirCool Conditioning & Heating specializes in all HVAC-related services. We offer heating and air conditioning installations as well as all types of repairs. We also offer preventative plans like inspections for the Spring and Winter as well as yearly service agreements that include all the top brands.",
+            "features": [
+              {
+                "id": "f1",
+                "title": "Licensed installs and repairs for every home"
+              },
+              {
+                "id": "f2",
+                "title": "Spring and winter inspections on a set schedule"
+              },
+              {
+                "id": "f3",
+                "title": "Yearly service agreements for all major brands"
+              }
+            ],
+            "phone": "+1 000000000",
+            "imageMain": "/about/about1.webp",
+            "yearsOfService": "25+",
+            "yearsText": "Years of service",
+            "hideButton": true
+          }
+        },
+        "Team": {
+          "Team-10": {
+            "subtitle": "MEET THE TEAM",
+            "title1": "Our Service",
+            "title2": "Professionals",
+            "description": "Skilled technicians committed to keeping your home comfortable.",
+            "members": [
+              {
+                "id": "m1",
+                "name": "Daniel Brooks",
+                "role": "HVAC Specialist",
+                "image": "/team/1.jpg",
+                "phone": "tel:+1000000000",
+                "linkedin": "https://linkedin.com/"
+              },
+              {
+                "id": "m2",
+                "name": "Marcus Reed",
+                "role": "Appliance Technician",
+                "image": "/team/2.jpg",
+                "phone": "tel:+1000000000",
+                "linkedin": "https://linkedin.com/"
+              },
+              {
+                "id": "m3",
+                "name": "Ethan Cole",
+                "role": "Senior Service Engineer",
+                "image": "/team/3.jpg",
+                "phone": "tel:+1000000000",
+                "linkedin": "https://linkedin.com/"
+              },
+              {
+                "id": "m4",
+                "name": "James Carter",
+                "role": "Maintenance Expert",
+                "image": "/team/4.jpg",
+                "phone": "tel:+1000000000",
+                "linkedin": "https://linkedin.com/"
+              }
+            ]
+          }
+        },
+        "FAQ": {
+          "FAQ-10": {
+            "subtitle": "FAQ",
+            "title1": "Frequently Asked",
+            "title2": "Questions",
+            "description": "Find answers to common questions about our AC repair, installation and maintenance services.",
+            "image": "/about/faq.webp",
+            "faqs": [
+              {
+                "id": "q1",
+                "question": "How often should I service my AC?",
+                "answer": "It is recommended to service your AC at least twice a year, preferably before the summer season and after heavy usage, to ensure optimal performance and longer life."
+              },
+              {
+                "id": "q2",
+                "question": "What types of AC units do you repair?",
+                "answer": "We repair all types of AC units including split, window, and central air conditioning systems from major brands."
+              },
+              {
+                "id": "q3",
+                "question": "Do you provide AC installation services?",
+                "answer": "Yes, we provide professional installation services for all kinds of AC units."
+              },
+              {
+                "id": "q4",
+                "question": "How long does an AC repair usually take?",
+                "answer": "Most repairs are completed within a few hours depending on the complexity of the issue."
+              },
+              {
+                "id": "q5",
+                "question": "Is there a warranty on your repair services?",
+                "answer": "Yes, we provide a 30-day warranty on all our repair services and parts."
+              }
+            ]
+          }
+        },
+        "ServicePage": {
+          "ServicePage-10": {
+            "subtitle": "OUR SERVICES",
+            "title1": "Expert",
+            "title2": "HVAC & AC",
+            "description": "We provide complete heating and air conditioning solutions for homes and businesses.",
+            "button": {
+              "text": "View More ->",
+              "url": "/services"
+            },
+            "services": [
+              {
+                "id": "s1",
+                "title": "AC Installation",
+                "description": "Professional AC installation for homes and offices with best quality products and expert support.",
+                "image": "/service/1.webp",
+                "icon": "",
+                "url": "/services/ac-installation"
+              },
+              {
+                "id": "s2",
+                "title": "AC Repair",
+                "description": "Fast and reliable AC repair services to fix all types of cooling problems quickly and efficiently.",
+                "image": "/service/2.webp",
+                "icon": "",
+                "url": "/services/ac-repair"
+              },
+              {
+                "id": "s3",
+                "title": "AC Cleaning",
+                "description": "Deep cleaning services to improve air quality, performance and cooling efficiency.",
+                "image": "/service/3.webp",
+                "icon": "",
+                "url": "/services/ac-cleaning"
+              },
+              {
+                "id": "s4",
+                "title": "AC Maintenance",
+                "description": "Regular maintenance to keep your AC system running smoothly and extend its lifespan.",
+                "image": "/service/4.webp",
+                "icon": "",
+                "url": "/services/ac-maintenance"
+              },
+              {
+                "id": "s5",
+                "title": "Heating Services",
+                "description": "Complete heating solutions including installation, repair and maintenance for all heating systems.",
+                "image": "/service/5.webp",
+                "icon": "",
+                "url": "/services/heating-services"
+              },
+              {
+                "id": "s6",
+                "title": "HVAC Solutions",
+                "description": "End-to-end HVAC solutions for better airflow, energy efficiency and year-round comfort.",
+                "image": "/service/6.webp",
+                "icon": "",
+                "url": "/services/hvac-solutions"
+              }
+            ],
+            "title3": "Services",
+            "hideButton": true
+          }
+        },
+        "ServiceDetail": {
+          "ServiceDetail-10": {
+            "id": "HVAC & AC-installation",
+            "title1": "Heater",
+            "title2": "Installation",
+            "images": {
+              "main": "/service/service detail.webp ",
+              "small1": "/service/service small1.webp",
+              "small2": "/service/service small2.webp"
+            },
+            "descriptions": [
+              "Stay warm and comfortable with our professional heater installation services. We install all types of heating systems including electric heaters, gas heaters, wall-mounted units, central heating systems and more. Our experienced technicians ensure safe, efficient and long-lasting installation for your home or office.",
+              "We assess your space, recommend the right heating solution, and install it with precision and care. Whether you need a new heater for a single room or a complete heating system for your property, we provide reliable and affordable installation services tailored to your needs."
+            ],
+            "features": [
+              {
+                "id": "f1",
+                "icon": "FaCog",
+                "title": "Expert Installation",
+                "description": "By certified technicians"
+              },
+              {
+                "id": "f2",
+                "icon": "FaShieldAlt",
+                "title": "Safe & Secure Setup",
+                "description": "Following industry standards"
+              },
+              {
+                "id": "f3",
+                "icon": "FaBolt",
+                "title": "Energy Efficient",
+                "description": "Optimized for better performance"
+              },
+              {
+                "id": "f4",
+                "icon": "FaWallet",
+                "title": "Affordable Pricing",
+                "description": "Best value for your money"
+              }
+            ],
+            "typesTitle1": "Types of Heaters",
+            "typesTitle2": "We Install",
+            "types": [
+              {
+                "id": "t1",
+                "image": "/service/service small1.webp",
+                "title": "Room Heaters",
+                "description": "Portable and wall-mounted room heaters."
+              },
+              {
+                "id": "t2",
+                "image": "/service/service small2.webp",
+                "title": "Wall Mounted Heaters",
+                "description": "Space-saving and efficient wall heaters."
+              },
+              {
+                "id": "t3",
+                "image": "/service/service small2.webp",
+                "title": "Oil Filled Heaters",
+                "description": "Reliable and long-lasting oil filled heaters."
+              },
+              {
+                "id": "t4",
+                "image": "/service/service small1.webp",
+                "title": "Infrared Heaters",
+                "description": "Quick and effective infrared heating solutions."
+              }
+            ],
+            "sidebar": {
+              "servicesTitle": "Our Services",
+              "servicesList": [
+                {
+                  "id": "s1",
+                  "title": "AC Installation",
+                  "image": "/service/1.webp",
+                  "url": "/services/ac-installation"
+                },
+                {
+                  "id": "s2",
+                  "title": "AC Repair",
+                  "image": "/service/2.webp",
+                  "url": "/services/ac-repair"
+                },
+                {
+                  "id": "s3",
+                  "title": "AC Cleaning",
+                  "image": "/service/3.webp",
+                  "url": "/services/ac-cleaning"
+                },
+                {
+                  "id": "s4",
+                  "title": "AC Maintenance",
+                  "image": "/service/4.webp",
+                  "url": "/services/ac-maintenance"
+                },
+                {
+                  "id": "s5",
+                  "title": "Heating Services",
+                  "image": "/service/5.webp",
+                  "url": "/services/heating-services"
+                },
+                {
+                  "id": "s6",
+                  "title": "HVAC Solutions",
+                  "image": "/service/6.webp",
+                  "url": "/services/hvac-solutions"
+                }
+              ],
+              "helpBox": {
+                "title": "Need Help with Heater Installation?",
+                "description": "Get expert advice and professional installation service today.",
+                "buttonText": "Call Us Now",
+                "phone": "+1 3490 2838 00",
+                "image": "/service/worker.webp"
+              },
+              "whyChooseUs": {
+                "title": "Why Choose Us?",
+                "list": [
+                  "Certified & Experienced Technicians",
+                  "High-Quality Equipment Usage",
+                  "On-Time Installation",
+                  "Affordable & Transparent Pricing",
+                  "High-Quality Equipment Usage",
+                  "On-Time Installation",
+                  "Affordable & Transparent Pricing"
+                ]
+              }
+            }
+          }
+        },
+        "GalleryPage": {
+          "GalleryPage-10": {
+            "subtitle": "OUR GALLERY",
+            "title1": "Recent",
+            "title2": "Projects",
+            "description": "A look at installations, repairs, and maintenance from homes and offices.",
+            "images": [
+              {
+                "id": "g1",
+                "image": "/gallery/g1.webp",
+                "alt": "AC Installation",
+                "title": "AC Installation"
+              },
+              {
+                "id": "g2",
+                "image": "/gallery/g2.webp",
+                "alt": "Coil Cleaning",
+                "title": "Coil Cleaning"
+              },
+              {
+                "id": "g3",
+                "image": "/gallery/g3.webp",
+                "alt": "Heating Repair",
+                "title": "Heating Repair"
+              },
+              {
+                "id": "g4",
+                "image": "/gallery/g4.webp",
+                "alt": "Outdoor Unit",
+                "title": "Outdoor Unit"
+              },
+              {
+                "id": "g5",
+                "image": "/gallery/g5.webp",
+                "alt": "Office HVAC",
+                "title": "Office HVAC"
+              },
+              {
+                "id": "g6",
+                "image": "/gallery/g6.webp",
+                "alt": "Duct Work",
+                "title": "Duct Work"
+              },
+              {
+                "id": "g7",
+                "image": "/gallery/g7.webp",
+                "alt": "Filter Change",
+                "title": "Filter Change"
+              },
+              {
+                "id": "g8",
+                "image": "/gallery/g8.webp",
+                "alt": "Thermostat",
+                "title": "Thermostat"
+              }
+            ]
+          }
+        },
+        "BlogPage": {
+          "BlogPage-10": {
+            "subtitle": "LATEST TIPS & INSIGHTS",
+            "title1": "Our Latest",
+            "title2": "Blog Posts",
+            "description": "Stay informed with helpful tips, expert advice and the latest updates on AC repair, maintenance and home comfort.",
+            "button": {
+              "text": "View All Blogs ->",
+              "url": "/blog"
+            },
+            "blogs": [
+              {
+                "id": "b1",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b1",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog/b2"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog/b3"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog/b2"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog/b3"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home's Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ],
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "b2",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b2",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b3",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b3",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b4",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b4",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b5",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b5",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b6",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b6",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b7",
+                "image": "/blog/b1.webp",
+                "date": "April 26, 2025",
+                "category": "Buying Guide",
+                "title": "How to Choose the Right AC for Your Home",
+                "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+                "url": "/blog/b7",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b8",
+                "image": "/blog/b2.webp",
+                "date": "April 20, 2025",
+                "category": "Maintenance",
+                "title": "5 Simple AC Maintenance Tips for Better Performance",
+                "description": "Regular maintenance can improve cooling efficiency, reduce electricity bills and extend the life of your AC unit.",
+                "url": "/blog/b8",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b9",
+                "image": "/blog/b3.webp",
+                "date": "April 15, 2025",
+                "category": "Repair",
+                "title": "Common AC Problems and How to Fix Them",
+                "description": "Is your AC not cooling properly? Learn about the most common issues and how professional repair can solve them quickly.",
+                "url": "/blog/b9",
+                "detail": {
+                  "author": "Abhishek",
+                  "commentsCount": 21,
+                  "title1": "Took a whole lotta: How Regular AC Maintenance",
+                  "title2": "Saves You Money",
+                  "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                  "features": [
+                    {
+                      "id": "f1",
+                      "icon": "FaBolt",
+                      "title": "1. Improves Energy Efficiency",
+                      "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                    },
+                    {
+                      "id": "f2",
+                      "icon": "FaWrench",
+                      "title": "2. Prevents Costly Repairs",
+                      "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                    },
+                    {
+                      "id": "f3",
+                      "icon": "FaShieldAlt",
+                      "title": "3. Extends the Lifespan of Your AC",
+                      "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                    }
+                  ],
+                  "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                  "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                  "bottomImage": "/service/1.webp",
+                  "sidebar": {
+                    "categoriesTitle": "Categories",
+                    "categories": [
+                      {
+                        "id": "c1",
+                        "name": "Indoor Air Quality",
+                        "count": 8,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c2",
+                        "name": "Heating Services",
+                        "count": 12,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c3",
+                        "name": "Windowing Units",
+                        "count": 6,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c4",
+                        "name": "AC Installation",
+                        "count": 14,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c5",
+                        "name": "Maintenance & Repairing",
+                        "count": 10,
+                        "url": "/blog"
+                      },
+                      {
+                        "id": "c6",
+                        "name": "Annual Inspections",
+                        "count": 7,
+                        "url": "/blog"
+                      }
+                    ],
+                    "recentPostsTitle": "Recent Posts",
+                    "recentPostsLinkText": "View All ->",
+                    "recentPostsUrl": "/blog",
+                    "adBanner": {
+                      "title": "Need Professional AC Service?",
+                      "description": "Get expert installation, repair and maintenance services.",
+                      "buttonText": "Get a Free Quote ->",
+                      "buttonUrl": "/contact",
+                      "image": "/blog/worker.webp"
+                    },
+                    "recentPosts": [
+                      {
+                        "id": "rp1",
+                        "title": "How to Improve Your Home Air Quality",
+                        "image": "/blog/b1.webp",
+                        "date": "January 11, 2024",
+                        "url": "/blog/b1"
+                      },
+                      {
+                        "id": "rp2",
+                        "title": "Top Benefits of Regular AC Servicing",
+                        "image": "/blog/b2.webp",
+                        "date": "January 12, 2024",
+                        "url": "/blog/b2"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "sidebarCta": {
+              "title1": "Need Professional",
+              "title2": "HVAC Help?",
+              "description": "Our experienced team is ready to assist you with all your HVAC & AC needs. Get in touch today for a quick and reliable solution.",
+              "buttonText": "Enquire Now ->",
+              "buttonUrl": "/enquiry"
+            },
+            "isListingPage": true
+          }
+        },
+        "BlogDetail": {
+          "BlogDetail-10": {
+            "blog": {
+              "id": "b1",
+              "image": "/blog/b1.webp",
+              "date": "April 26, 2025",
+              "category": "Buying Guide",
+              "title": "How to Choose the Right AC for Your Home",
+              "description": "From cooling capacity to energy efficiency, find out what to consider before buying the perfect AC for your home.",
+              "url": "/blog/b1",
+              "detail": {
+                "author": "Abhishek",
+                "commentsCount": 21,
+                "title1": "Took a whole lotta: How Regular AC Maintenance",
+                "title2": "Saves You Money",
+                "intro": "Keeping your air conditioner in good condition is not just about comfort, it's also a smart way to save money in the long run. Regular AC maintenance helps improve performance, reduce energy bills and prevent costly breakdowns.",
+                "features": [
+                  {
+                    "id": "f1",
+                    "icon": "FaBolt",
+                    "title": "1. Improves Energy Efficiency",
+                    "description": "A well-maintained AC unit works more efficiently and consumes less electricity. Cleaning filters, checking refrigerant levels and ensuring proper airflow can significantly reduce your energy bills."
+                  },
+                  {
+                    "id": "f2",
+                    "icon": "FaWrench",
+                    "title": "2. Prevents Costly Repairs",
+                    "description": "Regular maintenance helps identify small issues before they turn into major problems. This can save you from expensive repairs or even a complete AC replacement."
+                  },
+                  {
+                    "id": "f3",
+                    "icon": "FaShieldAlt",
+                    "title": "3. Extends the Lifespan of Your AC",
+                    "description": "With proper care and servicing, your AC can last for many more years. Regular check-ups keep all components in good condition and ensure smooth operation."
+                  }
+                ],
+                "quote": "Regular AC maintenance is a small investment that brings big savings. It keeps your home cooler, your energy bills lower and your AC running for years to come.",
+                "conclusion": "Whether you use your AC at home or in the office, scheduling regular maintenance is the best way to ensure reliable performance and long-term savings. Don't wait for a breakdown - keep your AC in top shape with professional servicing.",
+                "bottomImage": "/service/1.webp",
+                "sidebar": {
+                  "categoriesTitle": "Categories",
+                  "categories": [
+                    {
+                      "id": "c1",
+                      "name": "Indoor Air Quality",
+                      "count": 8,
+                      "url": "/blog/b1"
+                    },
+                    {
+                      "id": "c2",
+                      "name": "Heating Services",
+                      "count": 12,
+                      "url": "/blog/b2"
+                    },
+                    {
+                      "id": "c3",
+                      "name": "Windowing Units",
+                      "count": 6,
+                      "url": "/blog/b3"
+                    },
+                    {
+                      "id": "c4",
+                      "name": "AC Installation",
+                      "count": 14,
+                      "url": "/blog/b1"
+                    },
+                    {
+                      "id": "c5",
+                      "name": "Maintenance & Repairing",
+                      "count": 10,
+                      "url": "/blog/b2"
+                    },
+                    {
+                      "id": "c6",
+                      "name": "Annual Inspections",
+                      "count": 7,
+                      "url": "/blog/b3"
+                    }
+                  ],
+                  "recentPostsTitle": "Recent Posts",
+                  "recentPostsLinkText": "View All ->",
+                  "recentPostsUrl": "/blog",
+                  "recentPosts": [
+                    {
+                      "id": "rp1",
+                      "title": "How to Improve Your Home's Air Quality",
+                      "image": "/blog/b1.webp",
+                      "date": "January 11, 2024",
+                      "url": "/blog/b1"
+                    },
+                    {
+                      "id": "rp2",
+                      "title": "Top Benefits of Regular AC Servicing",
+                      "image": "/blog/b2.webp",
+                      "date": "January 12, 2024",
+                      "url": "/blog/b2"
+                    }
+                  ],
+                  "adBanner": {
+                    "title": "Need Professional AC Service?",
+                    "description": "Get expert installation, repair and maintenance services.",
+                    "buttonText": "Get a Free Quote ->",
+                    "buttonUrl": "/contact",
+                    "image": "/blog/worker.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ContactPage": {
+          "ContactPage-10": {
+            "subtitle": "CONTACT US",
+            "title1": "Get In",
+            "title2": "Touch",
+            "description": "We are here to help you with all your HVAC & AC needs. Feel free to contact us.",
+            "form": {
+              "title": "Send Us A",
+              "description": "Fill out the form and we will get back to you shortly.",
+              "buttonText": "Send Message"
+            },
+            "contactInfo": {
+              "title": "Contact Information",
+              "description": "Reach out to us through any of the following methods.",
+              "phoneTitle": "Call Us",
+              "phone": "+1 000000000",
+              "phoneDesc": "24/7 Support Available",
+              "emailTitle": "Email Us",
+              "email": "info@xyz.com",
+              "emailDesc": "We reply within 24 hours",
+              "addressTitle": "Location",
+              "address": "123 Main St, New York, NY, USA"
+            },
+            "technicianImage": "/service/worker.webp",
+            "map": {
+              "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.213192451996!2d-73.9877!3d40.7588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzMxLjciTiA3M8KwNTknMTUuNyJX!5e0!3m2!1sen!2sus!4v1",
+              "boxTitle": "Our Office",
+              "boxAddress": "123 Main St, New York, NY, USA",
+              "buttonText": "Get Directions"
+            }
+          }
+        },
+        "EnquiryPage": {
+          "EnquiryPage-10": {
+            "subtitle": "ENQUIRY NOW",
+            "title1": "Request A",
+            "title2": "Quote",
+            "description": "Fill out the form below and our team will get back to you with a competitive quote for your HVAC needs.",
+            "features": [
+              {
+                "id": "eq-f1",
+                "title": "Fast Response",
+                "description": "We respond to all enquiries within 24 hours"
+              },
+              {
+                "id": "eq-f2",
+                "title": "Competitive Pricing",
+                "description": "Best rates for top-quality HVAC services"
+              }
+            ],
+            "form": {
+              "title1": "Fill The",
+              "title2": "Form",
+              "description": "Provide your details and requirements.",
+              "buttonText": "Submit Enquiry ->",
+              "servicesList": [
+                "AC Installation",
+                "AC Repair",
+                "Heating System",
+                "Maintenance",
+                "Duct Cleaning"
+              ]
+            }
+          }
+        },
+        "ErrorPage": {
+          "ErrorPage-10": {
+            "title": "Page Not Found",
+            "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
           }
         }
       }

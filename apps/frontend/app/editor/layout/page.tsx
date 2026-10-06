@@ -2791,6 +2791,41 @@ const readServiceItemsFromData = (data: SectionData): ServiceItem[] => {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   }
 
+  const applianceServices = Array.isArray(
+    (data as { services?: Array<Record<string, unknown>> }).services,
+  )
+    ? (data as { services: Array<Record<string, unknown>> }).services
+    : [];
+  if (applianceServices.length) {
+    return applianceServices
+      .map((item, index) => {
+        const title = String(item.title || "");
+        const slug =
+          (typeof item.slug === "string" && item.slug.trim()) ||
+          String(item.id || "") ||
+          createPageSlug(title) ||
+          `service-${index + 1}`;
+        return {
+          id: String(item.id || slug),
+          title,
+          category: "Service",
+          desc: String(item.description || item.desc || ""),
+          content: "",
+          image: String(item.image || "/bg1.jpg"),
+          alt: title,
+          slug,
+          order: index + 1,
+          active: item.active !== false,
+          layout: "",
+          seoTitle: "",
+          seoDescription: "",
+          seoKeywords: "",
+          showOnHome: item.showOnHome !== false,
+        };
+      })
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
   const slides = Array.isArray(data.serviceSlides)
     ? data.serviceSlides
     : Array.isArray(data.productSlides)
@@ -2850,7 +2885,8 @@ const resolveManagerForSection = (
     id === "ServicePage" ||
     type === "ServicePage" ||
     (type === "Product" &&
-      String(section.variant || "").startsWith("Product-9")) ||
+      (String(section.variant || "").startsWith("Product-9") ||
+        String(section.variant || "").startsWith("Product-10"))) ||
     (type === "Service" && (page === "service" || page === "services"))
   ) {
     return "Services";
@@ -3021,6 +3057,38 @@ const applyServicePageStateToData = (
       slug: item.slug,
       showOnHome: item.showOnHome !== false,
     })),
+    ...(((Array.isArray((current as { services?: Array<{ url?: unknown }> }).services) &&
+      (current as { services: Array<{ url?: unknown }> }).services.some(
+        (row) => typeof row?.url === "string",
+      )) ||
+      String(state.layout || "").includes("-10"))
+      ? {
+          services: visibleServices.map((service) => {
+            const previous = (
+              Array.isArray((current as { services?: Array<Record<string, unknown>> }).services)
+                ? (current as { services: Array<Record<string, unknown>> }).services
+                : []
+            ).find(
+              (row) =>
+                row.id === service.id ||
+                row.title === service.title ||
+                row.slug === service.slug,
+            );
+            return {
+              id: service.id,
+              title: service.title,
+              description: service.desc,
+              image: service.image || String(previous?.image || "/bg1.jpg"),
+              icon: String(previous?.icon || ""),
+              url:
+                String(previous?.url || "") ||
+                `/services/${service.slug || service.id}`,
+              slug: service.slug,
+              showOnHome: service.showOnHome !== false,
+            };
+          }),
+        }
+      : {}),
   };
 };
 
@@ -8108,7 +8176,8 @@ function EditorPage({
         (section) =>
           section.type === "Product" &&
           !section.page &&
-          String(section.variant || "").startsWith("Product-9"),
+          String(section.variant || "").startsWith("Product-9") ||
+          String(section.variant || "").startsWith("Product-10"),
       );
 
     const emitServiceState = (items: SectionItem[]) => {
@@ -8266,7 +8335,8 @@ function EditorPage({
           if (
             section.type !== "Product" ||
             section.page ||
-            !String(section.variant || "").startsWith("Product-9")
+            !String(section.variant || "").startsWith("Product-9") &&
+            !String(section.variant || "").startsWith("Product-10")
           ) {
             return section;
           }

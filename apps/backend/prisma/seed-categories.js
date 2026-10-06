@@ -23,6 +23,14 @@ const categories = [
     description: 'Build an events website',
     status: 'Active',
   },
+  {
+    order: 3,
+    name: 'Service',
+    slug: 'service',
+    icon: 'lucide-wrench',
+    description: 'Build an appliance repair website',
+    status: 'Active',
+  },
 ];
 
 async function main() {

@@ -264,6 +264,27 @@ import EventLegalPage from "../components/sections/legal/EventLegalPage";
 import EventSitemapPage from "../components/sections/sitemap/EventSitemapPage";
 import EventErrorPage from "../components/sections/error/EventErrorPage";
 import EventStats from "../components/sections/stats/EventStats";
+import ServiceHeader10, {
+  ServiceFooter10,
+  ServiceBreadcrumb10,
+  ServiceBanner10,
+  ServiceAbout10,
+  ServiceAboutPage10,
+  ServiceProduct10,
+  ServicePage10,
+  ServiceDetail10,
+  ServiceStats10,
+  ServiceBlog10,
+  ServiceBlogPage10,
+  ServiceBlogDetail10,
+  ServiceTestimonial10,
+  ServiceTeam10,
+  ServiceFaq10,
+  ServiceGalleryPage10,
+  ServiceContactPage10,
+  ServiceEnquiryPage10,
+  ServiceErrorPage10,
+} from "../components/sections/appliance";
 
 const asSection = (component: unknown) =>
   component as ComponentType<SectionProps>;
@@ -561,6 +582,27 @@ export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   "CookiePolicyPage-9": asSection(EventLegalPage),
   "SitemapPage-9": asSection(EventSitemapPage),
   "ErrorPage-9": asSection(EventErrorPage),
+
+  "Header-10": asSection(ServiceHeader10),
+  "Banner-10": asSection(ServiceBanner10),
+  "About-10": asSection(ServiceAbout10),
+  "Product-10": asSection(ServiceProduct10),
+  "Stats-10": asSection(ServiceStats10),
+  "Blog-10": asSection(ServiceBlog10),
+  "Testimonial-10": asSection(ServiceTestimonial10),
+  "Footer-10": asSection(ServiceFooter10),
+  "Breadcrumb-10": asSection(ServiceBreadcrumb10),
+  "AboutPage-10": asSection(ServiceAboutPage10),
+  "Team-10": asSection(ServiceTeam10),
+  "FAQ-10": asSection(ServiceFaq10),
+  "ServicePage-10": asSection(ServicePage10),
+  "ServiceDetail-10": asSection(ServiceDetail10),
+  "GalleryPage-10": asSection(ServiceGalleryPage10),
+  "BlogPage-10": asSection(ServiceBlogPage10),
+  "BlogDetail-10": asSection(ServiceBlogDetail10),
+  "ContactPage-10": asSection(ServiceContactPage10),
+  "EnquiryPage-10": asSection(ServiceEnquiryPage10),
+  "ErrorPage-10": asSection(ServiceErrorPage10),
  };
 
 /** Realestate template-4 skins. Global *-4 keys stay generic for Business/School. */

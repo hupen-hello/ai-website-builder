@@ -58,6 +58,7 @@ import {
 } from "../../data/templateFlow";
 import { PageLink, usePreview } from "../context/PreviewContext";
 import { resolveEventBreadcrumbView } from "../../lib/eventBreadcrumb";
+import { resolveApplianceBreadcrumbView } from "../../lib/applianceBreadcrumb";
 import ImageLibraryPicker from "./ImageLibraryPicker";
 import {
   getSectionAnchorId,
@@ -482,6 +483,7 @@ const breadcrumbLayouts = [
   { id: "Breadcrumb-4", name: "Breadcrumb 4" },
   { id: "Breadcrumb-5", name: "Realestate Inner Banner" },
   { id: "Breadcrumb-9", name: "Event Page Banner" },
+  { id: "Breadcrumb-10", name: "Service Page Banner" },
 ];
 
 const getDefaultBreadcrumbData = (variant: string): SectionData => {
@@ -789,6 +791,7 @@ const componentContentFieldsByVariant: Record<string, string[]> = {
   "Breadcrumb-4": ["homeLabel", "title", "desc", "breadcrumbBackgroundColor", "breadcrumbTextColor"],
   "Breadcrumb-5": ["pretitle", "title", "desc", "desc2"],
   "Breadcrumb-9": ["title", "bgImage", "breadcrumbs"],
+  "Breadcrumb-10": ["title", "bgImage", "breadcrumbs"],
   "About-1": ["title", "desc", "backgroundImage", "backgroundImageTitle", "buttons"],
   "About-2": ["pretitle", "title", "subtitle", "desc", "backgroundImage", "backgroundImageTitle", "sideImage", "sideImageTitle", "philosophyTitle", "philosophyDesc", "buttons"],
   "About-3": ["title", "desc", "backgroundImage", "backgroundImageTitle", "buttons"],
@@ -3268,7 +3271,13 @@ export default function EditSectionModal({
           pageSlug: currentSection?.page,
           data: (editableGenericData ?? {}) as Record<string, unknown>,
         })
-      : null;
+      : activeVariant === "Breadcrumb-10"
+        ? resolveApplianceBreadcrumbView({
+            currentPage,
+            pageSlug: currentSection?.page,
+            data: (editableGenericData ?? {}) as Record<string, unknown>,
+          })
+        : null;
   const activeComponentContentFields =
     componentContentFieldsByVariant[activeVariant];
   const knownSectionContentFields =
@@ -3454,7 +3463,10 @@ export default function EditSectionModal({
       ]);
     }
     if (activeSectionType === "Breadcrumb") {
-      if (activeVariant === "Breadcrumb-9" && eventBreadcrumbEditorData) {
+      if (
+        (activeVariant === "Breadcrumb-9" || activeVariant === "Breadcrumb-10") &&
+        eventBreadcrumbEditorData
+      ) {
         return [
           ["title", eventBreadcrumbEditorData.title],
           ["bgImage", eventBreadcrumbEditorData.bgImage],

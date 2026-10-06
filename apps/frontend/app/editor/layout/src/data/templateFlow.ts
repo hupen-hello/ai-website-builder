@@ -2123,6 +2123,9 @@ export const getThemeManagerVisibility = (
   const pages = getTemplatePages(template);
   const ids = new Set(pages.map((page) => slugifyTemplatePageId(page.id)));
   const types = new Set(pages.map((page) => page.sectionType));
+  for (const list of Object.values(template.pageCompanions || {})) {
+    for (const sectionType of list || []) types.add(sectionType);
+  }
   const home = new Set(template.homeSectionOrder || []);
 
   const has = (
@@ -2146,7 +2149,7 @@ export const getThemeManagerVisibility = (
       ["portfolio", "portfolios", "project", "projects"],
       ["PortfolioPage"],
     ),
-    teams: has(["team", "teams", "our-team"], ["TeamPage"]),
+    teams: has(["team", "teams", "our-team"], ["TeamPage", "Team"]),
     gallery: has(["gallery"], ["GalleryPage"]),
     countries: has(
       ["countries", "countries-we-serve"],
@@ -2245,11 +2248,23 @@ function pageVariantsFor(
   pageBodyType?: string,
   pageBodyKey?: string,
   homeSectionOrder?: string[] | null,
+  companions?: string[] | null,
 ): Record<string, string> {
   const next: Record<string, string> = {};
   if (pageBodyType && pageBodyKey) {
     if (source.Topbar) next.Topbar = source.Topbar;
     if (source.Header) next.Header = source.Header;
+    if (companions?.length) {
+      for (const sectionType of companions) {
+        if (source[sectionType]) next[sectionType] = source[sectionType];
+      }
+      if (!next.Breadcrumb && !next.PageBanner) {
+        next.Breadcrumb = source.Breadcrumb || "Breadcrumb-1";
+      }
+      next[pageBodyType] = pageBodyKey;
+      if (source.Footer) next.Footer = source.Footer;
+      return next;
+    }
     next.Breadcrumb = source.Breadcrumb || "Breadcrumb-1";
     next[pageBodyType] = pageBodyKey;
     if (pageBodyType === "MissionPage") {
@@ -2318,7 +2333,13 @@ export const buildTemplateComposePreviewUrl = (
     const layoutKey = variants[page.sectionType];
     if (!layoutKey) return;
     const csv = variantsToCsv(
-      pageVariantsFor(variants, page.sectionType, layoutKey),
+      pageVariantsFor(
+        variants,
+        page.sectionType,
+        layoutKey,
+        undefined,
+        template.pageCompanions?.[page.id],
+      ),
     );
     if (!csv) return;
     qs.append(
@@ -2404,6 +2425,20 @@ export const resolveLayoutPreview = (
     categoryContent.categories[category] != null
       ? category
       : Object.keys(categoryContent.categories)[0] || "Business";
+
+  const directPack = (
+    categoryContent.categories[categoryKey]?.sections as
+      | Record<string, Record<string, SectionData>>
+      | undefined
+  )?.[sectionType]?.[variantKey];
+  if (
+    variantKey.endsWith("-10") &&
+    directPack &&
+    typeof directPack === "object" &&
+    !Array.isArray(directPack)
+  ) {
+    return { sectionType, data: directPack };
+  }
 
   if (sectionType === "AboutPage") {
     const section = createAboutPageSection(categoryKey);
