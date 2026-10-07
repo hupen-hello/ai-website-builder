@@ -218,6 +218,18 @@ const normalizeContentPageSlug = (value: string) => {
   return slug;
 };
 
+/** Keep one Stats block per inner page. About companions plus the generic About stats pass were both saved. */
+const dropDuplicatePageStats = (sections: SectionItem[]) => {
+  const seen = new Set<string>();
+  return sections.filter((section) => {
+    if (section.type !== "Stats" || !section.page) return true;
+    const key = `${normalizeContentPageSlug(section.page)}:${section.variant}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
 /** Label slug, URL slug, and template page id can differ (Sale a Property vs properties). */
 const getPublishedPageContentSlugs = (
   payload: ClientPayload,
@@ -4501,7 +4513,9 @@ function PublishedSiteContent({
       });
     }
     return orderChromeSections(
-      dropExtraPageBreadcrumbs(pageSections, publishedTemplate),
+      dropDuplicatePageStats(
+        dropExtraPageBreadcrumbs(pageSections, publishedTemplate),
+      ),
     );
   }, [
     currentPage,
@@ -4728,9 +4742,15 @@ function PublishedSiteContent({
     payload.sections,
   ).filter((link) => link.kind === "blog" && !link.hidden);
   const hasBlogIndexPage = hasPublishedBlogIndexPage(payload);
+  const pageAlreadyRendersBlogList = sectionsToRender.some(
+    (section) =>
+      (section.type === "BlogPage" || section.type === "Blog") &&
+      String(section.variant || "").endsWith("-10"),
+  );
   const showPublishedBlogIndex =
     (publishedPath === "blogs" || publishedPath === "blog") &&
-    hasBlogIndexPage;
+    hasBlogIndexPage &&
+    !pageAlreadyRendersBlogList;
   const showPublishedBlogView =
     isBlogDetailRoute || showPublishedBlogIndex;
   const blogIndexLayout = payload.pageLinks.find(
@@ -4916,7 +4936,7 @@ function PublishedSiteContent({
       return null;
     }
     const section = countriesServeSectionForShell;
-    const Component = resolveSectionComponent(section.variant, category);
+    const Component = resolveSectionComponent(section.variant, payload.category);
     if (!Component) return null;
     const defaultVariant = `${section.type}-1`;
     const variantData =
@@ -4961,7 +4981,7 @@ function PublishedSiteContent({
           publishedTemplate,
         );
         const renderSection = { ...section, variant: renderVariant };
-        const Component = resolveSectionComponent(renderVariant, category);
+        const Component = resolveSectionComponent(renderVariant, payload.category);
         const defaultVariant = `${section.type}-1`;
         const variantData =
           section.data?.[renderVariant] ??

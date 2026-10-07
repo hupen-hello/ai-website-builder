@@ -1,6 +1,7 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React, { useState, useEffect } from 'react';
-import { GalleryData } from './applianceTypes';
+import { GalleryData } from "../../../lib/applianceTypes";
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 
@@ -151,3 +152,8 @@ export const GallerySection = ({ data, editorMode }: { data?: GalleryData, edito
     </section>
   );
 };
+
+export default function ServiceGalleryPage({ data = {}, editorMode }: SectionProps) {
+  return <GallerySection data={data as never} editorMode={editorMode} />;
+}
+

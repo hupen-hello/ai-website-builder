@@ -1,7 +1,8 @@
 "use client";
+import type { SectionProps } from "../../../types/section";
 import React from 'react';
-import { ServicesData } from './applianceTypes';
-import { ApplianceLink as Link } from "./ApplianceLink";
+import { ServicesData } from "../../../lib/applianceTypes";
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
 import { FaArrowRight } from 'react-icons/fa';
 import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 
@@ -32,11 +33,11 @@ export const ServicesSection = ({ data, hideButton = false, globalUI, editorMode
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
             <h4 className="text-[var(--color-accent)] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {data.subtitle}
             </h4>
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold text-[var(--color-primary)] leading-tight mb-4">
             {data.title1}{' '}
@@ -82,7 +83,7 @@ export const ServicesSection = ({ data, hideButton = false, globalUI, editorMode
           <div className="flex justify-center mt-8 lg:mt-12">
             <Link
               href={data.button.url}
-              className="inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] px-8 py-3.5 rounded-full text-[15px] font-bold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30"
+              className="inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] px-8 py-3.5 rounded-full text-[15px] font-bold text-white transition-all hover:brightness-95 hover:shadow-lg hover:shadow-blue-500/30"
             >
               {data.button.text.replace('->', '').trim()}
               <FaArrowRight className="text-[13px]" />
@@ -94,3 +95,8 @@ export const ServicesSection = ({ data, hideButton = false, globalUI, editorMode
     </section>
   );
 };
+
+export default function ServiceSection1({ data = {}, editorMode }: SectionProps) {
+  return <ServicesSection data={data as never} editorMode={editorMode} />;
+}
+

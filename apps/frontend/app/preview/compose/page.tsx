@@ -13,6 +13,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import { resolveSectionComponent } from "@/app/editor/layout/src/lib/sectionRegistry";
 import {
+  getBuilderTemplate,
   getTemplateVariables,
   refreshCategoryContentFromApi,
   resolveLayoutPreview,
@@ -23,6 +24,7 @@ import {
   type PageLink,
 } from "@/app/editor/layout/src/components/context/PreviewContext";
 import EditorLoadingScreen from "@/app/editor/components/EditorLoadingScreen";
+import { SITE_THEME_GLOBAL_CSS } from "@/app/editor/layout/src/lib/themeTokens";
 
 /**
  * Card thumbnails: slightly shorter hero so Header + Banner + next section fit.
@@ -542,8 +544,30 @@ function ComposeInner() {
             ?.variants || [],
         )
       : sortVariants(parseVariants(searchParams));
-    if (!previewDetail) return pageKeys;
-    const chrome = pageKeys.filter((key) =>
+    const requestedTemplateId = searchParams.get("templateId") || "";
+    const template = requestedTemplateId
+      ? getBuilderTemplate(requestedTemplateId, searchParams.get("category"))
+      : null;
+    const companionTypes =
+      template && template.id === requestedTemplateId
+        ? template.pageCompanions?.[activePageId] || []
+        : [];
+    const withCompanions = (() => {
+      if (!companionTypes.length) return pageKeys;
+      const sectionVariants = template?.sectionVariants || {};
+      const present = new Set(
+        pageKeys.map((key) => key.replace(/-\d+$/, "")),
+      );
+      const extras = companionTypes
+        .map((type) => sectionVariants[type])
+        .filter((key): key is string => Boolean(key) && !present.has(key.replace(/-\d+$/, "")));
+      if (!extras.length) return pageKeys;
+      const footer = pageKeys.filter((key) => /^Footer-\d+$/.test(key));
+      const body = pageKeys.filter((key) => !/^Footer-\d+$/.test(key));
+      return [...body, ...extras, ...footer];
+    })();
+    if (!previewDetail) return withCompanions;
+    const chrome = withCompanions.filter((key) =>
       /^(Topbar|Header|Footer)-\d+$/.test(key),
     );
     const detailKey =
@@ -842,7 +866,13 @@ function ComposeInner() {
   }
 
   const body = (
-    <main className="min-h-dvh bg-white" style={cssVars} data-template-scroll>
+    <main
+      className="min-h-dvh bg-white"
+      style={cssVars}
+      data-template-scroll
+      data-site-theme-root
+    >
+      <style dangerouslySetInnerHTML={{ __html: SITE_THEME_GLOBAL_CSS }} />
       {!showNav && !hideChrome ? (
         <div className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 px-4 py-2 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">

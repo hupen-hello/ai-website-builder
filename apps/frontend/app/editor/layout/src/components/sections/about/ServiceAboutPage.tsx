@@ -1,6 +1,7 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React from 'react';
-import { AboutUsData } from './applianceTypes';
+import { AboutUsData } from "../../../lib/applianceTypes";
 import { FaPhoneAlt } from 'react-icons/fa';
 
 export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsData, hideButton?: boolean }) => {
@@ -15,8 +16,8 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
 
           {/* Subtitle Line */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-[2px] w-8 bg-[#007bff]" />
-            <h4 className="text-[#007bff] font-bold text-[14px] uppercase tracking-wide">
+            <div className="h-[2px] w-8 bg-[var(--color-accent)]" />
+            <h4 className="text-[var(--color-accent)] font-bold text-[14px] uppercase tracking-wide">
               {data.subtitle}
             </h4>
           </div>
@@ -27,7 +28,7 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
           )}
 
           {/* Title */}
-          <h2 className="text-5xl lg:text-6xl font-bold text-[#051838] leading-tight mb-6">
+          <h2 className="text-5xl lg:text-6xl font-bold text-[var(--color-primary)] leading-tight mb-6">
             {data.title1} {data.title2}
           </h2>
 
@@ -40,7 +41,7 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
           <div className="flex flex-col gap-4 mb-10">
             {data.features?.map((feat) => (
               <div key={feat.id} className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-[#007bff] mt-2 shrink-0 shadow-[0_0_8px_rgba(0,123,255,0.5)]"></div>
+                <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] mt-2 shrink-0 shadow-[0_0_8px_rgba(0,123,255,0.5)]"></div>
                 <p className="text-[#1a202c] font-medium text-[15px]">{feat.title}</p>
               </div>
             ))}
@@ -49,8 +50,8 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
           {/* Phone */}
           {data.phone && (
             <div className="flex items-center gap-3">
-              <FaPhoneAlt className="text-[#007bff] text-xl" />
-              <span className="text-[#051838] font-bold text-2xl tracking-wide">
+              <FaPhoneAlt className="text-[var(--color-accent)] text-xl" />
+              <span className="text-[var(--color-primary)] font-bold text-2xl tracking-wide">
                 {data.phone}
               </span>
             </div>
@@ -71,7 +72,7 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
           {/* Floating Badge */}
           {(data.yearsOfService || data.yearsText) && (
             <div className="absolute bottom-4 -left-2 sm:bottom-6 sm:-left-6 lg:-left-8 bg-white rounded-xl sm:rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-4 sm:p-6 px-6 sm:px-8 flex flex-col justify-center border border-gray-50 z-20">
-              <h3 className="text-[#051838] font-extrabold text-[32px] sm:text-[42px] leading-none mb-1">
+              <h3 className="text-[var(--color-primary)] font-extrabold text-[32px] sm:text-[42px] leading-none mb-1">
                 {data.yearsOfService}
               </h3>
               <p className="text-gray-500 font-medium text-[13px] sm:text-[15px]">
@@ -85,3 +86,13 @@ export const AboutFirmSection = ({ data, hideButton = false }: { data?: AboutUsD
     </section>
   );
 };
+
+export default function ServiceAboutPage({ data = {} }: SectionProps) {
+  return (
+    <AboutFirmSection
+      data={data as never}
+      hideButton={Boolean((data as { hideButton?: boolean }).hideButton)}
+    />
+  );
+}
+

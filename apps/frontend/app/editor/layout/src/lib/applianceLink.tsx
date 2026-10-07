@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { useOptionalPreview } from "../../context/PreviewContext";
-import { scrollTemplateToTop } from "../../../lib/previewNav";
+import { useOptionalPreview } from "../components/context/PreviewContext";
+import { scrollTemplateToTop } from "./previewNav";
 
 type PageRule = {
   test: (path: string) => boolean;
@@ -47,6 +47,16 @@ export function useAppliancePathname() {
   return "/";
 }
 
+const editorPageHref = (label: string, fallback: string) => {
+  const slug = label
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  if (!slug || slug === "home") return fallback;
+  return `#page-${slug}`;
+};
+
 export function ApplianceLink({
   href,
   onClick,
@@ -54,14 +64,17 @@ export function ApplianceLink({
   ...rest
 }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
   const preview = useOptionalPreview();
+  const label = applianceHrefToLabel(String(href || ""));
+  const renderedHref =
+    preview && label ? editorPageHref(label, href) : href;
   return (
     <a
-      href={href}
+      href={renderedHref}
       {...rest}
+      data-editor-nav-link={preview ? "true" : undefined}
       onClick={(event) => {
         onClick?.(event);
         if (event.defaultPrevented || !preview) return;
-        const label = applianceHrefToLabel(String(href || ""));
         if (!label) return;
         event.preventDefault();
         preview.setCurrentPage(label);

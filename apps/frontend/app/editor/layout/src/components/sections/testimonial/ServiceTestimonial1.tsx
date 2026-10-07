@@ -1,6 +1,7 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React, { useRef, useState } from 'react';
-import { TestimonialsData } from './applianceTypes';
+import { TestimonialsData } from "../../../lib/applianceTypes";
 import { FaChevronLeft, FaChevronRight, FaStar, FaMapMarkerAlt, FaQuoteRight } from 'react-icons/fa';
 
 export const TestimonialSection = ({ data }: { data?: TestimonialsData }) => {
@@ -71,11 +72,11 @@ export const TestimonialSection = ({ data }: { data?: TestimonialsData }) => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
             <h4 className="text-[var(--color-accent)] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {data.subtitle}
             </h4>
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold text-[var(--color-primary)] leading-tight mb-4">
             {data.title1} <span className="text-[var(--color-accent)]">{data.title2}</span>
@@ -91,14 +92,14 @@ export const TestimonialSection = ({ data }: { data?: TestimonialsData }) => {
           {/* Side Arrows */}
           <button
             onClick={scrollLeft}
-            className="flex absolute left-[-45px] md:left-[-70px] lg:left-[-80px] top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--color-accent)] text-white items-center justify-center shadow-lg hover:bg-blue-600 transition-colors z-20"
+            className="flex absolute left-[-45px] md:left-[-70px] lg:left-[-80px] top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--color-accent)] text-white items-center justify-center shadow-lg hover:brightness-95 transition-colors z-20"
           >
             <FaChevronLeft />
           </button>
 
           <button
             onClick={scrollRight}
-            className="flex absolute right-[-45px] md:right-[-70px] lg:right-[-80px] top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--color-accent)] text-white items-center justify-center shadow-lg hover:bg-blue-600 transition-colors z-20"
+            className="flex absolute right-[-45px] md:right-[-70px] lg:right-[-80px] top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--color-accent)] text-white items-center justify-center shadow-lg hover:brightness-95 transition-colors z-20"
           >
             <FaChevronRight />
           </button>
@@ -165,3 +166,8 @@ export const TestimonialSection = ({ data }: { data?: TestimonialsData }) => {
     </section>
   );
 };
+
+export default function ServiceTestimonial1({ data = {} }: SectionProps) {
+  return <TestimonialSection data={data as never} />;
+}
+

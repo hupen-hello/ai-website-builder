@@ -1161,6 +1161,7 @@ const TemplatesPage = () => {
   const buildComposeUrl = (
     variants: Record<string, string> | undefined,
     categoryName?: string,
+    templateId?: string,
   ) => {
     const selected = variants || {};
     const keys = Object.values(selected).filter(Boolean) as string[];
@@ -1174,6 +1175,7 @@ const TemplatesPage = () => {
         categoryNames[0] ||
         "Business",
     );
+    if (templateId) qs.set("templateId", templateId);
     qs.set("chrome", "0");
     return `${FRONTEND_URL}/preview/compose?${qs.toString()}`;
   };
@@ -1230,11 +1232,12 @@ const TemplatesPage = () => {
         undefined,
         template.homeSectionOrder,
       );
-      return buildComposeUrl(homeOnly, category);
+      return buildComposeUrl(homeOnly, category, template.key);
     }
 
     const qs = new URLSearchParams();
     qs.set("category", category);
+    qs.set("templateId", template.key);
     qs.set("nav", "1");
     qs.set("page", options?.pageId || "home");
 
@@ -1307,6 +1310,7 @@ const TemplatesPage = () => {
           builderData.homeSectionOrder,
         ),
         builderCategoryName,
+        builderData.key,
       );
       return url ? `${url}&${tick}` : null;
     }
@@ -1341,6 +1345,7 @@ const TemplatesPage = () => {
         pageLayout,
       ),
       builderCategoryName,
+      builderData.key,
     );
     if (!url) return null;
     const title = encodeURIComponent(page.label || page.id);

@@ -1028,8 +1028,12 @@ export default function EditableSection({
 
   const canShowGoToIcon = (element: HTMLElement | null) => {
     if (!element) return false;
-    if (isChromeSection(label)) return Boolean(findClosestHref(element));
-    return isButtonLikeHost(element) && Boolean(findClosestHref(element));
+    if (!findClosestHref(element)) return false;
+    if (element.closest("[data-editor-nav-link]")) return true;
+    if (isChromeSection(label) || isChromeSection(sectionType || "")) {
+      return true;
+    }
+    return isButtonLikeHost(element);
   };
 
   const goToResolvedLink = (target: HoveredLinkNav) => {

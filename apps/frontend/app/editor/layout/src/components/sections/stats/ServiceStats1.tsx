@@ -1,6 +1,7 @@
 "use client";
+import type { SectionProps } from "../../../types/section";
 import React from 'react';
-import { AchievementData } from './applianceTypes';
+import { AchievementData } from "../../../lib/applianceTypes";
 import { FaUsers, FaAward, FaHardHat, FaHome, FaSnowflake } from 'react-icons/fa';
 
 const renderIcon = (iconName: string) => {
@@ -33,11 +34,11 @@ export const AchievementSection = ({ data }: { data?: AchievementData }) => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
             <h4 className="text-[var(--color-accent)] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {data.subtitle}
             </h4>
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold text-[var(--color-primary)] leading-tight mb-4">
             {data.title1} <span className="text-[var(--color-accent)]">{data.title2}</span> {data.title3}
@@ -60,7 +61,7 @@ export const AchievementSection = ({ data }: { data?: AchievementData }) => {
               <p className="text-[var(--color-primary)] font-bold text-[14px] sm:text-[15px]">
                 {item.label}
               </p>
-              <div className="h-[2px] w-8 bg-[#70b5f9] mt-4" />
+              <div className="h-[2px] w-8 bg-[var(--color-accent-light)] mt-4" />
             </div>
           ))}
         </div>
@@ -69,3 +70,8 @@ export const AchievementSection = ({ data }: { data?: AchievementData }) => {
     </section>
   );
 };
+
+export default function ServiceStats1({ data = {} }: SectionProps) {
+  return <AchievementSection data={data as never} />;
+}
+

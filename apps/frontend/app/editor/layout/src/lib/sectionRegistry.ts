@@ -264,27 +264,26 @@ import EventLegalPage from "../components/sections/legal/EventLegalPage";
 import EventSitemapPage from "../components/sections/sitemap/EventSitemapPage";
 import EventErrorPage from "../components/sections/error/EventErrorPage";
 import EventStats from "../components/sections/stats/EventStats";
-import ServiceHeader10, {
-  ServiceFooter10,
-  ServiceBreadcrumb10,
-  ServiceBanner10,
-  ServiceAbout10,
-  ServiceAboutPage10,
-  ServiceProduct10,
-  ServicePage10,
-  ServiceDetail10,
-  ServiceStats10,
-  ServiceBlog10,
-  ServiceBlogPage10,
-  ServiceBlogDetail10,
-  ServiceTestimonial10,
-  ServiceTeam10,
-  ServiceFaq10,
-  ServiceGalleryPage10,
-  ServiceContactPage10,
-  ServiceEnquiryPage10,
-  ServiceErrorPage10,
-} from "../components/sections/appliance";
+import ServiceHeader1 from "../components/sections/header/ServiceHeader1";
+import ServiceFooter1 from "../components/sections/footer/ServiceFooter1";
+import ServiceBreadcrumb1 from "../components/sections/breadcrumb/ServiceBreadcrumb1";
+import ServiceBanner1 from "../components/sections/banner/ServiceBanner1";
+import ServiceAbout1 from "../components/sections/about/ServiceAbout1";
+import ServiceAboutPage from "../components/sections/about/ServiceAboutPage";
+import ServiceSection1 from "../components/sections/service/ServiceSection1";
+import ServiceListPage from "../components/sections/service/ServiceListPage";
+import ServiceDetailPage from "../components/sections/service/ServiceDetailPage";
+import ServiceStats1 from "../components/sections/stats/ServiceStats1";
+import ServiceBlogSection from "../components/sections/blog/ServiceBlogSection";
+import ServiceBlogPage from "../components/sections/blog/ServiceBlogPage";
+import ServiceBlogDetail from "../components/sections/blog/ServiceBlogDetail";
+import ServiceTestimonial1 from "../components/sections/testimonial/ServiceTestimonial1";
+import ServiceTeam1 from "../components/sections/team/ServiceTeam1";
+import ServiceFaq1 from "../components/sections/faq/ServiceFaq1";
+import ServiceGalleryPage from "../components/sections/gallery/ServiceGalleryPage";
+import ServiceContactPage from "../components/sections/contact/ServiceContactPage";
+import ServiceEnquiryPage from "../components/sections/enquiry/ServiceEnquiryPage";
+import ServiceErrorPage from "../components/sections/error/ServiceErrorPage";
 
 const asSection = (component: unknown) =>
   component as ComponentType<SectionProps>;
@@ -583,26 +582,26 @@ export const sectionRegistry: Record<string, ComponentType<SectionProps>> = {
   "SitemapPage-9": asSection(EventSitemapPage),
   "ErrorPage-9": asSection(EventErrorPage),
 
-  "Header-10": asSection(ServiceHeader10),
-  "Banner-10": asSection(ServiceBanner10),
-  "About-10": asSection(ServiceAbout10),
-  "Product-10": asSection(ServiceProduct10),
-  "Stats-10": asSection(ServiceStats10),
-  "Blog-10": asSection(ServiceBlog10),
-  "Testimonial-10": asSection(ServiceTestimonial10),
-  "Footer-10": asSection(ServiceFooter10),
-  "Breadcrumb-10": asSection(ServiceBreadcrumb10),
-  "AboutPage-10": asSection(ServiceAboutPage10),
-  "Team-10": asSection(ServiceTeam10),
-  "FAQ-10": asSection(ServiceFaq10),
-  "ServicePage-10": asSection(ServicePage10),
-  "ServiceDetail-10": asSection(ServiceDetail10),
-  "GalleryPage-10": asSection(ServiceGalleryPage10),
-  "BlogPage-10": asSection(ServiceBlogPage10),
-  "BlogDetail-10": asSection(ServiceBlogDetail10),
-  "ContactPage-10": asSection(ServiceContactPage10),
-  "EnquiryPage-10": asSection(ServiceEnquiryPage10),
-  "ErrorPage-10": asSection(ServiceErrorPage10),
+  "Header-10": asSection(ServiceHeader1),
+  "Banner-10": asSection(ServiceBanner1),
+  "About-10": asSection(ServiceAbout1),
+  "Product-10": asSection(ServiceSection1),
+  "Stats-10": asSection(ServiceStats1),
+  "Blog-10": asSection(ServiceBlogSection),
+  "Testimonial-10": asSection(ServiceTestimonial1),
+  "Footer-10": asSection(ServiceFooter1),
+  "Breadcrumb-10": asSection(ServiceBreadcrumb1),
+  "AboutPage-10": asSection(ServiceAboutPage),
+  "Team-10": asSection(ServiceTeam1),
+  "FAQ-10": asSection(ServiceFaq1),
+  "ServicePage-10": asSection(ServiceListPage),
+  "ServiceDetail-10": asSection(ServiceDetailPage),
+  "GalleryPage-10": asSection(ServiceGalleryPage),
+  "BlogPage-10": asSection(ServiceBlogPage),
+  "BlogDetail-10": asSection(ServiceBlogDetail),
+  "ContactPage-10": asSection(ServiceContactPage),
+  "EnquiryPage-10": asSection(ServiceEnquiryPage),
+  "ErrorPage-10": asSection(ServiceErrorPage),
  };
 
 /** Realestate template-4 skins. Global *-4 keys stay generic for Business/School. */

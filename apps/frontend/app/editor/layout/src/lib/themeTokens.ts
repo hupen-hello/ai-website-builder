@@ -59,6 +59,9 @@ export const SITE_THEME_GLOBAL_CSS = `
 [data-site-theme-root] {
   font-family: var(--font-body);
   color: var(--secondary-text);
+  --color-primary: var(--header-bg, #051c4a) !important;
+  --color-accent: var(--primary-bg, #007bff) !important;
+  --color-accent-light: color-mix(in srgb, var(--primary-bg, #007bff) 55%, white) !important;
 }
 [data-site-theme-root] h1,
 [data-site-theme-root] h2,

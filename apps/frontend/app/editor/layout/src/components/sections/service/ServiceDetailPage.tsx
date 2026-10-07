@@ -1,7 +1,8 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React from 'react';
-import { ServiceDetailData } from './applianceTypes';
-import { ApplianceLink as Link } from "./ApplianceLink";
+import { ServiceDetailData } from "../../../lib/applianceTypes";
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
 import { FaAngleRight, FaPhoneAlt, FaCheck, FaCog, FaShieldAlt, FaBolt, FaWallet } from 'react-icons/fa';
 
 const renderIcon = (iconName: string) => {
@@ -45,8 +46,8 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
               </div>
             ) : null}
 
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#051838] leading-tight tracking-tight mt-4">
-              {data.title1} <span className="text-[#007bff]">{data.title2}</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary)] leading-tight tracking-tight mt-4">
+              {data.title1} <span className="text-[var(--color-accent)]">{data.title2}</span>
             </h2>
 
             <div className="flex flex-col gap-4 text-[#4a5568] text-[15px] sm:text-[16px] leading-relaxed">
@@ -63,11 +64,11 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
                 {data.features?.map((feat, i) => (
                   <div key={feat.id} className={`flex items-start gap-4 ${i !== 0 ? 'pt-4 sm:pt-0 sm:pl-4 lg:pl-6' : ''}`}>
-                    <div className="w-12 h-12 rounded-full bg-[#007bff] flex items-center justify-center text-white text-xl flex-shrink-0 shadow-lg shadow-blue-500/30">
+                    <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-xl flex-shrink-0 shadow-lg shadow-blue-500/30">
                       {renderIcon(feat.icon || '')}
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#051838] text-[15px] mb-1 leading-snug">
+                      <h4 className="font-bold text-[var(--color-primary)] text-[15px] mb-1 leading-snug">
                         {feat.title}
                       </h4>
                       <p className="text-gray-500 text-[13px] leading-tight">
@@ -81,8 +82,8 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
 
             {data.typesTitle1 && data.types && (
               <>
-                <h3 className="text-3xl md:text-[34px] font-extrabold text-[#051838] mt-4 mb-6">
-                  {data.typesTitle1} <span className="text-[#007bff]">{data.typesTitle2}</span>
+                <h3 className="text-3xl md:text-[34px] font-extrabold text-[var(--color-primary)] mt-4 mb-6">
+                  {data.typesTitle1} <span className="text-[var(--color-accent)]">{data.typesTitle2}</span>
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -92,7 +93,7 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
                         <img src={type.image} alt={type.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="p-6 text-center">
-                        <h4 className="font-bold text-[#051838] text-[18px] mb-2">{type.title}</h4>
+                        <h4 className="font-bold text-[var(--color-primary)] text-[18px] mb-2">{type.title}</h4>
                         <p className="text-gray-500 text-[14px] leading-relaxed">{type.description}</p>
                       </div>
                     </div>
@@ -103,17 +104,17 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
 
             {data.processTitle && data.processSteps && (
               <>
-                <h3 className="text-3xl md:text-[34px] font-extrabold text-[#051838] mt-4 mb-6">
+                <h3 className="text-3xl md:text-[34px] font-extrabold text-[var(--color-primary)] mt-4 mb-6">
                   {data.processTitle}
                 </h3>
                 <div className="flex flex-col gap-6">
                   {data.processSteps.map((step) => (
                     <div key={step.id} className="flex items-start gap-5 bg-[#f4f7fb] p-6 rounded-[16px]">
-                      <div className="w-14 h-14 rounded-full bg-[#007bff] text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
                         {step.number}
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#051838] text-[18px] mb-2">{step.title}</h4>
+                        <h4 className="font-bold text-[var(--color-primary)] text-[18px] mb-2">{step.title}</h4>
                         <p className="text-gray-500 text-[14px] leading-relaxed">{step.description}</p>
                       </div>
                     </div>
@@ -124,13 +125,13 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
 
             {data.faqTitle && data.faqs && (
               <>
-                <h3 className="text-3xl md:text-[34px] font-extrabold text-[#051838] mt-10 mb-6">
+                <h3 className="text-3xl md:text-[34px] font-extrabold text-[var(--color-primary)] mt-10 mb-6">
                   {data.faqTitle}
                 </h3>
                 <div className="flex flex-col gap-4">
                   {data.faqs.map((faq) => (
                     <div key={faq.id} className="border border-gray-200 rounded-[12px] p-5">
-                      <h4 className="font-bold text-[#051838] text-[16px] mb-2">{faq.question}</h4>
+                      <h4 className="font-bold text-[var(--color-primary)] text-[16px] mb-2">{faq.question}</h4>
                       <p className="text-gray-500 text-[14px] leading-relaxed">{faq.answer}</p>
                     </div>
                   ))}
@@ -142,28 +143,28 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
           {/* Right Sidebar */}
           <div className="w-full lg:w-[35%] flex flex-col gap-8 sticky top-8">
             <div>
-              <h3 className="text-2xl font-extrabold text-[#051838] mb-6">
+              <h3 className="text-2xl font-extrabold text-[var(--color-primary)] mb-6">
                 {data.sidebar?.servicesTitle || 'Our Services'}
               </h3>
               <div className="flex flex-col gap-3">
                 {data.sidebar.servicesList.map((srv: any) => (
-                  <Link key={srv.id} href={srv.url} className="flex items-center justify-between p-3 pl-4 pr-5 rounded-[12px] bg-[#f4f7fb] hover:bg-[#007bff] hover:text-white transition-all duration-300 group">
+                  <Link key={srv.id} href={srv.url} className="flex items-center justify-between p-3 pl-4 pr-5 rounded-[12px] bg-[#f4f7fb] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300 group">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-10 rounded-md overflow-hidden bg-white">
                         <img src={srv.image} alt={srv.title} className="w-full h-full object-cover" />
                       </div>
-                      <span className="font-bold text-[15px] text-[#051838] group-hover:text-white transition-colors">
+                      <span className="font-bold text-[15px] text-[var(--color-primary)] group-hover:text-white transition-colors">
                         {srv.title}
                       </span>
                     </div>
-                    <FaAngleRight className="text-[#007bff] group-hover:text-white transition-colors text-lg" />
+                    <FaAngleRight className="text-[var(--color-accent)] group-hover:text-white transition-colors text-lg" />
                   </Link>
                 ))}
               </div>
             </div>
 
             {data.sidebar?.helpBox && (
-            <div className="bg-[#0042a4] rounded-[20px] p-8 relative overflow-hidden text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="bg-[var(--color-primary)] rounded-[20px] p-8 relative overflow-hidden text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="relative z-10 w-full lg:w-[60%] flex flex-col items-start">
                 <h3 className="text-2xl font-bold mb-3 leading-tight text-white">
                   {data.sidebar.helpBox.title}
@@ -172,7 +173,7 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
                   {data.sidebar.helpBox.description}
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#007bff] flex items-center justify-center text-white text-xl flex-shrink-0 shadow-lg shadow-blue-500/30">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-xl flex-shrink-0 shadow-lg shadow-blue-500/30">
                     <FaPhoneAlt className="text-lg" />
                   </div>
                   <div>
@@ -193,13 +194,13 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
 
             {data.sidebar?.whyChooseUs && (
             <div className="bg-[#f4f7fb] rounded-[20px] p-8 shadow-sm">
-              <h3 className="text-2xl font-extrabold text-[#051838] mb-6">
+              <h3 className="text-2xl font-extrabold text-[var(--color-primary)] mb-6">
                 {data.sidebar.whyChooseUs.title}
               </h3>
               <ul className="flex flex-col gap-4">
                 {data.sidebar.whyChooseUs.list.map((item: any, i: number) => (
                   <li key={i} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#007bff] flex items-center justify-center text-white text-xs shrink-0 shadow-sm">
+                    <div className="w-6 h-6 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-xs shrink-0 shadow-sm">
                       <FaCheck />
                     </div>
                     <span className="text-[#4a5568] font-medium text-[15px]">{item}</span>
@@ -215,3 +216,8 @@ export const ServiceDetailSection = ({ data }: { data?: ServiceDetailData }) => 
     </section>
   );
 };
+
+export default function ServiceDetailPage({ data = {} }: SectionProps) {
+  return <ServiceDetailSection data={data as never} />;
+}
+

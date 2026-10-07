@@ -1,3 +1,7 @@
+// One-off import. Do not run again.
+// Service components live in the existing section folders
+// (header/ServiceHeader1.tsx, about/ServiceAboutPage.tsx, blog/ServiceBlogSection.tsx, …).
+// See docs/any-template-playbook.md. Do not recreate sections/appliance.
 import fs from "fs";
 import path from "path";
 

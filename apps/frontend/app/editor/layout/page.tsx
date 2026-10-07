@@ -1877,7 +1877,7 @@ const alignTemplatePageSections = (
         ];
   const breadcrumbVariant =
     template.sectionVariants.Breadcrumb || "Breadcrumb-1";
-  return syncHomeCardsIntoManagers(ensureUniqueSectionIds(bodiesWithMissing.flatMap((section) => {
+  const withPageChrome = bodiesWithMissing.flatMap((section) => {
     const pageDefinition = pageDefinitions.find(
       (pageDefinition) =>
         pageDefinition.id !== "home" &&
@@ -2189,25 +2189,35 @@ const alignTemplatePageSections = (
           ? savedAboutStatsData.stats
           : undefined) ||
         (Array.isArray(pageBodyData.stats) ? pageBodyData.stats : undefined);
-      attached.push({
-        id: savedAboutStats?.id || `Stats-${pageDefinition.id}`,
-        page: pageDefinition.id,
-        type: "Stats",
-        variant: aboutStatsVariant,
-        data: {
-          ...(savedAboutStats?.data || {}),
-          [aboutStatsVariant]: {
-            ...mergeSectionContent(
-              aboutStatsPreview as Record<string, unknown>,
-              savedAboutStatsData as Record<string, unknown>,
-            ),
-            ...(aboutStats ? { stats: aboutStats } : {}),
-            statsStyle:
-              (savedAboutStatsData.statsStyle as string | undefined) ||
-              "light",
+      const pageAlreadyHasStats =
+        companionTypes.includes("Stats") ||
+        attached.some((item) => item.type === "Stats") ||
+        bodiesWithMissing.some(
+          (item) =>
+            item.type === "Stats" &&
+            normalizePageSlug(item.page || "") === pageSlug,
+        );
+      if (!pageAlreadyHasStats) {
+        attached.push({
+          id: savedAboutStats?.id || `Stats-${pageDefinition.id}`,
+          page: pageDefinition.id,
+          type: "Stats",
+          variant: aboutStatsVariant,
+          data: {
+            ...(savedAboutStats?.data || {}),
+            [aboutStatsVariant]: {
+              ...mergeSectionContent(
+                aboutStatsPreview as Record<string, unknown>,
+                savedAboutStatsData as Record<string, unknown>,
+              ),
+              ...(aboutStats ? { stats: aboutStats } : {}),
+              statsStyle:
+                (savedAboutStatsData.statsStyle as string | undefined) ||
+                "light",
+            },
           },
-        },
-      });
+        });
+      }
 
       const savedAboutCta = savedAboutCtaByPage.get(
         normalizePageSlug(pageDefinition.id),
@@ -2263,7 +2273,18 @@ const alignTemplatePageSections = (
       });
     }
     return attached;
-  })));
+  });
+
+  const seenPageStats = new Set<string>();
+  const withoutDuplicateStats = withPageChrome.filter((section) => {
+    if (section.type !== "Stats" || !section.page) return true;
+    const key = `${normalizePageSlug(section.page)}:${section.variant}`;
+    if (seenPageStats.has(key)) return false;
+    seenPageStats.add(key);
+    return true;
+  });
+
+  return syncHomeCardsIntoManagers(ensureUniqueSectionIds(withoutDuplicateStats));
 };
 
 const ensureMissingAboutPageCompanions = (

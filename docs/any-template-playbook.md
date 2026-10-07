@@ -106,6 +106,19 @@ For a multiple-page template:
 
 After save, open the template preview from the admin card. You should see this theme’s sections, not another category’s header. Then do the editor steps below in the frontend.
 
+The admin preview URL must include `templateId` (the template key, for example `template-service-1`) and `category`. Without `templateId`, compose loads another template’s colors. The logo panel, buttons, and accent text then look like a different site. The preview root also needs `data-site-theme-root` so the same theme stylesheet the editor uses is applied.
+
+### Theme colors
+
+The theme panel writes `--primary-bg`, `--header-bg`, `--hero-bg`, `--blue-bg`, `--primary-link-bg`, and the other tokens in `EditorThemePanels`. It does not write a private name such as `--color-accent`.
+
+Point this theme’s brand colors at those tokens:
+
+- Dark brand (logo panel, headings): `--color-primary: var(--header-bg)`
+- Accent (buttons, highlights, active menu): `--color-accent: var(--primary-bg)`
+
+Set the template’s default `--header-bg` and `--primary-bg` to the design’s real colors. A hardcoded `#007bff` or `#051838` in a class does not change when the user picks Sunset, Ocean, or any other preset. Use the variables above instead.
+
 ---
 
 ## Step 1 — Register only this theme
@@ -115,6 +128,22 @@ After save, open the template preview from the admin card. You should see this t
 3. Register those variants in `apps/frontend/app/editor/layout/src/lib/sectionRegistry.ts`.
 4. One component file per theme. A new Business header does not go inside `EventHeader.tsx`.
 5. Every inner page gets its own slug. A content page is not the manager hash (`#page-teams`, `#page-blogs`, and the rest).
+
+### Where the component files go
+
+Do not make a new folder named after the theme (`appliance/`, `hvac/`, or similar). The section folders already exist. Put this theme’s file in the folder that matches the section.
+
+| What it is | File |
+| --- | --- |
+| Home about block | `about/ServiceAbout1.tsx` |
+| About page body | `about/ServiceAboutPage.tsx` |
+| Home blog block | `blog/ServiceBlogSection.tsx` |
+| Blog page | `blog/ServiceBlogPage.tsx` |
+| Blog detail page | `blog/ServiceBlogDetail.tsx` |
+
+Use the same pattern for header, banner, footer, breadcrumb, service, gallery, contact, team, faq, and the rest. The `1` is this template’s own number. A page file sits in that same section folder (`ServiceAboutPage.tsx` inside `about/`). If that filename already belongs to another theme, pick a new name (`ServiceListPage.tsx`) and do not overwrite the existing file. Shared helpers (link component, types) go in `src/lib/`, not in a theme folder.
+
+The registry key can use a different free suffix so it does not collide with another category. Example: file `header/ServiceHeader1.tsx`, registry key `Header-10`.
 
 ### Slugs
 
@@ -137,6 +166,8 @@ Build this theme’s own nav resolver and header component. Copy the rules, not 
 5. Close that JSX ternary with `: null`. Closing it with `)}` is a parse error (`Expected '</', got '}'`).
 6. Do not put detail-only links in the menu (team detail, blog detail, `/blog/123`) unless the design shows them.
 7. Clicking a menu item opens that item’s page. It does not open Home, and it does not open the manager hash for a different page.
+8. The section wrapper already has the class `group`. Each menu item must use a named group: `group/nav` on the item, and `group-hover/nav:` on its dropdown. An unnamed `group-hover` opens every dropdown in the header at the same time.
+9. In the editor, a menu link’s `href` must be that page’s hash (`#page-about-us`), not only a site path like `/about`. The hash is what the go-to icon matches. Put `data-editor-nav-link` on those anchors so the icon shows on Home when the pointer is on About Us, Gallery, Contact, and the other real page links.
 
 ---
 
@@ -238,14 +269,16 @@ Use the editor. A screenshot is not enough. Then open one template in a differen
 
 1. In admin, the category is Active, every layout key for this theme is Active, and the template is Active on exactly that one category.
 2. The template preview in admin shows this theme’s sections. A layout card is not blank.
-3. Header arrows only on items that have children.
-4. Each menu item opens its own page. None of them reset the canvas to Home.
-5. Detail links you removed are not in the menu.
-6. For each manager this theme uses: Home is column 2, the control is the Active / Inactive badge, Category and Order do not overlap.
-7. Home set to Inactive hides that card on the home section and leaves it on its own page.
-8. Click one card of each manager this theme uses. The Edit modal opens for that item. A working blog card was not rewritten.
-9. The blue inline box does not appear on those cards. It can still appear on the section heading.
-10. The breadcrumb editor fields match the banner on that page.
-11. Another category’s template still opens with its own header and its own breadcrumb fields. Its admin layouts were not edited.
+3. Header arrows only on items that have children. Hovering one item opens only that item’s dropdown.
+4. Each menu item opens its own page. None of them reset the canvas to Home. On Home, hovering a real page link (About Us, Gallery, Contact) shows the go-to icon.
+5. Changing the theme preset changes this template’s brand colors (logo panel, buttons, headings, accents).
+6. Detail links you removed are not in the menu.
+7. For each manager this theme uses: Home is column 2, the control is the Active / Inactive badge, Category and Order do not overlap.
+8. Home set to Inactive hides that card on the home section and leaves it on its own page.
+9. Click one card of each manager this theme uses. The Edit modal opens for that item. A working blog card was not rewritten.
+10. The blue inline box does not appear on those cards. It can still appear on the section heading.
+11. The breadcrumb editor fields match the banner on that page.
+12. Another category’s template still opens with its own header and its own breadcrumb fields. Its admin layouts were not edited.
+13. The admin template card matches the editor: same logo panel, same header, same hero button colors.
 
 If a card click does nothing, check in this order: `editorMode` is forwarded, the card has the empty full-card hit target and `data-editor-no-inline`, and the manager does not clear the session key before the item is found.

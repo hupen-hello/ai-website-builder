@@ -1,9 +1,10 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 
 import React, { useState } from 'react';
-import { BlogsData } from './applianceTypes';
+import { BlogsData } from "../../../lib/applianceTypes";
 import { FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
-import { ApplianceLink as Link } from "./ApplianceLink";
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
 import { handleManagerCardClick } from "../../../lib/editorManagerCards";
 
 export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data?: BlogsData, isListingPage?: boolean, editorMode?: boolean }) => {
@@ -33,11 +34,11 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
             <h4 className="text-[var(--color-accent)] font-bold text-xs sm:text-sm tracking-widest uppercase">
               {data.subtitle}
             </h4>
-            <div className="w-12 h-[2px] bg-[#70b5f9]" />
+            <div className="w-12 h-[2px] bg-[var(--color-accent-light)]" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold text-[var(--color-primary)] leading-tight mb-4">
             {data.title1} <span className="text-[var(--color-accent)]">{data.title2}</span>
@@ -79,7 +80,7 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* Category Badge over image */}
-                  <div className="absolute top-4 left-4 bg-[#007bff] text-white px-3 py-1.5 rounded-full shadow-md text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 z-10">
+                  <div className="absolute top-4 left-4 bg-[var(--color-accent)] text-white px-3 py-1.5 rounded-full shadow-md text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 z-10">
                     <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="12px" width="12px" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
                     {blog.category}
                   </div>
@@ -89,12 +90,12 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
               {/* Content Area */}
               <div className="p-6 md:p-8 pt-5 flex flex-col flex-grow bg-white relative z-10">
                 <div className="flex items-center gap-2 text-gray-400 text-[13px] font-medium mb-3">
-                  <FaCalendarAlt className="text-[#007bff]" />
+                  <FaCalendarAlt className="text-[var(--color-accent)]" />
                   <span>{blog.date}</span>
                 </div>
                 
-                <Link href={blog.url} className="group-hover:text-[#007bff] transition-colors duration-300">
-                  <h3 className="text-[19px] font-extrabold text-[#051838] leading-snug mb-3 line-clamp-2">
+                <Link href={blog.url} className="group-hover:text-[var(--color-accent)] transition-colors duration-300">
+                  <h3 className="text-[19px] font-extrabold text-[var(--color-primary)] leading-snug mb-3 line-clamp-2">
                     {blog.title}
                   </h3>
                 </Link>
@@ -105,7 +106,7 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
                 
                 <Link
                   href={blog.url}
-                  className="text-[#007bff] font-bold text-[14px] flex items-center gap-2 mt-auto w-fit group/link"
+                  className="text-[var(--color-accent)] font-bold text-[14px] flex items-center gap-2 mt-auto w-fit group/link"
                 >
                   Read More
                   <FaArrowRight className="text-[12px] group-hover/link:translate-x-1 transition-transform" />
@@ -120,7 +121,7 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
           <div className="mt-12 flex justify-center">
             <Link
               href={data.button.url}
-              className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-blue-600 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:brightness-95 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
             >
               {data.button.text.replace('->', '').trim()}
               <FaArrowRight className="text-[13px]" />
@@ -133,7 +134,7 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
           <div className="mt-12 flex justify-center">
             <button
               onClick={handleLoadMore}
-              className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-blue-600 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:brightness-95 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
             >
               Load More
               <FaArrowRight className="text-[13px]" />
@@ -145,3 +146,8 @@ export const BlogsSection = ({ data, isListingPage = false, editorMode }: { data
     </section>
   );
 };
+
+export default function ServiceBlogSection({ data = {}, editorMode }: SectionProps) {
+  return <BlogsSection data={data as never} editorMode={editorMode} />;
+}
+

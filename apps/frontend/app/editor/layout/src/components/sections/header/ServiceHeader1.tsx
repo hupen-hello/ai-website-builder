@@ -1,8 +1,9 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React, { useState } from 'react';
-import { ApplianceLink as Link } from "./ApplianceLink";
-import { useAppliancePathname as usePathname } from "./ApplianceLink";
-import { HeaderData } from './applianceTypes';
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
+import { useAppliancePathname as usePathname } from "../../../lib/applianceLink";
+import { HeaderData } from "../../../lib/applianceTypes";
 import { FaArrowRight, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { FiPhoneCall } from 'react-icons/fi';
 
@@ -46,7 +47,7 @@ export const Header = ({ data }: { data?: HeaderData }) => {
             {navLinks.map((link) => {
               const hasDropdown = link.subLinks && link.subLinks.length > 0;
               return (
-                <div key={link.id} className="relative group py-6">
+                <div key={link.id} className="relative group/nav py-6">
                   {hasDropdown ? (
                     <div 
                       className={`relative flex items-center gap-1.5 py-1 text-[15px] font-bold tracking-wide transition-colors cursor-default ${
@@ -56,7 +57,7 @@ export const Header = ({ data }: { data?: HeaderData }) => {
                       }`}
                     >
                       {link.label}
-                      <FaChevronDown className="text-[10px] transition-transform duration-300 group-hover:rotate-180" />
+                      <FaChevronDown className="text-[10px] transition-transform duration-300 group-hover/nav:rotate-180" />
                     </div>
                   ) : (
                     <Link 
@@ -73,7 +74,7 @@ export const Header = ({ data }: { data?: HeaderData }) => {
 
                   {/* Dropdown Menu */}
                   {hasDropdown && (
-                    <div className="absolute top-full left-0 mt-0 w-[220px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] rounded-b-lg border-t-[3px] border-[var(--color-accent)] opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                    <div className="absolute top-full left-0 mt-0 w-[220px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] rounded-b-lg border-t-[3px] border-[var(--color-accent)] opacity-0 invisible translate-y-4 group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 transition-all duration-300 z-50">
                       <ul className="flex flex-col py-2">
                         {link.subLinks!.map((subLink) => (
                           <li key={subLink.id}>
@@ -100,7 +101,7 @@ export const Header = ({ data }: { data?: HeaderData }) => {
             {data.contactButton && (
               <Link 
                 href={data.contactButton.url} 
-                className="flex items-center justify-center gap-3 bg-[var(--color-accent)] pl-2 pr-5 py-2 rounded-full text-[15px] font-bold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30"
+                className="flex items-center justify-center gap-3 bg-[var(--color-accent)] pl-2 pr-5 py-2 rounded-full text-[15px] font-bold text-white transition-all hover:brightness-95 hover:shadow-lg hover:shadow-blue-500/30"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[var(--color-accent)]">
                   <FiPhoneCall className="text-[16px]" />
@@ -176,3 +177,8 @@ export const Header = ({ data }: { data?: HeaderData }) => {
     </header>
   );
 };
+
+export default function ServiceHeader1({ data = {} }: SectionProps) {
+  return <Header data={data as never} />;
+}
+

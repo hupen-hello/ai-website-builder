@@ -1,7 +1,8 @@
 "use client";
+import type { SectionProps } from "../../../types/section";
 import React from 'react';
-import { HeroData } from './applianceTypes';
-import { ApplianceLink as Link } from "./ApplianceLink";
+import { HeroData } from "../../../lib/applianceTypes";
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
 import { FaArrowRight } from 'react-icons/fa';
 
 export const HeroSection = ({ data }: { data?: HeroData }) => {
@@ -47,7 +48,7 @@ export const HeroSection = ({ data }: { data?: HeroData }) => {
           {data.button && (
             <Link
               href={data.button.url}
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-accent)] px-8 py-3.5 text-[15px] font-bold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-accent)] px-8 py-3.5 text-[15px] font-bold text-white transition-all hover:brightness-95 hover:shadow-lg hover:shadow-blue-500/30"
             >
               {data.button.text}
               <FaArrowRight className="text-sm" />
@@ -59,3 +60,8 @@ export const HeroSection = ({ data }: { data?: HeroData }) => {
     </section>
   );
 };
+
+export default function ServiceBanner1({ data = {} }: SectionProps) {
+  return <HeroSection data={data as never} />;
+}
+

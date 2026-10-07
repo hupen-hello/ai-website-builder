@@ -1,7 +1,8 @@
 "use client";
+import type { SectionProps } from "../../../types/section";
 
 import React from 'react';
-import { EnquiryData } from './applianceTypes';
+import { EnquiryData } from "../../../lib/applianceTypes";
 import { FiArrowRight, FiCalendar } from 'react-icons/fi';
 
 export const EnquirySection = ({ data, globalUI }: { data?: EnquiryData, globalUI?: Record<string, string> }) => {
@@ -119,3 +120,8 @@ export const EnquirySection = ({ data, globalUI }: { data?: EnquiryData, globalU
     </section>
   );
 };
+
+export default function ServiceEnquiryPage({ data = {} }: SectionProps) {
+  return <EnquirySection data={data as never} />;
+}
+

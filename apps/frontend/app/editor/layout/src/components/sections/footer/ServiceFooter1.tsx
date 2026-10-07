@@ -1,7 +1,8 @@
 'use client';
+import type { SectionProps } from "../../../types/section";
 import React, { useEffect, useState } from 'react';
-import { FooterData } from './applianceTypes';
-import { ApplianceLink as Link } from "./ApplianceLink";
+import { FooterData } from "../../../lib/applianceTypes";
+import { ApplianceLink as Link } from "../../../lib/applianceLink";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaChevronRight, FaArrowUp } from 'react-icons/fa';
 
 const renderSocialIcon = (iconName: string) => {
@@ -236,7 +237,7 @@ export const Footer = ({ data }: { data?: FooterData }) => {
       {showScrollTop && (
         <button 
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(0,123,255,0.4)] hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(0,123,255,0.4)] hover:brightness-95 hover:-translate-y-1 transition-all duration-300 animate-fade-in"
           aria-label="Scroll to top"
         >
           <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
@@ -246,3 +247,8 @@ export const Footer = ({ data }: { data?: FooterData }) => {
     </footer>
   );
 };
+
+export default function ServiceFooter1({ data = {} }: SectionProps) {
+  return <Footer data={data as never} />;
+}
+
